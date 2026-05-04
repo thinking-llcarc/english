@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第45講 to (V) ~ の to は「まとめ役」② ─ 抽象から具体への流れ | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">45</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 不定詞</div>
+        <h1 class="lesson-title">to (V) ~ の to は「まとめ役」② ─ 抽象から具体への流れ</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  <p class="opening-text">
+      <strong>ついに最終講!</strong>45講シリーズの集大成です。<br>
+      今日のキー:<br>
+      ① <strong>抽象的な文の後ろには具体化した文</strong>(=英語の論理展開の原則)<br>
+      ② <strong><span class="en">ask</span> の用法整理</strong>(=4つのパターン)<br>
+      ③ <strong>《名詞 + to (V)》</strong>(=形容詞用法、未来を示唆)<br>
+      ④ <strong><span class="en">on one's behalf</span></strong>「~の代わりに」<br>
+      これまで学んだ全テクニックの<strong>総合運用</strong>が問われます。最後の問題、しっかり読み解いて完結させましょう!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>抽象的な文の後ろには具体化した文</strong>がある、という英語の論理展開の原則を理解します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong><span class="en">ask</span> の4つの用法</strong>(<span class="en">ask 人 to V / ask (人) for / ask (人) if/疑問詞 / ask 人 a question</span>)を整理します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>《名詞 + to (V)》= 形容詞用法</strong>で、<strong>to不定詞は未来を示唆</strong>することを理解します。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">Constructive criticism can be offered in an indirect way. Asking someone who is very close to the person to be criticized to speak on your behalf is a thoughtful act.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>6つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title">第1文「<span class="en">Constructive criticism can be offered in an indirect way.</span>」だけを読んで意味が分からない</span>
+  </div>
+  <div class="trap-misread">「(建設的な批判が間接的に提供できる、とは何?と止まる)」</div>
+  <p class="trap-why">★ <strong>英語の論理展開の原則</strong>: <strong>抽象的な文の後ろには、具体化した文がある</strong>!<br>★ 第1文「建設的な批判は間接的な方法で提供することが可能である」 → これは<strong>抽象的</strong>!<br>→ 「建設的批判」「間接的な方法」とは何か?<br>★ <strong>解決策</strong>: 第2文以降を読んで<strong>具体化された内容</strong>を確認する!<br>★ 第2文: <span class="en">Asking someone who is very close to the person to be criticized to speak on your behalf is a thoughtful act.</span><br>= 「批判を受ける人と親しい人に、代わりに話をしてくれるように頼むのは思慮深い行為だ」<br>→ これが「間接的な批判の方法」の<strong>具体例</strong>!<br>★ <strong>原則</strong>: <strong>抽象的でよく分からない文を見ても、そこで止まらず、次の文を読む</strong>!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Asking someone who is very close to the person to be criticized to speak on your behalf</span> の構造を取り違える</span>
+  </div>
+  <div class="trap-misread">「(複雑すぎて構造が取れない)」</div>
+  <p class="trap-why">★ 構造を分解!<br>① <span class="en">Asking</span> = 動名詞「(人に)頼むこと」(=主語、第44講)<br>② <span class="en">someone</span> = ask の<strong>目的語</strong>(=「人」)<br>③ <span class="en">who is very close to the person to be criticized</span> = 関係代名詞節「批判を受ける人ととても親しい(人)」(=someone を修飾)<br>④ <span class="en">to speak on your behalf</span> = ask の<strong>2つ目の目的語</strong>(=「Vするように」、=第41講のask + 人 + to V)<br>★ <strong>つまり</strong>: <span class="en">asking someone (...) to speak on your behalf</span> = 「(...の)人に、代わりに話してくれるように頼むこと」<br>★ <strong>構造</strong>: <span class="en">Asking + someone + (修飾節) + to speak ~</span> = 「~な人に~するように頼むこと」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the person to be criticized</span> を「批判されている人」と訳す</span>
+  </div>
+  <div class="trap-misread">「<u>批判されている人</u>と~」</div>
+  <p class="trap-why">★ <span class="en">the person to be criticized</span> = 「<strong>これから批判されることになる人</strong>」「<strong>批判を受けることになる人</strong>」<br>★ ≠ 「批判されている人」(=現在進行形のニュアンス)<br>★ <strong>理由</strong>: <strong>to不定詞は未来を示唆</strong>!<br>→ <span class="en">the person to be criticized</span> = 「(これから)批判される人」<br>→ もし「(今)批判されている人」なら <span class="en">the person being criticized</span>(=現在分詞)を使う!<br>★ <strong>区別</strong>:<br>(1) <span class="en">名詞 + to (V)</span> = 「(これから)Vする(される)~」(=未来)<br>(2) <span class="en">名詞 + (V)ing</span> = 「(現在)Vしている~」(=現在進行)<br>(3) <span class="en">名詞 + (V)p.p.</span> = 「(過去に)Vされた~」(=完了/受動)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">on your behalf</span> を直訳</span>
+  </div>
+  <div class="trap-misread">「あなたのbehalfで~」</div>
+  <p class="trap-why">★ <span class="en">on one's behalf</span> = 「<strong>~の代わりに/~のために</strong>」(=慣用)<br>★ <span class="en">on your behalf</span> = 「<strong>あなたの代わりに</strong>」「<strong>あなたのために</strong>」<br>★ ここでは「<strong>(批判をする)あなたの代わりに(誰かが話す)</strong>」というニュアンス。<br>★ <span class="en">behalf</span> 単独では使わない、<span class="en">on someone's behalf</span>(=慣用)で覚える!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">ask 人 to V</span> 構文を見落とす</span>
+  </div>
+  <div class="trap-misread">「(askの後の構造が分からず混乱)」</div>
+  <p class="trap-why">★ <strong><span class="en">ask</span> の4つの用法</strong>を覚えておく!<br>(1) <span class="en">ask + 人 + to V</span>「<strong>人にVするように頼む</strong>」<br>(2) <span class="en">ask (+ 人) + for ~</span>「(人に)~をくれるように頼む」<br>(3) <span class="en">ask (+ 人) + if 節/疑問詞節</span>「(人に)~を尋ねる」<br>(4) <span class="en">ask + 人 + a question</span>「人に質問をする」<br>★ 今回 <span class="en">asking someone (...) to speak ~</span> = (1) のパターン!「~な人にVするように頼む」<br>★ <span class="en">ask</span> は <strong>SVOC</strong> の形をとるので、<span class="en">to speak on your behalf</span> は<strong>名詞句的</strong>(=補語C)。</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">close to the person to be criticized</span> の構造で混乱</span>
+  </div>
+  <div class="trap-misread">「(2つの to が混在して構造が分からない)」</div>
+  <p class="trap-why">★ <span class="en">be close to ~</span> = 「~と親しい/~と近い」(=慣用)<br>★ <span class="en">very close to the person</span> = 「(その)人ととても親しい」<br>★ さらに <span class="en">to be criticized</span> = 「(これから)批判される(=形容詞用法、未来)」が <span class="en">the person</span> を修飾。<br>★ つまり <span class="en">close to the person to be criticized</span> = 「(これから)批判を受けることになる人と(とても)親しい」<br>★ <strong>2つの to の役割</strong>:<br>(1) <span class="en">close to ~</span> の to = 前置詞(=「~と」)<br>(2) <span class="en">to be criticized</span> の to = 不定詞のto(=「~される」)</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>Constructive criticism can be offered in an indirect way.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">第1文 ─ 抽象的な内容</span>
+    </div>
+    <div class="ra-step-body">
+      <p>第1文: <span class="en">Constructive criticism can be offered in an indirect way.</span>「建設的な批判は間接的な方法で提供することが可能である」</p>
+        <div class="ra-step-think">
+          ★ <strong>抽象的</strong>な内容!「建設的な批判」「間接的な方法」とは何か?<br>
+          → そこで止まらず、<strong>第2文に進む</strong>!<br><br>
+          ★ <span class="en">Constructive criticism</span> = 「建設的な批判」<br>
+          ★ <span class="en">be offered</span> = 「提供される」(受動態)<br>
+          ★ <span class="en">in an indirect way</span> = 「間接的な方法で」(=副詞句)<br>
+          ★ <span class="en">can be offered</span> = 「提供されることが可能である」 → 自然訳「<strong>提供することが可能である</strong>」(=能動的に意訳)<br><br>
+          ★ <strong>原則</strong>: 抽象的な文の後ろには<strong>具体化した文</strong>がある!
+        </div>
+        <div class="ra-step-conclude">
+          第1文 = 抽象的な内容(主張)。第2文で具体化されるはず!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>Asking someone</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">第2文の主語 ─ 動名詞</span>
+    </div>
+    <div class="ra-step-body">
+      <p>第2文の主語 <span class="en">Asking someone</span>「(人に)頼むこと」が登場。</p>
+        <div class="ra-step-think">
+          ★ <span class="en">Asking</span> = 動名詞「~すること」(=第44講のルール)<br>
+          ★ <span class="en">someone</span> = ask の<strong>目的語</strong>(=「人」)<br><br>
+          ★ <strong><span class="en">ask</span> の4つの用法</strong>:<br>
+          (1) <span class="en">ask + 人 + to V</span>「人にVするように頼む」<br>
+          (2) <span class="en">ask (+ 人) + for ~</span>「(人に)~をくれるように頼む」<br>
+          (3) <span class="en">ask (+ 人) + if/疑問詞</span>「(人に)~を尋ねる」<br>
+          (4) <span class="en">ask + 人 + a question</span>「人に質問をする」<br><br>
+          → 後ろに何が来るかで判別!
+        </div>
+        <div class="ra-step-conclude">
+          S = [Asking someone ~]「(人に)頼むこと」(=動名詞、第44講)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>who is very close to the person</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">関係代名詞節 ─ someone を修飾</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">who is very close to the person</span>「(その)人ととても親しい」が登場。</p>
+        <div class="ra-step-think">
+          ★ <span class="en">who</span> = 関係代名詞(主格、人を指す)<br>
+          → <span class="en">someone</span> を修飾する関係代名詞節!<br><br>
+          ★ <span class="en">be close to ~</span> = 「<strong>~と親しい/~と近い</strong>」(=慣用)<br>
+          ★ <span class="en">very close</span> = 「とても親しい」<br>
+          ★ <span class="en">to the person</span> = 「(その)人と」(=close to の to、前置詞)<br><br>
+          → 全体: 「<strong>(その)人ととても親しい</strong>」(=someone を修飾)
+        </div>
+        <div class="ra-step-conclude">
+          {who is very close to the person ~} = 関係代名詞節、someone を修飾「~ととても親しい(人)」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>to be criticized</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">名詞+to不定詞 ─ 未来を示唆！</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">to be criticized</span>「(これから)批判される」が登場。</p>
+        <div class="ra-step-think">
+          ★ <strong>《名詞 + to (V)》</strong>= <strong>形容詞用法</strong>(=直前の名詞を修飾、第17講)<br>
+          → <span class="en">the person to be criticized</span> = 「(これから)批判される人」(=person を修飾)<br><br>
+          ★ <strong>重要</strong>: <strong>to不定詞は未来を示唆</strong>!<br>
+          → <span class="en">to be criticized</span> = 「<strong>これから批判されることになる</strong>」<br>
+          → ≠ 「(今)批判されている」(=これは <span class="en">being criticized</span>、現在分詞)<br><br>
+          ★ <strong>区別</strong>:<br>
+          (1) <span class="en">名詞 + to V</span> = 「(これから)Vする(される)~」(=未来)<br>
+          (2) <span class="en">名詞 + (V)ing</span> = 「(現在)Vしている~」(=進行)<br>
+          (3) <span class="en">名詞 + (V)p.p.</span> = 「(過去に)Vされた~」(=完了/受動)<br><br>
+          ★ <strong>例外</strong>: <span class="en">the first / last ~ to V</span> は現実の内容(=過去)を示すこともある。<br>
+          例: <span class="en">He was the first man to land on the moon.</span>「彼は最初に月に降り立った男だ」(=過去の事実)<br><br>
+          ★ <span class="en">be criticized</span> = 「批判される」(受動態)
+        </div>
+        <div class="ra-step-conclude">
+          (to be criticized) = 形容詞用法、the person を修飾「(これから)批判されることになる(人)」(=未来を示唆)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>to speak on your behalf</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">ask + 人 + to V 構文！</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました <span class="en">to speak on your behalf</span>「あなたの代わりに話をする」!</p>
+        <div class="ra-step-think">
+          ★ <strong><span class="en">ask + 人 + to V</span></strong> = 「<strong>人にVするように頼む</strong>」(=ask の用法 (1))!<br>
+          → ここで <span class="en">asking someone (...) to speak on your behalf</span> の構造が完成!<br>
+          = 「(...の)人に、あなたの代わりに話をしてくれるように頼む」<br><br>
+          ★ <span class="en">on your behalf</span> = 「<strong>あなたの代わりに</strong>」(=慣用、<span class="en">on one's behalf</span>)<br>
+          ★ <span class="en">your</span> = 一般論を示す you の所有格 → 「(批判をする側の)あなたの代わりに」のニュアンス。<br><br>
+          ★ <strong>主語の意味</strong>: 「<strong>(批判を受ける人と親しい人に)、(批判する側の)あなたの代わりに話してくれるように頼むこと</strong>」<br>
+          → これが第1文「間接的な批判」の<strong>具体例</strong>!<br>
+          → 直接批判するのではなく、親しい人を通じて伝える、という<strong>間接的な方法</strong>。
+        </div>
+        <div class="ra-step-conclude">
+          to speak on your behalf = ask + 人 + to V のV「あなたの代わりに話をするように」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>is a thoughtful act</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン動詞+補語 ─ 結論</span>
+    </div>
+    <div class="ra-step-body">
+      <p>第2文の主節 <span class="en">is a thoughtful act</span>「思慮深い行為である」が結論。</p>
+        <div class="ra-step-think">
+          ★ ここでメイン動詞 + 補語!<br>
+          → 主語 = <span class="en">[Asking someone ... to speak on your behalf]</span>(=動名詞句)<br>
+          → 動詞 = <span class="en">is</span><br>
+          → 補語 = <span class="en">a thoughtful act</span>「思慮深い行為」<br><br>
+          ★ <span class="en">thoughtful</span> = 「思慮深い/思いやりのある」<br>
+          ★ <span class="en">act</span> = 「行為」(「行動」も可)<br><br>
+          ★ <strong>意訳の選択肢</strong>:<br>
+          (1) 「思慮深い行為である」<br>
+          (2) 「思いやりのある行為である」<br><br>
+          ★ <strong>全体の流れ</strong>: 第1文「建設的な批判は間接的に提供することが可能である」(=抽象) → 第2文「批判を受ける人と親しい人に頼んで、代わりに話してもらうのは、思慮深い行為である」(=具体的な方法)<br>
+          → これで第1文の意味が明確に!
+        </div>
+        <div class="ra-step-conclude">
+          V = is / C = a thoughtful act「思慮深い行為(である)」
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">Constructive criticism</span><span class="seg-marker seg-marker-main">S</span></span>
+    <span class="seg-wrap"><span class="seg-sub">can</span><span class="seg-marker seg-marker-sub">助</span></span>
+    <span class="seg-wrap"><span class="seg-main">be offered</span><span class="seg-marker seg-marker-main">V</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈in an indirect way〉.</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-text"> </span>
+    <span class="seg-wrap"><span class="seg-sub">[Ask</span><span class="seg-marker seg-marker-sub">S→</span></span>
+    <span class="seg-wrap"><span class="seg-sub">ing</span><span class="seg-marker seg-marker-sub">まとめ役</span></span>
+    <span class="seg-wrap"><span class="seg-main">someone</span><span class="seg-marker seg-marker-main">O'</span></span>
+    <span class="seg-wrap"><span class="seg-sub">{who</span><span class="seg-marker seg-marker-sub">関代</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V''</span></span>
+    <span class="seg-wrap"><span class="seg-sub">very</span><span class="seg-marker seg-marker-sub">M''₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">close</span><span class="seg-marker seg-marker-main">C''</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈to the person</span><span class="seg-marker seg-marker-sub">M''₂→</span></span>
+    <span class="seg-wrap"><span class="seg-sub">(to be criticized)〉}</span><span class="seg-marker seg-marker-sub">形容詞句(未来)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[to</span><span class="seg-marker seg-marker-sub">C'→</span></span>
+    <span class="seg-wrap"><span class="seg-main">speak</span><span class="seg-marker seg-marker-main">V'</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈on your behalf〉]]</span><span class="seg-marker seg-marker-sub">M'</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V</span></span>
+    <span class="seg-wrap"><span class="seg-main">a thoughtful act.</span><span class="seg-marker seg-marker-main">C</span></span><span class="seg-text">.</span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>S 助 V 〈M〉. [Asking O' {関代節 ... 名詞(to V)} (to V)] V C</strong>(第1文=抽象、第2文=具体化。動名詞主語 + ask + 人 + to V 構文。名詞 + to V = 形容詞用法、未来)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">建設的な批判は間接的な方法で提供されることが可能である。批判される人ととても親しい誰かに、あなたの代わりに話すように頼むことは思慮深い行為である。</span>
+      <span class="trans-row-note">構造どおりの直訳。「批判される人」(=現在進行的)、「あなた」(=一般論を示すyou)が硬い。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>《名詞+to (V)》= 「(これから)~される」</strong>(=未来を示唆)</span>
+    <span class="trans-arrow-detail"><span class="en">the person to be criticized</span> = 「批判を受けることになる人」(=未来)。「批判されている人」(=現在進行)とは異なる!</span>
+  </div>
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">建設的な批判は間接的な方法で提供することが可能である。批判を受けることになる人ととても親しい人に、代わりに話をしてもらうように頼むのは思慮深い行為である。</span>
+      <span class="trans-row-note">「批判される人」を「批判を受けることになる人」(=未来)に、「あなた」を訳出しない、「方法で」を「方法に」など整える。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>「あなた」を訳さない</strong></span>
+    <span class="trans-arrow-detail"><span class="en">your behalf</span> の <span class="en">your</span> は一般論を示す you の所有格。「(あなたの)代わりに」と意訳するか、訳出しない。</span>
+  </div>
+
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>建設的な批判は間接的に提供することが可能である。批判を受けることになる人ととても親しい人に、代わりに話をしてくれるように頼むのは思慮深い行為である。</strong></span>
+      <span class="trans-row-note">「間接的な方法で」を「間接的に」と簡潔に、「~してもらう」を「~してくれる」と自然な日本語に。これで完成。</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>抽象→具体</strong>の流れ ─ 英語の論理展開の原則</span>
+  </div>
+  <p class="natural-tip-body">
+    ★ <strong>英語ではまず結論を抽象的に述べて、第2文以降でそれを具体化する</strong>という流れが一般的!<br>★ つまり、<strong>抽象的でよく分からない文を見ても、そこで止まらず、次の文を読む</strong>ことが大切!<br>★ 例:<br>第1文(抽象): <span class="en">Constructive criticism can be offered in an indirect way.</span>「建設的な批判は間接的に提供することが可能である」<br>→ 「建設的批判」「間接的な方法」とは具体的に何か?疑問が浮かぶ。<br>第2文(具体): <span class="en">Asking someone who is very close to the person to be criticized to speak on your behalf is a thoughtful act.</span>「批判を受けることになる人と親しい人に、代わりに話をしてくれるように頼むのは思慮深い行為である」<br>→ <strong>これが具体例</strong>!直接批判するのではなく、親しい人を通じて伝える、という間接的な方法。<br><br>★ <strong>応用</strong>: 抽象的な文を読み終えたら、<strong>次の文で具体化される</strong>と予測しながら読み進めると、英文全体の流れが見えやすくなる!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">Many things in life are unpredictable. For example, you never know when you might lose your job.</span></span>
+      <span class="natural-tip-ex-bad">(第1文だけで止まる)</span>
+      <span class="natural-tip-ex-good">人生では多くのことが予測不能である。例えば、いつ仕事を失うか分からない (第1文=抽象、第2文=具体例)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">Communication is key in any relationship. Without it, misunderstandings will inevitably arise.</span></span>
+      <span class="natural-tip-ex-bad">(第1文の意味が抽象的で困惑)</span>
+      <span class="natural-tip-ex-good">コミュニケーションはどんな関係においても重要である。それなしでは、誤解が必然的に生じる (第1文=抽象、第2文=具体的な理由)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title"><span class="en">ask</span> の用法 ─ ask + 人 + to V</span>
+  </div>
+  <p class="drill-en">I <strong>asked him to fix</strong> the door.</p>
+  <p class="drill-q">構造と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>構造:</strong> <span class="en">ask + 人(him) + to V(fix the door)</span>「人にVするように頼む」<br>
+        <strong>訳:</strong> 「彼にドアを直してくれるように頼んだ」<br><br>
+        💡 <span class="en">ask</span> の4つの用法:<br>
+        (1) <span class="en">ask + 人 + to V</span>「人にVするように頼む」<br>
+        (2) <span class="en">ask (+ 人) + for ~</span>「(人に)~をくれるように頼む」<br>
+        (3) <span class="en">ask (+ 人) + if/疑問詞</span>「(人に)~を尋ねる」<br>
+        (4) <span class="en">ask + 人 + a question</span>「人に質問をする」
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">《名詞 + to (V)》 ─ 未来 vs 現在進行</span>
+  </div>
+  <p class="drill-en">The book <strong>to be published</strong> next month is exciting.</p>
+  <p class="drill-q"><span class="en">the book to be published</span> の意味は？</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> <span class="en">名詞 + to (V)</span> = 形容詞用法、<strong>未来を示唆</strong>!<br>
+        <strong>訳:</strong> 「<strong>来月出版される予定の</strong>本は面白い」<br><br>
+        💡 <strong>区別</strong>:<br>
+        ・<span class="en">the book to be published</span>(=未来)「これから出版される予定の本」<br>
+        ・<span class="en">the book being published</span>(=進行)「(今)出版されつつある本」<br>
+        ・<span class="en">the book published</span>(=過去/受動)「(過去に)出版された本」
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">抽象→具体の流れ</span>
+  </div>
+  <p class="drill-en">Honesty is the best policy. <strong>Always telling the truth</strong>, even when it is difficult, builds trust.</p>
+  <p class="drill-q">第1文と第2文の関係は？</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>関係:</strong> 第1文(抽象)「正直は最善の方策だ」 → 第2文(具体化)「常に真実を語ることが、たとえそれが難しい時でも、信頼を築く」<br>
+        <strong>訳:</strong> 「正直は最善の方策である。常に真実を語ることは、たとえそれが難しい時でも、信頼を築く」<br><br>
+        💡 抽象的な原則 → 具体的な行動・例 という流れは、英語の論理展開の典型!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>抽象的な文の後ろには具体化した文</strong>がある(=英語の論理展開の原則)</div>
+      <div class="flow-desc">抽象的でよく分からない文を見ても、そこで止まらず、次の文を読む!具体例で意味が明確に。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">ask</span> の4つの用法</strong>を整理:<br>(1) <span class="en">ask + 人 + to V</span>「人にVするように頼む」<br>(2) <span class="en">ask (+ 人) + for ~</span>「~をくれるように頼む」<br>(3) <span class="en">ask (+ 人) + if/疑問詞</span>「~を尋ねる」<br>(4) <span class="en">ask + 人 + a question</span>「質問をする」</div>
+      <div class="flow-desc">今回 (1) のパターン。ask は SVOC の形をとる。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>《名詞 + to (V)》</strong>= 形容詞用法、<strong>to不定詞は未来を示唆</strong></div>
+      <div class="flow-desc"><span class="en">the person to be criticized</span> = 「(これから)批判されることになる人」(=未来)。「批判されている人」(=現在進行)ではない!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>《名詞 + to V》 vs 《名詞 + (V)ing》 vs 《名詞 + (V)p.p.》</strong>の区別</div>
+      <div class="flow-desc">(1) to V = 未来「これから~する/される」/(2) (V)ing = 進行「~している」/(3) (V)p.p. = 完了・受動「~された」</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>例外</strong>: <span class="en">the first / last ~ to V</span> は<strong>現実の内容(=過去)</strong>を示すこともある</div>
+      <div class="flow-desc"><span class="en">He was the first man to land on the moon.</span>「彼は最初に月に降り立った男だ」(=過去の事実)。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">on one's behalf</span></strong>「<strong>~の代わりに</strong>」(=慣用)</div>
+      <div class="flow-desc"><span class="en">on your behalf</span>「あなたの代わりに」、<span class="en">on his behalf</span>「彼の代わりに」など。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">be close to ~</span></strong>「<strong>~と親しい/~と近い</strong>」(=慣用)</div>
+      <div class="flow-desc"><span class="en">very close to the person</span> = 「(その)人ととても親しい」。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>抽象的な文の後ろには具体化した文がある</strong>という英語の論理展開の原則を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">ask</span> の4つの用法</strong>(<span class="en">ask 人 to V / for / if / 質問</span>)を整理した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>《名詞 + to (V)》</strong>= 形容詞用法、<strong>to不定詞は未来を示唆</strong>と理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>《名詞 + to V》 vs (V)ing vs (V)p.p.</strong>の<strong>時制的区別</strong>ができる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>例外</strong>: <span class="en">the first / last ~ to V</span> は<strong>現実(=過去)</strong>を示すと覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">on one's behalf</span></strong>「~の代わりに」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">be close to ~</span></strong>「~と親しい」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>動名詞主語</strong>(=Asking someone ~ is ~)を見抜ける(第44講)</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>シリーズ全45講で学んだ全テクニック</strong>を、初見の英文で総合運用できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第45講 · to (V) ~ の to は「まとめ役」② ─ 抽象から具体への流れ</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>
