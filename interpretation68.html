@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第68講 《A and 副詞 B》の副詞の挿入 ② ─ until の用法 | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">68</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 接続詞ほか</div>
+        <h1 class="lesson-title">《A and 副詞 B》の副詞の挿入 ② ─ until の用法</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  <p class="opening-text">
+      <strong>《A and 副詞 B》シリーズ第2弾</strong>!<br>
+      キー:<br>
+      ① <strong><span class="en">until</span> の2つの用法</strong>:接続詞「~するまで」/前置詞「~まで」<br>
+      ② <strong>and の直後の副詞</strong>はいったん<strong>〈　〉でくくる</strong>(=第67講応用)<br>
+      ③ <strong>《A, and B, ~》のコンマ</strong>に注目で並列を見抜く!<br>
+      ④ <strong>世紀名には the がつく</strong>(=<span class="en">the 5th century</span>「西暦5世紀」)<br>
+      ⑤ <strong><span class="en">remained + C</span></strong>「<strong>~のままであった</strong>」(=第1文型「残った」と区別)<br>
+      ローマ帝国を題材に、副詞の挿入と until を攻略!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong><span class="en">until</span> の2つの用法</strong>(接続詞/前置詞)を区別します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>and の直後の副詞句挿入</strong>(=第67講)を再確認します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>世紀名には the がつく</strong>(=<span class="en">the 5th century</span>)を覚えます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">The Roman Empire became, and until the 5th century CE remained, the dominant power in the Western world.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>6つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">and のつなぐもの</span>を取り違える</span>
+  </div>
+  <div class="trap-misread">「(and の前後で何が並列されているか分からない)」</div>
+  <p class="trap-why">★ <strong><span class="en">A, and B, ~</span>の場合は、AとBの後に打たれたコンマに注目すれば、並列されているものがAとBであることを比較的簡単に見つけることができる</strong>!<br>★ <strong>例</strong>: <span class="en">Japan is, and will be, a major contributor to world peace.</span>「日本は現在もまたこれからも、世界平和に貢献する主要な原動力であるだろう」<br>→ <span class="en">is</span> と <span class="en">will be</span> の後のコンマに注目!<br>→ <strong>視覚化</strong>:<br>Japan ┳ is,<br>&nbsp;&nbsp;&nbsp;&nbsp;┃ and ┃ a major contributor to world peace<br>&nbsp;&nbsp;&nbsp;&nbsp;┗ will be,<br>→ <span class="en">Japan</span> が共通の主語、<span class="en">a major ~</span> が共通の補語!<br>★ <strong>本問</strong>: <span class="en">A, and B, ~</span> の <span class="en">B</span> の前に、副詞句 <span class="en">until the 5th century CE</span> が挿入されている!<br>★ 確かにややこしいが、<span class="en">became</span> と <span class="en">remained</span> の後に打たれたコンマに注目すれば、以下のように見えてくる!<br>★ <strong>視覚化</strong>:<br>The Roman Empire ┳ became,<br>&nbsp;&nbsp;&nbsp;&nbsp;┃ and ┃ the dominant power ...<br>&nbsp;&nbsp;&nbsp;&nbsp;┗ 〈until the 5th century CE〉 remained,<br>★ <span class="en">and</span> がつなぐもの: <span class="en">became</span> と <span class="en">(until the 5th century CE) remained</span>!<br>★ <span class="en">until the 5th century CE</span> が二つの動詞両方を修飾すると考えて、「<strong>西暦5世紀まで……になりそれを保持した</strong>」などと訳したものは<strong>認められない</strong>!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">until</span> を「~するまで」と接続詞として読む</span>
+  </div>
+  <div class="trap-misread">「<u>西暦5世紀が残るまで</u>~」(意味不明!)</div>
+  <p class="trap-why">★ <strong><span class="en">until</span> の代表的な用法</strong>:<br>(1) <strong>接続詞</strong>: <span class="en">I stayed home until he came back.</span>「私は彼が帰ってくるまで家にいた」<br>(2) <strong>前置詞</strong>: <span class="en">We have to wait until noon.</span>「私たちは正午まで待たなければならない」<br>★ <strong>本問</strong>: もし(1)の接続詞と考えると、<span class="en">until</span> の後には文がきて、<span class="en">until the 5th century CE remained</span> で副詞節をつくるはずだが、「<strong>西暦5世紀が残るまで</strong>」では意味が通らない!<br>★ よって、<span class="en">until</span> を接続詞と考えるのは無理があると分かる!<br>★ 以上から、この <span class="en">until</span> は<strong>前置詞</strong>!<br>→ <span class="en">until the 5th century CE</span> = 「<strong>西暦5世紀までずっと</strong>」<br>→ この副詞句は後ろの <span class="en">remained</span> を修飾!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the 5th century CE</span> を「5世紀」と訳す</span>
+  </div>
+  <div class="trap-misread">「<u>5世紀</u>まで~」</div>
+  <p class="trap-why">★ <span class="en">the 5th century CE</span> = 「<strong>西暦5世紀</strong>」「<strong>紀元後5世紀</strong>」<br>★ 単に「5世紀」とすると「<strong>紀元前5世紀</strong>」の可能性もあるので<strong>避ける</strong>!<br>★ <span class="en">CE</span> = <span class="en">Common Era</span>「西暦/紀元後」<br>→ かつての <span class="en">AD</span>(=<span class="en">Anno Domini</span>「主の年」)に代わって使われることがある<br>★ <span class="en">BCE</span> = <span class="en">Before Common Era</span>「紀元前」(=かつての <span class="en">BC</span>)<br>★ なお<strong>西ローマ帝国の滅亡は紀元後の476年</strong>とされている。<br>★ <span class="en">until the 5th century CE</span> = 「<strong>西暦5世紀まで(ずっと)</strong>」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">remained</span> を「残った」と訳す</span>
+  </div>
+  <div class="trap-misread">「~<u>残った</u>~」</div>
+  <p class="trap-why">★ <strong>本問の <span class="en">remained</span> は補語をとっている</strong>ので「<strong>~のままであった</strong>」という意味!<br>★ 第1文型(SV)の訳である「<strong>残った</strong>」とするのは<strong>誤り</strong>!<br>★ <span class="en">remain</span> は2つの用法:<br>(1) <strong>第1文型 SV</strong>(=自動詞、補語なし): 「残る/残存する」<br>例: <span class="en">Few buildings remained after the earthquake.</span>「地震の後、わずかしか建物が残らなかった」<br>(2) <strong>第2文型 SVC</strong>(=連結動詞、補語あり): 「<strong>~のままである</strong>」<br>例: <span class="en">He remained silent.</span>「彼は黙ったままだった」<br>★ <strong>本問</strong>: <span class="en">remained the dominant power</span><br>→ 補語 <span class="en">the dominant power</span> をとっている → <strong>(2) 第2文型「~のままであった」</strong>!<br>★ <span class="en">until the 5th century CE remained the dominant power</span> = 「<strong>西暦5世紀まで支配的な勢力のままであった</strong>」 = 「<strong>その地位を維持した</strong>」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the dominant power</span> を「強国」と訳す</span>
+  </div>
+  <div class="trap-misread">「<u>強国</u>~」(=やや弱い)</div>
+  <p class="trap-why">★ <span class="en">the dominant power</span> = 「<strong>支配的な勢力</strong>」「<strong>支配的な強国</strong>」「<strong>優勢な力</strong>」<br>★ <span class="en">dominant</span> = 「<strong>支配的な/優位な</strong>」(=形容詞)<br>★ <span class="en">power</span> = 「<strong>勢力/力</strong>」(=「強国」と訳すと意味は通るが、ニュアンスが弱い)<br>★ <strong>可</strong>:<br>・「<strong>支配的な勢力</strong>」(=最も自然)<br>・「<strong>支配的な強国</strong>」<br>・「<strong>優勢な力</strong>」<br>★ 「強国」だけだと <span class="en">dominant</span> のニュアンスが消えてしまうので、「<strong>支配的な</strong>」を訳出!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the Western world</span> を「西の世界」と訳す</span>
+  </div>
+  <div class="trap-misread">「<u>西の世界</u>~」</div>
+  <p class="trap-why">★ <span class="en">the Western world</span> の訳:<br>・「<strong>西欧世界</strong>」(=最も自然)<br>・「<strong>西側世界</strong>」<br>・「<strong>西洋世界</strong>」<br>・「<strong>欧米(の)世界</strong>」<br>★ 「<strong>西の世界</strong>」という訳は<strong>避ける</strong>!<br>★ <span class="en">Western</span> は形容詞「西洋の/西の」(=大文字)<br>★ <span class="en">in the Western world</span> = 「<strong>西欧世界において</strong>」</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>The Roman Empire</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">主語 ─ ローマ帝国</span>
+    </div>
+    <div class="ra-step-body">
+      <p>主語 <span class="en">The Roman Empire</span>「ローマ帝国」が登場。</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">The Roman Empire</span>「<strong>ローマ帝国</strong>」<br>
+          → 古代ローマの大帝国!紀元前27年〜紀元後476年(=西ローマ帝国の滅亡)。<br><br>
+          → 後ろに動詞が来るはず!
+        </div>
+        <div class="ra-step-conclude">
+          S = The Roman Empire「ローマ帝国」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>became,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">V₁ became + コンマ ─ 何かが続く！</span>
+    </div>
+    <div class="ra-step-body">
+      <p>動詞 <span class="en">became</span>「~となった」+ <strong>コンマ</strong>が登場。</p>
+        <div class="ra-step-think">
+          ★ V₁ = <span class="en">became</span>「~となった」(=第2文型、補語が必要)<br>
+          ★ <strong>コンマ</strong>に注目!<br>
+          → <span class="en">became</span> の後にコンマ → 何かが続く可能性!<br>
+          → <strong>《A, and B, ~》</strong>パターンを予測!<br><br>
+          ★ <strong>判別</strong>: コンマで一旦区切られている → 補語が後ろに来る前に、<span class="en">and B</span> が挿入される予感!
+        </div>
+        <div class="ra-step-conclude">
+          V₁ = became, ─ コンマで一旦区切り、《A, and B, ~》パターンを予測!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>and until the 5th century CE</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">and + 副詞句挿入 until ~</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました <span class="en">and until the 5th century CE</span>「そして西暦5世紀まで」!</p>
+        <div class="ra-step-think">
+          ★ <strong>《A and 副詞 B》のパターン</strong>!(=第67講応用)<br>
+          ★ <span class="en">and</span> の直後に <span class="en">until the 5th century CE</span>(=副詞句)が挿入されている!<br>
+          → いったん<strong>〈　〉でくくって</strong>無視!<br>
+          → 後ろを見ると <span class="en">remained</span> がある!<br><br>
+          ★ <strong><span class="en">until</span> の用法</strong>:<br>
+          (1) 接続詞「~するまで」<br>
+          (2) 前置詞「~まで」<br><br>
+          ★ <strong>判別</strong>: もし(1)の接続詞と考えると、後ろに文が来るはずだが、<span class="en">the 5th century CE remained</span> では「西暦5世紀が残るまで」となり<strong>意味が通らない</strong>!<br>
+          → よって、この <span class="en">until</span> は<strong>(2) 前置詞</strong>!<br><br>
+          ★ <span class="en">until the 5th century CE</span> = 「<strong>西暦5世紀までずっと</strong>」<br>
+          ★ <span class="en">CE</span> = <span class="en">Common Era</span>「西暦/紀元後」<br>
+          → 単に「5世紀」とすると「紀元前5世紀」の可能性もあるので避ける!<br><br>
+          ★ この副詞句は後ろの <span class="en">remained</span> を修飾!
+        </div>
+        <div class="ra-step-conclude">
+          and 〈until the 5th century CE〉= 副詞句挿入「西暦5世紀まで」(=前置詞 until、remained を修飾)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>remained,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">V₂ remained ─ 補語をとる「~のままであった」</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">remained,</span>「~のままであった」+ コンマが登場。</p>
+        <div class="ra-step-think">
+          ★ <span class="en">remain</span> は2つの用法:<br>
+          (1) <strong>第1文型 SV</strong>: 「残る/残存する」<br>
+          (2) <strong>第2文型 SVC</strong>: 「<strong>~のままである</strong>」(=連結動詞)<br><br>
+          ★ <strong>本問</strong>: 後ろにコンマがあり、後で補語が来る → <strong>(2) 第2文型「~のままであった」</strong>!<br>
+          → 「残った」と訳すのは<strong>誤り</strong>!<br><br>
+          ★ <strong>《A, and B, ~》</strong>のパターン:<br>
+          → <span class="en">became,</span> と <span class="en">remained,</span> の後のコンマに注目!<br>
+          → AとBが等しい形で並列されている!<br><br>
+          ★ <strong>視覚化</strong>:<br>
+          The Roman Empire ┳ became,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;┃ and ┃ the dominant power ...<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;┗ 〈until the 5th century CE〉 remained,<br><br>
+          ★ <span class="en">The Roman Empire</span> が<strong>共通の主語</strong>!<br>
+          ★ <span class="en">the dominant power ...</span> が<strong>共通の補語</strong>!
+        </div>
+        <div class="ra-step-conclude">
+          V₂ remained, ─ 第2文型「~のままであった」(=補語が後で来る)。A, and B, ~ パターン!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>the dominant power</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">共通の補語 ─ 支配的な勢力</span>
+    </div>
+    <div class="ra-step-body">
+      <p>共通の補語 <span class="en">the dominant power</span>「支配的な勢力」が登場。</p>
+        <div class="ra-step-think">
+          ★ C = <span class="en">the dominant power</span>「<strong>支配的な勢力</strong>」<br>
+          → <span class="en">became</span>(=なった)と <span class="en">remained</span>(=のままであった)の<strong>共通の補語</strong>!<br><br>
+          ★ <span class="en">dominant</span> = 「<strong>支配的な/優位な</strong>」(=形容詞)<br>
+          ★ <span class="en">power</span> = 「<strong>勢力/力</strong>」<br><br>
+          ★ <strong>可</strong>:<br>
+          ・「支配的な勢力」(=最も自然)<br>
+          ・「支配的な強国」<br>
+          ・「優勢な力」<br><br>
+          ★ <strong>意訳</strong>:<br>
+          <span class="en">The Roman Empire became and 〈until the 5th century CE〉 remained the dominant power</span><br>
+          = 「ローマ帝国は<strong>支配的な勢力となり</strong>、<strong>西暦5世紀までその地位を維持した</strong>」<br>
+          (=「~のままであった」を「~その地位を維持した」と意訳すると自然!)
+        </div>
+        <div class="ra-step-conclude">
+          C = the dominant power「支配的な勢力」(=became と remained の共通補語)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>in the Western world.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">副詞句M ─ 西欧世界において</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後に <span class="en">in the Western world.</span>「西欧世界において」が登場!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">in the Western world</span> = 「<strong>西欧世界において</strong>」(=副詞句、the dominant power を修飾)<br><br>
+          ★ <strong>the Western world の訳</strong>:<br>
+          ・「<strong>西欧世界</strong>」(=最も自然)<br>
+          ・「西側世界」<br>
+          ・「西洋世界」<br>
+          ・「欧米(の)世界」<br>
+          ・「<strong>「西の世界」は避ける!</strong>」<br><br>
+          ★ <span class="en">Western</span> = 形容詞「西洋の/西の」(=大文字)<br><br>
+          ★ <strong>全体の意訳</strong>:<br>
+          直訳: 「ローマ帝国は西欧世界において支配的な勢力となり、西暦5世紀まで(支配的な勢力)のままであった」<br>
+          → 自然な日本語: 「<strong>ローマ帝国は、西欧世界の支配的な勢力となり、西暦5世紀まで、その地位を維持した</strong>」<br>
+          (=「のままであった」を「その地位を維持した」と意訳)<br><br>
+          ★ <strong>世紀名には the がつく</strong>!<br>
+          → <span class="en">the 5th century</span>「西暦5世紀」<br>
+          → これは英作文でも頻出の知識!
+        </div>
+        <div class="ra-step-conclude">
+          〈in the Western world〉= 「西欧世界において」(=副詞句、the dominant power を修飾)
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">The Roman Empire</span><span class="seg-marker seg-marker-main">S</span></span>
+    <span class="seg-wrap"><span class="seg-main">became,</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈until the 5th century CE〉</span><span class="seg-marker seg-marker-sub">M(挿入)</span></span>
+    <span class="seg-wrap"><span class="seg-main">remained,</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">the dominant power</span><span class="seg-marker seg-marker-main">C</span></span>
+    <span class="seg-wrap"><span class="seg-sub">(in the Western world).</span><span class="seg-marker seg-marker-sub">修飾</span></span><span class="seg-text">.</span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>S V₁(became), and 〈M(until ~ 挿入)〉 V₂(remained), C(the dominant power) (in ~)</strong>(A and 〈副詞句〉 B パターン:became と remained の共通補語が the dominant power。until は前置詞、副詞句として remained を修飾)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ローマ帝国は西の世界において支配的な力となり、西暦5世紀まで残った。</span>
+      <span class="trans-row-note">構造どおりの直訳。「西の世界」「残った」「支配的な力」が硬く、A, and B, ~ の構造と remained + C の意味が出ていない。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong><span class="en">A, and B, ~</span> パターン</strong>(=コンマに注目)</span>
+    <span class="trans-arrow-detail"><span class="en">became,</span> と <span class="en">remained,</span> の後のコンマに注目すれば、AとBの並列が見える!共通主語と共通補語を見つける。</span>
+  </div>
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ローマ帝国は西欧世界において支配的な勢力となり、西暦5世紀まで支配的な勢力のままであった。</span>
+      <span class="trans-row-note">「西の世界」を「西欧世界」、「残った」を「~のままであった」(=remained + C)、「支配的な力」を「支配的な勢力」に意訳。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>and の直後の副詞句挿入</strong>(=第67講応用)</span>
+    <span class="trans-arrow-detail"><span class="en">and 〈until the 5th century CE〉 remained</span>:until 副詞句が <span class="en">remained</span> を修飾していることを明確化!</span>
+  </div>
+
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>ローマ帝国は、西欧世界の支配的な勢力となり、西暦5世紀まで、その地位を維持した。</strong></span>
+      <span class="trans-row-note">「~のままであった」を「その地位を維持した」と意訳、共通補語の重複を避けて自然に。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong><span class="en">until</span> の用法</strong> ─ 接続詞 vs 前置詞</span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 代表的な <span class="en">until</span> の用法は次の二つが考えられます!<br><br>★ <strong>(1) 接続詞</strong>: <span class="en">until + 文(SV)</span><br>例: <span class="en">I stayed home until he came back.</span>「私は彼が帰ってくるまで家にいた」<br>→ <span class="en">until</span> の後に文(=he came back)が来る → 接続詞!<br>→ 「~するまで」<br><br>★ <strong>(2) 前置詞</strong>: <span class="en">until + 名詞(句)</span><br>例: <span class="en">We have to wait until noon.</span>「私たちは正午まで待たなければならない」<br>→ <span class="en">until</span> の後に名詞(=noon)が来る → 前置詞!<br>→ 「~まで」<br><br>★ <strong>本問の判別</strong>:<br>もし(1)の接続詞と考えると、<span class="en">until</span> の後には文が来るはずですが、<span class="en">until the 5th century CE remained</span> で副詞節をつくるはずなのに、「<strong>西暦5世紀が残るまで</strong>」では意味が通りません!<br>→ よって、<span class="en">until</span> を接続詞と考えるのは<strong>無理がある</strong>と分かります!<br>→ 以上から、この <span class="en">until</span> は<strong>前置詞</strong>!<br>→ <span class="en">until the 5th century CE</span> = 「<strong>西暦5世紀までずっと</strong>」<br>→ この副詞句は後ろの <span class="en">remained</span> を修飾!<br><br>★ <strong>類例</strong>:<br>(1) <span class="en">Wait until I tell you to start.</span>「私が始めるよう言うまで待ってください」(=接続詞)<br>(2) <span class="en">The store is open until 9 p.m.</span>「店は午後9時まで開いている」(=前置詞)<br>(3) <span class="en">She studied until midnight.</span>「彼女は夜中の12時まで勉強した」(=前置詞)
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I will wait until he arrives.</span></span>
+      <span class="natural-tip-ex-bad">彼の到着まで待ちます</span>
+      <span class="natural-tip-ex-good">彼が到着するまで待ちます (until + SV = 接続詞)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I will wait until tomorrow.</span></span>
+      <span class="natural-tip-ex-bad">明日まで待つ間</span>
+      <span class="natural-tip-ex-good">明日まで待ちます (until + 名詞 = 前置詞)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">The empire remained powerful until the 5th century.</span></span>
+      <span class="natural-tip-ex-bad">帝国は5世紀が残るまで強力だった</span>
+      <span class="natural-tip-ex-good">帝国は5世紀まで強力なままだった (until + 名詞 = 前置詞、remained = 「~のままだった」)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title"><span class="en">until</span> の用法判別</span>
+  </div>
+  <p class="drill-en">(1) She waited <strong>until</strong> the rain stopped. / (2) She waited <strong>until</strong> noon.</p>
+  <p class="drill-q">2つの <span class="en">until</span> の用法と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>(1):</strong> <span class="en">until + 文(the rain stopped)</span> → <strong>接続詞</strong>「~するまで」<br>
+        → 訳: 「彼女は雨が止む<strong>まで</strong>待った」<br>
+        <strong>(2):</strong> <span class="en">until + 名詞(noon)</span> → <strong>前置詞</strong>「~まで」<br>
+        → 訳: 「彼女は正午<strong>まで</strong>待った」<br><br>
+        💡 後ろが文なら接続詞、名詞なら前置詞!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title"><span class="en">A, and B, ~</span> の挿入</span>
+  </div>
+  <p class="drill-en">Tokyo <strong>is, and will be</strong>, the largest city in Japan.</p>
+  <p class="drill-q"><span class="en">and</span> がつなぐものは？</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> <span class="en">A, and B, ~</span> パターン!<br>
+        ・A = <span class="en">is</span>(=動詞)<br>
+        ・B = <span class="en">will be</span>(=動詞)<br>
+        ・~ = <span class="en">the largest city in Japan</span>(=共通の補語)<br>
+        <strong>訳:</strong> 「東京は<strong>現在も、これからも</strong>、日本で最大の都市である」<br><br>
+        💡 コンマで区切られた "~" は<strong>共通要素</strong>!Tokyo が共通主語、the largest ~ が共通補語。
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title"><span class="en">remain + C</span></span>
+  </div>
+  <p class="drill-en">Despite the changes, he <strong>remained calm</strong>.</p>
+  <p class="drill-q"><span class="en">remained</span> の用法と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>用法:</strong> <span class="en">remain + 補語(C)</span> = 「<strong>~のままである</strong>」(=第2文型)<br>
+        <strong>訳:</strong> 「変化にもかかわらず、彼は<strong>冷静なままだった</strong>」<br><br>
+        💡 <span class="en">remain</span> は補語をとると「~のまま」!補語なしの第1文型「残る」と区別!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">until</span> の2つの用法</strong>を区別</div>
+      <div class="flow-desc">(1) 接続詞: <span class="en">until + 文(SV)</span>「~するまで」/(2) 前置詞: <span class="en">until + 名詞(句)</span>「~まで」</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">until</span> の判別</strong>: 後ろが文か名詞か</div>
+      <div class="flow-desc">本問の <span class="en">until the 5th century CE</span> は前置詞「~まで(ずっと)」!接続詞だと意味不明。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>and の直後の副詞句</strong>はいったん<strong>〈　〉でくくる</strong>(=第67講応用)</div>
+      <div class="flow-desc">副詞挿入の場合は副詞を一旦無視!and のつなぐものは A と B(=副詞は無視)。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>《A, and B, ~》パターン</strong>: コンマに注目</div>
+      <div class="flow-desc">AとBの後に打たれたコンマに注目すれば、並列されているものがAとBであることを比較的簡単に見つけられる!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>共通主語・共通補語</strong>を見つける</div>
+      <div class="flow-desc">本問は <span class="en">The Roman Empire</span>(=共通主語)+ <span class="en">became / remained</span>(=2つの動詞)+ <span class="en">the dominant power</span>(=共通補語)</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">remained + C</span></strong>「<strong>~のままであった</strong>」(=第2文型)</div>
+      <div class="flow-desc"><span class="en">remain</span> は補語をとると「~のままである」!第1文型「残る」と区別。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>世紀名には the がつく</strong>(=<span class="en">the 5th century</span>「西暦5世紀」)</div>
+      <div class="flow-desc">英作文で世紀名を書くときは、通例 the をつけて <span class="en">the 21st century</span> と書く!<span class="en">a 21st century</span>(=「21番目の100年間」)とは違う。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>多義語の処理</strong>: <span class="en">power</span>「勢力/力」、<span class="en">Western world</span>「西欧世界」</div>
+      <div class="flow-desc">「強国」「西の世界」は不自然!「支配的な勢力」「西欧世界」と訳すと自然。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">until</span> の2つの用法</strong>(接続詞/前置詞)を区別できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>後ろが文 → 接続詞、後ろが名詞 → 前置詞</strong></span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>and の直後の副詞句</strong>はいったん<strong>〈　〉でくくる</strong>(=第67講応用)</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>《A, and B, ~》パターン</strong>: コンマに注目</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>共通主語・共通補語</strong>を見つけられる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">remained + C</span></strong>「~のままであった」(=第2文型)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>第1文型「残る」と第2文型「~のままである」</strong>を区別できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>世紀名には the がつく</strong>(=<span class="en">the 5th century</span>)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">CE</span></strong>「西暦/紀元後」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">the dominant power</span></strong>「支配的な勢力」と訳せる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">the Western world</span></strong>「西欧世界」(=「西の世界」は避ける)</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第68講 · 《A and 副詞 B》の副詞の挿入 ② ─ until の用法</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>
