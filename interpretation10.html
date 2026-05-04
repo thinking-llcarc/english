@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第10講 whether の応用 ─ 省略と並列を読み解く | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">10</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 接続詞ほか</div>
+        <h1 class="lesson-title">whether の応用 ─ 省略と並列を読み解く</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  <p class="opening-text">
+      第9講で学んだ <strong><span class="en">whether</span></strong> の応用編。今日の英文には <span class="en">whether</span> が<strong>2回</strong>出てきます。それぞれが副詞節と名詞節として違う働きをしている、という難しいパターン。<br>
+      さらに、<strong>主語+be動詞の省略</strong>、<strong><span class="en">he or she</span> = 一般の人</strong>、<strong><span class="en">and</span> が結ぶものの判定</strong>、<strong>使役動詞 <span class="en">help</span></strong> ── これまでの講で学んだ要素が総動員されます。<br>
+      これが読めれば、whether と接続詞の理解は完璧です。
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>副詞節中の主語+be動詞は省略可能</strong>というルールが分かります(<span class="en">whether (it is) at an elementary level</span>)。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong><span class="en">he or she</span> = 「一般の人」</strong>を表す代名詞だと知って、不自然な訳を回避できます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>and の前後で同じ働きを揃える</strong>(第3講)鉄則を、複雑な文で実践できます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">Whether at an elementary or high school level, one sign of a good teacher is whether he or she can find out a student who is in trouble and help that student get out of it.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>4つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Whether at an elementary or high school level</span> をどう読むか分からない</span>
+  </div>
+  <div class="trap-misread">「(主語と動詞が見当たらず止まる)」</div>
+  <p class="trap-why"><span class="en">whether</span> の後ろに <span class="en">at an elementary level</span> という前置詞句があるだけで、SVがない!?<br>これは<strong>《主語+be動詞》が省略されたパターン</strong>。<span class="en">whether (it is) at an elementary or high school level</span> 「(教育が)小学校レベルであろうと高校レベルであろうと」が元の形。<br>副詞節中で主語+be動詞は<strong>自明な場合は省略可能</strong>(<span class="en">While (I was) in Tokyo</span> など)。</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">level</span> を「(学力)レベル」と訳す</span>
+  </div>
+  <div class="trap-misread">「小学校か高校の<u>学力レベル</u>であろうと…」</div>
+  <p class="trap-why">この文の <span class="en">level</span> は「<strong>段階</strong>」の意味。「(学力)レベル」と訳すのは不適切で、「小学校という段階」「高校という段階」の意。<br>もっと自然なのは、「小学校<strong>であろうと</strong>高校<strong>であろうと</strong>」と「level」を訳出しないアプローチ。</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">he or she</span> を「彼または彼女」と訳す</span>
+  </div>
+  <div class="trap-misread">「<u>彼または彼女</u>が見つけられるかどうか…」</div>
+  <p class="trap-why"><span class="en">he or she</span> は「<strong>一般の人</strong>」を指す代名詞(=昔の英語では <span class="en">he</span> がそれを担っていたが、男女差別になるという理由で <span class="en">he or she</span> が使われるようになった)。<br>「彼または彼女」と訳すと不自然になります。<strong>そのまま「先生」「その先生」</strong>と訳すか、文脈に応じて省略するのが自然。<br>※ 現代では <span class="en">they</span> を使う方が一般的になってきている。</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">and</span> が結ぶものを取り違える</span>
+  </div>
+  <div class="trap-misread">「(and が is と help を結んでいると思って混乱)」</div>
+  <p class="trap-why"><span class="en">and</span> の前後は<strong>同じ形・同じ働きの語句</strong>(第3講のRULE)。<br>近い動詞 <span class="en">is</span> と <span class="en">help</span> を結ぼうとすると…<span class="en">help</span> には3単現の-sがついていない! → これは並列にできない。<br>正解: <span class="en">and</span> は <strong><span class="en">find out a student</span> と <span class="en">help that student get out of it</span></strong> を結んでいる。両方とも <span class="en">can</span> の影響下にある原形動詞。</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>Whether at an elementary or high school level,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">主語+be動詞が省略された副詞節</span>
+    </div>
+    <div class="ra-step-body">
+      <p>文頭の <span class="en">Whether</span>。第9講と同じく、後ろを見て名詞節か副詞節かを判定…<strong>でも、SVが見当たらない!</strong></p>
+        <div class="ra-step-think">
+          <span class="en">Whether at an elementary or high school level</span> ← この後ろに動詞がない。<br>
+          → 何かが<strong>省略されている</strong>と疑う。<br>
+          → 副詞節の中の <strong>《主語+be動詞》は自明な場合に省略可能</strong>!<br>
+          → 元の形: <span class="en">Whether <strong>it is</strong> at an elementary or high school level</span>「(教育レベルが)小学校か高校であろうと」<br>
+          → カンマで区切られた後に主節が続くので、これは<strong>副詞節</strong>「〜であろうと」(=譲歩)。<br><br>
+          類例: <span class="en">While (I was) in Tokyo, I ran into Anne.</span>「東京にいるときにアンに偶然出会った」(主語と一致する場合に省略)
+        </div>
+        <div class="ra-step-conclude">
+          副詞節 = 〈Whether (it is) at an elementary or high school level〉「小学校であろうと高校であろうと」(譲歩)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>one sign of a good teacher</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">主節の主語</span>
+    </div>
+    <div class="ra-step-body">
+      <p>カンマの後に名詞句 <span class="en">one sign of a good teacher</span>「よい教師の一つの兆候」が登場。これが主節の主語(S)。</p>
+        <div class="ra-step-think">
+          <span class="en">sign</span> = 「兆候 / 痕跡 / 印」など色々な訳があるが、ここでは「<strong>(よい教師であることを)決めるもの</strong>」というニュアンスで訳すのが自然。<br>
+          → 「兆候」「兆し」「印」などの訳は今回の文脈には不適切。<br>
+          → もっと言うと <span class="en">sign</span> 自体を訳出せず「<strong>よい教師かどうかは〜で決まる</strong>」とすることもできる。
+        </div>
+        <div class="ra-step-conclude">
+          S = <span class="en">one sign (of a good teacher)</span>「よい教師の(を決める)一つのサイン」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>is</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン動詞、補語Cが続く</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">is</span>(be動詞)が登場。後ろに補語(C)が来るはず。</p>
+        <div class="ra-step-conclude">
+          V = is。SVCの第2文型を予測しながら次へ。
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>whether</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2つ目の whether！今度は名詞節</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2つ目の <span class="en">whether</span> 登場。今回はbe動詞の後ろにあります。</p>
+        <div class="ra-step-think">
+          be動詞の後ろの位置 = <strong>補語(C)の位置</strong>。<br>
+          → 補語になれるのは名詞か形容詞。<br>
+          → ここの <span class="en">whether</span> は<strong>名詞節「〜かどうか(ということ)」</strong>を導いている!<br>
+          → つまり、be動詞 <span class="en">is</span> の<strong>補語C</strong>として whether節全体が機能。
+        </div>
+        <div class="ra-step-conclude">
+          2つ目の whether = <strong>名詞節</strong>「〜かどうか」(be動詞の補語C)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>he or she can find out a student</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">whether節の中身① find out</span>
+    </div>
+    <div class="ra-step-body">
+      <p>whether節の中身の前半: <span class="en">he or she can find out a student</span>「先生がある生徒を見つけられる(かどうか)」。</p>
+        <div class="ra-step-think">
+          <span class="en">he or she</span> = <strong>「一般の人」「(一般的な)先生」</strong>を指す代名詞。「彼または彼女」と訳すと不自然。<br>
+          → 文脈に合わせて「その先生」「その教師」と訳すか、主語ごと省略してもよい。<br><br>
+          <span class="en">find out</span> = 群動詞「〜を見つけ出す/気づく」。<span class="en">a student</span> がその目的語。
+        </div>
+        <div class="ra-step-conclude">
+          S' = <span class="en">he or she</span>(=その先生) / V' = <span class="en">can find out</span> / O' = <span class="en">a student</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>who is in trouble</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">関係代名詞の後置修飾</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">who is in trouble</span>「困っている」が登場。これは<strong>関係代名詞</strong>で、直前の <span class="en">a student</span> を修飾。</p>
+        <div class="ra-step-think">
+          <span class="en">who</span> は人を指す関係代名詞。後ろに <span class="en">is in trouble</span>(主語が欠けた不完全文)が続いている → <strong>主格の関係代名詞</strong>。<br>
+          → <span class="en">a student (who is in trouble)</span> = 「困っている生徒」<br>
+          → <span class="en">in trouble</span> = 「困った状態で」(《be動詞 + 前置詞 + 名詞》= 補語の形容詞句、第8講参照)
+        </div>
+        <div class="ra-step-conclude">
+          (who is in trouble) = 関係代名詞節、a student を修飾「困っている生徒」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">7</span>
+      <span class="ra-step-pos"><em>and help</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">and は何と何を結ぶ？</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">and help</span>。and の働きを判定します。</p>
+        <div class="ra-step-think">
+          <span class="en">and</span> の前後は<strong>同じ形・同じ働き</strong>。<br>
+          一番近い動詞は <span class="en">is</span> だが、<span class="en">help</span> には3単現の-sがついていない → <span class="en">is</span> と <span class="en">help</span> を並列にはできない!<br><br>
+          さらに前を見ると、<span class="en">find out</span> という動詞句がある。これなら <span class="en">help</span>(原形動詞)と並列可能!<br>
+          → <span class="en">can find out a student ... and help that student ...</span><br>
+          → <span class="en">can</span>(助動詞)が両方の動詞に影響。
+        </div>
+        <div class="ra-step-conclude">
+          and = <span class="en">find out a student who is in trouble</span> と <span class="en">help that student get out of it</span> を結ぶ。両方とも <span class="en">can</span> の影響下。
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">8</span>
+      <span class="ra-step-pos"><em>help that student get out of it</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">使役動詞 help！</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">help that student get out of it</span>「その生徒がそこから抜け出すのを手助けする」。</p>
+        <div class="ra-step-think">
+          <span class="en">help</span> + 人 + 原形V = 「人が〜するのを手助けする」<br>
+          → 第6講で学んだ使役動詞 <span class="en">have</span> の親戚パターン!<br>
+          → <span class="en">help that student get out of it</span> = 「その生徒が(困難)から抜け出すのを助ける」<br>
+          → 厳密には <span class="en">help</span> は使役ではなく「手助け系」だが、「人 + 原形V」の構造を取る点で同じ仲間。<br><br>
+          ※ <span class="en">help</span> の後ろの to は省略可(<span class="en">help that student (to) get out</span>)。現代英語では省略形が一般的。
+        </div>
+        <div class="ra-step-conclude">
+          <span class="en">help + 人 + 原形V</span> = 「人が〜するのを手助けする」(使役動詞 help)
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">8つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-sub">〈Whether (it is) at an elementary or high school level〉</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-main">one sign</span><span class="seg-marker seg-marker-main">S</span></span>
+    <span class="seg-wrap"><span class="seg-sub">(of a good teacher)</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[whether</span><span class="seg-marker seg-marker-sub">C→接</span></span>
+    <span class="seg-wrap"><span class="seg-main">he or she</span><span class="seg-marker seg-marker-main">S'</span></span>
+    <span class="seg-wrap"><span class="seg-main">can find out</span><span class="seg-marker seg-marker-main">V'₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">a student</span><span class="seg-marker seg-marker-main">O'₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">{who is in trouble}</span><span class="seg-marker seg-marker-sub">修飾</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接</span></span>
+    <span class="seg-wrap"><span class="seg-main">help</span><span class="seg-marker seg-marker-main">V'₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">that student</span><span class="seg-marker seg-marker-main">O'₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">get out of it]</span><span class="seg-marker seg-marker-main">C'₂</span></span><span class="seg-text">.</span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>[副詞節], S V [名詞節C]</strong>(2つ目のwhetherは名詞節として補語C。中でand が2つの動詞句を結ぶ)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">(教育が)小学校または高校のレベルであろうと、よい教師の一つのサインは、彼または彼女が困っている生徒を見つけ出し、その生徒がそこから抜け出すのを助けることができるかどうかである。</span>
+      <span class="trans-row-note">構造どおりの直訳。意味は通るが、日本語として極めて硬い。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong><span class="en">he or she</span> →「その先生」</strong>と意訳</span>
+    <span class="trans-arrow-detail">「彼または彼女」は不自然。文脈の主体「先生」を再表記するか省略するのが自然。</span>
+  </div>
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">小学校でも高校でも、よい教師かどうかを決めるのは、その先生が困っている生徒に気づいてその生徒が困難から抜け出すのを手助けできるかどうかだ。</span>
+      <span class="trans-row-note">「彼または彼女」を「その先生」に。「サイン」を「決めるのは」と意訳。「(level)」は訳出せず。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>「level」「sign」を訳出せず</strong>、自然な日本語に</span>
+    <span class="trans-arrow-detail">直訳の「学力レベル」「兆候」は不自然。文脈に応じて訳語を選ぶか、訳出を省略する。</span>
+  </div>
+
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>小学校でも高校でも、よい教師かどうかを決めるのは、その先生が困っている生徒に気づいてその子が困難から抜け出すのを手助けしてやることができるかどうかである。</strong></span>
+      <span class="trans-row-note">「その生徒」→「その子」と表現を柔らかく。「手助けする」→「手助けしてやる」で先生の温かみを表現。これで完成。</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: 副詞節中の<strong>《主語+be動詞》の省略</strong>ルール</span>
+  </div>
+  <p class="natural-tip-body">
+    副詞節の中で、<strong>主語が主節の主語と同じ</strong>場合、または<strong>主語が「状況のit」</strong>の場合、《主語+be動詞》は省略できます。これは英語の効率化テクニック。<br>逆に、こうした省略を見たら「何が省略されているか?」を補って読む力が必要。文の意味が分からなくなったら、《主語+be動詞》の省略を疑ってみてください。
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">While in Tokyo, I ran into Anne.</span></span>
+      <span class="natural-tip-ex-bad">東京にいる間に、私はアンに偶然出会った</span>
+      <span class="natural-tip-ex-good">(私が)東京にいるときに、アンに偶然出会った (While I was in Tokyoの省略)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">If possible, please reply by Friday.</span></span>
+      <span class="natural-tip-ex-bad">もし可能、金曜日までに返信してください</span>
+      <span class="natural-tip-ex-good">可能であれば、金曜日までに返信してください (If it is possibleの省略)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">When asked about it, he refused to comment.</span></span>
+      <span class="natural-tip-ex-bad">それについて聞かれたとき、彼はコメントを拒否した</span>
+      <span class="natural-tip-ex-good">(彼は)それについて聞かれたとき、コメントを拒否した (When he was askedの省略)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">副詞節中の <span class="en">《主語+be動詞》の省略</span>を見抜く</span>
+  </div>
+  <p class="drill-en"><strong>If necessary</strong>, we will postpone the meeting.</p>
+  <p class="drill-q">この文で何が省略されている？　訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>省略:</strong> <span class="en">If <u>it is</u> necessary</span>「(状況が)必要なら」 → it is が省略<br>
+        <strong>訳:</strong> 「必要ならば、会議を延期します」<br><br>
+        💡 副詞節中の《主語+be動詞》は、自明な場合に省略される定番パターン。<span class="en">if possible / if necessary / when young / while in school</span> など、慣用的な表現も多い。
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title"><span class="en">help + 人 + 原形V</span> のパターン</span>
+  </div>
+  <p class="drill-en">The teacher helped the student understand the difficult problem.</p>
+  <p class="drill-q">構造は？　訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>構造:</strong> <span class="en">helped + 人(the student) + 原形V(understand)</span> = 「人が〜するのを手助けする」<br>
+        <strong>訳:</strong> 「先生は生徒がその難しい問題を理解するのを手助けした」<br><br>
+        💡 <span class="en">help</span> の後ろに <span class="en">to</span> を入れることもある(<span class="en">helped the student to understand</span>)。現代英語では <span class="en">to</span> を省略するのが一般的。
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">and の前後を見極める</span>
+  </div>
+  <p class="drill-en">A good leader can <strong>identify</strong> the problems <strong>and motivate</strong> the team to solve them.</p>
+  <p class="drill-q"><span class="en">and</span> は何と何を結んでいる？　骨格は？</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>and の働き:</strong> <span class="en">identify the problems</span> と <span class="en">motivate the team to solve them</span> を結ぶ。両方とも <span class="en">can</span> の影響下にある原形動詞。<br>
+        <strong>骨格:</strong> S = a good leader / V = can identify and motivate / O₁ = the problems / O₂ = the team<br>
+        <strong>訳:</strong> 「優れたリーダーは、問題を見極め、チームがそれを解決できるよう動機づけることができる」<br><br>
+        🎯 and の前後は同じ形・働き(=原形動詞)。「motivates」のように-sがついていれば並列にできない、というのが見抜きのポイント。
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q">副詞節中の<strong>《主語+be動詞》の省略</strong>に注意</div>
+      <div class="flow-desc"><span class="en">whether (it is) at ~ level / while (I am) young / if (it is) necessary</span> など、定番パターンを覚える。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">whether</span> が文中に2回以上出てきたら、<strong>それぞれの働きを別々に</strong>判定</div>
+      <div class="flow-desc">同じ単語でも、位置と後ろの構造で名詞節か副詞節かが変わる。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">be動詞の後ろの whether節</span>は<strong>補語(C)</strong>になる<strong>名詞節</strong></div>
+      <div class="flow-desc"><span class="en">A is whether SV</span> = 「Aは〜かどうかである」</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">he or she</span> は<strong>「一般の人」</strong>を指す代名詞</div>
+      <div class="flow-desc">「彼または彼女」と訳さず、文脈に合わせて「その人」「その先生」など、または省略する。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">help + 人 + 原形V</span> = 「人が〜するのを手助けする」</div>
+      <div class="flow-desc">使役動詞の親戚。<span class="en">help</span> の後ろの <span class="en">to</span> は省略可。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">and</span> の並列は<strong>同じ形・働き</strong>。形が揃わないなら結べない</div>
+      <div class="flow-desc"><span class="en">is</span> と原形 <span class="en">help</span> は結べない(時制・形が違う)。前に遡って同じ形を探す。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">副詞節中の<strong>《主語+be動詞》</strong>は<strong>省略可能</strong>なルールを理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">whether (it is) ~</span> のような省略パターンを見抜ける</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">whether</span> が同じ文に2回以上出ても、<strong>それぞれ別の働き</strong>(名詞節/副詞節)を判定できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>be動詞の後ろの whether節</strong>は<strong>名詞節(補語C)</strong>であると判別できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">he or she</span> = <strong>「一般の人/その先生」</strong>と訳すと自然</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">help + 人 + 原形V</span> 「人が〜するのを手助けする」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">and</span> の前後は<strong>同じ形・同じ働き</strong>を結ぶ、という鉄則を実践できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第10講 · whether の応用 ─ 省略と並列を読み解く</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

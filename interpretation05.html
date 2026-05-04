@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第5講 受動態か、後置修飾か ─ 過去分詞識別の決定版 | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">5</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 動詞</div>
+        <h1 class="lesson-title">受動態か、後置修飾か ─ 過去分詞識別の決定版</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  <p class="opening-text">
+      最終講です。今日の英文には、これまで習った全テクニックが詰まっています。<br>
+      動詞らしき単語が <strong><span class="en">discussed</span> と <span class="en">attracted</span></strong> の2つ。さらに <strong><span class="en">before</span></strong> という小さな単語と、<strong><span class="en">more</span></strong> が修飾するのは何かという、いくつもの判断ポイント。<br>
+      これらを<strong>すべての品詞・構造のルールを駆使して</strong>解き明かすのが今回のミッション。これが読めれば、第1〜4講で学んだことが完全に自分のものになっています。
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div>過去分詞の<strong>後置修飾</strong>を瞬時に見抜く眼が完成します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><span class="en">before</span> の<strong>3つの顔(接続詞・前置詞・副詞)</strong>を識別できるようになります。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong><span class="en">more</span> が何を修飾しているか</strong>を、文法的な根拠で判断できるようになります。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">The issue of obesity rarely discussed before has attracted more public attention because of the documentary film.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>4つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">discussed</span> をメイン動詞だと誤読</span>
+  </div>
+  <div class="trap-misread">「肥満の問題は<u>めったに議論しなかった</u>…」</div>
+  <p class="trap-why"><span class="en">discuss</span>「〜について議論する」は<strong>他動詞</strong>。これがメイン動詞なら、後ろに目的語(=「〜を」にあたる名詞)が必要。<br>でも後ろを見ると <span class="en">before has attracted...</span> と続くだけで、目的語の名詞がない。<br>→ ということは、これは<strong>過去分詞</strong>として、直前の名詞 <span class="en">obesity</span> ではなく、もっと前の <span class="en">The issue</span> を後置修飾している!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">The issue ... was rarely discussed</span> と読み違える</span>
+  </div>
+  <div class="trap-misread">「肥満の問題は、めったに<u>議論されなかった</u>…」(受動態として読む)</div>
+  <p class="trap-why">「他動詞 discuss なのに目的語が無いから受動態かな?」と発想は良いんですが、<strong>受動態なら《be動詞 + 過去分詞》のセット</strong>が必要。<br>今日の英文には <span class="en">discussed</span> の前に <span class="en">was</span> も <span class="en">is</span> もありません。だから受動態ではあり得ない。<br>→ 唯一残る可能性が<strong>過去分詞の後置修飾</strong>。受動態にしたければ <span class="en">The issue ... was rarely discussed</span> と be動詞が必要なんです。</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">before</span> を接続詞として読み違える</span>
+  </div>
+  <div class="trap-misread">「めったに議論されなかった、<u>関心を集める前に</u>…」(before を接続詞として読む)</div>
+  <p class="trap-why"><span class="en">before</span> には<strong>3つの顔</strong>があります: ①接続詞 ②前置詞 ③副詞。<br>もしここで <span class="en">before</span> を<strong>接続詞</strong>と読むと、<span class="en">before has attracted...</span> となり、<strong>主語が無い節</strong>になってしまう(英語は普通、主語を省略しない)。<br>→ 接続詞の可能性は消える。<br>後ろに名詞も無いので<strong>前置詞</strong>でもない。<br>→ 残るのは<strong>副詞</strong>「以前に」だけ。これが <span class="en">discussed</span> を修飾しています。</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">more</span> が修飾する語を間違える</span>
+  </div>
+  <div class="trap-misread">「<u>より公共な</u>注意を集めた」(more が public を修飾と誤解)</div>
+  <p class="trap-why"><span class="en">more</span> は<strong>形容詞・副詞の比較級を作る</strong>か、<strong><span class="en">many/much</span> の比較級「より多くの」</strong>になります。<br><span class="en">more public</span> と読みたくなりますが、ここで<strong>文法的なチェック</strong>が必要。<br><span class="en">public</span>「公の」は<strong>性質を表す形容詞</strong>で、比較級を作りません(「より公の」って変ですよね)。<br>→ よって <span class="en">more</span> は <span class="en">attention</span>「(不可算の)注意」を修飾する <span class="en">much</span> の比較級「より多くの」。<br>→ 正しい読み: <span class="en">more attention</span>「より多くの注意/関心」</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>The issue</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">主語(S)候補</span>
+    </div>
+    <div class="ra-step-body">
+      <p>文頭の <span class="en">The issue</span>「問題」が主語(S)候補です。</p>
+        <div class="ra-step-think">
+          <span class="en">The issue</span> だけだと「何の問題か」分からない。<strong>後ろに修飾語が来るはず</strong>と予測。
+        </div>
+        <div class="ra-step-conclude">
+          S 候補 = <span class="en">The issue</span>「(何かの)問題」 → 修飾を待つ
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>of obesity</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">前置詞句、Sを修飾</span>
+    </div>
+    <div class="ra-step-body">
+      <p>前置詞句 <span class="en">of obesity</span>「肥満の」が <span class="en">The issue</span> を修飾。</p>
+        <div class="ra-step-think">
+          注意: ここの <span class="en">of</span> は<strong>「同格関係を示す of」</strong>と呼ばれるもの。「肥満<u>という</u>問題」と訳すとより正確(「の」でも×ではない)。<br>
+          → <span class="en">A of B</span> で「A=B」の関係を示すのが「同格の of」。<br>
+          例: <span class="en">the city of Tokyo</span>「東京<u>という</u>都市(=東京という名前の都市)」
+        </div>
+        <div class="ra-step-conclude">
+          S = <span class="en">The issue of obesity</span>「肥満(という)問題」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>rarely discussed before</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">過去分詞の後置修飾</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3語のかたまり <span class="en">rarely discussed before</span> が登場。これは過去分詞か?動詞か?</p>
+        <div class="ra-step-think">
+          <span class="en">discuss</span> = 「〜について議論する」(他動詞)。<br>
+          → メイン動詞なら後ろに目的語必須。でも見当たらない!<br>
+          → 受動態 <span class="en">was discussed</span> なら成立するけど、be動詞が無い。<br>
+          → 残る可能性は<strong>過去分詞の後置修飾</strong>。<br>
+          つまり <span class="en">The issue ... (rarely discussed before)</span> = 「(以前にめったに議論されなかった)問題」<br><br>
+          副詞 <span class="en">rarely</span>「めったに〜ない」が <span class="en">discussed</span> を修飾、副詞 <span class="en">before</span>「以前に」も <span class="en">discussed</span> を修飾。
+        </div>
+        <p>※ <span class="en">before</span> の正体については次のステップで詳しく!</p>
+        <div class="ra-step-conclude">
+          (rarely discussed before) = 過去分詞句、<span class="en">The issue</span> を後置修飾「以前はめったに議論されなかった(問題)」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>before</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">before の正体は？</span>
+    </div>
+    <div class="ra-step-body">
+      <p>ここで <span class="en">before</span> の正体を確定させます。<span class="en">before</span> には<strong>3つの顔</strong>があります。</p>
+        <div class="ra-step-think">
+          ① <strong>接続詞</strong>: 後ろに「主語+動詞」が来る。例: <span class="en">before I left for Australia</span>「オーストラリアへ出発する前に」<br>
+          ② <strong>前置詞</strong>: 後ろに名詞が来る。例: <span class="en">before six</span>「6時より前に」<br>
+          ③ <strong>副詞</strong>: 後ろに何も来ない。例: <span class="en">I have never been there before.</span>「以前そこに行ったことがない」<br><br>
+          今回の <span class="en">before</span> の後ろを見ると…<span class="en">has attracted</span>(動詞のかたまり)が来てるけど、<strong>主語が無い</strong>!<br>
+          → 接続詞だとすると主語が無いから×<br>
+          → 名詞も無いから前置詞でも×<br>
+          → 残るは<strong>副詞</strong>「以前に」のみ!<br>
+          この副詞 <span class="en">before</span> は直前の <span class="en">discussed</span> を修飾しています。
+        </div>
+        <div class="ra-step-conclude">
+          <span class="en">before</span> = <strong>副詞</strong>「以前に」(discussed を修飾)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>has attracted</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">本物のメイン動詞、登場！</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました、本物のメイン動詞 <span class="en">has attracted</span>「集めてきた/集めた」(現在完了)。</p>
+        <div class="ra-step-think">
+          <span class="en">attract</span> = 「〜を引きつける/集める」(他動詞)。<br>
+          → 後ろに目的語(O)が必要。それを探しに行く。<br>
+          → 主語の長さに惑わされず、ここまで来れば骨格が見えてきた!
+        </div>
+        <div class="ra-step-conclude">
+          V = <span class="en">has attracted</span>「集めた/集めてきた」(他動詞、現在完了)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>more public attention</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">moreは何を修飾している？</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3語のかたまり <span class="en">more public attention</span>。<span class="en">more</span> は <span class="en">public</span> を修飾しているのか、<span class="en">attention</span> を修飾しているのか?</p>
+        <div class="ra-step-think">
+          ここで<strong>文法的な判断</strong>が必要。<br>
+          <span class="en">more</span> の働きは2つ:<br>
+          ① <strong>形容詞・副詞の比較級を作る</strong>(<span class="en">more beautiful</span>「より美しい」)<br>
+          ② <strong><span class="en">many/much</span> の比較級</strong>「より多くの」<br><br>
+          選択肢A: <span class="en">more public</span>「より公的な」?<br>
+          → でも <span class="en">public</span>「公の」は<strong>性質を表す形容詞で、比較級を作らない</strong>!(「より公の」は変)<br>
+          → ×<br><br>
+          選択肢B: <span class="en">more attention</span>「より多くの注意/関心」?<br>
+          → <span class="en">attention</span> は不可算名詞なので、その前の <span class="en">more</span> は <span class="en">much</span> の比較級「より多くの」と解釈できる。<br>
+          → ○<br><br>
+          結論: <span class="en">more</span> は <span class="en">attention</span> を修飾。「より多くの世間の注意」
+        </div>
+        <div class="ra-step-conclude">
+          O = <span class="en">more public attention</span>「より多くの世間の注意/関心」<br>
+          (more = attention を修飾、public = attention を修飾、それぞれ別々に attention を修飾)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">7</span>
+      <span class="ra-step-pos"><em>because of the documentary film</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">原因を表す副詞句</span>
+    </div>
+    <div class="ra-step-body">
+      <p>文末の <span class="en">because of the documentary film</span>「その記録映画のために/によって」。</p>
+        <div class="ra-step-think">
+          <span class="en">because of ~</span> は<strong>群前置詞</strong>(2語以上で1つの前置詞のように働く)で、「〜のために/〜のせいで/〜が原因で」と<strong>原因・理由</strong>を表す。<br>
+          → 群前置詞+名詞 = 副詞句として、動詞 <span class="en">has attracted</span> を修飾。<br>
+          注意: <span class="en">the documentary film</span> の <span class="en">the</span> は<strong>「その」と訳していい</strong>。文脈で「話題に出ている特定の記録映画」を指している。
+        </div>
+        <p>※ 「ドキュメンタリー映画」も日本語化していますが、英語の試験では「<strong>記録映画</strong>」と訳す方が好まれます。</p>
+        <div class="ra-step-conclude">
+          M = 〈because of the documentary film〉「その記録映画によって」(原因を表す副詞句)
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">7つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">The issue</span><span class="seg-marker seg-marker-main">S</span></span>
+    <span class="seg-wrap"><span class="seg-sub">of obesity</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-sub">(rarely discussed before)</span><span class="seg-marker seg-marker-sub">修飾</span></span>
+    <span class="seg-wrap"><span class="seg-main">has</span><span class="seg-marker seg-marker-main">助</span></span>
+    <span class="seg-wrap"><span class="seg-main">attracted</span><span class="seg-marker seg-marker-main">V</span></span>
+    <span class="seg-wrap"><span class="seg-main">more public attention</span><span class="seg-marker seg-marker-main">O</span></span>
+    <span class="seg-wrap"><span class="seg-sub">because of the documentary film</span><span class="seg-marker seg-marker-sub">M</span></span><span class="seg-text">.</span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>S 助 V O</strong>(主語+助動詞+動詞+目的語の第3文型。Sは長い後置修飾つき)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">肥満の問題、以前はめったに議論されなかった、は、より多くの世間の注意を集めた、その記録映画によって。</span>
+      <span class="trans-row-note">構造どおりに直訳した状態。意味は何となく分かるが、ぎこちない。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>後置修飾を主語の前へ</strong>持ってくる</span>
+    <span class="trans-arrow-detail">英語: 名詞 + 修飾 / 日本語: 修飾 + 名詞、と語順が逆。日本語に訳すときは前に出す</span>
+  </div>
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">以前はめったに議論されなかった肥満の問題が、その記録映画によって、より多くの世間の関心を集めた。</span>
+      <span class="trans-row-note">後置修飾を主語の前に持ってきて、文末の原因句も自然な位置へ移動。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>原因句を文頭</strong>に置いて、日本語らしい流れに</span>
+    <span class="trans-arrow-detail">日本語は「原因 → 結果」の順が自然。because of ... を文頭に持ってくると一気に読みやすくなる</span>
+  </div>
+
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>その記録映画によって、以前はめったに議論されることがなかった肥満の問題が、より多くの人々の関心を集めるようになった。</strong></span>
+      <span class="trans-row-note">原因句を文頭に出して、結論を後ろに置く日本語らしい構造に。「集めた」→「集めるようになった」で現在完了の継続感を表現。</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: 長い主語の和訳テクニック</span>
+  </div>
+  <p class="natural-tip-body">
+    今日の英文のように<strong>主語が後置修飾で長い場合</strong>、日本語に訳す時は<strong>修飾部分を主語の前に持ってくる</strong>のが基本。さらに、文末の<strong>原因・条件を表す副詞句</strong>は、日本語では文頭に出すと自然になります。
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">The book written by him became a bestseller because of its honest message.</span></span>
+      <span class="natural-tip-ex-bad">本、彼によって書かれた、はベストセラーになった、その正直なメッセージによって</span>
+      <span class="natural-tip-ex-good">その正直なメッセージのおかげで、彼が書いた本はベストセラーになった</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">People living in the city tend to feel stressed due to the noise.</span></span>
+      <span class="natural-tip-ex-bad">人々は、都市に住んでいる、ストレスを感じる傾向がある、騒音のために</span>
+      <span class="natural-tip-ex-good">騒音のせいで、都市に住む人々はストレスを感じやすい</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">過去分詞の後置修飾を見抜く</span>
+  </div>
+  <p class="drill-en">The novel <strong>written</strong> by a teenager <strong>became</strong> a worldwide hit.</p>
+  <p class="drill-q">① <span class="en">written</span> はメイン動詞？過去分詞？根拠は？ ② 本物のメイン動詞は？ ③ 訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    ① <span class="en">write</span>(他動詞)で目的語が無く、be動詞も無い → <strong>過去分詞の後置修飾</strong>。<span class="en">The novel</span>を修飾「(10代の若者によって書かれた)小説」<br>
+        ② 本物のメイン動詞 = <span class="en">became</span>「〜になった」<br>
+        ③ <strong>「10代の若者が書いたその小説は、世界的ヒットになった」</strong><br><br>
+        💡 主語 <span class="en">The novel written by a teenager</span> + 動詞 <span class="en">became</span> + 補語 <span class="en">a worldwide hit</span> でSVCの第2文型。
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title"><span class="en">before</span> の品詞を識別</span>
+  </div>
+  <p class="drill-en">I had never heard of this composer <strong>before</strong>.</p>
+  <p class="drill-q">この <span class="en">before</span> は接続詞？前置詞？副詞？　判定の根拠は？</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>判定:</strong> <span class="en">before</span> の後ろに何も無い(文末) → <strong>副詞</strong><br>
+        <strong>意味:</strong> 「以前に」(動詞 <span class="en">had heard</span> を修飾)<br>
+        <strong>訳:</strong> 「以前にこの作曲家のことは聞いたことがなかった」<br><br>
+        💡 文末の <span class="en">before</span> はほぼ必ず副詞。「以前に」と訳す。
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title"><span class="en">more</span> の修飾先を判定</span>
+  </div>
+  <p class="drill-en">In the last twenty years, humans have made <strong>more scientific progress</strong> than in the previous century.</p>
+  <p class="drill-q"><span class="en">more</span> は <span class="en">scientific</span> を修飾？それとも <span class="en">progress</span> を修飾？</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>判定:</strong> <span class="en">scientific</span>「科学的な」は性質形容詞で比較級にならない → よって <span class="en">more</span> は <span class="en">progress</span>「進歩」を修飾。<br>
+        <strong>意味:</strong> <span class="en">more progress</span> = 「より多くの進歩」<span class="en">scientific</span> も別途 <span class="en">progress</span> を修飾。<br>
+        <strong>訳:</strong> 「過去20年間で、人類は前世紀よりも多くの科学的進歩を遂げてきた」<br><br>
+        💡 「より科学的な進歩」と読むのは×。<span class="en">more</span> の修飾先は文法的根拠で決まる。
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q">主語(S)候補を見つけたら、<strong>後ろに修飾語</strong>(過去分詞句など)が続くか確認</div>
+      <div class="flow-desc">《名詞 + 過去分詞 + ...》のパターンなら、過去分詞句が主語を後置修飾している。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q">動詞らしき単語を見たら、<strong>3つのパターンで判別</strong></div>
+      <div class="flow-desc">①メイン動詞(目的語あり) ②受動態(be動詞あり) ③過去分詞の後置修飾(両方なし)</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">before / after / since</span> など、<strong>複数の品詞を持つ単語</strong>は後ろを見て判別</div>
+      <div class="flow-desc">主語+動詞 → 接続詞 / 名詞 → 前置詞 / 何もなし → 副詞</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">more</span> が修飾する語は、<strong>「比較級にできる形容詞か」</strong>で判別</div>
+      <div class="flow-desc">性質形容詞(public, foreign, main...)は比較級にならない。残った可能性で読む。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><span class="en">because of / due to / thanks to</span> などの<strong>群前置詞</strong>は、まとめて1つの前置詞として処理</div>
+      <div class="flow-desc">原因・理由を表す副詞句として動詞を修飾。日本語訳では文頭に出すと自然。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q">骨格が見えたら、<strong>長い主語は修飾を前出し</strong>、<strong>原因句は文頭</strong>に置いて自然な日本語に</div>
+      <div class="flow-desc">英語: 名詞+修飾 / 日本語: 修飾+名詞。原因→結果の順で読みやすく。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">他動詞なのに目的語が無く、be動詞も無いとき<strong>過去分詞の後置修飾</strong>と判断できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">before</span> の<strong>3つの顔(接続詞・前置詞・副詞)</strong>を後ろを見て識別できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">英語が<strong>「主語を省略しない」</strong>原則(主語の無い節は無い)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">more</span> の修飾先を<strong>「比較級にできる形容詞か」</strong>で判別できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><span class="en">because of ~</span> が<strong>群前置詞</strong>として原因を表す副詞句を作ることを理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>《<span class="en">the</span> + 名詞 + 形容詞句》の <span class="en">the</span> は訳さない</strong>(復習: Lesson 4)</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">長い主語は<strong>修飾を前出し</strong>、原因句は<strong>文頭</strong>に置く和訳テクニックが身についた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第5講 · 受動態か、後置修飾か ─ 過去分詞識別の決定版</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>
