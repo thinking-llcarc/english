@@ -1,0 +1,2305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第40講 「~はどうなるだろうか」を表現する文 | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">40</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 疑問詞 What ~ be like + 関係代名詞 what + 不定詞の意味上の主語</div>
+        <h1 class="lesson-title">「~はどうなるだろうか」を表現する文</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第40講のテーマは <strong>「<span class="en">What will ~ be like?</span>」+「関係代名詞 <span class="en">what</span>」+「不定詞の意味上の主語」</strong>。<br>
+      第30講で関係代名詞 <span class="en">what</span> を学びました。今回はその応用 ─ 同じ文の中で<strong><span class="en">What will ~ be like?</span></strong>(=疑問詞)と<strong><span class="en">what theaters have always done</span></strong>(=関係代名詞)が登場!<br>
+      また、<strong>不定詞の意味上の主語</strong>と<strong>知覚動詞 watch + O + 現在分詞</strong>もしっかり押さえます。<br>
+      未来の劇場の話を題材に、<strong>多重の構造を整理する力</strong>を磨きます。<br>
+      第30講応用の関係代名詞 what、第34講応用の疑問詞 what、第15講応用の and / for、第26講応用の現在進行形的な現在分詞も登場!<br>
+      今日のキー:<br>
+      ① <strong><span class="en">What will ~ be like?</span></strong>「<strong>~はどんなものになるか</strong>」(=疑問詞、第34講応用)<br>
+      ② <strong>関係代名詞 <span class="en">what</span></strong>「~するもの/こと」(=第30講応用)<br>
+      ③ <strong>不定詞の意味上の主語 <span class="en">for 人 to V</span></strong>「<strong>人がVするための</strong>」<br>
+      ④ <strong>知覚動詞 watch + O + 現在分詞</strong>「<strong>O が ~ しているのを見る</strong>」<br>
+      ⑤ <strong>コロン(:) で具体内容を提示</strong>「すなわち~」<br>
+      未来の劇場像を題材に、<strong>多層的な構造</strong>を読み解きます!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>What will S be like?</strong>を「Sはどんなものになるか」(=疑問詞 what + be like)と読み解きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>関係代名詞 what</strong>「~するもの/こと」(=第30講応用)を見抜き、「先行詞を含む関係代名詞」として処理します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>for 人 to V</strong>(=不定詞の意味上の主語)、<strong>watch + O + V-ing</strong>(=知覚動詞)を理解します。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">What will theaters be like in the future? Anyway, they will still have to do what theaters have always done: provide a setting for people to watch actors performing live drama.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>8つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">What will theaters be like in the future?</span> の <span class="en">What ~ be like</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「<u>未来において、劇場は何のように~?</u>」(=直訳的でぎこちない)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">What is/will ~ be like?</span> = 慣用「<strong>~はどんなもの(になる)か?</strong>」<br>→ what(=疑問代名詞)+ like(=前置詞「~のような」)<br>→ 「~は何のようか?」 = 「~はどんなふうか?」<br>★ <strong>本問</strong>: <span class="en">What will theaters be like in the future?</span><br>→ What(=疑問代名詞、be like の目的語)<br>→ will be(=助動詞 + be 動詞、未来形)<br>→ S = theaters「劇場(複数)」<br>→ like + 名詞「~のような」(=前置詞句、What がここに入る)<br>→ M = in the future「未来において」<br>★ <strong>元の語順を考える</strong>:<br>→ <span class="en">Theaters will be like ___ in the future.</span>「劇場は未来において___のようになるだろう」<br>→ ___ の部分(=like の目的語)を疑問詞 What で問う<br>→ <span class="en">What will theaters be like in the future?</span>「劇場は未来においてどのようになるだろうか?」<br>★ <strong>意訳</strong>: 「<strong>未来の劇場はどんなものになるのだろうか?</strong>」<br>★ <strong>類例</strong>(=What ~ be like?):<br>・<span class="en">What is your new teacher like?</span>「新しい先生はどんな人?」<br>・<span class="en">What was the weather like yesterday?</span>「昨日の天気はどうだった?」<br>・<span class="en">What will the future be like?</span>「未来はどうなるだろう?」<br>★ <strong>類似表現</strong>:<br>(1) <span class="en">What is X like?</span>「Xはどんなもの?」(=本問!)<br>(2) <span class="en">How is X?</span>「Xはどう?」(=似た意味、対象が状態・体調)<br>(3) <span class="en">What does X look like?</span>「Xは見た目がどう?」(=外見限定)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Anyway, they will still have to do</span> の <span class="en">Anyway</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(Anyway の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">Anyway</span> = 副詞「<strong>いずれにせよ/とにかく/ともかく</strong>」(=文修飾)<br>→ 前の話を一旦置いて、本筋に戻すニュアンス!<br>★ <strong>本問</strong>: <span class="en">Anyway, they will still have to do ~</span><br>→ Anyway「いずれにせよ」(=副詞、文頭)<br>→ S = they(=theaters を指す代名詞)<br>→ V = will still have to do「これからもやらなければならない」(=助動詞 + still + have to V)<br>★ <span class="en">have to V</span> = 「<strong>~しなければならない</strong>」(=義務、必要)<br>→ must と類似だが、have to は「外的な必要」、must は「主観的な義務」<br>★ <span class="en">still</span> = 副詞「まだ/今もなお/これからも」<br>→ 「(以前と同じく)これからも」のニュアンス!<br>★ <strong>意訳</strong>: 「<strong>いずれにせよ、(劇場は)これからもやらなければならない</strong>」<br>★ <strong>本問の文脈</strong>:<br>→ 1文目: 「未来の劇場はどんなふうになるか?」(=未知の未来)<br>→ 2文目: 「<strong>いずれにせよ</strong>、変わらずやり続けなければならないことがある」<br>→ 「未来がどうなろうとも、劇場の本質は変わらない」というメッセージ!<br>★ <strong>類例</strong>(=Anyway):<br>・<span class="en">Anyway, let’s move on.</span>「いずれにせよ、先に進もう」<br>・<span class="en">It’s expensive, but I want it anyway.</span>「高いが、いずれにせよ欲しい」<br>・<span class="en">Anyway, what time is it?</span>「ところで、何時?」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">do what theaters have always done</span> の <span class="en">what</span> を疑問詞と取る</span>
+  </div>
+  <div class="trap-misread">「<u>劇場が常にしてきたものは何かをする</u>」(=疑問詞と勘違いして混乱)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">what</span> = ここでは<strong>関係代名詞</strong>!(=第30講応用)<br>→ 「<strong>~するもの/こと</strong>」(=先行詞を含む関係代名詞)<br>→ <span class="en">what theaters have always done</span>「劇場がいつもやってきたこと」<br>★ <strong>本問</strong>: <span class="en">they will still have to do what theaters have always done</span><br>→ S = they(=theaters)<br>→ V = will have to do「やらなければならない」<br>→ O = <span class="en">what theaters have always done</span>「劇場がいつもやってきたこと」(=関係代名詞節、do の目的語)<br>★ <strong>関係代名詞 what 節の中身</strong>:<br>→ S’ = theaters「劇場」<br>→ V’ = have always done「いつもやってきた」(=現在完了 + always)<br>→ O’ = what「~こと」(=関係代名詞、目的語)<br>→ <strong>O が what になっている → 不完全文 → 関係代名詞!</strong><br>★ <strong>関係代名詞 what の特徴</strong>(=第30講応用):<br>→ 「~するもの/こと」(=先行詞を含む)<br>→ 名詞節として機能!<br>→ 動詞の目的語、文の主語、補語などになる!<br>★ <strong>疑問詞 what vs 関係代名詞 what の判別</strong>(=第34講応用):<br>(1) <strong>疑問詞</strong>: 「~は何か」(=疑問の意味、文頭で疑問文)<br>(2) <strong>関係代名詞</strong>: 「~するもの/こと」(=名詞節、文中の動詞の目的語など)<br>★ <strong>本問の文脈</strong>: do の目的語が必要 → 名詞節 → <strong>関係代名詞 what</strong>!<br>★ <strong>意訳</strong>: 「<strong>劇場がいつもやってきたこと</strong>」<br>★ <strong>類例</strong>(=関係代名詞 what):<br>・<span class="en">Tell me what you want.</span>「君が欲しいものを教えて」(=tell の目的語)<br>・<span class="en">What he said is true.</span>「彼が言ったことは本当だ」(=主語)<br>・<span class="en">This is what I need.</span>「これが私が必要なものだ」(=補語)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">have always done</span> の現在完了を取り違える</span>
+  </div>
+  <div class="trap-misread">「(have done の現在完了を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">have always done</span> = <strong>現在完了</strong>「<strong>いつもやってきた</strong>」(=継続/経験、第58講応用)<br>→ have(=助動詞)+ V-ed(=過去分詞)<br>→ <strong>過去から現在まで</strong>のずっと続く動作・状態!<br>★ <strong>本問</strong>: <span class="en">what theaters have always done</span><br>→ what 節の中身: theaters have always done「劇場はいつもやってきた」<br>→ <strong>過去から今まで、ずっと劇場がやってきたこと</strong>!<br>★ <strong>現在完了の用法</strong>:<br>(1) <strong>継続</strong>「(過去から現在まで)~している」<br>(2) <strong>経験</strong>「(過去から現在まで)~したことがある」(=本問!)<br>(3) 完了「(現在までに)~した」<br>(4) 結果「(過去に~して)現在の状態に至る」<br>★ <span class="en">always</span> = 副詞「いつも/常に」<br>→ 現在完了と相性◎(=継続・経験を強調)<br>→ <strong>have + always + V-ed</strong>(=have と過去分詞の間に always を挟む)<br>★ <strong>意訳</strong>: 「<strong>劇場がいつもやってきたこと</strong>」<br>★ <strong>類例</strong>(=現在完了 always):<br>・<span class="en">She has always loved music.</span>「彼女はいつも音楽が大好き」<br>・<span class="en">We have always lived here.</span>「私たちはいつもここに住んでいる」<br>・<span class="en">He has always been kind.</span>「彼はいつも親切だ」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title">コロン (:) の役割を取り違える</span>
+  </div>
+  <div class="trap-misread">「(コロンの役割を取り違え)」</div>
+  <p class="trap-why">★ <strong>コロン (:) の役割</strong>(=第58講応用):<br>→ <strong>説明・具体例・引用</strong>を導入する記号!<br>→ 「<strong>すなわち/つまり/具体的には</strong>」のニュアンス!<br>★ <strong>本問</strong>: <span class="en">they will still have to do what theaters have always done: provide a setting for people to watch actors performing live drama.</span><br>→ コロンの前: 「劇場がいつもやってきたことをやらなければならない」(=主張)<br>→ コロンの後: 「人々が俳優の生のドラマを見るための場所を提供する」(=具体的な内容)<br>★ <strong>provide</strong>(=他動詞「提供する」)が動詞の原形!<br>→ コロンの前の <span class="en">do</span>(=動詞の原形)に対応!<br>→ 「~することをやらなければならない:すなわち、~を提供すること」<br>★ <strong>意訳のニュアンス</strong>:<br>→ 「~することだ。<strong>すなわち</strong>、~」<br>→ 「~することだ。<strong>つまり</strong>、~」<br>★ <strong>類例</strong>(=コロンで具体内容):<br>・<span class="en">I have one wish: to live in peace.</span>「私には1つの願いがある。それは平和に生きること」<br>・<span class="en">There are two reasons: time and money.</span>「2つの理由がある。時間と金だ」<br>・<span class="en">Remember this: practice makes perfect.</span>「これを覚えておけ。練習が完璧を作る」<br>★ <strong>本講と第58講のコロン</strong>:<br>→ 第40講: コロンの後ろが<strong>動詞の原形 provide</strong>(=do の具体内容)<br>→ 第58講: コロンの後ろが<strong>独立した完全文</strong>(=具体例の追加説明)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">provide a setting for people to watch ~</span> の <span class="en">for people to watch</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「<u>人々のための設定/ステージを提供して見る</u>」(=構造を取り違え)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">for 人 to V</span> = <strong>不定詞の意味上の主語</strong>「<strong>人がVするための</strong>」<br>→ for + 人(=不定詞の意味上の主語)+ to V<br>→ 「人がVする」(=不定詞の動作主)<br>★ <strong>本問</strong>: <span class="en">provide a setting for people to watch actors performing live drama</span><br>→ V = provide「提供する」(=他動詞)<br>→ O = a setting「場所/環境」<br>→ 修飾 = for people to watch ~「人々が~を見るための」(=不定詞句、a setting を修飾)<br>★ <strong>分解</strong>:<br>→ for people = 不定詞の意味上の主語「人々が」<br>→ to watch = 不定詞「見る」(=形容詞用法、a setting を修飾)<br>→ watch の目的語 = actors「俳優」<br>→ さらに修飾 = performing live drama「生のドラマを演じている」(=現在分詞、actors を修飾)<br>★ <strong>不定詞の意味上の主語の判別</strong>:<br>→ <strong>for + 人/物 + to V</strong> → 不定詞の<strong>意味上の主語</strong>!<br>→ 「人/物がVする」<br>★ <span class="en">a setting</span>:<br>→ ここでは「<strong>場/環境/舞台設定</strong>」(=演劇の文脈)<br>→ 単に「設定/設置」ではない!<br>★ <strong>意訳</strong>: 「<strong>人々が俳優の生のドラマを見るための場所を提供する</strong>」<br>★ <strong>類例</strong>(=for 人 to V、不定詞の意味上の主語):<br>・<span class="en">a book for children to read</span>「子供が読むための本」<br>・<span class="en">a place for us to meet</span>「私たちが会うための場所」<br>・<span class="en">It is hard for me to swim.</span>「私が泳ぐのは難しい」(=形式主語 + for 人 + to V)<br>★ <strong>核心</strong>: for 人 + to V = 不定詞の意味上の主語!for = 「~のために」(=直訳)ではなく、<strong>不定詞の動作主</strong>を示す!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">actors performing live drama</span> の <span class="en">performing</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(performing の役割を取り違え)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">performing</span> = <strong>現在分詞</strong>「演じている」(=actors を後ろから修飾、第42講先取り)<br>→ 名詞 actors + 現在分詞句 performing live drama<br>→ 「<strong>生のドラマを演じている俳優</strong>」<br>★ <strong>本問</strong>: <span class="en">to watch actors performing live drama</span><br>→ V = watch「見る」(=他動詞、知覚動詞)<br>→ O = actors「俳優」<br>→ 修飾 = performing live drama「生のドラマを演じている」(=現在分詞句、actors を修飾)<br>★ <strong>2つの解釈</strong>:<br>(1) <strong>知覚動詞 + O + 現在分詞</strong>「<strong>O が ~ しているのを見る</strong>」(=知覚構文、第42講先取り)<br>(2) actors performing ~ = 「~している俳優」(=後置修飾、第42講先取り)<br>★ <strong>判別</strong>: どちらでも意味が通る!本問では<strong>知覚構文</strong>として解釈すると自然!<br>→ 「俳優がドラマを演じているのを見る」<br>★ <span class="en">live drama</span>:<br>→ live = 形容詞「生の/ライブの」<br>→ 「<strong>生のドラマ/ライブのドラマ</strong>」(=録画ではなく、その場での実演)<br>→ 劇場の<strong>本質</strong>を強調!<br>★ <strong>知覚動詞 + O + 現在分詞</strong>の用法:<br>→ see / watch / hear / feel + O + V-ing<br>→ 「O が V しているのを見る/聞く/感じる」(=進行中の動作の知覚)<br>★ <strong>類例</strong>(=知覚動詞 + O + 現在分詞):<br>・<span class="en">I saw him crossing the street.</span>「彼が道を横切っているのを見た」<br>・<span class="en">She heard birds singing.</span>「彼女は鳥がさえずるのを聞いた」<br>・<span class="en">We watched the children playing.</span>「私たちは子供たちが遊んでいるのを見た」<br>★ <strong>意訳</strong>: 「<strong>俳優の生のドラマを見る</strong>」(=俳優がドラマを演じているのを見る、自然訳)<br>★ <strong>劇場の本質</strong>:<br>→ 「人々が、俳優が生のドラマを演じているのを見るための場」<br>→ どんな技術革新があっても、<strong>「生」+「俳優」+「観客」</strong>が劇場の本質!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">they will still have to do</span> の <span class="en">they</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(they が何を指すか不明)」</div>
+  <p class="trap-why">★ <span class="en">they</span> = 代名詞、ここでは<strong>theaters を指す</strong>!(=前文の theaters の繰り返しを避ける)<br>★ <strong>本問</strong>: <span class="en">Anyway, they will still have to do ~</span><br>→ they = 前文の theaters「劇場(複数)」を指す<br>→ 「劇場は、いずれにせよ、~をやらなければならない」<br>★ <span class="en">still</span> = 副詞「まだ/今もなお/これからも」<br>→ 「(以前と同じく)これからも」のニュアンス!<br>→ 「変わらずに続ける」感じ!<br>★ <span class="en">have to V</span> = 「~しなければならない」(=義務)<br>→ must V との違い: have to は<strong>外的必要</strong>(=社会的・状況的に必要)<br>→ must は<strong>主観的義務</strong>(=自分自身が必要と感じる)<br>★ <strong>意訳</strong>: 「<strong>(劇場は)これからもやらなければならない</strong>」<br>★ <strong>本問の意味</strong>:<br>→ 未来の劇場の形(=ハードウェア)は変わるかもしれない<br>→ でも、<strong>劇場の本質的な役割(=ソフトウェア)</strong>は変わらない!<br>→ 「劇場とは、人々が俳優の生のドラマを見るための場」<br>→ <strong>テクノロジーが変わっても、人間の本質は変わらない</strong>というメッセージ!<br>★ <strong>類例</strong>(=代名詞の指示):<br>・<span class="en">I bought a book. I read it.</span>「本を買った。それを読んだ」(=it = book)<br>・<span class="en">Cats are cute. They are also smart.</span>「猫は可愛い。それらは賢くもある」(=they = cats)</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>What will theaters be like</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ What ~ be like 疑問文「~はどんなものか」</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">What will theaters be like</span>「劇場はどんなものになるだろうか」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">What is/will ~ be like?</span> = 慣用「<strong>~はどんなもの(になる)か?</strong>」<br>
+          → what(=疑問代名詞)+ like(=前置詞「~のような」)<br>
+          → 「~は何のようか?」 = 「~はどんなふうか?」<br><br>
+          ★ <strong>分解</strong>:<br>
+          → What(=疑問代名詞、be like の目的語)<br>
+          → will be(=助動詞 + be 動詞、未来形)<br>
+          → S = theaters「劇場(複数)」<br><br>
+          ★ <strong>元の語順を考える</strong>:<br>
+          → Theaters will be like ___ in the future.「劇場は未来において___のようになるだろう」<br>
+          → ___(=like の目的語)を疑問詞 What で問う<br>
+          → What will theaters be like in the future?<br><br>
+          ★ <strong>類例</strong>:<br>
+          ・What is your new teacher like?「新しい先生はどんな人?」<br>
+          ・What was the weather like yesterday?「昨日の天気はどう?」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>劇場はどんなものになるだろうか</strong>」<br><br>
+          → いつのこと?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          What ~ be like? = 「~はどんなものか」(=慣用、第34講応用)!What is the suffix of like の目的語!will be で未来!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>in the future?</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">時を表す副詞句</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">in the future?</span>「未来において?」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">in the future</span> = 副詞句「未来において/将来」(=時間)<br>
+          → in(=前置詞)+ the future(=名詞)<br><br>
+          ★ <strong>1文目全体</strong>:<br>
+          → 「<strong>未来の劇場はどんなものになるだろうか?</strong>」<br>
+          → 疑問文の問いかけ!<br><br>
+          ★ <strong>本問の文脈</strong>:<br>
+          → 1文目で「未来の劇場の姿」について問いかけ<br>
+          → これから具体的な答えや考察が来る予感!<br><br>
+          → 答え/考察は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          in the future = 「未来において」!1文目は問いかけ「未来の劇場はどんなものになるか?」!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>Anyway, they will still have to do</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目スタート ─ Anyway「いずれにせよ」+ have to V</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目スタート <span class="en">Anyway, they will still have to do</span>「いずれにせよ、(劇場は)これからもやらなければならない」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">Anyway</span> = 副詞「<strong>いずれにせよ/とにかく</strong>」(=文修飾)<br>
+          → 前の話を一旦置いて、本筋に戻すニュアンス!<br>
+          → 「未来の劇場の形はどうあれ」のニュアンス!<br><br>
+          ★ S = <span class="en">they</span>「彼ら(=theaters を指す)」<br>
+          ★ V = <span class="en">will still have to do</span>「これからもやらなければならない」<br>
+          → will(=助動詞、未来)+ still(=副詞「まだ/これからも」)+ have to(=義務)+ do(=動詞の原形)<br><br>
+          ★ <span class="en">have to V</span> = 「~しなければならない」(=義務、外的必要)<br><br>
+          ★ <strong>still の意味合い</strong>:<br>
+          → 「(以前と同じく)これからも」(=変わらずに続ける感じ)<br>
+          → 「未来がどう変わっても」のニュアンス!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>いずれにせよ、(劇場は)これからもやらなければならない</strong>」<br><br>
+          → 何をやらなければならない?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          Anyway「いずれにせよ」(=文修飾)!will still have to do「これからもやらなければならない」(=助動詞 + still + have to V)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>what theaters have always done:</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">関係代名詞 what + 現在完了 + コロン!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">what theaters have always done:</span>「劇場がいつもやってきたこと、すなわち~」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">what</span> = ここでは<strong>関係代名詞</strong>!(=第30講応用)<br>
+          → 「~するもの/こと」(=先行詞を含む関係代名詞)<br>
+          → 名詞節として、do の目的語!<br><br>
+          ★ <strong>関係代名詞 what 節の中身</strong>:<br>
+          → S’ = theaters「劇場」<br>
+          → V’ = have always done「いつもやってきた」(=現在完了 + always)<br>
+          → O’ = what「~こと」(=関係代名詞、目的語、theaters have done what という形が元)<br>
+          → <strong>O が what になっている → 不完全文 → 関係代名詞!</strong><br><br>
+          ★ <strong>疑問詞 what vs 関係代名詞 what</strong>(=第34講応用):<br>
+          (1) 疑問詞: 「~は何か」(=疑問の意味、文頭で疑問文)(=1文目!)<br>
+          (2) <strong>関係代名詞</strong>: 「~するもの/こと」(=名詞節)(=本問!)<br>
+          → <strong>同じ what が、文の中で2つの違う役割!</strong><br><br>
+          ★ <span class="en">have always done</span> = 現在完了「いつもやってきた」(=継続/経験、第58講応用)<br>
+          → 過去から現在まで、ずっと劇場がやってきたこと!<br><br>
+          ★ <strong>コロン (:) の役割</strong>(=第58講応用):<br>
+          → 「<strong>すなわち/つまり/具体的には</strong>」のニュアンス!<br>
+          → コロンの後ろで、コロンの前の<strong>具体的な内容</strong>を説明!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>劇場がいつもやってきたこと、すなわち~</strong>」<br><br>
+          → 具体的に何?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          関係代名詞 what(=第30講応用、do の目的語)!have always done = 現在完了「いつもやってきた」!コロン(:)で具体内容を導入!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>provide a setting</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">コロンの後 ─ 動詞の原形 provide で具体内容</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">provide a setting</span>「場所を提供する」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">provide</span> = 他動詞「<strong>提供する</strong>」(=動詞の原形!)<br>
+          → コロンの前の <span class="en">do</span>(=動詞の原形)に対応!<br>
+          → 「~することをやらなければならない:すなわち、~を提供すること」<br><br>
+          ★ <strong>骨格</strong>:<br>
+          → V = provide「提供する」<br>
+          → O = a setting「場所/環境」<br><br>
+          ★ <span class="en">a setting</span>:<br>
+          → ここでは「<strong>場/環境/舞台設定</strong>」(=演劇の文脈!)<br>
+          → 単に「設定」ではない!<br>
+          → 演劇が行われる場全体を指す!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>場所を提供する</strong>」<br><br>
+          → 何のための場所?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          provide(=動詞の原形)+ a setting「場所」(=演劇の文脈)!コロン前の do の具体内容!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>for people to watch</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">不定詞の意味上の主語 for 人 + to V</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">for people to watch</span>「人々が見るための」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">for 人 to V</span> = <strong>不定詞の意味上の主語</strong>「<strong>人がVするための</strong>」<br>
+          → for + 人(=不定詞の意味上の主語)+ to V<br>
+          → 「人がVする」(=不定詞の動作主)<br><br>
+          ★ <strong>分解</strong>:<br>
+          → for people = 不定詞の意味上の主語「人々が」<br>
+          → to watch = 不定詞「見る」(=形容詞用法、a setting を修飾)<br><br>
+          ★ <strong>不定詞の意味上の主語の判別</strong>:<br>
+          → for + 人/物 + to V → 不定詞の<strong>意味上の主語</strong>!<br>
+          → 「人/物がVする」<br><br>
+          ★ <strong>類例</strong>(=for 人 to V):<br>
+          ・a book for children to read「子供が読むための本」<br>
+          ・a place for us to meet「私たちが会うための場所」<br>
+          ・It is hard for me to swim.「私が泳ぐのは難しい」(=形式主語)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>人々が見るための(場所)</strong>」<br><br>
+          ★ <strong>核心</strong>: for は「~のために」(=直訳)ではなく、<strong>不定詞の動作主</strong>を示す!<br><br>
+          → 何を見る?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          for 人 + to V = 不定詞の意味上の主語「人がVするための」!for は動作主を示す、「~のために」と訳さない!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">7</span>
+      <span class="ra-step-pos"><em>actors performing live drama.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">知覚動詞 watch + O + 現在分詞「O が ~ しているのを見る」</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">actors performing live drama.</span>「俳優が生のドラマを演じているのを(見る)」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">watch + O + V-ing</span> = <strong>知覚動詞構文</strong>「<strong>O が ~ しているのを見る</strong>」(=第42講先取り)<br>
+          → 知覚動詞: see / watch / hear / feel<br>
+          → O + V-ing = 「O が ~ している(進行中の動作)」<br><br>
+          ★ <strong>本問</strong>:<br>
+          → V = watch「見る」(=知覚動詞)<br>
+          → O = actors「俳優」<br>
+          → V-ing = performing live drama「生のドラマを演じている」<br>
+          → 「<strong>俳優が生のドラマを演じているのを見る</strong>」<br><br>
+          ★ <span class="en">performing</span> = 現在分詞「演じている」(=actors を修飾、第42講先取り)<br>
+          → 別解釈: actors performing live drama = 「生のドラマを演じている俳優」(=後置修飾)<br>
+          → どちらでも意味が通る!<br><br>
+          ★ <span class="en">live drama</span>:<br>
+          → live = 形容詞「<strong>生の/ライブの</strong>」<br>
+          → 「生のドラマ/ライブのドラマ」(=録画ではなく、その場での実演)<br>
+          → 劇場の<strong>本質</strong>を強調!<br><br>
+          ★ <strong>類例</strong>(=知覚動詞 + O + 現在分詞):<br>
+          ・I saw him crossing the street.「彼が道を横切っているのを見た」<br>
+          ・She heard birds singing.「鳥がさえずるのを聞いた」<br>
+          ・We watched the children playing.「子供たちが遊んでいるのを見た」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>俳優の生のドラマを見る</strong>」(=俳優がドラマを演じているのを見る、自然訳)<br><br>
+          ★ <strong>2文目全体</strong>: 「<strong>いずれにせよ、(劇場は)これからもやらなければならない、劇場がいつもやってきたことを。すなわち、人々が俳優の生のドラマを見るための場所を提供することだ</strong>」<br><br>
+          ★ <strong>2文全体のメッセージ</strong>:<br>
+          → 1文目: 未来の劇場の形は?(=未知の問いかけ)<br>
+          → 2文目: いずれにせよ、劇場の本質(=人々が俳優の生のドラマを見るための場の提供)は変わらない<br>
+          → <strong>テクノロジーが変わっても、人間の本質は変わらない</strong>というメッセージ!<br>
+          → どんなに技術が進化しても、「生」「俳優」「観客」が劇場の本質!<br><br>
+          ★ <strong>本講の本質</strong>:<br>
+          → What ~ be like? = 慣用「~はどんなものか」<br>
+          → 関係代名詞 what(=第30講応用)= 「~するもの/こと」<br>
+          → 不定詞の意味上の主語 for 人 + to V = 「人がVするための」<br>
+          → 知覚動詞 + O + 現在分詞 = 「O が ~ しているのを見る」<br>
+          → <strong>多層的な構造を、一つずつ整理して読み解く力を養う!</strong>
+        </div>
+        <div class="ra-step-conclude">
+          watch + O + V-ing = 知覚動詞構文「O が ~ しているのを見る」(=第42講先取り)!live drama = 「生のドラマ」(=劇場の本質!)!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">7つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">What</span><span class="seg-marker seg-marker-main">疑問詞(=be likeのO)</span></span>
+    <span class="seg-wrap"><span class="seg-main">will theaters be</span><span class="seg-marker seg-marker-main">V₁(未来)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">like</span><span class="seg-marker seg-marker-sub">前置詞</span></span>
+    <span class="seg-wrap"><span class="seg-sub">in the future?</span><span class="seg-marker seg-marker-sub">M(時間)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">Anyway,</span><span class="seg-marker seg-marker-sub">M(文修飾)</span></span>
+    <span class="seg-wrap"><span class="seg-main">they</span><span class="seg-marker seg-marker-main">S₂(=theaters)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">will still</span><span class="seg-marker seg-marker-sub">M(=助動詞+副詞)</span></span>
+    <span class="seg-wrap"><span class="seg-main">have to do</span><span class="seg-marker seg-marker-main">V₂(義務)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[what theaters have always done]:</span><span class="seg-marker seg-marker-sub">O₂(=関係代名詞what節)+コロン</span></span>
+    <span class="seg-wrap"><span class="seg-main">provide</span><span class="seg-marker seg-marker-main">V(=動詞原形、do の具体内容)</span></span>
+    <span class="seg-wrap"><span class="seg-main">a setting</span><span class="seg-marker seg-marker-main">O</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈for people</span><span class="seg-marker seg-marker-sub">不定詞の意味上の主語</span></span>
+    <span class="seg-wrap"><span class="seg-sub">to watch</span><span class="seg-marker seg-marker-sub">不定詞(=形容詞用法)</span></span>
+    <span class="seg-wrap"><span class="seg-main">actors</span><span class="seg-marker seg-marker-main">O(=watch の目的語)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">performing live drama〉.</span><span class="seg-marker seg-marker-sub">現在分詞(=O 修飾、知覚動詞構文)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: 疑問詞What + V(=will be) S 〈like〉 〈M(=in the future)〉? 2: 〈M(=Anyway)〉, S V(=have to do) [O=what S V(=have always done)]: V(=動詞原形) O 〈for 人 to V O(=現在分詞修飾)〉.</strong>(疑問詞 What ~ be like?「~はどんなものか」、関係代名詞 what「~するもの/こと」、現在完了 have always done、コロン(:) で具体内容、不定詞の意味上の主語 for 人 to V、知覚動詞 watch + O + 現在分詞、live drama「生のドラマ」)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">未来において劇場は何のようになるだろうか? とにかく、彼らは劇場が常にしてきたことをまだしなければならないだろう: 人々が生のドラマを演じている俳優を見るための設定を提供することだ。</span>
+      <span class="trans-row-note">構造どおりの直訳。「何のようになる」「彼ら」「設定を提供する」「演じている俳優を見る」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>What ~ be like?</strong>「~はどんなものか」(=疑問詞 what + 前置詞 like、慣用)、<strong>関係代名詞 what</strong>「~するもの/こと」(=第30講応用)</span>
+    <span class="trans-arrow-detail">同じ what が、1文目では疑問詞、2文目では関係代名詞!文の中での役割で判別!関係代名詞 what は名詞節「~するもの/こと」、do の目的語!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">未来において劇場はどんなものになるだろうか? いずれにせよ、劇場はこれまでもやってきたことを、これからもやらなければならない。すなわち、人々が俳優の生のドラマを見るための場所を提供することだ。</span>
+      <span class="trans-row-note">What ~ be like? を「どんなものか」、they = theaters を「劇場」、関係代名詞 what を「~こと」、コロンを「すなわち」、a setting を「場所」、watch + O + V-ing を「~の生のドラマを見る」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>不定詞の意味上の主語 for 人 to V</strong>「人がVするための」、<strong>知覚動詞 watch + O + 現在分詞</strong>「O が ~ しているのを見る」、<strong>コロン (:) で具体内容</strong></span>
+    <span class="trans-arrow-detail">for 人 to V の for は「~のために」ではなく、不定詞の動作主!watch + O + V-ing で進行中の動作を知覚!コロン(:)は「すなわち/つまり」で具体内容を導入!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>未来の劇場はどんなものになるのだろうか? いずれにせよ、劇場はこれまでもずっとやってきたことを、これからもやらなければならない。すなわち、人々が俳優の生のドラマを見るための場所を提供することだ。</strong></span>
+      <span class="trans-row-note">「未来の劇場」(=in the future を冒頭に持ってきて自然に)、「これまでもずっと」(=have always done を「ずっと」で強調)、「これからも」(=will still を「これからも」で表現)、「~するための場所を提供すること」と仕上げ。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>多層的な構造を、一つずつ整理して読み解く</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第40講で身につけてほしい<strong>「多層的な構造を整理する力」</strong>を伝えます。<br><br>★ 本問は、1つの英文の中に<strong>複数の重要文法</strong>が組み合わさっています!<br>(1) <strong>What ~ be like?</strong>「~はどんなものか」(=疑問詞、慣用)<br>(2) <strong>関係代名詞 what</strong>(=第30講応用)<br>(3) <strong>現在完了 have always done</strong>(=継続/経験)<br>(4) <strong>コロン (:) で具体内容</strong><br>(5) <strong>不定詞の意味上の主語 for 人 to V</strong><br>(6) <strong>知覚動詞 watch + O + 現在分詞</strong><br>★ こうした多層的な構造を、<strong>一つずつ整理して読み解く力</strong>を磨くのが本講のテーマ!<br><br>★ <strong>① What ~ be like?</strong>「~はどんなものか」(=慣用):<br>★ what(=疑問代名詞)+ like(=前置詞「~のような」)<br>★ 「~は何のようか?」 = 「~はどんなふうか?」<br><br>★ <strong>類例</strong>:<br>・<span class="en">What is your new teacher like?</span>「新しい先生はどんな人?」<br>・<span class="en">What was the weather like yesterday?</span>「昨日の天気はどう?」<br>・<span class="en">What will the future be like?</span>「未来はどうなるだろう?」<br><br>★ <strong>類似表現</strong>:<br>(1) What is X like?「Xはどんなもの?」(=本問!)<br>(2) How is X?「Xはどう?」(=似た意味、対象が状態・体調)<br>(3) What does X look like?「Xは見た目がどう?」(=外見限定)<br><br>★ <strong>② 関係代名詞 what</strong>(=第30講応用):<br>★ 「~するもの/こと」(=先行詞を含む関係代名詞)<br>★ 名詞節として機能(=動詞の目的語、文の主語、補語など)!<br><br>★ <strong>本問の例</strong>: <span class="en">what theaters have always done</span>「劇場がいつもやってきたこと」(=do の目的語)<br><br>★ <strong>疑問詞 what vs 関係代名詞 what</strong>(=判別、第34講応用):<br>(1) <strong>疑問詞</strong>: 「~は何か」(=疑問の意味、文頭で疑問文)<br>(2) <strong>関係代名詞</strong>: 「~するもの/こと」(=名詞節)<br>★ <strong>本問</strong>:<br>→ 1文目の What = 疑問詞「~はどんなものか」<br>→ 2文目の what = 関係代名詞「~するもの/こと」<br>→ <strong>同じ what が、文の中で2つの違う役割!</strong><br><br>★ <strong>③ 現在完了 have always done</strong>(=第58講応用):<br>★ 過去から現在まで、ずっと続く動作・状態!<br>★ always と相性◎(=継続・経験を強調)<br>★ have + always + V-ed(=have と過去分詞の間に always)<br><br>★ <strong>類例</strong>:<br>・<span class="en">She has always loved music.</span>「彼女はいつも音楽が大好き」<br>・<span class="en">We have always lived here.</span>「私たちはずっとここに住んでいる」<br><br>★ <strong>④ コロン (:) で具体内容</strong>(=第58講応用):<br>★ 「<strong>すなわち/つまり/具体的には</strong>」のニュアンス!<br>★ コロンの後ろで、コロンの前の<strong>具体的な内容</strong>を説明!<br><br>★ <strong>本問の例</strong>: <span class="en">do what theaters have always done: provide a setting ~</span><br>→ 「劇場がいつもやってきたことをやる、すなわち、~を提供する」<br>→ コロンの後ろが、do の<strong>具体内容</strong>!<br><br>★ <strong>⑤ 不定詞の意味上の主語 for 人 to V</strong>:<br>★ for + 人(=意味上の主語)+ to V「<strong>人がVするための</strong>」<br>★ for は「~のために」(=直訳)ではなく、<strong>不定詞の動作主</strong>!<br><br>★ <strong>類例</strong>:<br>・<span class="en">a book for children to read</span>「子供が読むための本」<br>・<span class="en">a place for us to meet</span>「私たちが会うための場所」<br>・<span class="en">It is hard for me to swim.</span>「私が泳ぐのは難しい」(=形式主語)<br><br>★ <strong>⑥ 知覚動詞 watch + O + 現在分詞</strong>「O が ~ しているのを見る」(=第42講先取り):<br>★ 知覚動詞: see / watch / hear / feel<br>★ O + V-ing = 「O が ~ している」(=進行中の動作)<br><br>★ <strong>類例</strong>:<br>・<span class="en">I saw him crossing the street.</span>「彼が道を横切っているのを見た」<br>・<span class="en">She heard birds singing.</span>「鳥がさえずるのを聞いた」<br>・<span class="en">We watched the children playing.</span>「子供たちが遊んでいるのを見た」<br><br>★ <strong>もう一つ ─ Anyway「いずれにせよ」</strong>(=文修飾):<br>★ 前の話を一旦置いて、本筋に戻すニュアンス!<br>★ 本問: 「未来の劇場がどうあれ(=置いて)、本質は~」<br><br>★ <strong>もう一つ ─ have to V「~しなければならない」</strong>:<br>★ 義務、外的必要を表す!<br>★ must V との違い: have to は外的必要、must は主観的義務<br><br>★ <strong>もう一つ ─ still「まだ/今もなお/これからも」</strong>:<br>★ 「(以前と同じく)これからも」のニュアンス!<br>★ 「変わらずに続ける」感じ!<br><br>★ <strong>もう一つ ─ 代名詞 they</strong>:<br>★ 前文の名詞を指す!<br>★ 本問: they = theaters「劇場」<br><br>★ <strong>多層的構造の読み方</strong>:<br>★ 本問のような英文を読むコツは、<strong>一つずつ要素を整理する</strong>こと!<br>(1) まず<strong>疑問文の形</strong>(=What ~ be like?)を捉える<br>(2) 次に<strong>主節の骨格</strong>(=they will still have to do ~)を捉える<br>(3) <strong>関係代名詞節</strong>(=what theaters have always done)を捉える<br>(4) <strong>コロン以降</strong>(=具体内容)を捉える<br>(5) <strong>不定詞の意味上の主語</strong>(=for people)、<strong>知覚動詞構文</strong>(=watch + O + V-ing)を捉える<br>★ <strong>一つずつ要素を整理</strong>すれば、どんなに複雑な英文も読めるようになります!<br><br>★ これからの英文読解で、複数の文法が組み合わさった英文は頻出します。<br>★ <strong>多層的な構造を、一つずつ整理する読み方</strong>を身につけましょう!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">What is your new house like?</span></span>
+      <span class="natural-tip-ex-bad">あなたの新しい家は何のようですか? (直訳的)</span>
+      <span class="natural-tip-ex-good">あなたの新しい家はどんな感じ? (What ~ be like? = 慣用「~はどんなものか」!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I bought a chair for the children to sit on.</span></span>
+      <span class="natural-tip-ex-bad">私は子供たちのために椅子を買って座る (構造を取り違え)</span>
+      <span class="natural-tip-ex-good">私は子供たちが座るための椅子を買った (for 人 to V = 不定詞の意味上の主語「人がVするための」!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I saw a bird flying in the sky.</span></span>
+      <span class="natural-tip-ex-bad">私は空で飛んでいる鳥を見た (現在分詞の修飾と取り違え、意味は通じる)</span>
+      <span class="natural-tip-ex-good">私は鳥が空で飛んでいるのを見た (see + O + V-ing = 知覚動詞構文「O が ~ しているのを見る」!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">What ~ be like?「~はどんなものか」</span>
+  </div>
+  <p class="drill-en"><strong>What is life in Tokyo like</strong>?</p>
+  <p class="drill-q">構造を分析し、自然に訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> What ~ be like? = 慣用!<br>
+        ・What = 疑問代名詞(=be like の目的語)<br>
+        ・is = be 動詞<br>
+        ・S = life in Tokyo「東京の生活」<br>
+        ・like = 前置詞「~のような」<br>
+        ・元の語順: Life in Tokyo is like ___?「東京の生活は___のようですか?」 → ___ を What で問う!<br>
+        <strong>訳:</strong> 「<strong>東京の生活はどんな感じ?</strong>」<br><br>
+        💡 What ~ be like? は慣用「~はどんなものか」!What is X like? = How is X? と似た意味!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">関係代名詞 what + 現在完了</span>
+  </div>
+  <p class="drill-en">I appreciate <strong>what you have done for me</strong>.</p>
+  <p class="drill-q">関係代名詞 what 節を分析し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> 関係代名詞 what = 「~したこと」!<br>
+        ・S = I「私」<br>
+        ・V = appreciate「感謝する」(=他動詞)<br>
+        ・O = what you have done for me「あなたが私のためにしてくれたこと」(=関係代名詞 what 節)<br>
+        ・what 節の中: S’ = you、V’ = have done(=現在完了)、O’ = what(=関係代名詞、do の目的語)、M’ = for me<br>
+        <strong>訳:</strong> 「<strong>あなたが私のためにしてくれたことに感謝しています</strong>」<br><br>
+        💡 関係代名詞 what = 「~するもの/こと」(=第30講応用)!動詞の目的語として機能、名詞節!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">知覚動詞 + O + 現在分詞 + 不定詞の意味上の主語</span>
+  </div>
+  <p class="drill-en">This is <strong>a place for tourists to watch dolphins swimming in the sea</strong>.</p>
+  <p class="drill-q">構造を分析して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> 不定詞の意味上の主語 + 知覚動詞 + O + 現在分詞!<br>
+        ・S = This、V = is、C = a place「場所」<br>
+        ・修飾 = for tourists to watch ~「観光客が~を見るための」(=不定詞の意味上の主語 + 不定詞、a place を修飾)<br>
+        ・to watch の中: O = dolphins「イルカ」、現在分詞 = swimming in the sea「海で泳いでいる」<br>
+        ・watch + O + V-ing = 「O が ~ しているのを見る」(=知覚動詞構文)<br>
+        <strong>訳:</strong> 「<strong>これは観光客がイルカが海で泳いでいるのを見るための場所だ</strong>」<br><br>
+        💡 for 人 to V = 不定詞の意味上の主語!watch + O + V-ing = 知覚動詞構文「O が ~ しているのを見る」!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>What ~ be like?</strong>「~はどんなものか」(=慣用、第34講応用)</div>
+      <div class="flow-desc">What is疑問代名詞、be like の目的語!Theaters will be like ___ → What で問う!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>関係代名詞 what</strong>「~するもの/こと」(=第30講応用)</div>
+      <div class="flow-desc">先行詞を含む関係代名詞!名詞節として機能(=動詞の目的語、主語、補語)!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>疑問詞 what vs 関係代名詞 what の判別</strong>(=第34講応用)</div>
+      <div class="flow-desc">疑問詞 = 「~は何か」(=文頭で疑問文)/関係代名詞 = 「~するもの/こと」(=名詞節)!文中の役割で判別!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>現在完了 have always done</strong>「いつもやってきた」(=継続/経験、第58講応用)</div>
+      <div class="flow-desc">過去から現在まで、ずっと続く動作!always は have と過去分詞の間!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>コロン (:) で具体内容</strong>(=第58講応用)</div>
+      <div class="flow-desc">「すなわち/つまり/具体的には」!コロンの後ろがコロン前の具体的な説明!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>不定詞の意味上の主語 for 人 to V</strong>「人がVするための」</div>
+      <div class="flow-desc">for は「~のために」ではなく、不定詞の動作主!for 人 + to V「人がVする」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>知覚動詞 watch + O + 現在分詞</strong>「O が ~ しているのを見る」(=第42講先取り)</div>
+      <div class="flow-desc">see / watch / hear / feel + O + V-ing!進行中の動作の知覚!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>Anyway「いずれにせよ」</strong>(=文修飾)、<strong>have to V「~しなければならない」</strong></div>
+      <div class="flow-desc">Anyway は前の話を置いて本筋に戻す!have to V は外的義務!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>多層的構造を一つずつ整理</strong></div>
+      <div class="flow-desc">疑問文の形 → 主節の骨格 → 関係詞節 → コロン以降 → 不定詞・知覚動詞構文の順に整理!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>What ~ be like?</strong>「~はどんなものか」(=慣用、第34講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 what</strong>「~するもの/こと」(=第30講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>疑問詞 what vs 関係代名詞 what</strong>の判別ができる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>同じ what が文中で2つの役割</strong>(=本問の1文目疑問詞 vs 2文目関係代名詞)を意識した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>現在完了 have always done</strong>「いつもやってきた」(=継続/経験)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>コロン (:) で具体内容</strong>(=「すなわち/つまり」)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>不定詞の意味上の主語 for 人 to V</strong>「人がVするための」を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>知覚動詞 watch + O + 現在分詞</strong>「O が ~ しているのを見る」(=第42講先取り)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>Anyway「いずれにせよ」</strong>(=文修飾)、<strong>have to V「~しなければならない」</strong>を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>still「まだ/今もなお/これからも」</strong>(=変わらずに続ける感じ)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>多層的構造を一つずつ整理する読み方</strong>を身につけた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第40講 · 「~はどうなるだろうか」を表現する文</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

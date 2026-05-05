@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第50講 名詞 + that の中身が完全文か不完全文かを毎回確かめる | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">50</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 関係代名詞 that vs 同格 that の判別</div>
+        <h1 class="lesson-title">名詞 + that の中身が完全文か不完全文かを毎回確かめる</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第50講のテーマは <strong>「関係代名詞 that vs 同格 that の判別」</strong>。<br>
+      第26・27講で関係代名詞を学びましたが、that は<strong>同格</strong>(=「~という(名詞)」)としても使われます!<br>
+      本問は、<span class="en">名詞 + that + ~</span> が<strong>4回も登場</strong>!関係代名詞2回 + 同格 that 2回!<br>
+      判別の決め手は<strong>that の中身が完全文か不完全文か</strong>です!<br>
+      第26・27講応用の関係代名詞、第49講応用の whether 副詞節、第15講応用の and 並列、第26講応用の as ~ as 比較も登場!<br>
+      今日のキー:<br>
+      ① <strong>関係代名詞 that</strong>: 名詞 + that + <strong>不完全文</strong>(=S か O が抜ける)<br>
+      ② <strong>同格 that</strong>: 名詞 + that + <strong>完全文</strong>「~という(名詞)」<br>
+      ③ <strong>判別の決め手</strong>: that の中身が完全文か不完全文か!<br>
+      ④ <strong>whether ~ or ~</strong>(=第49講応用)<br>
+      ⑤ <strong>as ~ as ~</strong>(=同等比較、第26講応用、本問では <span class="en">just as much as</span>)<br>
+      職場の有給休暇についての英文を題材に、<strong>that の2つの顔</strong>を見抜きます!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>関係代名詞 that</strong>(=that 節の中身が不完全文)を見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>同格 that</strong>(=that 節の中身が完全文、「~という(名詞)」)を見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>判別の手順</strong>を毎回踏みます ─ that の中身を主語・動詞・目的語まで全部見て、抜けがあるか確認!</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">Companies that promote paid leave, whether short term or long term, are accepting the idea that time off work matters just as much as time at work. Old-fashioned Japanese companies that discourage time off should consider and respect the human needs of employees and their legal right to vacation. They should also consider the fact that relaxed and satisfied workers are more productive and efficient.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>7つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Companies that promote paid leave</span> の <span class="en">that</span> を同格と取る</span>
+  </div>
+  <div class="trap-misread">「<u>有給休暇を推進するという会社</u>」(=同格 that と勘違い)</div>
+  <p class="trap-why">★ <span class="en">that</span> = ここでは<strong>関係代名詞(=主格)</strong>(=第26・27講応用)!<br>→ 名詞 <span class="en">Companies</span> を後ろから修飾!<br>→ that 節の中身は<strong>不完全文</strong>(=S が抜ける、that が S を兼ねる)<br>★ <strong>本問</strong>: <span class="en">Companies that promote paid leave</span><br>→ 名詞 = Companies「企業」<br>→ 修飾 = that promote paid leave「有給休暇を推進する」(=関係代名詞節)<br>→ 「<strong>有給休暇を推進する企業</strong>」<br>★ <strong>関係代名詞節の中身</strong>(=不完全文!):<br>→ S' = that(=主格、Companies を指す)<br>→ V' = promote「推進する」(=他動詞)<br>→ O' = paid leave「有給休暇」<br>→ <strong>S が that になっている → 不完全文 → 関係代名詞!</strong><br>★ <strong>判別の決め手</strong>: that の後ろに動詞 promote が直接来る → S が抜けている → <strong>関係代名詞</strong>!<br>★ <strong>類例</strong>(=関係代名詞 that 主格):<br>・<span class="en">people that work hard</span>「一生懸命働く人々」<br>・<span class="en">companies that grow fast</span>「急速に成長する企業」<br>・<span class="en">books that change minds</span>「考えを変える本」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">whether short term or long term</span> の構造を取り違える</span>
+  </div>
+  <div class="trap-misread">「(whether ~ or ~ の意味と省略を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">whether ~ or ~</span> = <strong>譲歩の副詞節</strong>「<strong>~であろうと~であろうと</strong>」(=第49講応用!)<br>→ 主語+be動詞の省略がある!<br>★ <strong>本問</strong>: <span class="en">whether short term or long term</span><br>→ 補うと: <span class="en">whether (it is) short term or (it is) long term</span><br>→ it = paid leave を指す<br>→ short term「短期」/ long term「長期」(=どちらも形容詞、be動詞のC)<br>★ <strong>挿入位置</strong>:<br>→ 主語 Companies の修飾(=関係代名詞節 that promote paid leave)の後、メイン動詞 are accepting の前<br>→ <strong>挿入句</strong>として、修飾内容の補足!<br>→ 「(その有給休暇が)短期であろうと長期であろうと」<br>★ <strong>意訳</strong>: 「<strong>短期であろうと長期であろうと、有給休暇を推進する企業は</strong>」<br>★ <strong>判別</strong>: メイン文(=Companies are accepting ~)が完結 → whether 節は副詞節!<br>★ <strong>類例</strong>(=主語+be動詞の省略):<br>・<span class="en">When (you are) young, learn a lot.</span>「若いときに、たくさん学べ」<br>・<span class="en">If (it is) possible, please come.</span>「可能なら来てください」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">are accepting the idea that time off work matters</span> の <span class="en">that</span> を関係代名詞と取る</span>
+  </div>
+  <div class="trap-misread">「<u>仕事から離れる時間が重要であるという考え</u> ─ あれ、that は何?」(=同格 that に気づかない)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">that</span> = ここでは<strong>同格 that</strong>!<br>→ 名詞 <span class="en">the idea</span> を「~という考え」と説明!<br>→ that 節の中身は<strong>完全文</strong>!<br>★ <strong>本問</strong>: <span class="en">the idea that time off work matters just as much as time at work</span><br>→ 名詞 = the idea「考え」<br>→ 同格 that = ~という考え<br>★ <strong>that 節の中身</strong>(=完全文!):<br>→ S' = <span class="en">time off work</span>「仕事を休む時間」(=複合名詞)<br>→ V' = <span class="en">matters</span>「重要である」(=自動詞、3単現の s!)<br>→ M' = <span class="en">just as much as time at work</span>「仕事をする時間と同じくらい」(=同等比較、第26講応用)<br>→ <strong>S', V' が揃って完全文 → 同格 that!</strong><br>★ <strong>判別の決め手</strong>: that の中身に S' = time off work、V' = matters が揃っている → 完全文 → <strong>同格 that</strong>!<br>★ <strong>意訳</strong>: 「<strong>仕事を休む時間が、仕事をする時間と同じくらい大切だ、という考え</strong>」<br>★ <span class="en">time off work</span> = 「仕事から離れる時間/休暇」(=time + off + work、複合名詞)<br>★ <span class="en">time at work</span> = 「仕事をする時間/勤務時間」(=time + at + work、複合名詞)<br>★ <strong>類例</strong>(=同格 that):<br>・<span class="en">the idea that he is right</span>「彼が正しいという考え」<br>・<span class="en">the fact that the earth is round</span>「地球が丸いという事実」<br>・<span class="en">the news that he won</span>「彼が勝ったという知らせ」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">just as much as time at work</span> の <span class="en">as ~ as</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(as ~ as の同等比較を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">as ~ as ~</span> = 同等比較「<strong>~と同じくらい~</strong>」(=第26講応用)<br>→ <span class="en">just</span> = 副詞「ちょうど/まさに」(=as ~ as を強調)<br>→ <span class="en">just as much as</span>「ちょうど同じくらい(に)」<br>★ <strong>本問</strong>: <span class="en">time off work matters just as much as time at work (matters)</span><br>→ matters「重要である」を比較!<br>→ 比較対象 = time off work(=休む時間) vs time at work(=働く時間)<br>→ 「<strong>休む時間は、働く時間と同じくらい重要だ</strong>」<br>★ <strong>同等比較の構造</strong>:<br>→ A V as ~ as B (V)<br>→ Aの V する程度 = Bの V する程度<br>→ 後ろの (V) は省略可能!<br>★ <span class="en">much</span> = ここでは副詞「(程度が)多く」<br>→ matters を修飾<br>→ matters much「大いに重要である」(=同等比較なしの形)<br>→ matters as much as ~「~と同じくらい重要である」<br>★ <strong>意訳</strong>: 「<strong>仕事を休む時間は、仕事をする時間と同じくらい大切だ</strong>」<br>★ <strong>類例</strong>:<br>・<span class="en">She works as hard as he (works).</span>「彼女は彼と同じくらい一生懸命働く」<br>・<span class="en">This book is as interesting as that one.</span>「この本はあの本と同じくらい面白い」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Old-fashioned Japanese companies that discourage time off</span> の <span class="en">that</span> を同格と取る</span>
+  </div>
+  <div class="trap-misread">「<u>休暇を取ることを良しとしないという旧式の日本企業</u>」(=同格 that と勘違い)</div>
+  <p class="trap-why">★ <span class="en">that</span> = ここでは<strong>関係代名詞(=主格)</strong>!<br>→ 名詞 <span class="en">Old-fashioned Japanese companies</span> を後ろから修飾!<br>→ that 節の中身は<strong>不完全文</strong>(=S が抜ける、that が S を兼ねる)<br>★ <strong>本問</strong>: <span class="en">Old-fashioned Japanese companies that discourage time off</span><br>→ 名詞 = Old-fashioned Japanese companies「旧式の日本企業」<br>→ 修飾 = that discourage time off「休暇を取ることを良しとしない」(=関係代名詞節)<br>★ <strong>関係代名詞節の中身</strong>(=不完全文!):<br>→ S' = that(=主格、companies を指す)<br>→ V' = discourage「~を阻止する/良しとしない」(=他動詞)<br>→ O' = time off「休暇/休む時間」<br>→ <strong>S が that になっている → 不完全文 → 関係代名詞!</strong><br>★ <span class="en">discourage</span> = 「思いとどまらせる/阻止する/良しとしない」(=encourage の反対)<br>★ <strong>意訳</strong>: 「<strong>休暇を取ることを良しとしない旧式の日本企業</strong>」<br>★ <strong>判別の決め手</strong>: that の後ろに動詞 discourage が直接来る → S が抜けている → <strong>関係代名詞</strong>!<br>★ <strong>1文目との対比</strong>:<br>→ Companies that promote paid leave(=第1文)= 関係代名詞<br>→ Old-fashioned Japanese companies that discourage time off(=第2文)= 関係代名詞<br>→ どちらも「~する企業」(=企業を修飾)!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">should consider and respect the human needs ~ and their legal right ~</span> の <span class="en">and</span> の繋ぎを取り違える</span>
+  </div>
+  <div class="trap-misread">「(2つの and が何を繋いでいるか掴めない)」</div>
+  <p class="trap-why">★ <span class="en">and</span> が<strong>2回登場</strong>!それぞれ繋いでいるものが違う!<br>★ <strong>本問</strong>: <span class="en">should consider and respect the human needs of employees and their legal right to vacation</span><br>★ <strong>1つ目の and</strong>(=consider and respect):<br>→ <strong>動詞を2つ並列</strong>!<br>→ should consider「考慮するべきだ」 + should respect「尊重するべきだ」<br>→ 共通の助動詞 should!<br>★ <strong>2つ目の and</strong>(=the human needs ~ and their legal right ~):<br>→ <strong>目的語(=名詞句)を2つ並列</strong>!<br>→ O₁ = the human needs of employees「従業員の人間としてのニーズ」<br>→ O₂ = their legal right to vacation「休暇への法的権利」<br>★ <strong>骨格</strong>:<br>→ S = Old-fashioned Japanese companies that discourage time off<br>→ V = should consider and respect(=動詞並列)<br>→ O = the human needs ~ and their legal right ~(=名詞並列)<br>★ <strong>意訳</strong>: 「<strong>従業員の人間としてのニーズと、休暇への法的権利を、考慮し、尊重するべきだ</strong>」<br>★ <strong>核心</strong>: and が複数登場するとき、それぞれが何と何を繋いでいるかを<strong>順番に</strong>見抜く!(=第15講応用)<br>★ <strong>類例</strong>:<br>・<span class="en">She read and reviewed books and magazines.</span>「彼女は本と雑誌を読んでレビューした」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">consider the fact that relaxed and satisfied workers are more productive</span> の <span class="en">that</span> を関係代名詞と取る</span>
+  </div>
+  <div class="trap-misread">「<u>リラックスし満足した労働者がより生産的だという事実</u> ─ あれ、that は何?」(=同格 that に気づかない)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">that</span> = ここでは<strong>同格 that</strong>!<br>→ 名詞 <span class="en">the fact</span> を「~という事実」と説明!<br>→ that 節の中身は<strong>完全文</strong>!<br>★ <strong>本問</strong>: <span class="en">the fact that relaxed and satisfied workers are more productive and efficient</span><br>→ 名詞 = the fact「事実」<br>→ 同格 that = ~という事実<br>★ <strong>that 節の中身</strong>(=完全文!):<br>→ S' = <span class="en">relaxed and satisfied workers</span>「リラックスして満足した労働者」(=形容詞並列 + 名詞)<br>→ V' = <span class="en">are</span>「~である」(=be 動詞)<br>→ C' = <span class="en">more productive and efficient</span>「より生産的で効率的」(=比較級 + 形容詞並列)<br>→ <strong>S', V', C' が揃って完全文 → 同格 that!</strong><br>★ <strong>判別の決め手</strong>: that の中身に S' = workers、V' = are、C' = productive and efficient が揃っている → 完全文 → <strong>同格 that</strong>!<br>★ <strong>意訳</strong>: 「<strong>リラックスして満足した労働者の方が、より生産的で効率的である、という事実</strong>」<br>★ <span class="en">relaxed and satisfied</span> = 過去分詞 relaxed + 形容詞 satisfied(=どちらも形容詞的)<br>★ <span class="en">more productive and efficient</span> = 比較級 + 形容詞並列<br>→ more が共通!<br>★ <strong>類例</strong>(=同格 that):<br>・<span class="en">the fact that he lied</span>「彼が嘘をついたという事実」<br>・<span class="en">the news that the war ended</span>「戦争が終わったという知らせ」</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>Companies that promote paid leave,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ 関係代名詞 that(=不完全文)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">Companies that promote paid leave,</span>「有給休暇を推進する企業」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Companies</span>「企業」(=メインの主語の中心)<br><br>
+          ★ <strong>that</strong> = ここでは<strong>関係代名詞(=主格)</strong>(=第26・27講応用)!<br>
+          → 名詞 Companies を後ろから修飾<br>
+          → that 節の中身を確認!<br><br>
+          ★ <strong>that 節の中身</strong>:<br>
+          → S' = that(=主格、Companies を指す)<br>
+          → V' = promote「推進する」(=他動詞)<br>
+          → O' = paid leave「有給休暇」<br>
+          → <strong>S が that → 不完全文 → 関係代名詞!</strong><br><br>
+          ★ <strong>意訳</strong>: 「<strong>有給休暇を推進する企業</strong>」<br><br>
+          ★ <strong>判別の決め手</strong>: that の後ろに動詞 promote が直接来る → S が抜けている → <strong>関係代名詞</strong>!<br><br>
+          → 続いて挿入句?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          名詞 + that + V O → 不完全文(=Sが抜ける、that が S を兼ねる) → 関係代名詞!(=第26・27講応用)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>whether short term or long term,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">挿入句 ─ whether ~ or ~ + 主語+be動詞の省略</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">whether short term or long term,</span>「短期であろうと長期であろうと」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">whether ~ or ~</span> = <strong>譲歩の副詞節</strong>「~であろうと~であろうと」(=第49講応用!)<br><br>
+          ★ <strong>主語+be動詞の省略</strong>!<br>
+          → 補うと: <span class="en">whether (it is) short term or (it is) long term</span><br>
+          → it = paid leave を指す<br>
+          → are = be 動詞<br><br>
+          ★ <strong>挿入位置</strong>:<br>
+          → 関係代名詞節 that promote paid leave の後、メイン動詞 are accepting の前<br>
+          → <strong>挿入句</strong>として、修飾内容の補足!<br>
+          → 「(その有給休暇が)短期であろうと長期であろうと」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>短期であろうと長期であろうと</strong>」<br><br>
+          → メインのVを待つ!
+        </div>
+        <div class="ra-step-conclude">
+          whether ~ or ~「~であろうと~であろうと」(=第49講応用)!主語+be動詞の省略!挿入句として補足!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>are accepting the idea that time off work matters</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メインV + 同格 that(=完全文)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">are accepting the idea that time off work matters</span>「~という考えを受け入れている」!</p>
+        <div class="ra-step-think">
+          ★ V = <span class="en">are accepting</span>「受け入れている」(=現在進行形)<br>
+          ★ O = <span class="en">the idea</span>「考え」(=名詞)<br><br>
+          ★ <strong>that</strong> = ここでは<strong>同格 that</strong>!<br>
+          → 名詞 the idea を「~という考え」と説明!<br><br>
+          ★ <strong>that 節の中身を確認</strong>:<br>
+          → S' = <span class="en">time off work</span>「仕事を休む時間」(=複合名詞)<br>
+          → V' = <span class="en">matters</span>「重要である」(=自動詞、3単現の s!)<br>
+          → <strong>S', V' が揃って完全文 → 同格 that!</strong><br><br>
+          ★ <strong>判別の決め手</strong>:<br>
+          → 1つ目の that(=Companies that ~)= 不完全文 → 関係代名詞<br>
+          → 2つ目の that(=the idea that ~)= 完全文 → <strong>同格 that</strong>!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>~という考えを受け入れている</strong>」<br><br>
+          → 比較が来る?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          are accepting + the idea + that(=同格)。that の中身は完全文(=S' V' が揃う)!関係代名詞 that とは違う!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>just as much as time at work.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">as ~ as 同等比較 + 後半の省略</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">just as much as time at work.</span>「仕事をする時間と同じくらい(重要だ)」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">as ~ as ~</span> = 同等比較「~と同じくらい~」(=第26講応用)<br>
+          → <span class="en">just</span> = 副詞「ちょうど/まさに」(=as ~ as を強調)<br><br>
+          ★ <span class="en">just as much as</span> = 「ちょうど同じくらい(に)」<br>
+          → much = 副詞「(程度が)多く」(=matters を修飾)<br><br>
+          ★ <strong>比較対象</strong>:<br>
+          → A = time off work matters「仕事を休む時間が重要である」<br>
+          → B = time at work (matters)「仕事をする時間が(重要である)」<br>
+          → A の重要度 = B の重要度!<br>
+          → 後ろの (matters) は省略!<br><br>
+          ★ <span class="en">time off work</span> = 「仕事から離れる時間/休暇」<br>
+          ★ <span class="en">time at work</span> = 「仕事をする時間/勤務時間」<br>
+          → off と at の対比!<br><br>
+          ★ <strong>1文目全体</strong>: 「<strong>短期であろうと長期であろうと、有給休暇を推進する企業は、仕事を休む時間が、仕事をする時間と同じくらい大切だ、という考えを受け入れている</strong>」<br><br>
+          → 旧式の日本企業の話?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          as ~ as ~ 同等比較(=第26講応用)。just で強調!後ろの matters は省略!time off work vs time at work の対比!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>Old-fashioned Japanese companies that discourage time off</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目 ─ また関係代名詞 that(=不完全文)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目スタート <span class="en">Old-fashioned Japanese companies that discourage time off</span>「休暇を取ることを良しとしない旧式の日本企業」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Old-fashioned Japanese companies</span>「旧式の日本企業」(=メインの主語)<br>
+          → Old-fashioned「旧式の」(=形容詞)<br>
+          → Japanese「日本の」(=形容詞)<br>
+          → companies「企業」(=名詞)<br><br>
+          ★ <strong>that</strong> = ここでは<strong>関係代名詞(=主格)</strong>!<br>
+          → 名詞 companies を後ろから修飾<br><br>
+          ★ <strong>that 節の中身</strong>:<br>
+          → S' = that(=主格、companies を指す)<br>
+          → V' = discourage「~を阻止する/良しとしない」(=他動詞)<br>
+          → O' = time off「休暇」<br>
+          → <strong>S が that → 不完全文 → 関係代名詞!</strong><br><br>
+          ★ <strong>1文目と同じパターン!</strong><br>
+          → 1文目 Companies that promote paid leave(=関係代名詞)<br>
+          → 2文目 companies that discourage time off(=関係代名詞)<br>
+          → どちらも「~する企業」!<br><br>
+          ★ <span class="en">discourage</span> = 「思いとどまらせる/阻止する/良しとしない」(=encourage の反対)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>休暇を取ることを良しとしない旧式の日本企業</strong>」<br><br>
+          → メインVを待つ!
+        </div>
+        <div class="ra-step-conclude">
+          再び 名詞 + that + V O → 不完全文 → 関係代名詞!1文目と同じパターン!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>should consider and respect the human needs of employees and their legal right to vacation.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">should V₁ and V₂ + O(=2つの名詞並列)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">should consider and respect the human needs of employees and their legal right to vacation.</span>「従業員の人間としてのニーズと、休暇への法的権利を、考慮し尊重するべきだ」!</p>
+        <div class="ra-step-think">
+          ★ <strong>and が2回登場</strong>!それぞれ何を繋いでいるか?<br><br>
+          ★ <strong>1つ目の and</strong>(=consider and respect):<br>
+          → <strong>動詞を2つ並列</strong>!<br>
+          → V₁ = should consider「考慮するべきだ」<br>
+          → V₂ = should respect「尊重するべきだ」<br>
+          → 共通の助動詞 should!<br><br>
+          ★ <strong>2つ目の and</strong>(=the human needs ~ and their legal right ~):<br>
+          → <strong>目的語(=名詞句)を2つ並列</strong>!<br>
+          → O₁ = the human needs of employees「従業員の人間としてのニーズ」<br>
+          → O₂ = their legal right to vacation「(従業員の)休暇への法的権利」<br><br>
+          ★ <strong>骨格</strong>:<br>
+          → S = Old-fashioned Japanese companies that discourage time off<br>
+          → V = should consider and respect(=動詞並列)<br>
+          → O = the human needs ~ and their legal right ~(=名詞並列)<br><br>
+          ★ <span class="en">their legal right to vacation</span>:<br>
+          → their = employees' を指す(=従業員の)<br>
+          → legal「法的な」(=形容詞)<br>
+          → right「権利」(=名詞)<br>
+          → to vacation「休暇への」(=不定詞ではなく、前置詞 to + 名詞 vacation!)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>従業員の人間としてのニーズと、休暇への法的権利を、考慮し、尊重するべきだ</strong>」<br><br>
+          → さらに考慮すべきことが?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          and 2回!1つ目=動詞並列(consider and respect)、2つ目=名詞並列(needs and right)。それぞれが何を繋ぐかを順番に整理!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">7</span>
+      <span class="ra-step-pos"><em>They should also consider the fact that relaxed and satisfied workers are more productive and efficient.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">3文目 ─ 同格 that(=完全文)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">They should also consider the fact that relaxed and satisfied workers are more productive and efficient.</span>「リラックスして満足した労働者の方が、より生産的で効率的である、という事実も考慮するべきだ」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">They</span>「彼ら」(=Old-fashioned Japanese companies を指す)<br>
+          ★ V = <span class="en">should also consider</span>「また考慮するべきだ」<br>
+          ★ O = <span class="en">the fact that ~</span>「~という事実」<br><br>
+          ★ <strong>that</strong> = ここでは<strong>同格 that</strong>!<br>
+          → 名詞 the fact を「~という事実」と説明!<br><br>
+          ★ <strong>that 節の中身を確認</strong>:<br>
+          → S' = <span class="en">relaxed and satisfied workers</span>「リラックスして満足した労働者」(=形容詞並列 + 名詞)<br>
+          → V' = <span class="en">are</span>「~である」(=be 動詞)<br>
+          → C' = <span class="en">more productive and efficient</span>「より生産的で効率的」(=比較級 + 形容詞並列)<br>
+          → <strong>S', V', C' が揃って完全文 → 同格 that!</strong><br><br>
+          ★ <strong>判別の決め手</strong>: that の中身に S' V' C' が揃っている → 完全文 → <strong>同格 that</strong>!<br><br>
+          ★ <strong>本問の that 4回まとめ</strong>:<br>
+          → 1回目: Companies that promote ~ → 不完全文 → 関係代名詞<br>
+          → 2回目: the idea that time off work ~ → 完全文 → <strong>同格</strong><br>
+          → 3回目: companies that discourage ~ → 不完全文 → 関係代名詞<br>
+          → 4回目: the fact that workers are ~ → 完全文 → <strong>同格</strong><br>
+          → <strong>that の中身を毎回確認する習慣の徹底</strong>!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>リラックスして満足した労働者の方が、より生産的で効率的である、という事実も考慮するべきだ</strong>」<br><br>
+          ★ <strong>3文全体のメッセージ</strong>:<br>
+          → 1文目: 進歩的企業は、休む時間 = 働く時間と同じくらい大切と認識<br>
+          → 2文目: 旧式企業は、従業員のニーズと休暇権を尊重すべき<br>
+          → 3文目: 満足した労働者の方が生産的という事実も考慮すべき<br>
+          → <strong>働き方改革・有給休暇のメッセージ</strong>!<br><br>
+          ★ <strong>本講の本質</strong>: 名詞 + that を見たら、必ず<strong>that の中身が完全文か不完全文か</strong>を確認!<br>
+          → 不完全文 → 関係代名詞「~する(名詞)」<br>
+          → 完全文 → 同格 that「~という(名詞)」
+        </div>
+        <div class="ra-step-conclude">
+          再び 名詞 + that + 完全文 → 同格 that!the fact that S V C「S が C である事実」!4回登場した that の判別の総まとめ!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">7つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">Companies</span><span class="seg-marker seg-marker-main">S₁(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that promote paid leave],</span><span class="seg-marker seg-marker-sub">関係代名詞主格(=不完全文)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[whether (it is) short term or (it is) long term],</span><span class="seg-marker seg-marker-sub">whether副詞節+省略(挿入)</span></span>
+    <span class="seg-wrap"><span class="seg-main">are accepting</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">the idea</span><span class="seg-marker seg-marker-main">O₁(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that time off work matters just as much as time at work].</span><span class="seg-marker seg-marker-sub">同格 that(=完全文)</span></span>
+    <span class="seg-wrap"><span class="seg-main">Old-fashioned Japanese companies</span><span class="seg-marker seg-marker-main">S₂(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that discourage time off]</span><span class="seg-marker seg-marker-sub">関係代名詞主格(=不完全文)</span></span>
+    <span class="seg-wrap"><span class="seg-main">should consider and respect</span><span class="seg-marker seg-marker-main">V₂(動詞並列)</span></span>
+    <span class="seg-wrap"><span class="seg-main">the human needs of employees and their legal right to vacation.</span><span class="seg-marker seg-marker-main">O₂(名詞並列)</span></span>
+    <span class="seg-wrap"><span class="seg-main">They</span><span class="seg-marker seg-marker-main">S₃</span></span>
+    <span class="seg-wrap"><span class="seg-sub">also</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-main">should consider</span><span class="seg-marker seg-marker-main">V₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">the fact</span><span class="seg-marker seg-marker-main">O₃(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that relaxed and satisfied workers are more productive and efficient].</span><span class="seg-marker seg-marker-sub">同格 that(=完全文)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: S [that V O](=関係詞)〈whether (省略) C or C〉(=挿入), V O [that S' V' as ~ as N](=同格). 2: S [that V O](=関係詞) V₁ and V₂ O₁ and O₂. 3: S 〈M〉 V O [that S' V' C'](=同格).</strong>(関係代名詞 that 主格 2回 + 同格 that 2回、whether ~ or ~ 副詞節 + 主語+be 省略、as ~ as 同等比較、and 並列 複数回)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">有給休暇を推進する企業、それが短期か長期かに関わらず、仕事を休む時間が仕事をする時間と同じくらい重要であるという考えを受け入れている。休暇を取ることを良しとしない旧式の日本の企業は、従業員の人間のニーズと休暇への法的な権利を考慮して尊重するべきだ。彼らはまた、リラックスして満足した労働者がより生産的で効率的であるという事実を考慮するべきだ。</span>
+      <span class="trans-row-note">構造どおりの直訳。「短期か長期かに関わらず」「人間のニーズ」「~という事実を考慮する」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>関係代名詞 that vs 同格 that の判別</strong> ─ <strong>that の中身が完全文か不完全文か</strong>!</span>
+    <span class="trans-arrow-detail">本問では4回登場!Companies that promote(=不完全→関係代名詞)、the idea that time off matters(=完全→同格)、companies that discourage(=不完全→関係代名詞)、the fact that workers are(=完全→同格)!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">短期であろうと長期であろうと、有給休暇を推進する企業は、仕事を休む時間が仕事をする時間と同じくらい大切だという考えを受け入れている。休暇を良しとしない旧式の日本企業は、従業員の人間としてのニーズと、休暇への法的権利を考慮し尊重すべきだ。また、リラックスして満足した労働者の方が生産的で効率的だという事実も考慮すべきだ。</span>
+      <span class="trans-row-note">「~であろうと~であろうと」(whether ~ or ~)、「~という考え/~という事実」(同格 that)、「~の方が」(比較級)と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>whether ~ or ~</strong>(=第49講応用)+ <strong>主語+be 省略</strong>、<strong>as ~ as ~</strong>(=同等比較、第26講応用)、<strong>and の並列</strong>(=第15講応用、複数回)</span>
+    <span class="trans-arrow-detail">whether (it is) short term or long term、just as much as time at work (matters省略)!and は動詞並列・名詞並列の両方!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>短期であろうと長期であろうと、有給休暇を推進する企業は、仕事を休む時間が、仕事をする時間と同じくらい大切だ、という考えを受け入れている。休暇を取ることを良しとしない旧式の日本企業は、従業員の人間としてのニーズと、休暇への法的権利を、考慮し、尊重するべきだ。また、リラックスして満足した労働者の方が、より生産的で効率的である、という事実も考慮するべきだ。</strong></span>
+      <span class="trans-row-note">「~という考え/~という事実」を読点で区切って読みやすく。「考慮し、尊重するべきだ」と動詞並列を読点で区切る。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>名詞 + that を見たら、that の中身を毎回確認する</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第50講で身につけてほしい<strong>「関係代名詞 that vs 同格 that の判別」</strong>を伝えます。<br><br>★ 第26・27講で関係代名詞 that を学びました。<br>★ that はもう1つ重要な役割があります ─ <strong>同格 that</strong>!<br><br>★ <strong>判別の決め手</strong>:<br>★ <strong>that の中身が完全文か不完全文か</strong>!<br><br>★ <strong>関係代名詞 that</strong>:<br>(1) 名詞 + that + <strong>不完全文</strong>(=Sか O が抜ける!)<br>(2) 訳: 「~する(名詞)」<br>(3) 例: <span class="en">Companies that promote paid leave</span>「有給休暇を推進する企業」<br>　→ that の中身: that(=S) promote(=V) paid leave(=O)<br>　→ S が that になっている → 不完全文!<br><br>★ <strong>同格 that</strong>:<br>(1) 名詞 + that + <strong>完全文</strong>(=S, V, O/C 全て揃う!)<br>(2) 訳: 「~という(名詞)」<br>(3) 例: <span class="en">the idea that time off work matters</span>「仕事を休む時間が大切だという考え」<br>　→ that の中身: time off work(=S) matters(=V)<br>　→ S, V が揃う → 完全文!<br><br>★ <strong>本問の4回の that</strong>:<br>(1) <span class="en">Companies that promote paid leave</span> → that の後ろに動詞 → 不完全文 → <strong>関係代名詞</strong><br>(2) <span class="en">the idea that time off work matters ~</span> → that の後ろに完全文 → <strong>同格 that</strong><br>(3) <span class="en">companies that discourage time off</span> → that の後ろに動詞 → 不完全文 → <strong>関係代名詞</strong><br>(4) <span class="en">the fact that relaxed and satisfied workers are ~</span> → that の後ろに完全文 → <strong>同格 that</strong><br><br>★ <strong>判別の手順</strong>:<br>(1) 名詞 + that を見たら、that 節の中身を全部見る<br>(2) S, V, O/C が揃っているか?<br>(3) 揃っている → <strong>完全文 → 同格 that</strong>「~という(名詞)」<br>(4) S か O が抜けている → <strong>不完全文 → 関係代名詞</strong>「~する(名詞)」<br><br>★ <strong>同格 that を取る代表的な名詞</strong>:<br>★ <span class="en">the idea that ~</span>「~という考え」<br>★ <span class="en">the fact that ~</span>「~という事実」<br>★ <span class="en">the news that ~</span>「~という知らせ」<br>★ <span class="en">the truth that ~</span>「~という真実」<br>★ <span class="en">the belief that ~</span>「~という信念」<br>★ <span class="en">the rumor that ~</span>「~という噂」<br>→ <strong>抽象名詞 + that</strong>のパターンが多い!<br><br>★ <strong>関係代名詞 that が多い名詞</strong>:<br>★ 物・人・動物などの<strong>具体名詞</strong>!<br>★ 例: people that ~, companies that ~, books that ~ など<br><br>★ <strong>もう一つ ─ <span class="en">whether ~ or ~</span></strong>(=第49講応用):<br>★ 譲歩の副詞節「~であろうと~であろうと」!<br>★ 主語+be動詞の省略が頻出!<br>★ 本問: <span class="en">whether (it is) short term or (it is) long term</span><br><br>★ <strong>もう一つ ─ <span class="en">as ~ as ~</span></strong>(=同等比較、第26講応用):<br>★ A V as ~ as B (V) = 「A は B と同じくらい~に V する」<br>★ 後ろの (V) は省略可能!<br>★ 本問: <span class="en">time off work matters just as much as time at work (matters)</span><br>→ 「仕事を休む時間は、仕事をする時間と同じくらい大切だ」<br><br>★ <strong>もう一つ ─ and の並列を見抜く</strong>(=第15講応用):<br>★ 本問では and が<strong>複数回</strong>登場!<br>★ 各 and が何を繋いでいるかを順番に整理!<br>(1) consider and respect = 動詞並列<br>(2) the human needs ~ and their legal right ~ = 名詞並列<br>(3) productive and efficient = 形容詞並列<br>(4) relaxed and satisfied = 形容詞並列<br><br>★ <strong>もう一つ ─ time off work / time at work</strong>:<br>★ 複合名詞!off と at の対比!<br>★ time off work「仕事から離れる時間」=「休暇/休む時間」<br>★ time at work「仕事をする時間」=「勤務時間」<br><br>★ これからの60講で、<strong>名詞 + that</strong> は頻繁に登場します。<br>★ <strong>毎回 that の中身を確認する習慣</strong>を身につけましょう!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I heard the news that he passed the exam.</span></span>
+      <span class="natural-tip-ex-bad">彼が試験に合格した知らせを聞いた (関係代名詞と勘違い → 訳は通じるが構造把握ミス)</span>
+      <span class="natural-tip-ex-good">彼が試験に合格したという知らせを聞いた (the news + 同格 that = 「~という知らせ」、that の中身は完全文 he passed the exam)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I read a book that changed my life.</span></span>
+      <span class="natural-tip-ex-bad">人生を変えるという本を読んだ (同格と勘違い)</span>
+      <span class="natural-tip-ex-good">人生を変えた本を読んだ (a book + 関係代名詞 that = 「~した本」、that の中身は不完全文 that(=S) changed(=V) my life(=O))</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I cannot accept the fact that he lied.</span></span>
+      <span class="natural-tip-ex-bad">彼が嘘をついた事実を受け入れられない (関係代名詞と勘違い)</span>
+      <span class="natural-tip-ex-good">彼が嘘をついたという事実を受け入れられない (the fact + 同格 that = 「~という事実」、that の中身は完全文 he lied)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">関係代名詞 that vs 同格 that(=連続)</span>
+  </div>
+  <p class="drill-en">A: <strong>the book that I bought</strong> / B: <strong>the news that he won</strong></p>
+  <p class="drill-q">2つのthatの違いを判別すると?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> that の中身が完全文か不完全文かで判別!<br>
+        ・A: <span class="en">the book that I bought</span><br>
+        　→ that の中身: I(=S) bought(=V) → O が抜ける(=that が O を兼ねる) → <strong>不完全文 → 関係代名詞(=目的格)</strong><br>
+        　→ 訳: 「<strong>私が買った本</strong>」<br>
+        ・B: <span class="en">the news that he won</span><br>
+        　→ that の中身: he(=S) won(=V) → S V が揃う → <strong>完全文 → 同格 that</strong><br>
+        　→ 訳: 「<strong>彼が勝ったという知らせ</strong>」<br><br>
+        💡 that の中身を必ず確認!不完全文 → 関係代名詞「~する(名詞)」、完全文 → 同格「~という(名詞)」!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">同格 that(=完全文)</span>
+  </div>
+  <p class="drill-en">I cannot accept <strong>the fact that you lied to me</strong>.</p>
+  <p class="drill-q">that 節の中身と役割は?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> the fact + 同格 that!<br>
+        ・名詞 = the fact「事実」<br>
+        ・that 節の中身: S' = you、V' = lied、M' = to me → <strong>完全文</strong>!<br>
+        ・S, V が揃う → 同格 that!<br>
+        ・訳: 「<strong>あなたが私に嘘をついたという事実</strong>」<br>
+        ・全文 = 「<strong>あなたが私に嘘をついたという事実を、私は受け入れられない</strong>」<br><br>
+        💡 the fact / the idea / the news + that → 多くは同格 that「~という(名詞)」!that 節の中身が完全文かを確認!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">関係代名詞 that(=不完全文)</span>
+  </div>
+  <p class="drill-en">I love <strong>the songs that he wrote</strong>.</p>
+  <p class="drill-q">that 節の中身と役割は?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> the songs + 関係代名詞 that!<br>
+        ・名詞 = the songs「歌」<br>
+        ・that 節の中身: S' = he、V' = wrote → O が抜ける(=that が O を兼ねる)→ <strong>不完全文</strong>!<br>
+        ・O が抜けている → 関係代名詞(=目的格)!<br>
+        ・訳: 「<strong>彼が書いた歌</strong>」<br>
+        ・全文 = 「<strong>彼が書いた歌が大好きだ</strong>」<br><br>
+        💡 that の中身に S, V, O の全部が揃わない(=どれかが抜ける)→ 関係代名詞!that が抜けた要素を兼ねる!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>名詞 + that を見たら、that 節の中身を全部見る</strong></div>
+      <div class="flow-desc">S, V, O/C を順番に確認!揃っているか?抜けているか?</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>that の中身が不完全文 → 関係代名詞</strong>(=第26・27講応用)</div>
+      <div class="flow-desc">S か O が抜ける!that が抜けた要素を兼ねる!訳: 「~する(名詞)」</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>that の中身が完全文 → 同格 that</strong></div>
+      <div class="flow-desc">S, V, O/C 全て揃う!訳: 「~という(名詞)」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>同格 that を取る代表的な名詞</strong></div>
+      <div class="flow-desc">the idea / the fact / the news / the truth / the belief / the rumor など、抽象名詞 + that が多い!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">whether ~ or ~</span></strong>(=第49講応用)</div>
+      <div class="flow-desc">譲歩の副詞節「~であろうと~であろうと」!主語+be動詞の省略が頻出!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">as ~ as ~</span></strong>(=同等比較、第26講応用)</div>
+      <div class="flow-desc">A V as ~ as B (V)「A は B と同じくらい~に V する」!後ろの V は省略可!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>and の並列を順番に整理</strong>(=第15講応用)</div>
+      <div class="flow-desc">本問では and が複数回!動詞並列・名詞並列・形容詞並列を見分ける!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>time off work / time at work</strong></div>
+      <div class="flow-desc">複合名詞!off「~から離れて」/at「~で」の対比!休む時間 vs 働く時間!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>discourage vs encourage</strong></div>
+      <div class="flow-desc">discourage「思いとどまらせる/良しとしない」!encourage「奨励する」の反対!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>名詞 + that を見たら、that 節の中身を確認</strong>する習慣がついた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 that</strong>(=不完全文、~する(名詞))を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>同格 that</strong>(=完全文、~という(名詞))を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>同格 that を取る代表的な名詞</strong>(=the idea/fact/news/truth など)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>whether ~ or ~</strong>(=第49講応用、譲歩の副詞節)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>主語+be動詞の省略</strong>(=副詞節、第49講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as ~ as ~</strong>(=同等比較、第26講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>and の並列を順番に整理</strong>(=第15講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>time off work / time at work</strong>(=複合名詞、off と at の対比)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>discourage</strong>「思いとどまらせる/良しとしない」(=encourage の反対)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>more productive and efficient</strong>(=比較級 + 形容詞並列、共通の more)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第50講 · 名詞 + that の中身が完全文か不完全文かを毎回確かめる</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

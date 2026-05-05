@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第57講 補足が多い文章で、骨格 SVO 接 SVO だけを抜き出す | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">57</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 長い主語の中の同格 + but で対比</div>
+        <h1 class="lesson-title">補足が多い文章で、骨格 SVO 接 SVO だけを抜き出す</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第57講のテーマは <strong>「補足が多い文章で、骨格 SVO 接 SVO だけを抜き出す」</strong>。<br>
+      第45講で「文頭の長い名詞のかたまりはどこで終わるか」を学びましたが、今日はその応用!<br>
+      長い主語の中に <strong>同格(=Florida, a southern state)</strong>が混ざり、さらに対比の but で繋がる ─<br>
+      補足を全部削って、<strong>骨格</strong> <span class="en">~ percent of ~ have SAD, but ~ percent of ~ have it</span> だけを浮かび上がらせる読み方を確立!<br>
+      第27講応用の関係代名詞 who、第36講応用の比較級、第55講応用の but 逆接、第54講応用の代名詞 it も登場!<br>
+      今日のキー:<br>
+      ① <strong>関係代名詞 who(=主格)</strong>(=第27講応用、人を修飾)<br>
+      ② <strong>seem to be + 形容詞</strong>「~であるようだ」(=不定詞名詞用法 + 補語)<br>
+      ③ <strong>much + 比較級</strong>「はるかに~」(=比較級の強調、第36講応用)<br>
+      ④ <strong>同格 A, B</strong>「A、つまり B」(=コンマで区切られた言い換え!)<br>
+      ⑤ <strong>but の対比</strong>: SVO + but + SVO(=シンプルな骨格に集約!)<br>
+      季節性情動障害(SAD)の英文を題材に、<strong>骨格抽出のスキル</strong>を確立します!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>長い主語の中の同格</strong>(=A, B = 「A、つまり B」)を見抜き、<strong>補足として括弧でくくる</strong>習慣をつけます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>but の対比</strong>(=節と節を繋ぐ)で、両側の<strong>骨格</strong>を比較します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>補足を全部削った骨格</strong>(=SVO 接 SVO)を頭の中で浮かび上がらせる読み方を身につけます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">People who have Seasonal Affective Disorder (SAD) become very sad during the fall and winter. SAD seems to be much more common in some places than in others. For example, in the United States, less than 1 percent of the people in Florida, a southern state, have SAD, but 10-30 percent of the people in Alaska, a northern state, have it.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>7つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">People who have Seasonal Affective Disorder (SAD)</span> の <span class="en">who</span> を疑問詞と取る</span>
+  </div>
+  <div class="trap-misread">「(who を疑問詞「誰」と勘違い)」</div>
+  <p class="trap-why">★ <span class="en">who</span> = ここでは<strong>関係代名詞(=主格)</strong>(=第27講応用)<br>→ 名詞 People を後ろから修飾!<br>→ who 節の中身は<strong>不完全文</strong>(=S が抜ける、who が S を兼ねる)<br>★ <strong>本問</strong>: <span class="en">People who have Seasonal Affective Disorder (SAD)</span><br>→ 名詞 = People「人々」<br>→ 修飾 = who have Seasonal Affective Disorder「季節性情動障害を持つ」(=関係代名詞節)<br>★ <strong>関係代名詞節の中身</strong>:<br>→ S’ = who(=主格、People を指す)<br>→ V’ = have「持つ」(=他動詞)<br>→ O’ = Seasonal Affective Disorder「季節性情動障害」(=固有の医学用語)<br>★ <span class="en">Seasonal Affective Disorder (SAD)</span>:<br>→ 直訳: 「季節性 + 情動 + 障害」<br>→ <strong>季節の変化(特に冬の日照不足)で気分が落ち込む病気</strong>!<br>→ 略称 SAD(=「悲しい」のsadと同綴り、覚えやすい)<br>★ <strong>意訳</strong>: 「<strong>季節性情動障害(SAD)を持つ人々</strong>」<br>★ <strong>関係代名詞 who vs that の使い分け</strong>:<br>→ 人 → who / that<br>→ 物・動物 → which / that<br>→ 本問: People(=人) → who!<br>★ <strong>類例</strong>(=who 主格):<br>・<span class="en">people who work hard</span>「一生懸命働く人々」<br>・<span class="en">students who study every day</span>「毎日勉強する学生」<br>・<span class="en">a doctor who helps the poor</span>「貧しい人を助ける医者」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">become very sad during the fall and winter</span> の <span class="en">during</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(during の使い方を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">during</span> = 前置詞「<strong>~の間に</strong>」(=期間)<br>→ during + 名詞「~の間」<br>→ <span class="en">while</span>(=接続詞)とは違う!during は<strong>名詞</strong>を取る!<br>★ <strong>本問</strong>: <span class="en">People who have SAD become very sad during the fall and winter.</span><br>→ S(=long、関係詞節含む) = People who have SAD「SADを持つ人々」<br>→ V = become「~になる」(=自動詞)<br>→ C = very sad「とても悲しい」(=形容詞、補語)<br>→ M = during the fall and winter「秋と冬の間」(=期間)<br>★ <span class="en">become + 形容詞</span> = 「(形容詞)になる」(=変化、第54講応用)<br>★ <span class="en">the fall and winter</span> = 「秋と冬」(=2つの名詞 and 並列、第15講応用、共通の the)<br>★ <strong>during vs while の違い</strong>:<br>(1) <strong>during + 名詞</strong>(=本問!): during the fall「秋の間」<br>(2) while + S V: while it is fall「秋の間」<br>★ <strong>意訳</strong>: 「<strong>秋と冬の間に、とても悲しい気持ちになる</strong>」<br>★ <strong>SAD の科学的背景</strong>: 日照時間が短くなる秋冬に、セロトニン分泌が減少 → 気分が落ち込みやすくなる病気!<br>★ <strong>類例</strong>(=during):<br>・<span class="en">during the summer</span>「夏の間」<br>・<span class="en">during the meeting</span>「会議の間」<br>・<span class="en">during the war</span>「戦争中」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">SAD seems to be much more common</span> の <span class="en">seems to be</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(seems to be の構造を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">seem to be + 形容詞</span> = 「<strong>~であるようだ/~に見える</strong>」(=不定詞名詞用法 + 補語、第11講応用)<br>→ seem(=自動詞「~に見える/~のようだ」)<br>→ to be(=不定詞、be動詞の不定詞)<br>→ 形容詞(=補語)<br>★ <strong>本問</strong>: <span class="en">SAD seems to be much more common</span><br>→ S = SAD<br>→ V = seems「~のようだ」(=自動詞、3単現の s)<br>→ C = to be much more common「はるかに一般的であるという状態」(=不定詞、補語)<br>★ <strong>seems to be の発展</strong>:<br>→ <span class="en">It seems that SAD is much more common ~</span>「SADがはるかに一般的であるようだ」(=形式主語、第51講応用)と<strong>同じ意味</strong>!<br>→ 2つの言い方は互換!<br>★ <span class="en">to be</span> は<strong>省略可能</strong>:<br>→ <span class="en">SAD seems much more common</span>(=○、to be 省略)<br>→ <span class="en">SAD seems to be much more common</span>(=○、本問)<br>→ どちらも自然!<br>★ <strong>意訳</strong>: 「<strong>SAD は、はるかに一般的であるようだ</strong>」<br>★ <strong>類例</strong>(=seem to be):<br>・<span class="en">He seems to be tired.</span>「彼は疲れているようだ」<br>・<span class="en">She seems to be happy.</span>「彼女は幸せそうだ」<br>・<span class="en">The plan seems (to be) good.</span>「その計画は良さそうだ」(=to be 省略可)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">much more common in some places than in others</span> の <span class="en">much more</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(much more の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">much</span> = 比較級を強調する副詞「<strong>はるかに/ずっと</strong>」(=第36講応用)<br>→ <strong>much + 比較級</strong>「はるかに~」<br>→ very + 比較級は<strong>不可</strong>!much / far / a lot などを使う!<br>★ <strong>本問</strong>: <span class="en">much more common in some places than in others</span><br>→ much「はるかに」(=副詞、強調)<br>→ more common「より一般的」(=common「一般的」の比較級、long形容詞は more + 形容詞)<br>→ in some places「ある場所では」(=範囲)<br>→ than in others「他の場所(で一般的である)よりも」(=比較対象、後ろは省略)<br>★ <strong>比較対象の省略</strong>:<br>→ 完全形: <span class="en">than (it is common) in others</span>「他の場所で(一般的である)よりも」<br>→ 後ろの it is common は<strong>省略</strong>!(=繰り返しを避ける)<br>★ <strong>比較級の強調</strong>:<br>(1) <strong>much + 比較級</strong>(=本問!)<br>(2) far + 比較級「はるかに~」<br>(3) a lot + 比較級「とても~」<br>(4) <strong>very + 比較級は不可</strong>!(=very は原級を強調)<br>★ <strong>in some places ~ than in others</strong>:<br>→ some ~ others の対比!「一部の場所では~ / 他の場所では~」<br>→ 「<strong>地域によって違う</strong>」(=地域差を強調)<br>★ <strong>意訳</strong>: 「<strong>地域によって、ほかの場所よりも、はるかに一般的である</strong>」<br>★ <strong>類例</strong>(=much + 比較級):<br>・<span class="en">much faster</span>「はるかに速い」<br>・<span class="en">much more important</span>「はるかに重要」<br>・<span class="en">much better</span>「ずっと良い」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">less than 1 percent of the people in Florida, a southern state,</span> の <span class="en">Florida, a southern state</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(Florida, a southern state を別の主語と勘違い)」</div>
+  <p class="trap-why">★ <strong>本講最大の核心 ─ 同格!</strong><br>★ <span class="en">A, B</span>(=コンマで区切られた2つの名詞)= <strong>同格</strong>「<strong>A、つまり B</strong>」(=言い換え/補足)<br>→ A と B は<strong>同じものを指す</strong>!<br>→ B は A の説明・補足!<br>★ <strong>本問</strong>: <span class="en">in Florida, a southern state,</span>「フロリダ、つまり南部の州である(その)場所で」<br>→ A = Florida「フロリダ」(=地名、固有名詞)<br>→ コンマ<br>→ B = a southern state「南部の州」(=Florida を説明する名詞句)<br>→ コンマ(=同格の終わり)<br>→ 「<strong>フロリダ、つまり南部の州</strong>」<br>★ <strong>同格の見抜き方</strong>:<br>→ 名詞 + コンマ + 名詞 + コンマ → <strong>同格の可能性</strong>!<br>→ 後ろの名詞が前の名詞を<strong>説明・言い換え</strong>している場合!<br>★ <strong>本問の主語の構造</strong>:<br>→ S = less than 1 percent of the people in Florida「フロリダの人々のうち1%未満」<br>→ 〈, a southern state,〉(=同格、Florida の補足!)<br>→ V = have「持つ」<br>→ O = SAD<br>★ <strong>骨格の抽出</strong>:<br>→ 同格を全部削ると: <span class="en">less than 1 percent of the people in Florida have SAD</span><br>→ 「フロリダの人々のうち1%未満がSADを持つ」<br>→ <strong>シンプル!</strong><br>★ <strong>意訳</strong>: 「<strong>南部の州であるフロリダの人々のうち、1パーセント未満がSADを持っている</strong>」<br>★ <strong>類例</strong>(=同格 A, B):<br>・<span class="en">Tokyo, the capital of Japan,</span>「東京、つまり日本の首都」<br>・<span class="en">Mr. Smith, my English teacher,</span>「スミス先生、つまり私の英語の先生」<br>・<span class="en">Einstein, a famous scientist,</span>「アインシュタイン、つまり有名な科学者」<br>★ <strong>核心</strong>: 同格 A, B は<strong>補足説明</strong>!括弧でくくって読み飛ばすと骨格が見える!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">less than 1 percent of the people</span> の <span class="en">less than 1 percent</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(less than 1 percent の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">less than ~</span> = 「<strong>~未満/~以下</strong>」(=慣用)<br>→ less = little の比較級「より少ない」<br>→ less than 1% = 「1%未満」(=1%に達しない)<br>★ <strong>本問</strong>: <span class="en">less than 1 percent of the people in Florida</span><br>→ less than 1 percent「1%未満」(=数量表現)<br>→ of the people「人々のうち」(=部分)<br>→ in Florida「フロリダの」(=場所、修飾)<br>→ 「<strong>フロリダの人々のうち、1%未満</strong>」<br>★ <span class="en">~ percent of N</span> = 「Nの~%」(=割合表現)<br>→ 主語の中心は <strong>~ percent</strong>!<br>→ 動詞の数の一致は、of の後ろの名詞による!(=people は複数 → have)<br>★ <strong>意訳</strong>: 「<strong>フロリダの人々のうち、1パーセント未満</strong>」<br>★ <strong>類例</strong>(=less than / more than):<br>・<span class="en">less than 50%</span>「50%未満」<br>・<span class="en">more than 70%</span>「70%以上」<br>・<span class="en">about 30%</span>「約30%」<br>★ <strong>SAD の本問数値</strong>:<br>→ フロリダ: 1%未満(=低)<br>→ アラスカ: 10-30%(=高)<br>→ <strong>地域差が顕著</strong>!(=日照時間との関連を示唆)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">but 10-30 percent of the people in Alaska, a northern state, have it</span> の <span class="en">it</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(it が何を指すか不明)」</div>
+  <p class="trap-why">★ <span class="en">it</span> = 代名詞、ここでは<strong>SAD を指す</strong>!(=前文の SAD の繰り返しを避ける)<br>★ <strong>本問</strong>: <span class="en">but 10-30 percent of the people in Alaska, a northern state, have it.</span><br>→ but(=逆接、SVO + but + SVO の対比、第55講応用)<br>→ S = 10-30 percent of the people in Alaska「アラスカの人々のうち10-30%」<br>→ 〈, a northern state,〉(=同格、Alaska の補足!)<br>→ V = have「持つ」<br>→ O = it「それ(=SAD を指す)」<br>★ <strong>but の対比構造</strong>:<br>→ 前: less than 1% of ~ Florida ~ have SAD「フロリダで1%未満がSADを持つ」<br>→ but(=逆接)<br>→ 後: 10-30% of ~ Alaska ~ have it「アラスカで10-30%が(SADを)持つ」<br>→ <strong>地域差の対比</strong>!<br>★ <strong>骨格 SVO 接 SVO</strong>:<br>→ 同格・前置詞句などの補足を全部削ると…<br>→ <span class="en">less than 1% of people have SAD, but 10-30% of people have it</span><br>→ 「1%未満が SAD を持つ、しかし 10-30% が(SADを)持つ」<br>→ <strong>骨格は単純!</strong><br>★ <strong>意訳</strong>: 「<strong>北部の州であるアラスカの人々のうち、10から30パーセントがSADを持っている</strong>」<br>★ <strong>核心</strong>: 代名詞 it は<strong>前文の名詞</strong>を指す!何を指すかを毎回確認!<br>★ <strong>類例</strong>(=代名詞 it):<br>・<span class="en">I bought a book. I read it.</span>「本を買った。それを読んだ」(=it = book)<br>・<span class="en">She wrote a song. People love it.</span>「彼女は歌を書いた。人々はそれを愛している」(=it = song)<br>★ <strong>本問の意味</strong>:<br>→ 1文目: SAD は秋冬に気分が落ち込む病気<br>→ 2文目: 場所によって SAD の発症率が違う<br>→ 3文目: フロリダ(南部、日照豊富) ↔ アラスカ(北部、日照少) → 30倍の差!<br>→ <strong>SAD と日照時間の関連の証拠</strong>!</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>People who have Seasonal Affective Disorder (SAD)</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ 関係代名詞 who(=主格)で長い主語</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">People who have Seasonal Affective Disorder (SAD)</span>「季節性情動障害(SAD)を持つ人々」!</p>
+        <div class="ra-step-think">
+          ★ S(=中心) = <span class="en">People</span>「人々」<br><br>
+          ★ <span class="en">who</span> = <strong>関係代名詞(=主格)</strong>(=第27講応用)<br>
+          → 名詞 People を後ろから修飾<br>
+          → who 節の中身は不完全文(=S が抜ける)<br><br>
+          ★ <strong>関係代名詞節の中身</strong>:<br>
+          → S’ = who(=主格、People を指す)<br>
+          → V’ = have「持つ」(=他動詞)<br>
+          → O’ = Seasonal Affective Disorder「季節性情動障害」(=医学用語)<br>
+          → 略称(=SAD)が括弧内に併記!<br><br>
+          ★ <strong>SAD とは</strong>:<br>
+          → Seasonal Affective Disorder「季節性情動障害」<br>
+          → 季節の変化(特に冬の日照不足)で気分が落ち込む病気!<br>
+          → 略称 SAD は「悲しい」(sad)と同綴り、覚えやすい!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>季節性情動障害(SAD)を持つ人々</strong>」<br><br>
+          → メインのVを待つ!
+        </div>
+        <div class="ra-step-conclude">
+          who = 関係代名詞主格(=人を修飾、第27講応用)!People who have ~ で長い主語!動詞を待つ!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>become very sad during the fall and winter.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン文 ─ become + 形容詞 + during 期間</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">become very sad during the fall and winter.</span>「秋と冬の間に、とても悲しい気持ちになる」!</p>
+        <div class="ra-step-think">
+          ★ V = <span class="en">become</span>「~になる」(=自動詞、変化)<br>
+          ★ C = <span class="en">very sad</span>「とても悲しい」(=形容詞、補語)<br><br>
+          ★ <strong>骨格</strong>: SVC = 第2文型!<br><br>
+          ★ M = <span class="en">during the fall and winter</span>「秋と冬の間」<br>
+          → during(=前置詞)+ 名詞「~の間」<br>
+          → the fall and winter「秋と冬」(=2つの名詞 and 並列、共通の the!)<br><br>
+          ★ <span class="en">during vs while</span>:<br>
+          → during + <strong>名詞</strong>(=本問!)<br>
+          → while + <strong>S V</strong>(=接続詞)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>秋と冬の間に、とても悲しい気持ちになる</strong>」<br><br>
+          ★ <strong>1文目全体</strong>: 「<strong>季節性情動障害(SAD)を持つ人々は、秋と冬の間に、とても悲しい気持ちになる</strong>」<br><br>
+          ★ <strong>SAD の科学</strong>:<br>
+          → 日照時間が短くなる秋冬<br>
+          → セロトニン分泌が減少<br>
+          → 気分が落ち込みやすくなる!<br><br>
+          → 場所による違いは?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          become + 形容詞「~になる」(=変化)。during + 名詞「~の間」(=期間、while = 接続詞と違う!)。SADの説明!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>SAD seems to be much more common</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目スタート ─ seem to be + 比較級の強調</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目スタート <span class="en">SAD seems to be much more common</span>「SADは、はるかに一般的であるようだ」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">SAD</span>「SAD(=季節性情動障害)」<br>
+          ★ V = <span class="en">seems</span>「~のようだ」(=自動詞、3単現の s)<br>
+          ★ C = <span class="en">to be much more common</span>「はるかに一般的である」(=不定詞、補語)<br><br>
+          ★ <span class="en">seem to be + 形容詞</span> = 「~であるようだ」(=不定詞名詞用法 + 補語、第11講応用)<br>
+          → It seems that SAD is ~ と<strong>同じ意味</strong>!(=形式主語、第51講応用と互換)<br><br>
+          ★ <span class="en">to be</span> は省略可能!<br>
+          → SAD seems much more common(=○、to be 省略)<br>
+          → SAD seems to be much more common(=○、本問)<br><br>
+          ★ <strong>much の役割</strong>:<br>
+          → much = 副詞「はるかに/ずっと」(=比較級を強調、第36講応用)<br>
+          → much + 比較級「はるかに~」<br>
+          → very + 比較級は<strong>不可</strong>!much / far / a lot を使う!<br><br>
+          ★ <span class="en">more common</span>:<br>
+          → common「一般的」(=long形容詞)<br>
+          → 比較級 = more + common「より一般的」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>SAD は、はるかに一般的であるようだ</strong>」<br><br>
+          → 何と比較?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          seem to be「~であるようだ」(=不定詞名詞用法、It seems that ~ と互換)。much + 比較級「はるかに~」(=強調、第36講応用)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>in some places than in others.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">比較対象 + 比較対象の省略</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">in some places than in others.</span>「ある場所では、ほかの場所よりも」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">in some places</span>「ある場所では」(=範囲)<br>
+          ★ <span class="en">than in others</span>「他の場所よりも」(=比較対象)<br><br>
+          ★ <strong>比較対象の省略</strong>:<br>
+          → 完全形: <span class="en">than (it is common) in others</span><br>
+          → 後ろの it is common は<strong>省略</strong>!(=繰り返しを避ける)<br>
+          → 「他の場所で(一般的である)よりも」<br><br>
+          ★ <strong>some ~ others の対比</strong>:<br>
+          → some places「一部の場所」<br>
+          → other places「他の場所」(=ここでは others = other places)<br>
+          → 「一部の場所で~、他の場所で~」(=地域差を強調!)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>地域によって、ほかの場所よりも、はるかに一般的である</strong>」<br><br>
+          ★ <strong>2文目全体</strong>: 「<strong>SAD は、地域によって、ほかの場所よりも、はるかに一般的であるようだ</strong>」<br>
+          → SAD には<strong>地域差</strong>がある!<br><br>
+          → 具体的には?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          some ~ others の対比!比較対象 than in others の後ろの「(it is common)」が省略!地域差の指摘!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>For example, in the United States, less than 1 percent of the people in Florida, a southern state, have SAD,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">3文目スタート ─ 長い主語 + 同格 Florida, a southern state</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3文目 <span class="en">For example, in the United States, less than 1 percent of the people in Florida, a southern state, have SAD,</span>「たとえば、アメリカ合衆国では、南部の州であるフロリダの人々のうち、1パーセント未満がSADを持っている」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">For example,</span>「たとえば」(=具体例の導入)<br>
+          ★ <span class="en">in the United States,</span>「アメリカ合衆国では」(=場所、副詞句)<br><br>
+          ★ <strong>本講最大の核心 ─ 同格!</strong><br><br>
+          ★ <strong>長い主語の構造</strong>:<br>
+          → S = less than 1 percent of the people in Florida<br>
+          → 〈, a southern state,〉(=同格、Florida の補足!)<br>
+          → V = have<br>
+          → O = SAD<br><br>
+          ★ <strong>同格 A, B の見抜き方</strong>:<br>
+          → 名詞 + コンマ + 名詞 + コンマ → 同格!<br>
+          → 後ろの名詞が前の名詞を<strong>説明・言い換え</strong>!<br>
+          → A = Florida(=地名)<br>
+          → B = a southern state「南部の州」(=説明)<br>
+          → 「<strong>フロリダ、つまり南部の州</strong>」<br><br>
+          ★ <span class="en">less than 1 percent of the people in Florida</span>:<br>
+          → less than 1 percent「1%未満」(=数量表現)<br>
+          → of the people「人々のうち」(=部分)<br>
+          → in Florida「フロリダの」(=場所、修飾)<br><br>
+          ★ <strong>骨格の抽出</strong>:<br>
+          → 同格・前置詞句などの補足を削る<br>
+          → <span class="en">less than 1% have SAD</span><br>
+          → 「<strong>1%未満が SAD を持つ</strong>」(=シンプル!)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>南部の州であるフロリダの人々のうち、1パーセント未満がSADを持っている</strong>」<br><br>
+          → 対比?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          長い主語 + 同格 A, B「A、つまり B」(=Florida, a southern state)!補足を削れば骨格 less than 1% have SAD!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>but 10-30 percent of the people in Alaska, a northern state, have it.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">but の対比 ─ もう一つの長い主語 + 同格 + 代名詞 it</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">but 10-30 percent of the people in Alaska, a northern state, have it.</span>「しかし、北部の州であるアラスカの人々のうち、10から30パーセントがSADを持っている」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">but</span> = 接続詞「しかし」(=逆接、節と節を繋ぐ、第15・29・55講応用)<br><br>
+          ★ <strong>but の節の構造</strong>(=前の節と<strong>並行</strong>):<br>
+          → S = 10-30 percent of the people in Alaska「アラスカの人々のうち10-30%」<br>
+          → 〈, a northern state,〉(=同格、Alaska の補足!)<br>
+          → V = have<br>
+          → O = it「それ(=SAD を指す代名詞)」<br><br>
+          ★ <strong>代名詞 it</strong>:<br>
+          → 前文の SAD の繰り返しを避けるための代名詞!<br>
+          → 「(SAD を)持っている」<br><br>
+          ★ <strong>骨格 SVO 接 SVO</strong>:<br>
+          → 同格・前置詞句などの補足を全部削ると…<br>
+          → <span class="en">less than 1% have SAD, but 10-30% have it</span><br>
+          → 「<strong>1%未満が SAD を持つ、しかし 10-30% が(SADを)持つ</strong>」<br>
+          → <strong>骨格は単純!</strong>(=対比をクリアに!)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>北部の州であるアラスカの人々のうち、10から30パーセントがSADを持っている</strong>」<br><br>
+          ★ <strong>3文目全体</strong>: 「<strong>たとえば、アメリカ合衆国では、南部の州であるフロリダの人々のうち、1パーセント未満しかSADを持っていないが、北部の州であるアラスカの人々のうち、10から30パーセントがSADを持っている</strong>」<br><br>
+          ★ <strong>3文全体のメッセージ</strong>:<br>
+          → 1文目: SAD は秋冬に気分が落ち込む病気<br>
+          → 2文目: 地域によって発症率が違う<br>
+          → 3文目: フロリダ(南部、日照豊富) ↔ アラスカ(北部、日照少) → 約30倍の差!<br>
+          → <strong>SAD と日照時間の関連の証拠</strong>!<br><br>
+          ★ <strong>本講の本質</strong>: 補足が多い文章を、骨格 SVO 接 SVO だけに集約!<br>
+          → 同格(=A, B)、関係詞節、前置詞句、修飾語をすべて<strong>補足として括弧でくくる</strong>!<br>
+          → 残ったSVO + 接 + SVOが本当の骨格!<br>
+          → 補足の中身は、骨格を理解した後で詳しく読む!
+        </div>
+        <div class="ra-step-conclude">
+          but で対比!骨格 = less than 1% have SAD, but 10-30% have it!代名詞 it = SAD!地域差の劇的な対比!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">People</span><span class="seg-marker seg-marker-main">S₁(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[who have Seasonal Affective Disorder (SAD)]</span><span class="seg-marker seg-marker-sub">関係代名詞主格</span></span>
+    <span class="seg-wrap"><span class="seg-main">become</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">very sad</span><span class="seg-marker seg-marker-main">C₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">during the fall and winter.</span><span class="seg-marker seg-marker-sub">M(期間)</span></span>
+    <span class="seg-wrap"><span class="seg-main">SAD</span><span class="seg-marker seg-marker-main">S₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">seems</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">to be much more common</span><span class="seg-marker seg-marker-main">C₂(=不定詞+比較級強調)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">in some places</span><span class="seg-marker seg-marker-sub">M(範囲)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">than in others.</span><span class="seg-marker seg-marker-sub">M(比較対象、省略あり)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">For example, in the United States,</span><span class="seg-marker seg-marker-sub">M(導入)</span></span>
+    <span class="seg-wrap"><span class="seg-main">less than 1 percent of the people in Florida</span><span class="seg-marker seg-marker-main">S₃(長い)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">, a southern state,</span><span class="seg-marker seg-marker-sub">同格(Florida=)</span></span>
+    <span class="seg-wrap"><span class="seg-main">have</span><span class="seg-marker seg-marker-main">V₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">SAD,</span><span class="seg-marker seg-marker-main">O₃</span></span>
+    <span class="seg-wrap"><span class="seg-sub">but</span><span class="seg-marker seg-marker-sub">接(対比)</span></span>
+    <span class="seg-wrap"><span class="seg-main">10-30 percent of the people in Alaska</span><span class="seg-marker seg-marker-main">S₄(長い)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">, a northern state,</span><span class="seg-marker seg-marker-sub">同格(Alaska=)</span></span>
+    <span class="seg-wrap"><span class="seg-main">have</span><span class="seg-marker seg-marker-main">V₄</span></span>
+    <span class="seg-wrap"><span class="seg-main">it.</span><span class="seg-marker seg-marker-main">O₄(=SAD)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: S [who V O](=関係詞) V C 〈M(=during 名詞)〉. 2: S V C(=to be much 比較級) 〈in 名詞 than in 名詞 (省略)〉. 3: 〈M(=導入)〉, S(=長) 〈,同格,〉 V O, 接 S(=長) 〈,同格,〉 V O(=代名詞 it). [骨格は SVO 接 SVO!]</strong>(関係代名詞 who 主格、seem to be + 形容詞、much + 比較級の強調、同格 A, B「A、つまり B」、but の対比、代名詞 it、less than ~「~未満」、less than 1% have SAD, but 10-30% have it = シンプルな骨格)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">SADを持つ人々は秋と冬の間とても悲しくなる。SADは他の場所よりもいくつかの場所においてはるかに一般的であるように見える。たとえば、合衆国において、フロリダ、つまり南部の州における人々の1パーセント未満がSADを持つ、しかしアラスカ、つまり北部の州における人々の10から30パーセントがそれを持つ。</span>
+      <span class="trans-row-note">構造どおりの直訳。「SADを持つ人々は」「他の場所よりもいくつかの場所において」「フロリダ、つまり南部の州における人々の1パーセント未満」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>長い主語 + 同格 A, B</strong>「A、つまり B」(=コンマで区切られた言い換え!)</span>
+    <span class="trans-arrow-detail">Florida, a southern state(=フロリダ、つまり南部の州)、Alaska, a northern state(=アラスカ、つまり北部の州)!同格は補足、削れば骨格が見える!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">SADを持つ人々は、秋と冬の間にとても悲しくなる。SADは、他の場所よりも、ある場所においてはるかに一般的であるようだ。たとえば、アメリカでは、南部の州であるフロリダの人々のうち1%未満がSADを持つが、北部の州であるアラスカの人々のうち10-30%がそれを持つ。</span>
+      <span class="trans-row-note">関係代名詞「~を持つ人々」、during を「~の間に」、seem to be を「~であるようだ」、同格「~である(=Florida = a southern state)」、but を「~が」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>but の対比</strong>(=SVO + but + SVO)、<strong>代名詞 it</strong>(=前文の SAD)、<strong>much + 比較級の強調</strong>(=第36講応用)、<strong>seem to be + 形容詞</strong>「~であるようだ」</span>
+    <span class="trans-arrow-detail">骨格 = less than 1% have SAD, but 10-30% have it!補足を削るとシンプル!much more common「はるかに一般的」!seems to be は It seems that ~ と互換!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>季節性情動障害(SAD)を持つ人々は、秋と冬の間に、とても悲しい気持ちになる。SAD は、地域によって、ほかの場所よりも、はるかに一般的であるようだ。たとえば、アメリカ合衆国では、南部の州であるフロリダの人々のうち、1パーセント未満しかSADを持っていないが、北部の州であるアラスカの人々のうち、10から30パーセントがSADを持っている。</strong></span>
+      <span class="trans-row-note">「気持ちになる」(=become very sad の自然な日本語)、「地域によって」(=in some places の意訳)、「1パーセント未満<strong>しか</strong>~ない」(=対比をはっきり)、「10から30パーセント<strong>が</strong>」(=対比強調)、it を訳出して「SADを持っている」と明示。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>補足を全部削って、骨格を浮かび上がらせる</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第57講で身につけてほしい<strong>「骨格抽出のスキル」</strong>を伝えます。<br><br>★ 第45講で「文頭の長い名詞のかたまりはどこで終わるか」を学びました。<br>★ 今日はその応用 ─ <strong>長い主語の中の同格</strong>を見抜き、<strong>骨格 SVO 接 SVO</strong>を浮かび上がらせる読み方!<br><br>★ <strong>本問の例</strong>:<br>★ 元の文: <span class="en">less than 1 percent of the people in Florida, a southern state, have SAD, but 10-30 percent of the people in Alaska, a northern state, have it.</span><br>→ 一見、長くて複雑!<br>→ でも<strong>補足を全部削る</strong>と…<br>→ 骨格: <strong><span class="en">less than 1% have SAD, but 10-30% have it</span></strong><br>→ 「1%未満がSADを持つ、しかし 10-30%が(SADを)持つ」<br>→ <strong>SVO + 接 + SVO</strong>!シンプル!<br><br>★ <strong>骨格抽出の手順</strong>:<br>(1) 同格(=A, B)を括弧でくくる(=補足!)<br>(2) 関係詞節・前置詞句・修飾語を括弧でくくる(=補足!)<br>(3) 残ったのが<strong>骨格</strong>!<br>(4) 骨格を理解してから、補足の中身を詳しく読む<br><br>★ <strong>同格 A, B の見抜き方</strong>:<br>★ <strong>名詞 + コンマ + 名詞 + コンマ</strong> → <strong>同格</strong>!<br>★ 後ろの名詞が前の名詞を<strong>説明・言い換え</strong>している!<br>★ A と B は<strong>同じものを指す</strong>!<br><br>★ <strong>本問の同格</strong>:<br>(1) <span class="en">Florida, a southern state,</span>「フロリダ、つまり南部の州」<br>(2) <span class="en">Alaska, a northern state,</span>「アラスカ、つまり北部の州」<br><br>★ <strong>類例</strong>(=同格 A, B):<br>・<span class="en">Tokyo, the capital of Japan,</span>「東京、つまり日本の首都」<br>・<span class="en">Mr. Smith, my English teacher,</span>「スミス先生、つまり私の英語の先生」<br>・<span class="en">Einstein, a famous scientist,</span>「アインシュタイン、つまり有名な科学者」<br>・<span class="en">Paris, the City of Light,</span>「パリ、つまり光の都」<br><br>★ <strong>同格 vs 関係代名詞 vs 同格 that</strong>:<br>(1) <strong>同格 A, B</strong>(=コンマ + 名詞、本問!)<br>(2) 関係代名詞 (=第26~28講応用): A who/which/that V (=動詞が続く)<br>(3) 同格 that (=第50講応用): A that S V (=完全文が続く)<br>→ A の後ろの形で判別!<br><br>★ <strong>もう一つ ─ but の対比構造</strong>(=第15・29・55講応用):<br>★ <strong>SVO + but + SVO</strong> = 節と節を繋ぐ!<br>★ 両側の<strong>骨格を比較</strong>!<br>★ 本問: less than 1% have SAD <strong>but</strong> 10-30% have it<br>→ 「Aは~、しかしBは~」(=対比をクリアに)<br><br>★ <strong>もう一つ ─ 代名詞 it</strong>:<br>★ 前文の名詞を指す!<br>★ 何を指すかを毎回確認!<br>★ 本問: it = SAD<br><br>★ <strong>もう一つ ─ much + 比較級</strong>(=第36講応用):<br>★ much / far / a lot + 比較級「はるかに~」<br>★ <strong>very + 比較級は不可</strong>!(=very は原級を強調)<br>★ <strong>類例</strong>:<br>・<span class="en">much faster</span>「はるかに速い」<br>・<span class="en">far better</span>「はるかに良い」<br>・<span class="en">a lot more interesting</span>「はるかに面白い」<br><br>★ <strong>もう一つ ─ seem to be + 形容詞</strong>「~であるようだ」:<br>★ seem(=自動詞)+ to be + 形容詞 = 「~であるようだ」<br>★ <span class="en">It seems that ~</span>(=形式主語、第51講応用)と互換!<br>★ to be は省略可!<br><br>★ <strong>もう一つ ─ 関係代名詞 who 主格</strong>(=第27講応用):<br>★ 人 + who + V → who が S を兼ねる(=不完全文)<br>★ 人なら who/that、物・動物なら which/that!<br><br>★ <strong>もう一つ ─ during + 名詞</strong>「~の間」(=期間):<br>★ during(=前置詞)+ 名詞<br>★ <strong>while(=接続詞)とは違う</strong>!while + S V<br><br>★ <strong>もう一つ ─ less than ~ / more than ~</strong>:<br>★ less than ~「~未満」<br>★ more than ~「~以上」<br>★ <strong>類例</strong>:<br>・<span class="en">less than 50%</span>「50%未満」<br>・<span class="en">more than 70%</span>「70%以上」<br>・<span class="en">about 30%</span>「約30%」<br><br>★ <strong>もう一つ ─ ~ percent of N</strong>「Nの~%」:<br>★ 動詞の数の一致は、of の後ろの名詞による!<br>★ 本問: less than 1 percent of <strong>the people</strong> ~ have(=people は複数 → have)<br><br>★ これからの60講で、<strong>長い主語の中の同格</strong>と<strong>骨格抽出</strong>は頻出します。<br>★ 同格を見抜き、補足を括弧でくくり、骨格を浮かび上がらせる読み方を毎回!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">My friend Tom, a great musician, won the contest.</span></span>
+      <span class="natural-tip-ex-bad">私の友人のトム、素晴らしい音楽家、コンテストに勝った (同格を訳出せずに混乱)</span>
+      <span class="natural-tip-ex-good">素晴らしい音楽家である私の友人のトムが、コンテストに優勝した (Tom, a great musician = 同格「~である(トム)」!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">20 percent of students have part-time jobs, but 80 percent of them don’t.</span></span>
+      <span class="natural-tip-ex-bad">20パーセントの学生は仕事を持つ、しかし80パーセントは持たない (骨格を意識せず読む)</span>
+      <span class="natural-tip-ex-good">学生のうち20%はアルバイトをしているが、80%はしていない (SVO + but + SVO の対比骨格!them = students!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">This new car seems to be much more popular than the old one.</span></span>
+      <span class="natural-tip-ex-bad">この新車は古い車と人気である (much more の比較級強調を訳出しない)</span>
+      <span class="natural-tip-ex-good">この新車は、古い車よりも、はるかに人気があるようだ (seems to be「~であるようだ」+ much + 比較級「はるかに~」!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">長い主語の中の同格</span>
+  </div>
+  <p class="drill-en">My uncle, a famous lawyer, lives in New York.</p>
+  <p class="drill-q">同格を見抜き、骨格を抽出して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> A, B の同格!<br>
+        ・S = My uncle「叔父」<br>
+        ・〈, a famous lawyer,〉(=同格、My uncle の説明!)<br>
+        ・V = lives「住んでいる」(=自動詞)<br>
+        ・M = in New York「ニューヨークに」<br>
+        ・<strong>骨格</strong>: My uncle lives in New York.「叔父はニューヨークに住んでいる」<br>
+        ・補足: a famous lawyer「有名な弁護士(である)」<br>
+        <strong>訳:</strong> 「<strong>有名な弁護士である私の叔父は、ニューヨークに住んでいる</strong>」<br><br>
+        💡 名詞 + コンマ + 名詞 + コンマ → 同格!括弧でくくれば骨格が見える!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">but の対比 + 骨格抽出</span>
+  </div>
+  <p class="drill-en"><strong>50% of the students in the class like math, but 30% of them prefer English</strong>.</p>
+  <p class="drill-q">骨格 SVO + but + SVO を抽出して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> SVO + but + SVO の対比!<br>
+        ・前: S = 50% of the students in the class、V = like、O = math<br>
+        ・but(=逆接、第15・29・55講応用)<br>
+        ・後: S = 30% of them、V = prefer、O = English<br>
+        ・them = the students を指す代名詞!<br>
+        ・<strong>骨格</strong>: 50% like math, but 30% prefer English<br>
+        <strong>訳:</strong> 「<strong>クラスの学生のうち、50%は数学が好きだが、30%は英語の方が好きだ</strong>」<br><br>
+        💡 SVO + but + SVO は対比の典型骨格!代名詞 them が前の students を指すのに注意!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">much + 比較級 + seem to be</span>
+  </div>
+  <p class="drill-en">This task <strong>seems to be much harder than that one</strong>.</p>
+  <p class="drill-q">構造を分析し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> seem to be + much + 比較級!<br>
+        ・S = This task「この仕事」<br>
+        ・V = seems「~のようだ」(=自動詞)<br>
+        ・C = to be much harder「はるかに難しい(である)」(=不定詞 + 補語)<br>
+        ・much = 副詞「はるかに」(=比較級強調)<br>
+        ・harder = hard「難しい」の比較級<br>
+        ・than that one「あの仕事よりも」(=比較対象、one = task の代名詞)<br>
+        <strong>訳:</strong> 「<strong>この仕事は、あの仕事よりも、はるかに難しいようだ</strong>」<br><br>
+        💡 seems to be + much + 比較級 + than ~ で「(~よりも)はるかに~であるようだ」!much は比較級強調(=第36講応用)、very + 比較級は不可!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>長い主語の中の同格</strong>(=A, B)を見抜く</div>
+      <div class="flow-desc">名詞 + コンマ + 名詞 + コンマ → 同格「A、つまり B」!後ろの名詞が前の名詞の説明!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>骨格抽出の手順</strong></div>
+      <div class="flow-desc">(1)同格を括弧でくくる (2)関係詞節・前置詞句・修飾語を括弧でくくる (3)残ったのが骨格(=SVO 接 SVO)!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>but の対比</strong>(=SVO + but + SVO、節と節)</div>
+      <div class="flow-desc">両側の骨格を比較!対比をクリアに!less than 1% have SAD, but 10-30% have it!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>代名詞 it</strong></div>
+      <div class="flow-desc">前文の名詞を指す!何を指すかを毎回確認!本問: it = SAD!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>関係代名詞 who 主格</strong>(=第27講応用、人を修飾)</div>
+      <div class="flow-desc">人 + who + V → who が S を兼ねる(=不完全文)!物・動物なら which/that!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>seem to be + 形容詞</strong>「~であるようだ」</div>
+      <div class="flow-desc">It seems that ~(=形式主語、第51講応用)と互換!to be は省略可!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>much + 比較級</strong>「はるかに~」(=第36講応用)</div>
+      <div class="flow-desc">much / far / a lot + 比較級!very + 比較級は不可!very は原級を強調!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>during + 名詞</strong>「~の間」(=期間)</div>
+      <div class="flow-desc">while(=接続詞 + S V)とは違う!during は前置詞、後ろは名詞!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>less than / more than</strong>「~未満 / ~以上」</div>
+      <div class="flow-desc">~ percent of N「Nの~%」!動詞の数の一致は of の後ろの名詞による!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>長い主語の中の同格 A, B</strong>「A、つまり B」を見抜けるようになった</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>骨格抽出のスキル</strong>(=補足を全部括弧でくくり、SVO 接 SVO を浮かび上がらせる)を身につけた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>同格 vs 関係代名詞 vs 同格 that</strong>の判別ができる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>but の対比</strong>(=SVO + but + SVO、節と節、第15・29・55講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>代名詞 it</strong>(=前文の名詞を指す)を意識する習慣がついた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 who 主格</strong>(=第27講応用、人を修飾)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>seem to be + 形容詞</strong>「~であるようだ」(=It seems that ~ と互換)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>much + 比較級</strong>「はるかに~」(=第36講応用、very 不可)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>during + 名詞</strong>「~の間」(=while = 接続詞と区別)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>less than ~</strong>「~未満」、<strong>more than ~</strong>「~以上」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>~ percent of N</strong>「Nの~%」(=動詞の数の一致は of の後ろ)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第57講 · 補足が多い文章で、骨格 SVO 接 SVO だけを抜き出す</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

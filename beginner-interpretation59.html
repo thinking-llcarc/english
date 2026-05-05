@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第59講 As you know の As と、by V-ing「~することによって」を整理する | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">59</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 関係代名詞 as + by V-ing + so 結果接続詞</div>
+        <h1 class="lesson-title">As you know の As と、by V-ing「~することによって」を整理する</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第59講のテーマは <strong>「As you know の As と、by V-ing「~することによって」を整理する」</strong>。<br>
+      第54・55・56講で as の様々な用法を学びましたが、今日はその中でも特殊な <strong>関係代名詞 as</strong>!<br>
+      <span class="en">As you know</span>「ご存知のように」(=慣用)は、実は<strong>関係代名詞 as</strong>!<br>
+      さらに今日のサブテーマは <strong>by V-ing</strong>「~することによって」(=動名詞、第37・41講応用)と <strong>so</strong>(=結果)!<br>
+      第15講応用の and 並列、第29・55講応用の so 接続詞、第41講応用の動名詞、第43講応用の前置詞 inside も登場!<br>
+      今日のキー:<br>
+      ① <strong>関係代名詞 as</strong>: <span class="en">As S V</span>「~するように」(=主節全体を先行詞とする特殊な関係代名詞)<br>
+      ② <strong>As you know</strong>「ご存知のように」(=慣用、頻出!)<br>
+      ③ <strong>by V-ing</strong>「~することによって」(=動名詞、手段を表す)<br>
+      ④ <strong>so</strong>(=結果接続詞)「だから/それで」(=第29・55講応用)<br>
+      ⑤ <strong>and の動詞並列</strong>(=第15講応用、共通の主語)<br>
+      白熱電球の仕組みを題材に、<strong>asの最終形態と by V-ing</strong>を整理します!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>As you know</strong>「ご存知のように」(=慣用)を見抜き、関係代名詞 as の特殊用法として理解します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>by V-ing</strong>「~することによって」(=動名詞、手段)を見抜き、自然に訳せるようにします。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>so 結果接続詞</strong>「だから」(=第29・55講応用)で、因果関係を読み解きます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">As you know, incandescent bulbs emit light by heating a metal filament inside them, so they need much electricity and become very hot.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>7つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">As you know</span> の <span class="en">As</span> を「~として」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>あなたが知るとして</u>」(=前置詞「~として」と勘違い)</div>
+  <p class="trap-why">★ <strong>核心 ─ 関係代名詞 as!</strong><br>★ <span class="en">As you know</span> = 「<strong>ご存知のように</strong>」(=慣用、関係代名詞 as の特殊用法)<br>→ <strong>as は関係代名詞</strong>!主節全体を先行詞とする!<br>★ <strong>本問</strong>: <span class="en">As you know, incandescent bulbs emit light ~</span><br>→ As you know「ご存知のように」(=主節全体を修飾する副詞句的な働き)<br>→ メイン文 = incandescent bulbs emit light ~<br>★ <strong>関係代名詞 as の特徴</strong>:<br>(1) 先行詞 = 主節全体(=文全体の内容!)<br>(2) 「~するように/~の通り」と訳す<br>(3) 関係代名詞 which と似た働きだが、節の意味が違う!<br>★ <strong>関係代名詞 as の用例</strong>:<br>・<span class="en">As you know</span>「ご存知のように」<br>・<span class="en">As you can see</span>「見ての通り」<br>・<span class="en">As I said before</span>「前に言ったように」<br>・<span class="en">As is often the case</span>「よくあることだが」<br>★ <strong>as 接続詞 vs 関係代名詞の違い</strong>:<br>(1) 接続詞: as + S V → 「~するときに/~なので/~のように」(=L54応用)<br>(2) <strong>関係代名詞</strong>: As + S V (=主節全体を先行詞) → 「~するように」(=本問!)<br>★ <strong>判別の手がかり</strong>:<br>→ As you know(=コンマで区切られている) + メイン文 → <strong>関係代名詞 as の慣用表現</strong>!<br>★ <strong>意訳</strong>: 「<strong>ご存知のように</strong>」<br>★ <strong>類例</strong>(=関係代名詞 as):<br>・<span class="en">As you can see, the situation is bad.</span>「見ての通り、状況は悪い」<br>・<span class="en">As I mentioned, we need more time.</span>「言及したように、もっと時間が必要だ」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">incandescent bulbs</span> の意味を取り違える</span>
+  </div>
+  <div class="trap-misread">「(incandescent の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">incandescent</span> = 形容詞「<strong>白熱の/白熱光を発する</strong>」(=科学用語)<br>→ ラテン語起源、「白く輝く」の意味<br>★ <span class="en">incandescent bulb</span> = 「<strong>白熱電球</strong>」(=エジソンが発明した電球)<br>★ <strong>本問</strong>: <span class="en">incandescent bulbs emit light by heating a metal filament inside them</span><br>→ S = incandescent bulbs「白熱電球(複数)」(=形容詞 + 名詞)<br>→ V = emit「放つ/出す」(=他動詞)<br>→ O = light「光」<br>★ <span class="en">emit</span> = 他動詞「<strong>(光・音・熱などを)放つ/出す</strong>」<br>→ emit light「光を放つ」<br>→ emit sound「音を出す」<br>→ emit heat「熱を放つ」<br>★ <strong>白熱電球の歴史と仕組み</strong>:<br>→ 1879年、トーマス・エジソンが実用化<br>→ 細い金属線(=フィラメント、主にタングステン)に電気を流して<strong>高温で発光</strong>させる<br>→ 効率が悪い(=エネルギーの90%が熱になる、光は10%)<br>→ 2010年代以降、<strong>LED に置き換わりつつある</strong>(=省エネ・長寿命のため)<br>★ <strong>意訳</strong>: 「<strong>白熱電球は光を放つ</strong>」<br>★ <strong>類例</strong>(=ラテン語起源の科学用語):<br>・<span class="en">fluorescent</span>「蛍光の」(=蛍光灯)<br>・<span class="en">phosphorescent</span>「燐光の」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">by heating a metal filament inside them</span> の <span class="en">by V-ing</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(by V-ing を「~による」とだけ取って混乱)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">by V-ing</span> = 「<strong>~することによって</strong>」(=動名詞、手段、第41講応用)<br>→ by(=前置詞)+ V-ing(=動名詞、=「~すること」)<br>→ <strong>手段・方法</strong>を表す!<br>★ <strong>本問</strong>: <span class="en">by heating a metal filament inside them</span><br>→ by(=前置詞)<br>→ heating「熱すること」(=動名詞、heat の現在分詞形)<br>→ a metal filament「金属フィラメント」(=heating の目的語)<br>→ inside them「それらの内部の」(=前置詞句、a metal filament を修飾)<br>★ <strong>分解</strong>:<br>→ V-ing = heating「熱すること」<br>→ heating の意味上のS = the bulb (省略、文脈で明確)<br>→ heating の目的語 = a metal filament<br>→ <span class="en">heating a metal filament</span>「金属フィラメントを熱すること」<br>★ <strong>by V-ing の用法</strong>:<br>→ <strong>手段・方法</strong>を表す!「~することによって」<br>→ メインの動詞(=ここでは emit)の<strong>方法</strong>を説明!<br>→ 「光を放つ」 ← どうやって? ← 「フィラメントを熱することによって」<br>★ <strong>意訳</strong>: 「<strong>内部の金属フィラメントを熱することによって</strong>」<br>★ <span class="en">inside them</span>:<br>→ inside = 前置詞「~の内部に」(=in より「内部」を強調)<br>→ them = bulbs を指す代名詞<br>→ 「電球の内部にある」<br>★ <strong>類例</strong>(=by V-ing):<br>・<span class="en">She passed the exam by studying hard.</span>「一生懸命勉強することによって、試験に合格した」<br>・<span class="en">We can save the planet by using renewable energy.</span>「再生可能エネルギーを使うことによって、地球を救える」<br>・<span class="en">He earned money by selling old books.</span>「古い本を売ることによって、彼は金を稼いだ」<br>★ <strong>類似表現</strong>:<br>(1) by V-ing「~することによって」(=本問!、手段)<br>(2) through V-ing「~することを通じて」<br>(3) with N「~を使って」<br>(4) by N「~によって」(=手段、人・物)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">a metal filament</span> の <span class="en">metal</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(metal を名詞「金属」とだけ取って混乱)」</div>
+  <p class="trap-why">★ <span class="en">metal</span> = ここでは<strong>形容詞的</strong>に「金属の/金属製の」(=名詞 + 名詞、複合名詞)<br>→ metal(=名詞)+ filament(=名詞)= 「金属フィラメント」(=金属でできたフィラメント)<br>★ <strong>名詞の形容詞的用法</strong>:<br>→ 名詞 + 名詞 で複合名詞を作る場合、前の名詞は<strong>形容詞的</strong>に働く!<br>→ metal filament「金属フィラメント」<br>→ paper bag「紙袋」<br>→ stone wall「石の壁」<br>★ <strong>本問</strong>: <span class="en">a metal filament inside them</span><br>→ a metal filament「金属フィラメント」(=metal は形容詞的)<br>→ inside them「それらの内部の」(=修飾)<br>→ 「<strong>内部の金属フィラメント</strong>」<br>★ <span class="en">filament</span>:<br>→ 名詞「フィラメント/細い糸/細線」<br>→ 電球内の細い金属線(=主にタングステン)<br>→ 高温になると発光する!<br>★ <strong>意訳</strong>: 「<strong>内部の金属フィラメント</strong>」<br>★ <strong>類例</strong>(=名詞の形容詞的用法、複合名詞):<br>・<span class="en">a metal box</span>「金属の箱」<br>・<span class="en">a wooden table</span>「木製のテーブル」(=wooden は形容詞)<br>・<span class="en">a stone bridge</span>「石の橋」<br>・<span class="en">a wool sweater</span>「ウールのセーター」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">so they need much electricity</span> の <span class="en">so</span> を「とても」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>とても多くの電気を必要とする</u>」(=副詞「とても」と勘違い)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">so</span> = ここでは<strong>結果接続詞</strong>「<strong>だから/それで</strong>」(=第29・55講応用)<br>→ 副詞「とても」(=very)<strong>ではない</strong>!<br>★ <strong>本問</strong>: <span class="en">~ emit light by heating ~ , so they need much electricity ~</span><br>→ 前: incandescent bulbs emit light by heating ~「白熱電球はフィラメントを熱して光を放つ」(=原因)<br>→ <strong>so</strong>(=結果接続詞)<br>→ 後: they need much electricity ~「(白熱電球は)多くの電気を必要とする」(=結果)<br>→ <strong>因果関係</strong>!<br>★ <strong>so vs because の対比</strong>:<br>(1) <strong>so</strong>: A so B「Aなので B」(=結果が後ろ、本問!)<br>(2) because: B because A「BなのはAから」(=理由が後ろ)<br>→ 同じ事実、語順が逆!<br>★ <span class="en">so</span> の意味の判別:<br>(1) <strong>結果接続詞「だから」</strong>(=本問!): A, so B<br>(2) 副詞「とても」: so + 形容詞 + 名詞(例: so much/so many/so good)<br>(3) 副詞「そう」: I think so.「そう思う」<br>(4) so that 構文「~するために」(=目的)<br>★ <strong>判別の決め手</strong>:<br>→ コンマ + so + S V → 結果接続詞!<br>→ so + 形容詞/副詞 → 副詞「とても」<br>★ <strong>意訳</strong>: 「<strong>だから、(白熱電球は)多くの電気を必要とする</strong>」<br>★ <strong>類例</strong>(=結果接続詞 so):<br>・<span class="en">It was raining, so we stayed home.</span>「雨だったので、家にいた」<br>・<span class="en">He worked hard, so he succeeded.</span>「一生懸命働いたので、成功した」<br>・<span class="en">She was tired, so she went to bed early.</span>「疲れていたので、早く寝た」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">they need much electricity</span> の <span class="en">much</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(much の使い方を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">much</span> = ここでは形容詞「<strong>多くの</strong>」(=不可算名詞を修飾、第36・57講応用)<br>→ <strong>不可算名詞</strong>の前!<br>★ <strong>本問</strong>: <span class="en">they need much electricity</span>「(白熱電球は)多くの電気を必要とする」<br>→ S = they(=incandescent bulbs を指す)<br>→ V = need「必要とする」<br>→ O = much electricity「多くの電気」(=much + 不可算名詞)<br>★ <strong>much vs many の使い分け</strong>:<br>(1) <strong>much + 不可算名詞</strong>(=本問!): much electricity「多くの電気」、much water「多くの水」、much money「多くのお金」<br>(2) many + 可算名詞: many books「多くの本」、many people「多くの人」<br>★ <span class="en">electricity</span> = 不可算名詞「電気」<br>→ 「いくつの電気」(=可算)とは数えない!<br>→ a lot of electricity / much electricity と表現!<br>★ <strong>much の用法</strong>:<br>(1) <strong>形容詞「多くの」</strong>(=不可算名詞修飾、本問!)<br>(2) 副詞「とても/はるかに」(=much + 比較級、第36・57講応用)<br>(3) 代名詞「多く」(=much + of ~)<br>★ <strong>意訳</strong>: 「<strong>多くの電気を必要とする</strong>」<br>★ <strong>類例</strong>(=much + 不可算名詞):<br>・<span class="en">much time</span>「多くの時間」<br>・<span class="en">much information</span>「多くの情報」<br>・<span class="en">much effort</span>「多くの努力」<br>・<span class="en">much electricity</span>「多くの電気」(=本問!)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">they need much electricity and become very hot</span> の <span class="en">and</span> の繋ぎを取り違える</span>
+  </div>
+  <div class="trap-misread">「(and の繋ぎを取り違え)」</div>
+  <p class="trap-why">★ <span class="en">and</span> = ここでは<strong>動詞句の並列</strong>!(=第15講応用)<br>→ V₁ + and + V₂、共通の主語!<br>★ <strong>本問</strong>: <span class="en">they need much electricity and become very hot.</span><br>→ S = they(=incandescent bulbs)<br>→ V₁ = need much electricity「多くの電気を必要とする」(=他動詞 + O)<br>→ and<br>→ V₂ = become very hot「非常に熱くなる」(=自動詞 + C、第54講応用)<br>★ <strong>並列の構造</strong>:<br>→ they (need much electricity) and (become very hot).<br>→ V₁ + V₂、共通の主語 they!<br>★ <span class="en">become + 形容詞</span> = 「(形容詞)になる」(=変化、第54・57講応用)<br>→ become very hot「非常に熱くなる」<br>★ <strong>意訳</strong>: 「<strong>(白熱電球は)多くの電気を必要とし、非常に熱くなる</strong>」<br>★ <strong>本問の科学的背景</strong>:<br>→ 白熱電球は、エネルギーの<strong>約90%が熱になり、光は10%</strong>!<br>→ だから「電気を多く使う」(=効率が悪い)<br>→ 「熱くなる」(=エネルギーの大半が熱)<br>→ <strong>LED は逆</strong>: 90%が光、10%が熱(=効率が良い、省エネ)!<br>★ <strong>類例</strong>(=and で動詞並列、共通の主語):<br>・<span class="en">She studies hard and gets good grades.</span>「彼女は一生懸命勉強し、いい成績を取る」<br>・<span class="en">He runs fast and jumps high.</span>「彼は速く走り、高く跳ぶ」<br>・<span class="en">The dog barks and wags its tail.</span>「犬は吠えて、しっぽを振る」</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>As you know,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ 関係代名詞 as 慣用「ご存知のように」</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">As you know,</span>「ご存知のように」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心 ─ 関係代名詞 as!</strong><br><br>
+          ★ <span class="en">As you know</span> = 「<strong>ご存知のように</strong>」(=慣用、関係代名詞 as の特殊用法)<br>
+          → as は<strong>関係代名詞</strong>!主節全体を先行詞とする!<br><br>
+          ★ <strong>関係代名詞 as の特徴</strong>:<br>
+          (1) 先行詞 = 主節全体(=文全体の内容!)<br>
+          (2) 「~するように/~の通り」と訳す<br>
+          (3) 関係代名詞 which と似た働きだが、節の意味が違う!<br><br>
+          ★ <strong>第54・55・56講で学んだ as の用法</strong>:<br>
+          → 接続詞「~するときに/~するにつれて/~なので/~のように」(=第54講)<br>
+          → 同等比較 as ~ as(=第26・50・56講)<br>
+          → 副詞節 as soon as / as long as(=第56講)<br>
+          → 前置詞「~として」<br>
+          → <strong>関係代名詞 as</strong>(=本講!最終形態!)<br><br>
+          ★ <strong>関係代名詞 as の用例</strong>:<br>
+          ・As you know「ご存知のように」<br>
+          ・As you can see「見ての通り」<br>
+          ・As I said before「前に言ったように」<br>
+          ・As is often the case「よくあることだが」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>ご存知のように</strong>」<br><br>
+          → メイン文を待つ!
+        </div>
+        <div class="ra-step-conclude">
+          As you know「ご存知のように」(=関係代名詞 as の特殊用法、慣用!)。第54・55・56講で学んだ as の最終形態!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>incandescent bulbs emit light</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン文 ─ S V O</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">incandescent bulbs emit light</span>「白熱電球は光を放つ」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">incandescent bulbs</span>「白熱電球(複数)」<br>
+          → incandescent = 形容詞「白熱の」(=ラテン語起源「白く輝く」)<br>
+          → bulbs = 名詞「電球(複数)」<br><br>
+          ★ V = <span class="en">emit</span>「放つ/出す」(=他動詞)<br>
+          → emit light「光を放つ」<br>
+          → emit sound「音を出す」<br>
+          → emit heat「熱を放つ」<br><br>
+          ★ O = <span class="en">light</span>「光」(=名詞)<br><br>
+          ★ <strong>骨格</strong>: SVO = 第3文型!<br><br>
+          ★ <strong>白熱電球の歴史</strong>:<br>
+          → 1879年、エジソンが実用化<br>
+          → 細い金属線(=フィラメント)に電気を流して高温で発光<br>
+          → 効率が悪い(=エネルギーの90%が熱)<br>
+          → 2010年代以降、LED に置き換わりつつある!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>白熱電球は光を放つ</strong>」<br><br>
+          → どうやって光を放つ?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          SVO = 白熱電球は光を放つ。emit「(光・音・熱を)放つ」(=他動詞)。次は方法を表現する by V-ing!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>by heating a metal filament inside them,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">本講のハイライト ─ by V-ing「~することによって」</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">by heating a metal filament inside them,</span>「内部の金属フィラメントを熱することによって」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">by V-ing</span> = 「<strong>~することによって</strong>」(=動名詞、手段、第41講応用)<br>
+          → by(=前置詞)+ V-ing(=動名詞)<br>
+          → <strong>手段・方法</strong>を表す!<br><br>
+          ★ <strong>分解</strong>:<br>
+          → V-ing = heating「熱すること」(=動名詞、heat の現在分詞形)<br>
+          → heating の目的語 = a metal filament「金属フィラメント」<br>
+          → 修飾 = inside them「それらの内部の」(=前置詞句、a metal filament を修飾)<br><br>
+          ★ <span class="en">a metal filament</span>:<br>
+          → metal = 名詞だが、ここでは形容詞的「金属の」(=名詞 + 名詞、複合名詞)<br>
+          → filament = 名詞「フィラメント/細い金属線」<br>
+          → 電球内のタングステン線、高温で発光!<br><br>
+          ★ <span class="en">inside them</span>:<br>
+          → inside = 前置詞「~の内部に」(=in より「内部」を強調)<br>
+          → them = bulbs を指す代名詞<br><br>
+          ★ <strong>by V-ing の用法</strong>:<br>
+          → メインの動詞(=emit)の<strong>方法</strong>を説明!<br>
+          → 「光を放つ」 ← どうやって? ← 「フィラメントを熱することによって」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>内部の金属フィラメントを熱することによって</strong>」<br><br>
+          ★ <strong>白熱電球の仕組み</strong>: 電気をフィラメントに流す → タングステン線が約2500°Cまで発熱 → 発光!<br><br>
+          → 結果は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          by V-ing「~することによって」(=動名詞、手段)!heating a metal filament「金属フィラメントを熱すること」!by の後ろは V-ing!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>so they need much electricity</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">so 結果接続詞 ─ 因果関係!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">so they need much electricity</span>「だから、(白熱電球は)多くの電気を必要とする」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">so</span> = <strong>結果接続詞</strong>「<strong>だから/それで</strong>」(=第29・55講応用)<br>
+          → 副詞「とても」(=very)<strong>ではない</strong>!<br>
+          → コンマ + so + S V → 結果接続詞!<br><br>
+          ★ <strong>因果関係</strong>:<br>
+          → 前: 白熱電球はフィラメントを熱して光を放つ(=原因)<br>
+          → so(=結果接続詞)<br>
+          → 後: 多くの電気を必要とする(=結果)<br><br>
+          ★ <span class="en">so の節の中身</span>:<br>
+          → S = they(=incandescent bulbs を指す)<br>
+          → V = need「必要とする」<br>
+          → O = much electricity「多くの電気」(=much + 不可算名詞)<br><br>
+          ★ <span class="en">much electricity</span>:<br>
+          → much = 形容詞「多くの」(=不可算名詞を修飾、第36・57講応用)<br>
+          → electricity = 不可算名詞「電気」<br>
+          → much + 不可算名詞!many は可算名詞!<br><br>
+          ★ <strong>so vs because の対比</strong>:<br>
+          → A so B「Aなので B」(=結果が後ろ、本問!)<br>
+          → B because A「BなのはAから」(=理由が後ろ)<br>
+          → 同じ事実、語順が逆!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>だから、(白熱電球は)多くの電気を必要とする</strong>」<br><br>
+          → さらに何が起こる?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          so = 結果接続詞「だから」(=第29・55講応用)!much + 不可算名詞 electricity!副詞「とても」と取り違え禁止!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>and become very hot.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">and で動詞並列 ─ become + 形容詞</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">and become very hot.</span>「そして、非常に熱くなる」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">and</span> = 動詞句の並列(=第15講応用)<br>
+          → V₁ + and + V₂、共通の主語!<br><br>
+          ★ <strong>並列の構造</strong>:<br>
+          → S(共通) = they(=incandescent bulbs)<br>
+          → V₁ = need much electricity「多くの電気を必要とする」(=他動詞 + O)<br>
+          → and<br>
+          → V₂ = become very hot「非常に熱くなる」(=自動詞 + C)<br><br>
+          ★ <span class="en">become + 形容詞</span> = 「(形容詞)になる」(=変化、第54・57講応用)<br>
+          → become very hot「非常に熱くなる」<br>
+          → become は SVC の補語!<br><br>
+          ★ <strong>本問の科学的背景</strong>:<br>
+          → 白熱電球はエネルギーの<strong>約90%が熱、光は10%</strong>!<br>
+          → だから「電気を多く使う」(=効率が悪い)<br>
+          → 「熱くなる」(=エネルギーの大半が熱)<br>
+          → <strong>LED は逆</strong>: 90%が光、10%が熱(=効率が良い、省エネ)!<br>
+          → これが<strong>白熱電球から LED への置き換えの理由</strong>!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>(白熱電球は)多くの電気を必要とし、非常に熱くなる</strong>」<br><br>
+          ★ <strong>1文全体</strong>: 「<strong>ご存知のように、白熱電球は、内部の金属フィラメントを熱することによって光を放つ。だから、(白熱電球は)多くの電気を必要とし、非常に熱くなる</strong>」<br><br>
+          ★ <strong>1文のメッセージ</strong>:<br>
+          → As you know「ご存知のように」(=読者が知っている前提)<br>
+          → 白熱電球の仕組みの説明<br>
+          → so で結果(=多くの電気と熱)を導入<br>
+          → これは<strong>LED の優位性を示唆する文脈</strong>!(=本講では明示されないが、続きの内容で出てくる可能性)<br><br>
+          ★ <strong>本講の本質</strong>: as の最終形態 = 関係代名詞!主節全体を先行詞とする特殊用法!<br>
+          → 第54・55・56講と合わせて、<strong>as の全用法を把握</strong>!<br>
+          → さらに by V-ing(=手段)、so(=結果)、and(=並列)、become + 形容詞(=変化)を組み合わせて、英文を読み解く!
+        </div>
+        <div class="ra-step-conclude">
+          and で動詞並列(need ~ and become ~)!共通の主語 they!become + 形容詞「~になる」!白熱電球の効率の悪さの含意!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">5つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-sub">[As you know],</span><span class="seg-marker seg-marker-sub">関係代名詞 as 慣用</span></span>
+    <span class="seg-wrap"><span class="seg-main">incandescent bulbs</span><span class="seg-marker seg-marker-main">S</span></span>
+    <span class="seg-wrap"><span class="seg-main">emit</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">light</span><span class="seg-marker seg-marker-main">O₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈by heating a metal filament inside them〉,</span><span class="seg-marker seg-marker-sub">by V-ing(=手段)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">so</span><span class="seg-marker seg-marker-sub">接(=結果)</span></span>
+    <span class="seg-wrap"><span class="seg-main">they</span><span class="seg-marker seg-marker-main">S(=共通、bulbs)</span></span>
+    <span class="seg-wrap"><span class="seg-main">need</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">much electricity</span><span class="seg-marker seg-marker-main">O₂(=不可算)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接(動詞並列)</span></span>
+    <span class="seg-wrap"><span class="seg-main">become</span><span class="seg-marker seg-marker-main">V₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">very hot.</span><span class="seg-marker seg-marker-main">C₃(=形容詞)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>[As you know](=関係代名詞 as 慣用), S V O 〈by V-ing 名詞 inside them〉(=手段), 接(=so) S V O(=much 不可算) 接(=and) V C(=形容詞).</strong>(関係代名詞 as 慣用 As you know、by V-ing「~することによって」、so 結果接続詞、much + 不可算名詞、and で動詞並列、become + 形容詞、emit「(光・熱・音を)放つ」、複合名詞 metal filament)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">あなたが知るように、白熱電球は、それらの内部の金属フィラメントを熱することによって光を放つ、だから彼らは多くの電気を必要として、そして非常に熱くなる。</span>
+      <span class="trans-row-note">構造どおりの直訳。「あなたが知るように」「それらの内部の金属フィラメント」「彼らは多くの電気を必要として」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>関係代名詞 as の慣用 As you know</strong>「ご存知のように」(=主節全体を先行詞)、<strong>by V-ing</strong>「~することによって」(=動名詞、手段)</span>
+    <span class="trans-arrow-detail">第54・55・56講で学んだ as の最終形態 = 関係代名詞!主節全体を先行詞とする特殊用法!by V-ing で手段「~することによって」(=第41講応用)!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ご存知のように、白熱電球は、内部の金属フィラメントを熱することによって光を放つ。だから多くの電気を必要とし、非常に熱くなる。</span>
+      <span class="trans-row-note">As you know を「ご存知のように」(=慣用)、by V-ing を「~することによって」、so を「だから」(=結果接続詞)、and で動詞並列を「~し、~なる」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>so 結果接続詞</strong>「だから」(=第29・55講応用)、<strong>and で動詞並列</strong>(=第15講応用)、<strong>much + 不可算名詞</strong>「多くの~」、<strong>become + 形容詞</strong>「~になる」(=第54・57講応用)</span>
+    <span class="trans-arrow-detail">so = 結果接続詞(=「とても」ではない!)、and で動詞句の並列、much electricity(=不可算)、become very hot(=変化)!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>ご存知のように、白熱電球は、内部の金属フィラメントを熱することによって光を放つ。だから、(白熱電球は)多くの電気を必要とし、非常に熱くなる。</strong></span>
+      <span class="trans-row-note">コンマで区切って読みやすく。「(白熱電球は)」と補足して、so の後ろの主語が they = incandescent bulbs を指すことを明示。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>as の最終形態 ─ 関係代名詞 as と by V-ing「~することによって」</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第59講で身につけてほしい<strong>「as の最終形態 + by V-ing」</strong>を伝えます。<br><br>★ 第54・55・56講で as の様々な用法を学びました。<br>★ 今日は<strong>as の最終形態</strong> ─ <strong>関係代名詞 as</strong>!<br><br>★ <strong>as の用法整理</strong>(=これまでのまとめ):<br>(1) <strong>接続詞「~するときに/~するにつれて/~なので/~のように」</strong>(=第54講)<br>(2) <strong>同等比較 as ~ as</strong>「~と同じくらい~」(=第26・50・56講)<br>(3) <strong>副詞節 as soon as / as long as / as well as</strong>(=第56講)<br>(4) <strong>前置詞「~として」</strong><br>(5) <strong>関係代名詞 as</strong>(=本講!最終形態!)<br><br>★ <strong>関係代名詞 as の特徴</strong>:<br>(1) <strong>先行詞 = 主節全体</strong>(=文全体の内容を指す!)<br>(2) 「~するように/~の通り」と訳す<br>(3) 関係代名詞 which と似た働きだが、用法が異なる!<br><br>★ <strong>本問の例</strong>: <span class="en">As you know</span>「ご存知のように」(=慣用)<br>→ as は関係代名詞!<br>→ 主節全体を先行詞として、「~の通り」のニュアンス!<br><br>★ <strong>関係代名詞 as の慣用句</strong>:<br>・<span class="en">As you know</span>「ご存知のように」(=本問!)<br>・<span class="en">As you can see</span>「見ての通り」<br>・<span class="en">As I said before</span>「前に言ったように」<br>・<span class="en">As is often the case</span>「よくあることだが」<br>・<span class="en">As might be expected</span>「予想されるように」<br><br>★ <strong>もう一つ ─ by V-ing「~することによって」</strong>(=動名詞、手段、第37・41講応用):<br>★ by(=前置詞)+ V-ing(=動名詞「~すること」)<br>★ <strong>手段・方法</strong>を表す!<br><br>★ <strong>本問の例</strong>: <span class="en">by heating a metal filament inside them</span>「内部の金属フィラメントを熱することによって」<br>→ メインの動詞 emit の<strong>方法</strong>を説明!<br><br>★ <strong>類例</strong>(=by V-ing):<br>・<span class="en">She passed the exam by studying hard.</span>「一生懸命勉強することによって、試験に合格した」<br>・<span class="en">We can save the planet by using renewable energy.</span>「再生可能エネルギーを使うことによって、地球を救える」<br>・<span class="en">He earned money by selling old books.</span>「古い本を売ることによって、お金を稼いだ」<br><br>★ <strong>類似表現</strong>:<br>(1) <strong>by V-ing</strong>「~することによって」(=本問!)<br>(2) <strong>through V-ing</strong>「~することを通じて」<br>(3) <strong>with N</strong>「~を使って」<br>(4) <strong>by N</strong>「~によって」(=手段、人・物)<br><br>★ <strong>もう一つ ─ so 結果接続詞</strong>(=第29・55講応用):<br>★ <span class="en">A, so B</span>「Aなので、B」(=結果が後ろ)<br>★ コンマ + so + S V → 結果接続詞!<br><br>★ <strong>so vs because の対比</strong>:<br>(1) <strong>so</strong>: A so B「AなのでB」(=結果が後ろ)<br>(2) <strong>because</strong>: B because A「BなのはAだから」(=理由が後ろ)<br>→ <strong>同じ事実、語順が逆</strong>!<br><br>★ <strong>so の意味の判別</strong>:<br>(1) <strong>結果接続詞「だから」</strong>: A, so B<br>(2) 副詞「とても」: so + 形容詞 + 名詞<br>(3) 副詞「そう」: I think so.<br>(4) so that 構文「~するために」(=目的)<br><br>★ <strong>もう一つ ─ much + 不可算名詞</strong>:<br>★ much + <strong>不可算名詞</strong>: much electricity / much time / much information<br>★ many + <strong>可算名詞</strong>: many books / many people / many cars<br>→ 名詞の可算/不可算を意識して使い分け!<br><br>★ <strong>もう一つ ─ become + 形容詞</strong>(=変化、第54・57講応用):<br>★ become は<strong>SVC</strong>の補語!<br>★ become very hot「非常に熱くなる」<br>★ become tired「疲れる」<br>★ become rich「金持ちになる」<br><br>★ <strong>もう一つ ─ and で動詞並列</strong>(=第15講応用):<br>★ V₁ + and + V₂、共通の主語!<br>★ 本問: <span class="en">they (need much electricity) and (become very hot)</span>「(電球は)多くの電気を必要とし、熱くなる」<br><br>★ <strong>もう一つ ─ 名詞の形容詞的用法(=複合名詞)</strong>:<br>★ 名詞 + 名詞で複合名詞!前の名詞は形容詞的!<br>★ <span class="en">a metal filament</span>「金属フィラメント」(=metal が形容詞的)<br>★ <span class="en">a paper bag</span>「紙袋」<br>★ <span class="en">a stone wall</span>「石の壁」<br><br>★ <strong>もう一つ ─ inside + 名詞</strong>「~の内部に」:<br>★ inside = 前置詞、in より「内部」を強調!<br>★ <span class="en">inside the box</span>「箱の中」<br>★ <span class="en">inside them</span>「それらの内部」(=本問)<br><br>★ これからの英文読解で、<strong>関係代名詞 as と by V-ing</strong>は頻出します。<br>★ As you know などの慣用句、by V-ing で手段を表す表現を、自然に訳せるようにしましょう!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">As you can see, the situation is improving.</span></span>
+      <span class="natural-tip-ex-bad">あなたが見られるように、状況は改善している (硬い直訳)</span>
+      <span class="natural-tip-ex-good">見ての通り、状況は改善している (As you can see = 関係代名詞 as の慣用「見ての通り」!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">You can lose weight by exercising every day.</span></span>
+      <span class="natural-tip-ex-bad">毎日運動することによる、あなたは体重を減らせる (by V-ing を取り違え)</span>
+      <span class="natural-tip-ex-good">毎日運動することによって、体重を減らせる (by V-ing「~することによって」、手段!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">It was raining, so we took a taxi.</span></span>
+      <span class="natural-tip-ex-bad">雨が降っていた、私たちはとてもタクシーに乗った (so を「とても」と取り違え)</span>
+      <span class="natural-tip-ex-good">雨が降っていたので、私たちはタクシーに乗った (コンマ + so + S V = 結果接続詞「だから」!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">関係代名詞 as「ご存知のように」</span>
+  </div>
+  <p class="drill-en"><strong>As I mentioned earlier</strong>, we need to leave by 5 PM.</p>
+  <p class="drill-q">as の役割と、自然な訳は?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> 関係代名詞 as の慣用!<br>
+        ・As I mentioned earlier「先ほど触れたように」(=慣用、関係代名詞 as)<br>
+        ・<strong>主節全体を先行詞</strong>とする!<br>
+        ・「触れたように」のニュアンス!<br>
+        ・主節 = we need to leave by 5 PM「5時までに出発する必要がある」<br>
+        <strong>訳:</strong> 「<strong>先ほど触れたように、5時までに出発する必要がある</strong>」<br><br>
+        💡 As I mentioned / As you know / As you can see / As I said は関係代名詞 as の慣用!主節全体が先行詞!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">by V-ing「~することによって」</span>
+  </div>
+  <p class="drill-en"><strong>By practicing every day</strong>, you can improve your English.</p>
+  <p class="drill-q">構造を分析し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> by + V-ing(=動名詞、手段)!<br>
+        ・by(=前置詞)+ practicing(=動名詞)= 「練習することによって」<br>
+        ・practicing の目的語 = every day(=副詞句、ここでは目的語ではなく修飾)<br>
+        ・主節 = you can improve your English「英語を上達させられる」<br>
+        ・by V-ing が主節の動詞 improve の<strong>手段</strong>を表す!<br>
+        <strong>訳:</strong> 「<strong>毎日練習することによって、英語を上達させられる</strong>」<br><br>
+        💡 by + V-ing「~することによって」(=動名詞、手段)!メインの動詞の方法を説明!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">so 結果接続詞 vs because</span>
+  </div>
+  <p class="drill-en">A: It was cold, <strong>so</strong> I wore a coat. / B: I wore a coat <strong>because</strong> it was cold.</p>
+  <p class="drill-q">so と because の違いを分析して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> 同じ事実を、語順を逆にして表現!<br>
+        ・A: A so B「Aなので B」(=結果が後ろ)<br>
+        　→ It was cold(=原因) + so + I wore a coat(=結果)<br>
+        ・B: B because A「BなのはAから」(=理由が後ろ)<br>
+        　→ I wore a coat(=結果) + because + it was cold(=原因)<br>
+        ・<strong>同じ事実、語順が逆!</strong><br>
+        <strong>訳:</strong><br>
+        ・A: 「<strong>寒かったので、コートを着た</strong>」<br>
+        ・B: 「<strong>寒かったから、コートを着た</strong>」(=同じ意味)<br><br>
+        💡 so = 結果接続詞「だから」!because = 理由接続詞「~なので」!同じ因果関係を、語順を逆にして表現!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>As you know / As you can see</strong> = 関係代名詞 as の慣用</div>
+      <div class="flow-desc">主節全体を先行詞とする特殊な関係代名詞!「ご存知のように/見ての通り」と訳す!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>as の用法を総整理</strong></div>
+      <div class="flow-desc">接続詞・同等比較・副詞節・前置詞・関係代名詞!後ろの形と意味で判別!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>by V-ing</strong>「~することによって」(=動名詞、手段)</div>
+      <div class="flow-desc">by(=前置詞)+ V-ing(=動名詞「~すること」)!メインの動詞の方法を説明!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>so 結果接続詞</strong>「だから」(=第29・55講応用)</div>
+      <div class="flow-desc">コンマ + so + S V → 結果接続詞!副詞「とても」と取り違え禁止!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>so vs because</strong>(=同じ事実、語順が逆)</div>
+      <div class="flow-desc">A so B(=結果が後ろ)/B because A(=理由が後ろ)!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>much + 不可算名詞</strong>「多くの~」</div>
+      <div class="flow-desc">much electricity / much time / much information!可算名詞には many!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>and で動詞並列</strong>(=共通の主語、第15講応用)</div>
+      <div class="flow-desc">V₁ + and + V₂、共通の主語!need ~ and become ~ で「~し、~なる」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>become + 形容詞</strong>「~になる」(=変化、第54・57講応用)</div>
+      <div class="flow-desc">SVCの補語!become very hot「非常に熱くなる」、become tired「疲れる」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>名詞 + 名詞 = 複合名詞</strong></div>
+      <div class="flow-desc">前の名詞は形容詞的!a metal filament「金属フィラメント」、a paper bag「紙袋」!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 as の慣用</strong>(=As you know / As you can see など)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as の用法を総整理</strong>(=接続詞・同等比較・副詞節・前置詞・関係代名詞)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>by V-ing</strong>「~することによって」(=動名詞、手段)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>by V-ing の類似表現</strong>(=through V-ing / with N / by N)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>so 結果接続詞</strong>「だから」(=第29・55講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>so vs because</strong>(=同じ事実、語順が逆)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>so の意味の判別</strong>(=結果接続詞 / 副詞「とても」/ 副詞「そう」/ so that)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>much + 不可算名詞</strong>「多くの~」(=many は可算名詞)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>and で動詞並列</strong>(=共通の主語、第15講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>become + 形容詞</strong>「~になる」(=変化、第54・57講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>名詞 + 名詞 = 複合名詞</strong>(=前の名詞が形容詞的、metal filament)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第59講 · As you know の As と、by V-ing「~することによって」を整理する</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第55講 knows の後ろの隠れた that と、not all の意味を見抜く | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">55</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ that 省略 + 部分否定 not all + 群動詞</div>
+        <h1 class="lesson-title">knows の後ろの隠れた that と、not all の意味を見抜く</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第55講のテーマは <strong>「that 省略 + 部分否定 not all + 群動詞」</strong>。<br>
+      第18・22・33講で <span class="en">that</span> 名詞節を学びましたが、<strong>that が省略</strong>されることが頻繁にあります!<br>
+      さらに今日の<strong>最大の罠</strong>は <span class="en">not all</span>!「<strong>すべてが~わけではない</strong>」(=部分否定)!<br>
+      「すべて~ない」(=全否定)と取り違えると<strong>意味が真逆</strong>に!<br>
+      第19・21・54講応用の受動態・if・群動詞、第15講応用の or 並列、第48講応用の when 副詞節も登場!<br>
+      今日のキー:<br>
+      ① <strong>knows + (that) S V</strong>「~ということを知っている」(=that 省略、第33講応用)<br>
+      ② <strong>not all ~</strong>「<strong>すべてが~わけではない</strong>」(=部分否定!全否定ではない!)<br>
+      ③ <strong>群動詞 bring about</strong>「引き起こす」、<strong>get away from</strong>「~から逃れる」<br>
+      ④ <strong>be afraid of ~</strong>「~を怖がる」(=慣用)<br>
+      ⑤ <strong>even when 副詞節</strong>「~するときでさえ」(=L48・L51応用、even で強調)<br>
+      恐怖症(=phobia)の英文を題材に、<strong>that 省略と部分否定</strong>を見抜きます!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>動詞 + S V</strong> を見たら、<strong>that 省略</strong>(=第33講応用)を疑います。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>not all ~</strong>「<strong>すべてが~わけではない</strong>」(=部分否定)を、<strong>「すべて~ない」</strong>(=全否定)と取り違えないようにします。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>群動詞</strong>(=bring about、get away from など)を1つの動詞として捉えます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">Some events of shock or great unhappiness often bring about phobias. If a little girl is bitten by a dog, she may be afraid of dogs even when she grows up. Maybe she knows not all the dogs will bite her, but she cannot get away from this fear.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>7つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Some events of shock or great unhappiness</span> の <span class="en">or</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(or の繋ぎを取り違え)」</div>
+  <p class="trap-why">★ <span class="en">or</span> = 接続詞「~か~/または」(=選択・並列、第15講応用)<br>→ 前置詞 of の<strong>目的語(=名詞)を2つ並列</strong>!<br>★ <strong>本問</strong>: <span class="en">Some events of shock or great unhappiness</span><br>→ 名詞 = Some events「いくつかの出来事」<br>→ 修飾 = of shock or great unhappiness「ショックや大きな不幸の」<br>→ shock(=名詞)+ or + great unhappiness(=名詞)<br>★ <strong>意訳</strong>: 「<strong>ショックや大きな不幸の(いくつかの)出来事</strong>」<br>★ <span class="en">unhappiness</span> = 名詞「不幸」(=happiness「幸福」の反対)<br>→ 形容詞 unhappy「不幸な」+ ness → 名詞「不幸」<br>★ <strong>類例</strong>(=or の名詞並列):<br>・<span class="en">a moment of joy or sadness</span>「喜びや悲しみの瞬間」<br>・<span class="en">a sense of pride or shame</span>「誇りや恥の感情」<br>★ <strong>核心</strong>: of の目的語に2つの名詞 → どちらも of の目的語!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">often bring about phobias</span> の <span class="en">bring about</span> を「~について持ってくる」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>恐怖症について持ってくる</u>」(=直訳して不自然)</div>
+  <p class="trap-why">★ <span class="en">bring about</span> = 群動詞「<strong>引き起こす/もたらす</strong>」(=他動詞的、bring + 副詞 about)<br>→ <span class="en">cause</span> や <span class="en">produce</span> と同じ意味!<br>→ 単に「~について持ってくる」ではない!<br>★ <strong>本問</strong>: <span class="en">Some events of shock or great unhappiness often bring about phobias.</span><br>→ S = Some events of shock or great unhappiness「ショックや大きな不幸のいくつかの出来事」(=長い主語!)<br>→ M = often「しばしば」(=副詞)<br>→ V = bring about「引き起こす」(=群動詞)<br>→ O = phobias「恐怖症(複数)」<br>★ <strong>骨格</strong>: SVO + 副詞 = 第3文型!<br>★ <span class="en">phobia</span>:<br>→ ギリシャ語 phobos「恐怖」が語源!<br>→ 単に「怖い」ではなく、<strong>病的・非合理的な恐怖</strong>!<br>→ -phobia の派生語: arachnophobia「クモ恐怖症」、claustrophobia「閉所恐怖症」、acrophobia「高所恐怖症」<br>★ <strong>意訳</strong>: 「<strong>しばしば恐怖症を引き起こす</strong>」<br>★ <strong>類例</strong>(=群動詞 bring about):<br>・<span class="en">bring about change</span>「変化をもたらす」<br>・<span class="en">bring about a revolution</span>「革命を引き起こす」<br>・<span class="en">bring about peace</span>「平和をもたらす」<br>★ <strong>核心</strong>: 句動詞は<strong>1つの他動詞</strong>として捉える!直訳すると不自然!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">If a little girl is bitten by a dog</span> の <span class="en">is bitten</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(is bitten の受動態を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">is bitten</span> = <strong>受動態</strong>(=be + 過去分詞、第19講応用)<br>→ bite「噛む」(=他動詞)→ bitten(=過去分詞)<br>→ <span class="en">is bitten by ~</span>「~に噛まれる」<br>★ <strong>本問</strong>: <span class="en">If a little girl is bitten by a dog</span><br>→ if 節 = 副詞節「もし~ならば」(=条件、第21講応用)<br>→ S’ = a little girl「幼い少女」<br>→ V’ = is bitten「噛まれる」(=受動態、現在形)<br>→ M’ = by a dog「犬に」(=動作主)<br>★ <strong>受動態の構造</strong>:<br>→ 能動態: A dog bites a little girl.「犬が少女を噛む」(=SVO)<br>→ 受動態: A little girl is bitten by a dog.「少女が犬に噛まれる」(=S = 元のO、by A = 元のS)<br>★ <span class="en">bite</span> の活用:<br>→ 原形 bite「噛む」<br>→ 過去形 bit<br>→ <strong>過去分詞 bitten</strong>!(=不規則変化、注意!)<br>★ <strong>意訳</strong>: 「<strong>もし幼い少女が犬に噛まれたら</strong>」<br>★ <strong>類例</strong>(=受動態 + by):<br>・<span class="en">be hit by a car</span>「車に轢かれる」<br>・<span class="en">be loved by everyone</span>「みんなに愛される」<br>・<span class="en">be praised by the teacher</span>「先生に褒められる」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">she may be afraid of dogs even when she grows up</span> の <span class="en">even when</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(even when の入れ子構造を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">even when S V</span> = 副詞節「<strong>~するときでさえ</strong>」(=when の強調、第48・51講応用)<br>→ even = 副詞「~でさえ」(=強調)<br>→ when = 接続詞「~するときに」<br>→ 合わせて「<strong>~するときでさえ</strong>」<br>★ <strong>本問</strong>: <span class="en">she may be afraid of dogs even when she grows up.</span><br>→ S = she、V = may be afraid of「怖がるかもしれない」<br>→ O(of の目的語) = dogs「犬」<br>→ even when 副詞節 = even when she grows up「大人になってもなお」<br>★ <span class="en">be afraid of ~</span> = 「<strong>~を怖がる</strong>」(=慣用、be + 形容詞 + of)<br>→ afraid「怖がっている」(=形容詞、補語)<br>→ of ~「~を/に対して」(=前置詞 + 目的語)<br>★ <span class="en">grow up</span> = 群動詞「<strong>大人になる/成長する</strong>」(=自動詞)<br>★ <strong>even when の意味合い</strong>:<br>→ 「子供のときの恐怖体験が、<strong>大人になっても</strong>残る」(=トラウマ)<br>→ even = 「驚くべきことに/期待を裏切って」のニュアンス!<br>★ <strong>意訳</strong>: 「<strong>大人になってもなお、犬を怖がるかもしれない</strong>」<br>★ <strong>類例</strong>(=even when):<br>・<span class="en">even when I am tired</span>「疲れているときでさえ」<br>・<span class="en">even when it rains</span>「雨が降るときでさえ」<br>・<span class="en">even when I try hard</span>「一生懸命努力するときでさえ」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Maybe she knows not all the dogs will bite her</span> の <span class="en">knows</span> の後ろの省略に気づかない</span>
+  </div>
+  <div class="trap-misread">「(she knows not = 「彼女は知らない」と勘違い)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">she knows</span> の後ろに<strong>that が省略</strong>!(=第33講応用)<br>→ 補うと: <span class="en">she knows (that) not all the dogs will bite her</span><br>→ 「彼女は、すべての犬が自分を噛むわけではない、と知っている」<br>★ <strong>本問</strong>: <span class="en">Maybe she knows not all the dogs will bite her, but ~</span><br>→ S = she「彼女」<br>→ V = knows「知っている」(=他動詞)<br>→ O = (that) not all the dogs will bite her「すべての犬が彼女を噛むわけではない、ということ」(=that 名詞節、that 省略)<br>★ <strong>判別の手順</strong>(=第33講応用):<br>(1) 動詞(=know/think/believe など、思考・発言動詞)+ S V → that 名詞節!<br>(2) その動詞の<strong>後ろに名詞節が必要</strong> → that 省略を疑う!<br>★ <strong>that 省略の頻出パターン</strong>:<br>・<span class="en">I think (that) he is right.</span>「彼が正しいと思う」<br>・<span class="en">She knows (that) ~</span>「彼女は~を知っている」<br>・<span class="en">We believe (that) ~</span>「私たちは~と信じる」<br>・<span class="en">He said (that) ~</span>「彼は~と言った」<br>★ <strong>意訳</strong>: 「<strong>彼女は、すべての犬が自分を噛むわけではない、と知っている</strong>」<br>★ <strong>核心</strong>: 思考・発言動詞の後ろに直接 S V が来ている → that が省略されている!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">not all the dogs will bite her</span> の <span class="en">not all</span> を「すべて~ない」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>すべての犬が彼女を噛まない</u>」(=全否定と勘違い、意味が真逆!)</div>
+  <p class="trap-why">★ <strong>本講最大の罠!核心</strong>: <span class="en">not all ~</span> = <strong>部分否定</strong>「<strong>すべてが~わけではない</strong>」<br>→ <strong>全否定「すべて~ない」とは違う</strong>!<br>★ <strong>本問</strong>: <span class="en">not all the dogs will bite her</span><br>→ <strong>正しい意訳</strong>: 「<strong>すべての犬が彼女を噛むわけではない</strong>」(=噛む犬もいるが、噛まない犬もいる)<br>→ <strong>誤った意訳</strong>: 「<strong>すべての犬が彼女を噛まない</strong>」(=どの犬も噛まない、=全否定、意味が真逆!)<br>★ <strong>部分否定 vs 全否定の対比</strong>:<br>(1) <strong>部分否定</strong>: <span class="en">not all ~</span>「すべてが~わけではない」(=本問!)<br>　→ 「一部はそうでない」(=例外あり)<br>(2) <strong>全否定</strong>: <span class="en">no ~ / none ~</span>「(全く)~ない」(=例外なし)<br>　→ <span class="en">No dogs will bite her.</span>「どの犬も噛まない」<br>★ <strong>部分否定の表現</strong>:<br>・<span class="en">not all</span>「すべてが~わけではない」<br>・<span class="en">not every</span>「すべての(=どの)~が~わけではない」<br>・<span class="en">not always</span>「いつも~わけではない」<br>・<span class="en">not necessarily</span>「必ずしも~わけではない」<br>★ <strong>本問の文脈での意味</strong>:<br>→ 「彼女は、犬の中には噛む犬もいれば、噛まない犬もいる、ということを<strong>頭では分かっている</strong>」<br>→ 「すべての犬が危険ではない」(=理性では理解)<br>→ <strong>でも</strong>、それでも怖がってしまう(=次の but ~ の文に繋がる!)<br>→ <strong>恐怖症の本質</strong>: 理性と感情の乖離!<br>★ <strong>類例</strong>(=部分否定):<br>・<span class="en">Not all that glitters is gold.</span>「光るものすべてが金とは限らない」(=有名なことわざ)<br>・<span class="en">Not all students are lazy.</span>「学生がすべて怠け者というわけではない」<br>・<span class="en">Not always things go well.</span>「いつも物事がうまくいくとは限らない」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">but she cannot get away from this fear</span> の <span class="en">get away from</span> を「離れる」とだけ取る</span>
+  </div>
+  <div class="trap-misread">「(get away from を直訳して恐怖からの逃れの意味を見失う)」</div>
+  <p class="trap-why">★ <span class="en">get away from ~</span> = 群動詞「<strong>~から逃れる/離れる</strong>」(=他動詞的、get + 副詞 away + 前置詞 from)<br>→ 物理的にも比喩的にも「逃れる」!<br>★ <strong>本問</strong>: <span class="en">but she cannot get away from this fear.</span><br>→ but(=逆接、節と節を繋ぐ)<br>→ S = she<br>→ V = cannot get away from「逃れることができない」(=助動詞 + 群動詞)<br>→ O(from の目的語) = this fear「この恐怖」<br>★ <strong>get away from</strong> の用法:<br>(1) 物理的「~から離れる/逃げる」(=場所)<br>(2) <strong>比喩的「~から逃れる」</strong>(=感情・状況、本問!)<br>→ <span class="en">get away from this fear</span>「この恐怖から逃れる」(=精神的に克服する)<br>★ <strong>but の対比</strong>:<br>→ 前: <span class="en">she knows not all the dogs will bite her</span>「すべての犬が噛むわけではないと頭では知っている」<br>→ but(=逆接)<br>→ 後: <span class="en">she cannot get away from this fear</span>「この恐怖から逃れられない」<br>→ <strong>理性と感情の対立</strong>!<br>★ <strong>意訳</strong>: 「<strong>でも、この恐怖から逃れることができない</strong>」<br>★ <strong>類例</strong>(=get away from):<br>・<span class="en">get away from work</span>「仕事から離れる」<br>・<span class="en">get away from reality</span>「現実から逃避する」<br>・<span class="en">get away from this place</span>「この場所から逃げる」<br>★ <strong>恐怖症の本質</strong>: 「頭では分かっているのに、感情では逃れられない」 → これが phobia(=恐怖症)!</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>Some events of shock or great unhappiness</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ 長い主語(=of で修飾、orで並列)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">Some events of shock or great unhappiness</span>「ショックや大きな不幸のいくつかの出来事」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Some events</span>「いくつかの出来事」(=主語の中心)<br><br>
+          ★ <strong>修飾</strong>: <span class="en">of shock or great unhappiness</span>「ショックや大きな不幸の」<br>
+          → of(=前置詞)<br>
+          → shock(=名詞)+ or + great unhappiness(=名詞)= or で2つの名詞並列(=第15講応用)<br><br>
+          ★ <span class="en">unhappiness</span>:<br>
+          → 形容詞 unhappy「不幸な」+ ness → 名詞「不幸」<br>
+          → happiness の反対!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>ショックや大きな不幸のいくつかの出来事</strong>」<br><br>
+          → 何を引き起こす?(=動詞を待つ!)
+        </div>
+        <div class="ra-step-conclude">
+          長い主語 + or で名詞並列(shock or great unhappiness)。-ness で形容詞→名詞!動詞を待つ!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>often bring about phobias.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン動詞 ─ 群動詞 bring about</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">often bring about phobias.</span>「しばしば恐怖症を引き起こす」!</p>
+        <div class="ra-step-think">
+          ★ M = <span class="en">often</span>「しばしば」(=副詞、頻度)<br>
+          ★ V = <span class="en">bring about</span>「引き起こす/もたらす」(=群動詞、他動詞的)<br>
+          ★ O = <span class="en">phobias</span>「恐怖症(複数)」<br><br>
+          ★ <span class="en">bring about</span> = 群動詞!<br>
+          → bring「持ってくる」+ 副詞 about → 「引き起こす/もたらす」(=cause / produce と同じ)<br>
+          → 単に「~について持ってくる」ではない!<br><br>
+          ★ <span class="en">phobia</span>:<br>
+          → ギリシャ語 phobos「恐怖」が語源<br>
+          → <strong>病的・非合理的な恐怖</strong>(=単に「怖い」ではない!)<br>
+          → 派生語: arachnophobia「クモ恐怖症」、claustrophobia「閉所恐怖症」<br><br>
+          ★ <strong>骨格</strong>: SVO + 副詞 = 第3文型!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>しばしば恐怖症を引き起こす</strong>」<br><br>
+          ★ <strong>1文目全体</strong>: 「<strong>ショックや大きな不幸の出来事が、しばしば恐怖症を引き起こす</strong>」<br><br>
+          → 具体例?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          bring about「引き起こす」(=群動詞、cause と同じ意味)!phobia = ギリシャ語起源、病的恐怖!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>If a little girl is bitten by a dog,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目スタート ─ if 副詞節 + 受動態(is bitten)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目スタート <span class="en">If a little girl is bitten by a dog,</span>「もし幼い少女が犬に噛まれたら」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">If S V</span> = 副詞節「もし~ならば」(=条件、第21講応用)<br><br>
+          ★ <strong>if 節の中身</strong>:<br>
+          → S’ = a little girl「幼い少女」<br>
+          → V’ = is bitten「噛まれる」(=受動態、be + 過去分詞、第19講応用)<br>
+          → M’ = by a dog「犬に」(=動作主)<br><br>
+          ★ <span class="en">bite</span>(=他動詞「噛む」)の活用:<br>
+          → 原形 bite<br>
+          → 過去形 bit<br>
+          → <strong>過去分詞 bitten</strong>(=不規則変化!)<br><br>
+          ★ <strong>受動態の意味</strong>:<br>
+          → 能動態: A dog bites a little girl.「犬が少女を噛む」<br>
+          → 受動態: A little girl is bitten by a dog.「少女が犬に噛まれる」<br>
+          → 視点を「噛まれる側」に変える!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>もし幼い少女が犬に噛まれたら</strong>」<br><br>
+          → メイン文を待つ!
+        </div>
+        <div class="ra-step-conclude">
+          if 副詞節 + 受動態 is bitten!bite-bit-bitten(=不規則変化)!受動態は視点を「される側」に変える!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>she may be afraid of dogs even when she grows up.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン文 ─ be afraid of + even when 副詞節</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">she may be afraid of dogs even when she grows up.</span>「大人になってもなお、犬を怖がるかもしれない」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">she</span>「彼女(=the little girl)」<br>
+          ★ V = <span class="en">may be afraid of</span>「怖がるかもしれない」<br>
+          → may = 助動詞「~かもしれない」<br>
+          → be afraid of「~を怖がる」(=慣用、be + 形容詞 afraid + 前置詞 of)<br><br>
+          ★ O(=of の目的語) = <span class="en">dogs</span>「犬」<br><br>
+          ★ <span class="en">even when she grows up</span>:<br>
+          → even = 副詞「~でさえ」(=強調)<br>
+          → when = 接続詞「~するときに」(=第48・51講応用)<br>
+          → 合わせて「<strong>~するときでさえ</strong>」<br>
+          → grow up「大人になる/成長する」(=群動詞、自動詞)<br><br>
+          ★ <strong>even when の意味合い</strong>:<br>
+          → 「子供のときの恐怖体験が、<strong>大人になっても</strong>残る」(=トラウマ)<br>
+          → even で「驚くべきことに/期待を裏切って」のニュアンス!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>大人になってもなお、犬を怖がるかもしれない</strong>」<br><br>
+          ★ <strong>2文目全体</strong>: 「<strong>もし幼い少女が犬に噛まれたら、大人になってもなお、犬を怖がるかもしれない</strong>」<br>
+          → トラウマの永続性!<br><br>
+          → でも理性的には?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          be afraid of「~を怖がる」(=慣用)!even when「~のときでさえ」(=強調、第48・51講応用)!grow up「大人になる」!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>Maybe she knows not all the dogs will bite her,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">3文目 ─ knows + that省略 + 部分否定 not all!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3文目 <span class="en">Maybe she knows not all the dogs will bite her,</span>「彼女は、すべての犬が自分を噛むわけではない、と分かっているかもしれない」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">Maybe</span> = 副詞「もしかすると/たぶん」(=文修飾)<br><br>
+          ★ S = <span class="en">she</span>「彼女」<br>
+          ★ V = <span class="en">knows</span>「知っている」(=他動詞)<br><br>
+          ★ <strong>核心 ─ that 省略!</strong>(=第33講応用)<br>
+          → knows の後ろに直接 S V が続く → <strong>that が省略</strong>!<br>
+          → 補うと: <span class="en">she knows (that) not all the dogs will bite her</span><br>
+          → 「彼女は、~ということを知っている」<br><br>
+          ★ <strong>核心 ─ 本講最大の罠!部分否定 not all!</strong><br>
+          → <span class="en">not all ~</span> = 「<strong>すべてが~わけではない</strong>」(=部分否定!)<br>
+          → 全否定「すべて~ない」とは<strong>違う</strong>!<br><br>
+          ★ <strong>that 名詞節の中身</strong>:<br>
+          → S'’ = not all the dogs「すべての犬が~わけではない」(=部分否定の主語!)<br>
+          → V'’ = will bite「噛むだろう」(=助動詞 + 他動詞)<br>
+          → O'’ = her「彼女を」<br><br>
+          ★ <strong>意味の対比</strong>:<br>
+          → <strong>部分否定(=本問)</strong>: 「すべての犬が彼女を噛むわけではない」<br>
+          　→ 「噛む犬もいるけど、噛まない犬もいる」(=例外あり)<br>
+          → <strong>全否定(=対比のため)</strong>: <span class="en">No dogs will bite her.</span>「どの犬も彼女を噛まない」<br>
+          　→ 例外なし、すべての犬が安全<br><br>
+          ★ <strong>意訳</strong>: 「<strong>彼女は、すべての犬が自分を噛むわけではない、と分かっているかもしれない</strong>」<br><br>
+          ★ <strong>本問の文脈</strong>:<br>
+          → 彼女は<strong>頭では理解</strong>している!(=「すべての犬が危険なわけじゃない」)<br>
+          → でも<strong>感情では恐怖が消えない</strong>!(=次の but ~ で対比!)<br><br>
+          → 続きを待つ!
+        </div>
+        <div class="ra-step-conclude">
+          knows + (that) → that 省略!not all = 部分否定「すべてが~わけではない」(=「すべて~ない」と取り違え禁止!)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>but she cannot get away from this fear.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">逆接 but + 群動詞 get away from</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">but she cannot get away from this fear.</span>「でも、この恐怖から逃れることができない」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">but</span> = 接続詞「しかし/だが」(=逆接、節と節を繋ぐ、第15・29講応用)<br><br>
+          ★ <strong>but の対比</strong>:<br>
+          → 前: 「すべての犬が噛むわけではない、と<strong>頭では分かっている</strong>」(=理性)<br>
+          → but(=逆接)<br>
+          → 後: 「<strong>この恐怖から逃れられない</strong>」(=感情)<br>
+          → <strong>理性と感情の対立</strong>!<br><br>
+          ★ <strong>but 節の中身</strong>:<br>
+          → S = she「彼女」<br>
+          → V = cannot get away from「逃れることができない」(=助動詞 + 群動詞)<br>
+          → O(from の目的語) = this fear「この恐怖」<br><br>
+          ★ <span class="en">get away from ~</span> = 群動詞「<strong>~から逃れる/離れる</strong>」<br>
+          → 物理的にも比喩的にも使える!<br>
+          → 本問は<strong>比喩的</strong>(=精神的に恐怖を克服する)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>でも、この恐怖から逃れることができない</strong>」<br><br>
+          ★ <strong>3文目全体</strong>: 「<strong>彼女は、すべての犬が自分を噛むわけではない、と分かっているかもしれないが、それでもこの恐怖から逃れることができない</strong>」<br><br>
+          ★ <strong>3文全体のメッセージ</strong>:<br>
+          → 1文目: ショックや不幸が恐怖症を引き起こす<br>
+          → 2文目: 子供のとき犬に噛まれると、大人になっても怖がる<br>
+          → 3文目: 頭では理解しても、感情では逃れられない<br>
+          → <strong>恐怖症の本質: 理性と感情の乖離</strong>!<br><br>
+          ★ <strong>本講の本質</strong>: 動詞 + S V → that 省略を疑う!not all → 部分否定「すべてが~わけではない」!<br>
+          → 「すべて~ない」と訳すと<strong>意味が真逆</strong>に!部分否定と全否定の区別を絶対に間違えない!
+        </div>
+        <div class="ra-step-conclude">
+          but(=逆接、理性 ↔ 感情)!get away from「~から逃れる」(=群動詞、比喩的に「恐怖から逃れる」)!恐怖症の本質!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">Some events</span><span class="seg-marker seg-marker-main">S₁(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈of shock or great unhappiness〉</span><span class="seg-marker seg-marker-sub">M(of+名詞 or 名詞)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">often</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-main">bring about</span><span class="seg-marker seg-marker-main">V₁(群動詞)</span></span>
+    <span class="seg-wrap"><span class="seg-main">phobias.</span><span class="seg-marker seg-marker-main">O₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[If a little girl is bitten by a dog]</span><span class="seg-marker seg-marker-sub">if副詞節(=受動態)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">,</span><span class="seg-marker seg-marker-sub">区切り</span></span>
+    <span class="seg-wrap"><span class="seg-main">she</span><span class="seg-marker seg-marker-main">S₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">may be afraid of</span><span class="seg-marker seg-marker-main">V₂(慣用)</span></span>
+    <span class="seg-wrap"><span class="seg-main">dogs</span><span class="seg-marker seg-marker-main">O₂(of の目的語)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[even when she grows up].</span><span class="seg-marker seg-marker-sub">when副詞節(even強調)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">Maybe</span><span class="seg-marker seg-marker-sub">M(文修飾)</span></span>
+    <span class="seg-wrap"><span class="seg-main">she</span><span class="seg-marker seg-marker-main">S₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">knows</span><span class="seg-marker seg-marker-main">V₃</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[(that)</span><span class="seg-marker seg-marker-sub">that省略!</span></span>
+    <span class="seg-wrap"><span class="seg-main">not all the dogs</span><span class="seg-marker seg-marker-main">S'(=部分否定!)</span></span>
+    <span class="seg-wrap"><span class="seg-main">will bite</span><span class="seg-marker seg-marker-main">V'</span></span>
+    <span class="seg-wrap"><span class="seg-main">her],</span><span class="seg-marker seg-marker-main">O'</span></span>
+    <span class="seg-wrap"><span class="seg-sub">but</span><span class="seg-marker seg-marker-sub">接(逆接)</span></span>
+    <span class="seg-wrap"><span class="seg-main">she</span><span class="seg-marker seg-marker-main">S₄</span></span>
+    <span class="seg-wrap"><span class="seg-main">cannot get away from</span><span class="seg-marker seg-marker-main">V₄(群動詞)</span></span>
+    <span class="seg-wrap"><span class="seg-main">this fear.</span><span class="seg-marker seg-marker-main">O₄(from の目的語)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: S 〈of A or B〉 〈M〉 V(=群動詞) O. 2: [If S V(=受動態) 〈by ~〉], S V(=be afraid of) O 〈[even when S V]〉. 3: 〈M〉 S V [O=(that)省略 not all S' V' O'](=部分否定), 接 S V(=群動詞) O.</strong>(that 省略 + 部分否定 not all、群動詞 bring about / get away from / grow up、be afraid of、受動態 is bitten、even when 副詞節、but 逆接)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ショックや大きな不幸のいくつかの出来事はしばしば恐怖症をもたらす。もし小さな少女が犬によって噛まれたら、彼女は大人になるときでさえ犬を怖がるかもしれない。たぶん彼女はすべての犬が彼女を噛むわけではないと知っているが、彼女はこの恐怖から逃れることができない。</span>
+      <span class="trans-row-note">構造どおりの直訳。「いくつかの出来事は」「犬によって噛まれたら」「すべての犬が彼女を噛むわけではないと知っている」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>動詞 + S V</strong> → <strong>that 省略</strong>を疑う(=第33講応用)、<strong>not all ~</strong>「すべてが~わけではない」(=部分否定!)</span>
+    <span class="trans-arrow-detail">she knows + (that) ~ → that 名詞節!not all the dogs will bite her「すべての犬が彼女を噛むわけではない」(=噛む犬もいる、噛まない犬もいる)!全否定「すべて~ない」と取り違え厳禁!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ショックや大きな不幸の出来事が、しばしば恐怖症を引き起こす。もし幼い少女が犬に噛まれたら、大人になっても犬を怖がるかもしれない。彼女は、すべての犬が自分を噛むわけではないと分かっているかもしれないが、この恐怖から逃れることができない。</span>
+      <span class="trans-row-note">bring about を「引き起こす」、is bitten by を「~に噛まれる」、even when を「~ても」、not all を「すべてが~わけではない」(=部分否定)、get away from を「~から逃れる」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>群動詞</strong> bring about「引き起こす」、get away from「~から逃れる」、<strong>be afraid of</strong>「~を怖がる」、<strong>even when 副詞節</strong>「~ときでさえ」</span>
+    <span class="trans-arrow-detail">句動詞は1つの他動詞・前置詞のように働く!be afraid of は be + 形容詞 + of の慣用!even は when と組み合わさって強調!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>ショックや大きな不幸の出来事が、しばしば恐怖症を引き起こす。もし幼い少女が犬に噛まれたら、大人になってもなお、犬を怖がるかもしれない。彼女は、すべての犬が自分を噛むわけではない、と分かっているかもしれないが、それでもこの恐怖から逃れることができない。</strong></span>
+      <span class="trans-row-note">「大人になってもなお」(even を「なお」で強調)、「分かっているかもしれないが、<strong>それでも</strong>」(=理性と感情の対立をはっきりと表現)、読点で因果関係を明確に。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>that 省略 + 部分否定 not all</strong> ─ 2つの罠を見抜く</span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第55講で身につけてほしい<strong>「2つの罠を見抜く読み方」</strong>を伝えます。<br><br>★ 罠①: <strong>that 省略</strong>(=第33講応用)<br>★ 罠②: <strong>not all = 部分否定「すべてが~わけではない」</strong>(=全否定「すべて~ない」ではない!)<br><br>★ <strong>罠①: that 省略</strong><br>★ 思考・発言動詞 + S V → <strong>that が省略</strong>されている!<br>★ that 名詞節「~ということ」が動詞の目的語!<br><br>★ <strong>that 省略の頻出パターン</strong>:<br>・<span class="en">I think (that) he is right.</span>「彼が正しいと思う」<br>・<span class="en">She knows (that) ~</span>「彼女は~を知っている」(=本問!)<br>・<span class="en">We believe (that) ~</span>「私たちは~と信じる」<br>・<span class="en">He said (that) ~</span>「彼は~と言った」<br>・<span class="en">I hope (that) ~</span>「~を願う」<br><br>★ <strong>判別の手順</strong>:<br>(1) 動詞(=思考・発言動詞)の後ろに直接 S V<br>(2) その動詞は<strong>他動詞</strong>(=目的語が必要)<br>(3) <strong>that が省略</strong>されている可能性大!<br>(4) that 名詞節「~ということ」を補って読む!<br><br>★ <strong>罠②: 部分否定 not all</strong><br>★ <span class="en">not all ~</span> = 「<strong>すべてが~わけではない</strong>」(=部分否定)<br>★ <strong>全否定「すべて~ない」とは違う!</strong><br><br>★ <strong>本問の例</strong>:<br>★ <span class="en">not all the dogs will bite her</span><br>→ <strong>正しい意訳</strong>: 「すべての犬が彼女を噛む<strong>わけではない</strong>」(=噛む犬もいるが、噛まない犬もいる)<br>→ <strong>誤った意訳</strong>: 「すべての犬が彼女を噛まない」(=どの犬も噛まない、=全否定、意味が真逆!)<br><br>★ <strong>部分否定 vs 全否定</strong>:<br>(1) <strong>部分否定</strong>: <span class="en">not all / not every / not always / not necessarily ~</span><br>　→ 「~とは限らない/~わけではない」(=例外あり)<br>(2) <strong>全否定</strong>: <span class="en">no / none / never / nothing ~</span><br>　→ 「(全く)~ない」(=例外なし)<br><br>★ <strong>類例</strong>(=部分否定):<br>・<span class="en">Not all that glitters is gold.</span>「光るものすべてが金とは限らない」(=有名なことわざ)<br>・<span class="en">Not all students are lazy.</span>「学生がすべて怠け者というわけではない」<br>・<span class="en">Not always things go well.</span>「いつも物事がうまくいくとは限らない」<br>・<span class="en">Not necessarily expensive things are good.</span>「必ずしも高価なものが良いわけではない」<br><br>★ <strong>類例</strong>(=全否定):<br>・<span class="en">No students are lazy.</span>「学生は誰も怠け者ではない」<br>・<span class="en">Nothing is impossible.</span>「不可能なことは何もない」<br>・<span class="en">None of them came.</span>「彼らの誰一人として来なかった」<br><br>★ <strong>もう一つ ─ 群動詞</strong>:<br>★ 動詞 + 副詞 / 前置詞 = <strong>1つの動詞のように</strong>働く!<br>★ <strong>本問の群動詞</strong>:<br>(1) <span class="en">bring about</span>「引き起こす/もたらす」(=cause)<br>(2) <span class="en">grow up</span>「大人になる/成長する」<br>(3) <span class="en">get away from</span>「~から逃れる/離れる」<br><br>★ <strong>もう一つ ─ be afraid of ~</strong>「~を怖がる」(=慣用):<br>★ be(=be 動詞)+ afraid(=形容詞、補語)+ of(=前置詞)+ 名詞<br>★ <strong>類例</strong>(=be + 形容詞 + 前置詞):<br>・<span class="en">be afraid of ~</span>「~を怖がる」(=本問!)<br>・<span class="en">be proud of ~</span>「~を誇りに思う」<br>・<span class="en">be tired of ~</span>「~に飽きる」<br>・<span class="en">be aware of ~</span>「~に気づいている」<br><br>★ <strong>もう一つ ─ even when ~</strong>「~するときでさえ」(=強調):<br>★ even(=副詞「~でさえ」)+ when(=接続詞「~するときに」)<br>★ 「驚くべきことに」のニュアンス!<br>★ <strong>類例</strong>:<br>・<span class="en">even when I am tired</span>「疲れているときでさえ」<br>・<span class="en">even when it rains</span>「雨が降るときでさえ」<br>・<span class="en">even though ~</span>「~にもかかわらず」(=対立)<br><br>★ <strong>もう一つ ─ but の逆接</strong>(=第15・29講応用):<br>★ 節と節を繋ぐ!<br>★ 本問は<strong>理性 ↔ 感情</strong>の対比!<br>★ 「頭では分かっているが、感情では~」(=恐怖症の本質)<br><br>★ <strong>もう一つ ─ -ness で名詞化</strong>:<br>★ 形容詞 + ness → 名詞「~である状態」<br>★ <strong>類例</strong>:<br>・happy → happiness「幸福」<br>・unhappy → unhappiness「不幸」(=本問!)<br>・kind → kindness「親切さ」<br>・dark → darkness「暗さ」<br><br>★ これからの60講で、<strong>that 省略</strong>と<strong>部分否定</strong>は頻出します。<br>★ 動詞 + S V を見たら that 省略を疑い、not all/every を見たら部分否定で読む習慣を!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I think he is right.</span></span>
+      <span class="natural-tip-ex-bad">私は彼が正しいということ、思う (that の省略を意識せず読む)</span>
+      <span class="natural-tip-ex-good">彼が正しいと思う (think + (that) ~ の that 省略!that 名詞節「~ということ」が動詞の目的語!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">Not all books are interesting.</span></span>
+      <span class="natural-tip-ex-bad">すべての本が面白くない (全否定と取り違え、意味が真逆!)</span>
+      <span class="natural-tip-ex-good">すべての本が面白いというわけではない (部分否定!面白い本もあれば、面白くない本もある)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">She knows not everyone likes her.</span></span>
+      <span class="natural-tip-ex-bad">彼女は誰もが彼女を好きじゃないと知っている (全否定と取り違え)</span>
+      <span class="natural-tip-ex-good">彼女は、皆が皆自分を好きなわけではない、と分かっている (knows + (that) ~ の that 省略 + not everyone = 部分否定!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">that 省略を補う</span>
+  </div>
+  <p class="drill-en">I think <strong>he will succeed</strong>.</p>
+  <p class="drill-q">that 省略を補い、構造を分析すると?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> think + (that) S V!<br>
+        ・S = I「私」<br>
+        ・V = think「思う」(=他動詞、思考動詞)<br>
+        ・O = (that) he will succeed「彼が成功するだろう、ということ」(=that 名詞節、that 省略)<br>
+        ・that 節の中: S’ = he、V’ = will succeed<br>
+        ・補うと: <span class="en">I think that he will succeed.</span><br>
+        <strong>訳:</strong> 「<strong>彼は成功するだろうと思う</strong>」<br><br>
+        💡 思考・発言動詞(=think/know/believe/say/hope など)+ S V → that 省略!that 名詞節「~ということ」!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">部分否定 not all</span>
+  </div>
+  <p class="drill-en"><strong>Not all teachers are strict</strong>.</p>
+  <p class="drill-q">部分否定の意味と訳は?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> not all = 部分否定!<br>
+        ・<strong>正しい意訳</strong>: 「すべての先生が厳しい<strong>わけではない</strong>」(=厳しい先生もいるが、厳しくない先生もいる)<br>
+        ・<strong>誤った意訳</strong>: 「すべての先生が厳しくない」(=全否定、意味が真逆!)<br>
+        ・全否定なら: <span class="en">No teachers are strict.</span>「どの先生も厳しくない」<br>
+        <strong>訳:</strong> 「<strong>すべての先生が厳しいというわけではない</strong>」<br><br>
+        💡 not all/every/always/necessarily = 部分否定「~とは限らない/~わけではない」!例外ありを示す!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">群動詞 + 慣用</span>
+  </div>
+  <p class="drill-en">She is afraid of dogs and <strong>cannot get away from</strong> her fear.</p>
+  <p class="drill-q">群動詞と慣用を分析して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> be afraid of + get away from の組み合わせ!<br>
+        ・S = She<br>
+        ・V₁ = is afraid of「~を怖がる」(=慣用、be + 形容詞 + 前置詞)<br>
+        ・O₁ = dogs「犬」<br>
+        ・and(=動詞句並列)<br>
+        ・V₂ = cannot get away from「~から逃れることができない」(=助動詞 + 群動詞)<br>
+        ・O₂(=from の目的語) = her fear「彼女の恐怖」<br>
+        <strong>訳:</strong> 「<strong>彼女は犬を怖がっており、その恐怖から逃れることができない</strong>」<br><br>
+        💡 be afraid of「~を怖がる」、get away from「~から逃れる」(=群動詞)!句動詞は1つの動詞のように働く!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>思考・発言動詞 + S V</strong> → that 省略を疑う(=第33講応用)</div>
+      <div class="flow-desc">know/think/believe/say/hope などの後ろに直接 S V → that 名詞節「~ということ」が省略!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>not all ~</strong> = 部分否定「すべてが~わけではない」</div>
+      <div class="flow-desc">全否定「すべて~ない」と取り違え厳禁!例外ありを示す!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>部分否定 vs 全否定</strong></div>
+      <div class="flow-desc">部分否定: not all/every/always/necessarily!全否定: no/none/never/nothing!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>群動詞は1つの動詞として捉える</strong></div>
+      <div class="flow-desc">bring about「引き起こす」、get away from「~から逃れる」、grow up「大人になる」!直訳ではなく慣用訳!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>be afraid of ~</strong>「~を怖がる」(=慣用)</div>
+      <div class="flow-desc">be(=be 動詞)+ afraid(=形容詞、補語)+ of(=前置詞)+ 名詞!be + 形容詞 + 前置詞のパターン!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>even when ~</strong>「~するときでさえ」(=強調)</div>
+      <div class="flow-desc">even(=副詞)+ when(=接続詞)!驚き・期待を裏切るニュアンス!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>受動態 be + 過去分詞</strong>(=第19講応用)</div>
+      <div class="flow-desc">is bitten「噛まれる」!bite-bit-bitten(=不規則変化)!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>but の逆接</strong>(=節と節、第15・29講応用)</div>
+      <div class="flow-desc">理性 ↔ 感情の対比!「頭では~、しかし~」のパターン!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>-ness で形容詞→名詞</strong></div>
+      <div class="flow-desc">happy→happiness、unhappy→unhappiness、kind→kindness!「~である状態」を表す!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>that 省略</strong>(=思考・発言動詞 + S V)を補って読めるようになった</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>not all = 部分否定「すべてが~わけではない」</strong>を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>部分否定 vs 全否定</strong>(=例外ありかなしか)を区別できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>部分否定の表現</strong>(=not all/every/always/necessarily)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>群動詞 bring about</strong>「引き起こす」(=cause)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>群動詞 grow up</strong>「大人になる」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>群動詞 get away from</strong>「~から逃れる」(=物理的・比喩的)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>be afraid of ~</strong>「~を怖がる」(=慣用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>even when ~</strong>「~するときでさえ」(=強調、第48・51講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>受動態 is bitten</strong>(=bite-bit-bitten、不規則変化)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>but の逆接</strong>(=理性 ↔ 感情の対立、第15・29講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第55講 · knows の後ろの隠れた that と、not all の意味を見抜く</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

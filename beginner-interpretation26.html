@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第26講 「いつ・誰が・何を」を整理して読む | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">26</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 場面と人物 + 関係詞</div>
+        <h1 class="lesson-title">「いつ・誰が・何を」を整理して読む</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  <p class="opening-text">
+      第26講のテーマは <strong>「<span class="en">and</span> が関係代名詞節2つをつなぐ」+ 「<span class="en">so~that</span> の再登場」</strong>。<br>
+      関係代名詞 <span class="en">who</span> が<strong>2回</strong>出てきて、<span class="en">and</span> でつながれます。<br>
+      でも怖がらず、<strong>左から右に追って、それぞれの節が何を修飾しているかを確認</strong>すれば自然に分かります。<br><br>
+      今日のキー:<br>
+      ① <strong>関係代名詞 <span class="en">who</span></strong>(=主格)が<strong>2つ並列</strong>(=同じ先行詞 a doctor を修飾)<br>
+      ② <strong><span class="en">and</span> が関係詞節2つをつなぐ</strong>(=第15講応用)<br>
+      ③ <strong>結果構文 <span class="en">so ~ that ~</span></strong>「あまりに~なので~」(=第25講応用)<br>
+      ④ <strong>従属接続詞 <span class="en">before</span></strong>「<strong>~する前に</strong>」(=時の副詞節)<br>
+      ⑤ <strong>場面・人物・物語</strong>を整理して読む力を養う<br>
+      ジェーン・グドール博士の幼少期の話を題材に、<strong>関係詞の応用</strong>を読み解きます!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>関係代名詞 <span class="en">who</span></strong>(=主格)を再確認します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong><span class="en">and</span> が関係詞節2つをつなぐ</strong>パターンを見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>結果構文 <span class="en">so ~ that ~</span></strong>(=第25講応用)を再確認します。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">When Jane was seven, her mother borrowed a book from the library near their house. It was The Story of Dr. Dolittle. This book is about a doctor who can talk to animals and who travels to Africa. Jane liked the story so much that she read it three times before she returned it.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>6つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">When Jane was seven,</span> を独立した文と思う</span>
+  </div>
+  <div class="trap-misread">「(when節を主節と取って混乱)」</div>
+  <p class="trap-why">★ <span class="en">When Jane was seven</span> = <strong>副詞節</strong>「<strong>ジェーンが7歳のとき</strong>」(=時、第16・21講応用)<br>★ <span class="en">When + S V</span>, ~ = 文頭の副詞節!主節を待つ前置き!<br>★ <strong>本問</strong>: 副詞節 + 主節「<strong>母親が本を借りた</strong>」<br>★ <span class="en">Jane was seven</span> = 「ジェーンは7歳だった」<br>→ <span class="en">be動詞 + 数字</span> = 「~歳である」(=年齢)<br>→ <span class="en">be 7</span>(=7歳)、<span class="en">be 25</span>(=25歳)など<br>★ <strong>意訳</strong>: 「<strong>ジェーンが7歳のとき</strong>」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">borrowed a book from the library near their house</span> の前置詞句がどこを修飾するか取り違える</span>
+  </div>
+  <div class="trap-misread">「(near their house がどこを修飾するか分からない)」</div>
+  <p class="trap-why">★ <span class="en">near their house</span> = 前置詞句「<strong>家の近くの</strong>」<br>→ 直前の <span class="en">the library</span> を<strong>後ろから修飾</strong>(=形容詞句、第14講応用)!<br>★ <strong>本問</strong>: <span class="en">the library near their house</span> = 「<strong>家の近くの図書館</strong>」<br>★ <span class="en">borrow A from B</span> = 「BからAを借りる」(=慣用)<br>→ A = <span class="en">a book</span>「本」<br>→ B = <span class="en">the library near their house</span>「家の近くの図書館」<br>★ <strong>意訳</strong>: 「<strong>家の近くの図書館から1冊の本を借りた</strong>」<br>★ <strong>類例</strong>:<br>・<span class="en">borrow money from a friend</span>「友達からお金を借りる」<br>・<span class="en">borrow a pen from her</span>「彼女からペンを借りる」<br>★ <strong>反対語</strong>: <span class="en">lend</span>「貸す」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">It was The Story of Dr. Dolittle.</span> の <span class="en">It</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(It が何を指すか分からない)」</div>
+  <p class="trap-why">★ <span class="en">It</span> = 前文の <span class="en">a book</span>(=本)を指す代名詞(=第14講応用)<br>★ <strong>本問</strong>: <span class="en">It was The Story of Dr. Dolittle.</span><br>→ S = It(=本)<br>→ V = was(=be動詞)<br>→ C = The Story of Dr. Dolittle(=書名)<br>→ 「<strong>それは『ドリトル先生物語』だった</strong>」<br>★ <span class="en">The Story of Dr. Dolittle</span> = 書名「<strong>ドリトル先生物語</strong>」(=児童文学)<br>★ <strong>第2文型 SVC</strong>: It = The Story of Dr. Dolittle のイコール!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">a doctor who can talk to animals and who travels to Africa</span> の<strong>and</strong>がつなぐものを取り違える</span>
+  </div>
+  <div class="trap-misread">「(2つの who 節の関係を取り違える)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">and</span> が<strong>関係代名詞節2つ</strong>をつなぐ!<br>★ <strong>本問</strong>: <span class="en">a doctor who can talk to animals and who travels to Africa</span><br>→ 先行詞: <span class="en">a doctor</span>「(ある)医者」<br>→ 関係詞節①: <span class="en">who can talk to animals</span>「動物と話せる」<br>→ 関係詞節②: <span class="en">who travels to Africa</span>「アフリカへ旅する」<br>→ <strong>and が2つの who 節を並列</strong>!<br>★ <strong>両方とも先行詞 <span class="en">a doctor</span> を修飾</strong>!<br>→ 「<strong>動物と話せて、アフリカへ旅する医者</strong>」<br>★ <span class="en">who</span> は<strong>主格</strong>(=who が主語の役割)<br>→ 関係詞節①: who(=S') + can talk(=V')<br>→ 関係詞節②: who(=S') + travels(=V')<br>★ <strong>類例</strong>:<br>・<span class="en">a man who is kind and who works hard</span>「親切で、よく働く男」<br>・<span class="en">a girl who sings well and who dances beautifully</span>「上手に歌い、美しく踊る少女」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">talk to animals</span> の <span class="en">talk to</span> を見落とす</span>
+  </div>
+  <div class="trap-misread">「(talk と to の関係を取り違える)」</div>
+  <p class="trap-why">★ <span class="en">talk to ~</span> = 「<strong>~と話す/~に話しかける</strong>」<br>★ <span class="en">talk</span>(=自動詞「話す」)+ <span class="en">to ~</span>(=前置詞「~に」)<br>★ <strong>類例</strong>:<br>・<span class="en">talk to him</span>「彼と話す」<br>・<span class="en">talk to a friend</span>「友達と話す」<br>・<span class="en">talk to my mother</span>「母と話す」<br>★ <strong>類似表現</strong>:<br>・<span class="en">talk with ~</span>「~と話す」(=お互いに話す)<br>・<span class="en">speak to ~</span>「~に話しかける」<br>★ <span class="en">talk to animals</span> = 「<strong>動物と話す</strong>」(=ドリトル先生の特技!)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">she read it three times before she returned it</span> の <span class="en">before</span> を見落とす</span>
+  </div>
+  <div class="trap-misread">「(before の役割を取り違える)」</div>
+  <p class="trap-why">★ <span class="en">before</span> = <strong>従属接続詞</strong>「<strong>~する前に</strong>」(=時の副詞節)<br>★ <strong>本問</strong>: <span class="en">she read it three times before she returned it</span><br>→ 主節: <span class="en">she read it three times</span>「彼女はそれを3回読んだ」<br>→ before節: <span class="en">before she returned it</span>「(本を)返す前に」<br>★ <span class="en">before</span> 節の中身:<br>→ S' = <span class="en">she</span><br>→ V' = <span class="en">returned</span>「返した」(=他動詞、過去形)<br>→ O' = <span class="en">it</span>「それ(=本)」<br>★ <strong>意訳</strong>: 「<strong>(本を)返す前に、3回読んだ</strong>」<br>★ <strong>類似の従属接続詞</strong>(=時を表す):<br>・<span class="en">when</span>「~するとき」<br>・<span class="en">while</span>「~する間」<br>・<span class="en">until</span>「~するまで」<br>・<span class="en">before</span>「~する前に」<br>・<span class="en">after</span>「~した後に」<br>★ <span class="en">three times</span> = 「<strong>3回</strong>」(=回数の表現)<br>→ <span class="en">once</span>「1回」、<span class="en">twice</span>「2回」、<span class="en">three times</span>「3回」(=以降は数字+times)</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>When Jane was seven, her mother borrowed a book from the library near their house.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">1文目 ─ 副詞節+主節 + 後置修飾</span>
+    </div>
+    <div class="ra-step-body">
+      <p>1文目 <span class="en">When Jane was seven, her mother borrowed a book from the library near their house.</span>「ジェーンが7歳のとき、母親は家の近くの図書館から1冊の本を借りた」!</p>
+        <div class="ra-step-think">
+          ★ <strong>副詞節</strong>: <span class="en">When Jane was seven</span>「ジェーンが7歳のとき」(=第16・21講応用)<br>
+          → S' = Jane / V' = was / C' = seven「7歳」<br><br>
+          ★ <strong>主節</strong>:<br>
+          → S = <span class="en">her mother</span>「母親」<br>
+          → V = <span class="en">borrowed</span>「借りた」(=他動詞)<br>
+          → O = <span class="en">a book</span>「本」<br>
+          → 〈<span class="en">from the library near their house</span>〉= 前置詞句<br><br>
+          ★ <span class="en">borrow A from B</span> = 「BからAを借りる」<br>
+          ★ <span class="en">near their house</span> = <strong>形容詞句</strong>(=library を後ろから修飾、第14講応用)<br>
+          → 「<strong>家の近くの図書館</strong>」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>ジェーンが7歳のとき、母親は家の近くの図書館から1冊の本を借りた</strong>」
+        </div>
+        <div class="ra-step-conclude">
+          [副詞節] + 主節 + 後置修飾。「7歳のとき、母親が家の近くの図書館から本を借りた」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>It was The Story of Dr. Dolittle.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目 ─ It は前文の本を指す</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目 <span class="en">It was The Story of Dr. Dolittle.</span>「それは『ドリトル先生物語』だった」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">It</span>「それ」(=前文の <span class="en">a book</span> を指す代名詞、第14講応用)<br>
+          ★ V = <span class="en">was</span>(=be動詞)<br>
+          ★ C = <span class="en">The Story of Dr. Dolittle</span>「『ドリトル先生物語』」(=書名)<br><br>
+          ★ <strong>第2文型 SVC</strong>: It = The Story of Dr. Dolittle<br>
+          → 「<strong>それは『ドリトル先生物語』だった</strong>」<br><br>
+          ★ <span class="en">The Story of Dr. Dolittle</span> = 児童文学の名作!動物と話せる医者の物語!
+        </div>
+        <div class="ra-step-conclude">
+          S=It(=前文の本) / V=was / C=書名「それは『ドリトル先生物語』だった」(=SVC)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>This book is about a doctor</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">3文目スタート ─ 主語+動詞+前置詞句</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3文目スタート <span class="en">This book is about a doctor</span>「この本はある医者についての話」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">This book</span>「この本」<br>
+          ★ V = <span class="en">is</span>(=be動詞)<br>
+          ★ <span class="en">about a doctor</span> = 前置詞句「<strong>ある医者について</strong>」<br><br>
+          ★ <span class="en">be about ~</span> = 「<strong>~についてのものだ</strong>」(=慣用)<br>
+          → 「この本は~の話だ」<br><br>
+          ★ <span class="en">a doctor</span> = 「(ある)医者」<br>
+          → でも、これだけでは「どんな医者か」分からない!<br>
+          → 後ろに修飾が来そう!(=関係詞節?)
+        </div>
+        <div class="ra-step-conclude">
+          S=This book / V=is / 〈about a doctor〉「この本はある医者の話」(=後ろに修飾を予測!)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>who can talk to animals and who travels to Africa.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">関係詞節2つを and でつなぐ！</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました <span class="en">who can talk to animals and who travels to Africa.</span>「動物と話せて、アフリカへ旅する」!</p>
+        <div class="ra-step-think">
+          ★ <strong>関係代名詞 who が2回出る!</strong><br>
+          ★ <strong>本問の構造</strong>:<br>
+          → 先行詞: <span class="en">a doctor</span>「医者」<br>
+          → 関係詞節①: <span class="en">who can talk to animals</span>「動物と話せる」<br>
+          → <span class="en">and</span><br>
+          → 関係詞節②: <span class="en">who travels to Africa</span>「アフリカへ旅する」<br>
+          → <strong>and が2つの who 節をつなぐ</strong>!<br><br>
+          ★ <strong>両方とも先行詞 <span class="en">a doctor</span> を修飾</strong>!<br>
+          → 「<strong>動物と話せて、アフリカへ旅する医者</strong>」<br><br>
+          ★ <span class="en">who</span> は<strong>主格</strong>:<br>
+          → 関係詞節①: who(=S')+ can talk(=V')+ to animals(=前置詞句)<br>
+          → 関係詞節②: who(=S')+ travels(=V')+ to Africa(=前置詞句)<br><br>
+          ★ <span class="en">talk to ~</span> = 「~と話す」(=群動詞的、talk + to)<br>
+          ★ <span class="en">travel to ~</span> = 「~へ旅する」<br><br>
+          ★ <strong>3文目全体</strong>: 「<strong>この本は、動物と話せて、アフリカへ旅する医者の話だ</strong>」<br><br>
+          ★ ドリトル先生の特徴を関係詞節2つで説明!
+        </div>
+        <div class="ra-step-conclude">
+          and = 関係詞節2つをつなぐ!両方とも a doctor を修飾。「動物と話せて、アフリカへ旅する医者」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>Jane liked the story so much</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">4文目スタート ─ so + 副詞</span>
+    </div>
+    <div class="ra-step-body">
+      <p>4文目スタート <span class="en">Jane liked the story so much</span>「ジェーンはこの物語がとても気に入った」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Jane</span><br>
+          ★ V = <span class="en">liked</span>「気に入った」(=他動詞)<br>
+          ★ O = <span class="en">the story</span>「この物語」<br>
+          ★ <span class="en">so much</span> = 副詞「<strong>とても</strong>」(=much の強調)<br><br>
+          ★ <span class="en">so + 形容詞/副詞</span> → 後ろに <span class="en">that</span> 節が来るかも?(=結果構文、第25講応用)<br>
+          → 待つ!
+        </div>
+        <div class="ra-step-conclude">
+          S=Jane / V=liked / O=the story / 副so much。so+副詞 → that 節を予測!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>that she read it three times</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">so ~ that 結果構文！</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました <span class="en">that she read it three times</span>「(あまりに気に入って)それを3回読んだ」!</p>
+        <div class="ra-step-think">
+          ★ <strong>結果構文 <span class="en">so ~ that ~</span></strong>「<strong>あまりに~なので~</strong>」!(=第25講応用)<br>
+          → 前: <span class="en">Jane liked the story so much</span>「とても気に入った」(=原因)<br>
+          → 後: <span class="en">that she read it three times</span>「それを3回読んだ」(=結果)<br><br>
+          ★ <strong>that 節の中身</strong>:<br>
+          → S' = <span class="en">she</span>「彼女」<br>
+          → V' = <span class="en">read</span>「読んだ」(=他動詞、過去形)<br>
+          → O' = <span class="en">it</span>「それ(=本)」<br>
+          → <span class="en">three times</span> = 副詞「<strong>3回</strong>」<br><br>
+          ★ <span class="en">three times</span> = 「3回」<br>
+          → <span class="en">once</span>(1回)、<span class="en">twice</span>(2回)、<span class="en">three times</span>(3回以降)<br><br>
+          → さらに後ろに何か続く?
+        </div>
+        <div class="ra-step-conclude">
+          so ~ that = 結果構文「あまりに~なので~」(=第25講応用)。「あまりに気に入ったので3回読んだ」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">7</span>
+      <span class="ra-step-pos"><em>before she returned it.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">before 副詞節 ─ 返す前に</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後に <span class="en">before she returned it.</span>「それを返す前に」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">before</span> = <strong>従属接続詞</strong>「<strong>~する前に</strong>」(=時の副詞節)<br>
+          → 主節「3回読んだ」の<strong>時を補足</strong>!<br><br>
+          ★ <strong>before 節の中身</strong>:<br>
+          → S' = <span class="en">she</span><br>
+          → V' = <span class="en">returned</span>「返した」(=他動詞)<br>
+          → O' = <span class="en">it</span>「それ(=本)」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>(本を)返す前に</strong>」<br><br>
+          ★ <strong>4文目全体</strong>: 「<strong>ジェーンはこの物語がとても気に入って、返す前に3回読んだ</strong>」<br><br>
+          ★ <strong>全体のメッセージ</strong>: 7歳のジェーンが図書館の本『ドリトル先生物語』に夢中になり、繰り返し読んだ ─ 動物への愛を育んだエピソード!<br>
+          ★ <strong>本講の本質</strong>: 関係詞節を <span class="en">and</span> でつなぐ + so~that の結果構文 + before 副詞節 ─ <strong>複数の節を整理して読む</strong>力を養う!
+        </div>
+        <div class="ra-step-conclude">
+          before節「返す前に」(=時の副詞節)。「3回読んだ ─ 返す前に」!ジェーンの夢中の様子!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">7つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-sub">[When Jane was seven],</span><span class="seg-marker seg-marker-sub">副詞節</span></span>
+    <span class="seg-wrap"><span class="seg-main">her mother</span><span class="seg-marker seg-marker-main">S₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">borrowed</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">a book</span><span class="seg-marker seg-marker-main">O₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈from the library</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-sub">near their house〉. </span><span class="seg-marker seg-marker-sub">M(後置修飾)</span></span>
+    <span class="seg-wrap"><span class="seg-main">It was The Story of Dr. Dolittle. </span><span class="seg-marker seg-marker-main">S₂ V₂ C₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">This book is about a doctor</span><span class="seg-marker seg-marker-main">S₃ V₃ 〈M〉</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[who can talk to animals</span><span class="seg-marker seg-marker-sub">関係詞節①</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接</span></span>
+    <span class="seg-wrap"><span class="seg-sub">who travels to Africa]. </span><span class="seg-marker seg-marker-sub">関係詞節②</span></span>
+    <span class="seg-wrap"><span class="seg-main">Jane liked the story</span><span class="seg-marker seg-marker-main">S₄ V₄ O₄</span></span>
+    <span class="seg-wrap"><span class="seg-sub">so much</span><span class="seg-marker seg-marker-sub">so+副</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that she read it three times</span><span class="seg-marker seg-marker-sub">結果</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[before she returned it]].</span><span class="seg-marker seg-marker-sub">副詞節(時)</span></span><span class="seg-text">.</span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: [When SV C], SVO 〈M後置修飾〉. 2: SVC. 3: SV 〈M〉 [who~ and who~]. 4: SVO so 副 [that S'V'O' 副 [before S'V'O']].</strong>(関係詞節2つを and でつなぐ!so~that 結果構文の中に before 副詞節も!複数の節を整理して読む)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ジェーンが7歳のとき、彼女の母親は彼女たちの家の近くの図書館から1冊の本を借りた。それは『ドリトル先生物語』だった。この本は動物と話せて、アフリカへ旅する医者についてだ。ジェーンはその物語がとても気に入って、彼女がそれを返す前に彼女はそれを3回読んだ。</span>
+      <span class="trans-row-note">構造どおりの直訳。代名詞の連発と「~についてだ」が硬い。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>関係代名詞 <span class="en">who</span></strong>(=主格)が<strong>2つ並列</strong></span>
+    <span class="trans-arrow-detail"><span class="en">a doctor who can talk to animals and who travels to Africa</span>!and が2つの who 節を並列、両方とも先行詞 a doctor を修飾。</span>
+  </div>
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ジェーンが7歳のとき、母親は家の近くの図書館から1冊の本を借りた。それは『ドリトル先生物語』だった。この本は、動物と話せてアフリカへ旅する医者の話だ。ジェーンはその物語がとても気に入って、返す前に3回読んだ。</span>
+      <span class="trans-row-note">「彼女の母親」を「母親」、「~についてだ」を「~の話だ」、「彼女がそれを」を消して自然に。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong><span class="en">and</span> が関係詞節2つをつなぐ</strong></span>
+    <span class="trans-arrow-detail">関係詞節+ and + 関係詞節 のパターン!後ろの関係詞節も同じ先行詞を修飾!</span>
+  </div>
+
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>ジェーンが7歳のとき、彼女の母親は家の近くの図書館から1冊の本を借りた。それは『ドリトル先生物語』だった。この本は、動物と話せて、アフリカへ旅する医者の話だ。ジェーンはこの物語がとても気に入って、返す前に3回読んだ。</strong></span>
+      <span class="trans-row-note">「彼女の母親」(=ジェーンに焦点)、「この物語」(=指示性UP)に微調整。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>関係詞節を <span class="en">and</span> でつなぐ</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第26講で身につけてほしい<strong>「関係詞節の並列」</strong>を伝えます。<br><br>★ 関係代名詞は、<strong>and でつないで2つ並列にできます</strong>。両方とも同じ先行詞を修飾!<br><br>★ <strong>本問の例</strong>:<br>★ <span class="en">a doctor who can talk to animals and who travels to Africa</span><br>→ 先行詞: <span class="en">a doctor</span>「医者」<br>→ 関係詞節①: <span class="en">who can talk to animals</span>「動物と話せる」<br>→ 関係詞節②: <span class="en">who travels to Africa</span>「アフリカへ旅する」<br>→ 「<strong>動物と話せて、アフリカへ旅する医者</strong>」<br><br>★ <strong>判別ルール</strong>:<br>(1) 名詞 + 関係代名詞 + S V<br>(2) <span class="en">and</span> + 関係代名詞 + S V<br>(3) <strong>2つの関係詞節が同じ先行詞を修飾</strong>!<br><br>★ <strong>類例</strong>:<br>・<span class="en">a man who is kind and who works hard</span>「親切で、よく働く男」<br>・<span class="en">a girl who sings well and who dances beautifully</span>「上手に歌い、美しく踊る少女」<br>・<span class="en">a book which is interesting and which teaches us a lot</span>「面白くて、多くを教えてくれる本」<br><br>★ <strong>2つ目の関係代名詞は省略可能</strong>:<br>・<span class="en">a doctor who can talk to animals and travels to Africa</span>(=2つ目の who を省略)<br>・<span class="en">a doctor who can talk to animals and who travels to Africa</span>(=本問、明示)<br>★ どちらでもOK!明示するか省略するかは文脈次第!<br><br>★ <strong>本問のもう一つのポイント ─ 結果構文 <span class="en">so ~ that ~</span></strong>(=第25講応用):<br>★ <span class="en">Jane liked the story so much that she read it three times</span><br>→ 「あまりに気に入ったので、3回読んだ」<br><br>★ <strong>さらに、その中に before 節</strong>(=時の副詞節):<br>★ <span class="en">before she returned it</span>「(本を)返す前に」<br>★ that 節の中に副詞節が入る → <strong>入れ子構造</strong>!(=第18講応用)<br><br>★ <strong>本問の入れ子構造</strong>:<br>主節: <span class="en">Jane liked the story so much</span><br>&nbsp;&nbsp;[that 節: <span class="en">she read it three times</span><br>&nbsp;&nbsp;&nbsp;&nbsp;[before 節: <span class="en">she returned it</span>]]<br><br>★ <strong>左から右に処理</strong>:<br>(1) Jane liked the story ─ ジェーンはこの物語が好きだった<br>(2) so much ─ とても!<br>(3) that ─ あ、結果構文だ!<br>(4) she read it three times ─ 3回読んだ<br>(5) before ─ いつ?(=時の副詞節)<br>(6) she returned it ─ 返す前に!<br><br>★ こうやって<strong>1つずつ整理</strong>すれば、複雑な文も自然に分かる!<br><br>★ これからの60講で、関係詞節の並列・結果構文・副詞節の入れ子は<strong>頻繁に</strong>登場します。出会うたびに「<strong>左から右に節を整理</strong>」する習慣を!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">I have a friend who lives in Tokyo and who works at a hospital.</span></span>
+      <span class="natural-tip-ex-bad">(2つ目の who 節の関係を取り違える)</span>
+      <span class="natural-tip-ex-good">東京に住んでいて、病院で働いている友達がいる (2つの who 節が a friend を修飾)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">She read the book before she went to bed.</span></span>
+      <span class="natural-tip-ex-bad">(before の役割が分からない)</span>
+      <span class="natural-tip-ex-good">彼女は寝る前に本を読んだ (before節=時の副詞節)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">It was so cold that I couldn't go out.</span></span>
+      <span class="natural-tip-ex-bad">(so~that の結果構文を見落とす)</span>
+      <span class="natural-tip-ex-good">あまりに寒くて外出できなかった (so~that 結果構文)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title"><span class="en">and</span> が関係詞節2つをつなぐ</span>
+  </div>
+  <p class="drill-en">I have a friend <strong>who studies hard and who plays soccer</strong>.</p>
+  <p class="drill-q">構造と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> <span class="en">and</span> が関係詞節2つをつなぐ!<br>
+        ・先行詞: <span class="en">a friend</span><br>
+        ・関係詞節①: <span class="en">who studies hard</span>「一生懸命勉強する」<br>
+        ・関係詞節②: <span class="en">who plays soccer</span>「サッカーをする」<br>
+        ・両方とも a friend を修飾!<br>
+        <strong>訳:</strong> 「私には<strong>一生懸命勉強し、サッカーをする友達</strong>がいる」<br><br>
+        💡 関係詞節 + and + 関係詞節!2つの節が同じ先行詞を修飾!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">so ~ that 結果構文(=第25講応用)</span>
+  </div>
+  <p class="drill-en">The book was <strong>so interesting that</strong> I couldn't stop reading.</p>
+  <p class="drill-q">構造と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> <span class="en">so + 形容詞 + that 節</span> = 結果構文「あまりに~なので~」<br>
+        ・前: <span class="en">The book was so interesting</span>「とても面白かった」(=原因)<br>
+        ・後: <span class="en">that I couldn't stop reading</span>「読むのを止められなかった」(=結果)<br>
+        <strong>訳:</strong> 「その本は<strong>あまりに面白くて、読むのを止められなかった</strong>」<br><br>
+        💡 so + 形容詞/副詞 + that 節!前=原因、後=結果!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">before 副詞節 ─ ~する前に</span>
+  </div>
+  <p class="drill-en">I always brush my teeth <strong>before I go to bed</strong>.</p>
+  <p class="drill-q">before 節の役割は？</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> <span class="en">before S V</span> = 副詞節「<strong>~する前に</strong>」(=時)<br>
+        ・主節: <span class="en">I always brush my teeth</span>「いつも歯を磨く」<br>
+        ・before 節: <span class="en">before I go to bed</span>「寝る前に」<br>
+        <strong>訳:</strong> 「私は<strong>寝る前にいつも歯を磨く</strong>」<br><br>
+        💡 before は時の副詞節!主節の時を補足!when, while, until, after も同類!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>関係代名詞 <span class="en">who</span></strong>(=主格)を覚える</div>
+      <div class="flow-desc">先行詞=人で、who がその人の動作を説明!who 自身が関係詞節の主語!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>and が関係詞節2つをつなぐ</strong>パターン</div>
+      <div class="flow-desc"><span class="en">a doctor who ~ and who ~</span>!両方とも同じ先行詞を修飾!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>2つ目の関係代名詞は省略可能</strong></div>
+      <div class="flow-desc"><span class="en">who ~ and ~</span>(=2つ目省略) or <span class="en">who ~ and who ~</span>(=明示)、両方OK!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>結果構文 <span class="en">so ~ that ~</span></strong>(=第25講応用)</div>
+      <div class="flow-desc"><span class="en">so + 形容詞/副詞 + that 節</span>「あまりに~なので~」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>従属接続詞 <span class="en">before</span></strong>「~する前に」(=時)</div>
+      <div class="flow-desc">副詞節を作る!<span class="en">when, while, until, after</span> 等と同類。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>節の入れ子構造</strong>を整理</div>
+      <div class="flow-desc">主節 + that 節 + before 節!左から右に1つずつ処理!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>後置修飾の前置詞句</strong>: <span class="en">the library near their house</span></div>
+      <div class="flow-desc">名詞 + 前置詞句 = 「~の名詞」!後ろから修飾(=形容詞句、第14講応用)。</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>慣用 <span class="en">borrow A from B</span></strong>「BからAを借りる」</div>
+      <div class="flow-desc">反対語: <span class="en">lend</span>「貸す」!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 <span class="en">who</span></strong>(=主格)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>and が関係詞節2つをつなぐ</strong>パターンを見抜ける</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>2つの関係詞節が同じ先行詞を修飾</strong>すると分かる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>2つ目の関係代名詞は省略可能</strong>と理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>結果構文 <span class="en">so ~ that ~</span></strong>(=第25講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>従属接続詞 <span class="en">before</span></strong>「~する前に」(=時)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>節の入れ子構造</strong>(=主節+that節+before節)を整理できる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>後置修飾の前置詞句</strong>(=第14講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>慣用 <span class="en">borrow A from B</span></strong>「BからAを借りる」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>群動詞 <span class="en">talk to ~</span></strong>「~と話す」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>回数表現</strong>(<span class="en">once, twice, three times</span>)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第26講 · 「いつ・誰が・何を」を整理して読む</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

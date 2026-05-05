@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第60講 【60講ラスト】if were to V / if V-ed と would V を見て、仮定法を見抜く | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">60</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 仮定法過去 if were to / if V-ed + 関係代名詞 + while 対比</div>
+        <h1 class="lesson-title">【60講ラスト】if were to V / if V-ed と would V を見て、仮定法を見抜く</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      <strong>第60講!ついに最終講!</strong><br>
+      テーマは <strong>「仮定法過去 if were to V / if V-ed と would V を見て、仮定法を見抜く」</strong>。<br>
+      これまで習った文法を<strong>総動員</strong>!関係代名詞、受動態の進行形、while 対比、過去分詞修飾、形式主語、why 名詞節 ─ ぜんぶ登場!<br>
+      しかしハイライトは<strong>仮定法過去</strong>!現実とは違う仮定を、特殊な時制で表現する英語の重要文法!<br>
+      第19・54講応用の受動態、第27講応用の関係代名詞、第43講応用の過去分詞、第29講応用の譲歩 although、第51講応用の形式主語、第57講応用の同格的構造、新出 while 対比 ─ <strong>これまでのすべて</strong>を結集!<br>
+      今日のキー:<br>
+      ① <strong>仮定法過去 if S were to V, S would V</strong>「もしSが Vしようとするなら、Sは Vするだろう」(=現実離れした仮定)<br>
+      ② <strong>仮定法過去 if S V-ed, S would V</strong>「もしSが Vしたら、Sは Vするだろう」(=現在の事実と違う仮定)<br>
+      ③ <strong>関係代名詞 which + 受動態の進行形 is being offered</strong>「現在提供されているもの」<br>
+      ④ <strong>although 副詞節</strong>「~だけれども」(=譲歩、第29講応用)<br>
+      ⑤ <strong>while 副詞節</strong>「~する一方で」(=対比、新出!)<br>
+      ⑥ <strong>形式主語 It is 形容詞 to V</strong>(=第39・51講応用、why 名詞節を含む)<br>
+      ⑦ <strong>at + %</strong>「~の税率で」(=慣用)<br>
+      イギリスの税制度の英文を題材に、<strong>仮定法と60講総まとめ</strong>を完成させます!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>仮定法過去</strong>(=if S were to V / if S V-ed + would V)を見抜き、現実とは違う仮定として読みます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>関係代名詞 + 受動態の進行形 is being V-ed</strong>「現在~されている」を理解します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>while 副詞節</strong>「~する一方で」(=対比)を覚えて、文の構造を浮かび上がらせます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">Tax is paid when a business provides goods or services to a customer. The rates vary according to the kind of item which is being offered, although it is sometimes difficult to understand why items are taxed at different rates. For example, if you were to buy chocolate covered biscuits, you would pay the standard tax rate of 20%, but if you wanted non-chocolate covered biscuits, the zero rate would apply. Clothes and footwear which are for children are taxed at 0%, while clothes and footwear that are for adults are taxed at 20%.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>8つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Tax is paid when a business provides goods or services to a customer</span> の <span class="en">when</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(when を疑問詞と勘違い)」</div>
+  <p class="trap-why">★ <span class="en">when S V</span> = ここでは<strong>副詞節</strong>「<strong>~するときに</strong>」(=接続詞、第48・51講応用)<br>★ <strong>本問</strong>: <span class="en">Tax is paid when a business provides goods or services to a customer.</span><br>→ メイン文 = Tax is paid「税金は支払われる」(=受動態)<br>→ when 副詞節 = when a business provides goods or services to a customer「企業が顧客に商品やサービスを提供するときに」<br>★ <strong>骨格</strong>:<br>→ S = Tax「税金」<br>→ V = is paid「支払われる」(=受動態)<br>→ M = when 副詞節(=時間)<br>★ <strong>when 節の中身</strong>:<br>→ S’ = a business「(ある)企業」<br>→ V’ = provides「提供する」(=他動詞、3単現の s)<br>→ O’ = goods or services「商品やサービス」(=or で名詞並列、第15講応用)<br>→ M’ = to a customer「顧客に」<br>★ <span class="en">provide A to B</span> = 「<strong>A を B に提供する</strong>」(=慣用)<br>→ provide A with B「A に B を提供する」も同義!<br>★ <strong>意訳</strong>: 「<strong>税金は、企業が顧客に商品やサービスを提供するときに支払われる</strong>」<br>★ <strong>類例</strong>:<br>・<span class="en">provide goods to customers</span>「商品を顧客に提供する」<br>・<span class="en">provide information to the public</span>「情報を一般に提供する」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">vary according to the kind of item</span> の <span class="en">vary according to</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(vary according to の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">vary according to ~</span> = 慣用「<strong>~に応じて変わる/異なる</strong>」<br>→ vary(=自動詞「変わる」)+ according to(=前置詞句「~に応じて」)<br>★ <strong>本問</strong>: <span class="en">The rates vary according to the kind of item which is being offered</span><br>→ S = The rates「税率(複数)」<br>→ V = vary「変わる/異なる」(=自動詞)<br>→ M = according to the kind of item「商品の種類に応じて」<br>★ <span class="en">according to ~</span> = 「<strong>~に応じて/~によると</strong>」(=慣用)<br>★ <span class="en">the kind of item</span>:<br>→ the kind「種類」(=名詞)<br>→ of item「商品の」(=of + 名詞、修飾)<br>→ 「商品の種類」<br>★ <strong>意訳</strong>: 「<strong>税率は、商品の種類に応じて異なる</strong>」<br>★ <strong>類例</strong>(=vary according to):<br>・<span class="en">Prices vary according to demand.</span>「価格は需要に応じて変わる」<br>・<span class="en">Rules vary according to the country.</span>「規則は国によって異なる」<br>・<span class="en">Salaries vary according to experience.</span>「給与は経験に応じて変わる」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">which is being offered</span> の <span class="en">is being offered</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(is being offered の受動態の進行形を取り違え)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">is being V-ed</span> = <strong>受動態の進行形</strong>「<strong>(現在)~されている</strong>」(=第19講応用、進行形 + 受動態の組み合わせ!)<br>→ is(=be 動詞)+ being(=現在分詞)+ V-ed(=過去分詞)<br>→ <strong>「現在 V されつつある」</strong>(=進行中の動作の受動)<br>★ <strong>本問</strong>: <span class="en">the kind of item which is being offered</span>「現在提供されている商品の種類」<br>→ which = 関係代名詞(=主格、第27講応用)<br>→ which 節の中身: which is being offered「(その)商品が現在提供されている」<br>★ <strong>受動態の進行形の構造</strong>:<br>→ 能動態の進行形: is offering「提供している」<br>→ <strong>受動態の進行形</strong>: <span class="en">is being offered</span>「提供されている」<br>→ 「現在進行中で、かつ受動」!<br>★ <strong>時制の整理</strong>:<br>(1) 現在: is offered(=受動態)<br>(2) <strong>現在進行</strong>: <span class="en">is being offered</span>(=受動態の進行形、本問!)<br>(3) 現在完了: has been offered(=現在完了 + 受動)<br>(4) 過去完了: had been offered(=過去完了 + 受動、第58講応用)<br>★ <strong>意訳</strong>: 「<strong>現在提供されている商品の種類</strong>」<br>★ <strong>類例</strong>(=受動態の進行形):<br>・<span class="en">The house is being built.</span>「家が建てられている(=建設中)」<br>・<span class="en">The book is being written.</span>「本が書かれている(=執筆中)」<br>・<span class="en">The room is being cleaned.</span>「部屋が掃除されている(=掃除中)」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">although it is sometimes difficult to understand why items are taxed at different rates</span> の <span class="en">although</span>と<span class="en">why</span>を取り違える</span>
+  </div>
+  <div class="trap-misread">「(although + 形式主語 + why 名詞節を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">although</span> = 接続詞「<strong>~だけれども/~にもかかわらず</strong>」(=譲歩、第29講応用)<br>★ <strong>本問</strong>: <span class="en">although it is sometimes difficult to understand why items are taxed at different rates</span><br>→ although 副詞節「~けれども」<br>→ 中身: it is sometimes difficult to understand ~(=形式主語、第39・51講応用)<br>★ <strong>形式主語の構造</strong>(=第39講応用):<br>→ 仮主語 = it<br>→ V = is(=be 動詞)<br>→ M = sometimes「ときに」(=副詞)<br>→ C = difficult「難しい」(=形容詞)<br>→ 真主語 = to understand ~「~を理解すること」(=不定詞、名詞用法)<br>★ <strong>真主語(不定詞)の中身</strong>:<br>→ to understand「理解すること」<br>→ understand の目的語 = why items are taxed at different rates「なぜ商品が異なる税率で課税されるのか」(=why 名詞節)<br>★ <span class="en">why 名詞節</span>:<br>→ why「なぜ」(=接続詞的疑問詞)<br>→ S’ = items「商品(複数)」<br>→ V’ = are taxed「課税される」(=受動態、第19講応用)<br>→ M’ = at different rates「異なる税率で」<br>★ <span class="en">at different rates</span>:<br>→ at = 前置詞「~で」(=税率を表す at)<br>→ different rates「異なる税率」<br>→ 「異なる税率で」<br>★ <strong>意訳</strong>: 「<strong>もっとも、なぜ商品が異なる税率で課税されるのかを理解するのは、ときに難しい</strong>」<br>★ <span class="en">although vs but の違い</span>:<br>(1) <strong>although</strong> = 副詞節「~だけれども」(=従属節、メインを補足)<br>(2) but = 等位接続詞「しかし」(=2つの節を対等に繋ぐ)<br>★ <strong>類例</strong>(=形式主語 + why 名詞節):<br>・<span class="en">It is hard to understand why he left.</span>「彼がなぜ去ったのか理解するのは難しい」<br>・<span class="en">It is important to know why mistakes happen.</span>「なぜミスが起こるのか知ることは重要」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">if you were to buy chocolate covered biscuits, you would pay the standard tax rate</span> の<strong>仮定法過去</strong>を取り違える</span>
+  </div>
+  <div class="trap-misread">「<u>もしチョコレートで覆われたビスケットを買えば、標準税率を払う</u>」(=直説法と取り違え!)</div>
+  <p class="trap-why">★ <strong>本講最大の核心 ─ 仮定法過去!</strong><br>★ <span class="en">if S were to V, S would V</span> = <strong>仮定法過去</strong>「<strong>もし S が V しようとするなら、Sは V するだろう</strong>」(=現実離れした仮定)<br>→ if 節: <strong>過去形(=if S V-ed)</strong>または <strong>were to V</strong><br>→ メイン節: <strong>would V</strong>(=助動詞の過去形 + 動詞の原形)<br>★ <strong>本問</strong>: <span class="en">if you were to buy chocolate covered biscuits, you would pay the standard tax rate of 20%</span><br>→ if 節 = if you were to buy「(あなたが)買おうとするなら」(=仮定法過去 were to V)<br>→ メイン節 = you would pay「あなたは支払うだろう」(=助動詞 would + V)<br>★ <strong>仮定法 vs 直説法の違い</strong>:<br>(1) <strong>直説法</strong>: <span class="en">If you buy ~, you pay ~.</span>「買えば、支払う」(=現在の事実、ありうる仮定)<br>(2) <strong>仮定法過去</strong>: <span class="en">If you were to buy ~, you would pay ~.</span>「(仮に)買おうとするなら、支払うだろう」(=現実とは違う仮定、ありえない/可能性が低い)<br>★ <span class="en">were to V</span>:<br>→ <strong>純粋な仮定/予想</strong>を表す!<br>→ 「(現実には不確かだが)仮に~するとしたら」<br>→ 過去形の were(=主語が単数でも were!)+ to V<br>★ <strong>過去分詞修飾 chocolate covered biscuits</strong>(=第43講応用):<br>→ chocolate covered = 過去分詞句「チョコレートで覆われた」(=biscuits を修飾)<br>→ chocolate(=名詞、副詞的)+ covered(=過去分詞)<br>→ 「<strong>チョコレートで覆われたビスケット</strong>」(=チョココーティングのビスケット)<br>★ <strong>意訳</strong>: 「<strong>もしあなたがチョコレートで覆われたビスケットを買おうとすれば、標準税率の20%を支払うことになるだろう</strong>」<br>★ <strong>イギリスの税制度の例</strong>:<br>→ 標準税率(=Standard rate)= 20%<br>→ ゼロ税率(=Zero rate)= 0%<br>→ ビスケットでも「チョコレートコーティング」=高級品 → 20%<br>→ 「ノンチョコレート」=必需品 → 0%<br>→ <strong>非常に細かい税制!</strong><br>★ <strong>類例</strong>(=仮定法過去 were to V):<br>・<span class="en">If I were to win the lottery, I would travel the world.</span>「もし宝くじに当たったら、世界中を旅するだろう」<br>・<span class="en">If he were to leave, we would be sad.</span>「彼が去るとしたら、悲しいだろう」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">but if you wanted non-chocolate covered biscuits, the zero rate would apply</span> の もう一つの <strong>仮定法過去</strong>を取り違える</span>
+  </div>
+  <div class="trap-misread">「(if + V-ed の仮定法過去を直説法と勘違い)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">if S V-ed, S would V</span> = <strong>仮定法過去</strong>「<strong>もし S が V したら、Sは V するだろう</strong>」(=現在の事実と違う仮定)<br>→ if 節: <strong>過去形 V-ed</strong>(=現在の事実とは違う)<br>→ メイン節: <strong>would V</strong><br>★ <strong>本問</strong>: <span class="en">but if you wanted non-chocolate covered biscuits, the zero rate would apply.</span><br>→ but(=逆接、前文との対比)<br>→ if 節 = if you wanted「(あなたが)欲しいと思ったら」(=仮定法過去 V-ed)<br>→ メイン節 = the zero rate would apply「ゼロ税率が適用されるだろう」(=助動詞 would + V)<br>★ <strong>2種類の仮定法過去</strong>:<br>(1) <strong>if S were to V</strong>(=前文): 純粋な仮定/予想<br>(2) <strong>if S V-ed</strong>(=本文): 現在の事実と違う仮定<br>→ どちらも仮定法過去!メインは would V!<br>★ <strong>判別の決め手</strong>:<br>→ if 節の動詞が<strong>過去形</strong>(=V-ed)<br>→ メイン節の動詞が<strong>would V</strong><br>→ → <strong>仮定法過去!</strong><br>★ <span class="en">non-chocolate covered biscuits</span>:<br>→ non-(=接頭辞「~でない」)+ chocolate covered = 「チョコレートで覆われていない」<br>→ 「ノン・チョコレートのビスケット」(=普通のビスケット)<br>★ <span class="en">apply</span> = 自動詞「適用される」<br>→ the zero rate applies「ゼロ税率が適用される」(=直説法)<br>→ would apply「適用されるだろう」(=仮定法、本問!)<br>★ <strong>意訳</strong>: 「<strong>だが、もしあなたがチョコレートのないビスケットが欲しいと思えば、ゼロ税率が適用されるだろう</strong>」<br>★ <strong>類例</strong>(=if S V-ed の仮定法過去):<br>・<span class="en">If I had time, I would help you.</span>「時間があれば、手伝うのに」(=今は時間がない、現実とは違う仮定)<br>・<span class="en">If she were here, she would know what to do.</span>「彼女がここにいれば、何をすべきか分かるだろうに」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Clothes and footwear which are for children are taxed at 0%, while clothes and footwear that are for adults are taxed at 20%</span> の <span class="en">while</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「<u>~している間に~</u>」(=時間と勘違い、対比のwhileを取り違え)</div>
+  <p class="trap-why">★ <strong>核心 ─ while の対比!</strong><br>★ <span class="en">while</span> = 接続詞、ここでは「<strong>~する一方で/~に対して</strong>」(=対比、副詞節)<br>→ <strong>「~している間に」(=時間)とは別の用法!</strong><br>→ 文脈で対比を表す!<br>★ <strong>本問</strong>: <span class="en">Clothes and footwear which are for children are taxed at 0%, while clothes and footwear that are for adults are taxed at 20%.</span><br>→ メイン文 = Clothes and footwear ~ are taxed at 0%「(子供向けの)衣類や履物は0%で課税される」<br>→ while 副詞節 = while ~ are taxed at 20%「(大人向けの)衣類や履物は20%で課税される(一方)」<br>★ <strong>while の用法</strong>:<br>(1) <strong>「~している間に」</strong>(=時間)<br>(2) <strong>「~する一方で/~に対して」</strong>(=対比、本問!)<br>(3) 「~だけれども」(=譲歩、although に近い)<br>★ <strong>判別の決め手</strong>:<br>→ 文脈で「2つの状況を対比」 → 対比!<br>→ 「同時に起こる動作」 → 時間!<br>★ <strong>関係代名詞 which vs that</strong>:<br>→ which / that どちらも物・動物を修飾(=人なら who/that)<br>→ 本問では Clothes and footwear に which / that の<strong>両方</strong>!(=同じ意味)<br>★ <strong>関係代名詞の中身</strong>:<br>→ which/that are for children「子供向けの」<br>→ which/that are for adults「大人向けの」<br>→ どちらも形容詞句<br>★ <span class="en">at + %</span> = 「<strong>~の税率で</strong>」(=慣用)<br>→ taxed at 0%「0%で課税される」<br>→ taxed at 20%「20%で課税される」<br>★ <strong>骨格 + 対比の構造</strong>(=L57応用!):<br>→ Clothes and footwear (which are for children) are taxed at 0%(=メイン)<br>→ <strong>while</strong>(=対比)<br>→ clothes and footwear (that are for adults) are taxed at 20%(=対比)<br>→ <strong>骨格</strong>: clothes for children are taxed at 0%, while clothes for adults are taxed at 20%(=シンプル!)<br>★ <strong>意訳</strong>: 「<strong>子供向けの衣類や履物は0%で課税されるが、一方、大人向けの衣類や履物は20%で課税される</strong>」<br>★ <strong>類例</strong>(=while の対比):<br>・<span class="en">Some people love coffee, while others prefer tea.</span>「コーヒーが好きな人もいれば、紅茶が好きな人もいる(一方)」<br>・<span class="en">Tom is tall, while his brother is short.</span>「Tomは背が高いが、弟は背が低い」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the standard tax rate of 20%</span> の <span class="en">of 20%</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(of 20% の役割を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">of 20%</span> = 「<strong>20%という</strong>/20%の」(=同格的な of、第57講で同格を学んだ応用)<br>→ of は<strong>説明・同格</strong>を表す!<br>★ <strong>本問</strong>: <span class="en">the standard tax rate of 20%</span>「20%の標準税率/標準税率(20%)」<br>→ the standard tax rate「標準税率」(=名詞)<br>→ of 20%「20%という」(=of + 数字、説明)<br>★ <strong>of の用法</strong>:<br>(1) 所有「~の」: the dog of John「ジョンの犬」<br>(2) 部分「~のうちの」: a piece of cake「ケーキの一切れ」<br>(3) <strong>同格・説明</strong>(=本問!): the city of Tokyo「東京という都市」、the year of 2024「2024年」<br>(4) 起源・出身: a man of Japan「日本出身の男性」<br>★ <strong>意訳</strong>: 「<strong>標準税率の20%</strong>」または「<strong>20%という標準税率</strong>」<br>★ <strong>類例</strong>(=of で説明):<br>・<span class="en">a price of $100</span>「100ドルという価格」<br>・<span class="en">a rate of 5%</span>「5%という割合」<br>・<span class="en">a temperature of 30°C</span>「30°Cという気温」</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>Tax is paid when a business provides goods or services to a customer.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">1文目 ─ 受動態 + when 副詞節</span>
+    </div>
+    <div class="ra-step-body">
+      <p>1文目 <span class="en">Tax is paid when a business provides goods or services to a customer.</span>「税金は、企業が顧客に商品やサービスを提供するときに支払われる」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Tax</span>「税金」(=不可算名詞)<br>
+          ★ V = <span class="en">is paid</span>「支払われる」(=受動態、第19講応用)<br><br>
+          ★ <span class="en">when</span> = 副詞節「~するときに」(=時間、第48・51講応用)<br><br>
+          ★ <strong>when 節の中身</strong>:<br>
+          → S’ = a business「(ある)企業」<br>
+          → V’ = provides「提供する」(=他動詞、3単現の s)<br>
+          → O’ = goods or services「商品やサービス」(=or の名詞並列、第15講応用)<br>
+          → M’ = to a customer「顧客に」<br><br>
+          ★ <span class="en">provide A to B</span> = 「A を B に提供する」(=慣用)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>税金は、企業が顧客に商品やサービスを提供するときに支払われる</strong>」<br><br>
+          → 税率は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          1文目: 受動態 Tax is paid + when 副詞節!provide A to B「AをBに提供する」(=慣用)。税金の基本ルール!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>The rates vary according to the kind of item which is being offered,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目スタート ─ vary according to + 関係代名詞 which + 受動態の進行形!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目スタート <span class="en">The rates vary according to the kind of item which is being offered,</span>「税率は、現在提供されている商品の種類に応じて異なる」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">The rates</span>「税率(複数)」<br>
+          ★ V = <span class="en">vary</span>「変わる/異なる」(=自動詞)<br>
+          ★ M = <span class="en">according to</span>「~に応じて」(=慣用)<br><br>
+          ★ <span class="en">vary according to ~</span> = 慣用「~に応じて変わる/異なる」<br><br>
+          ★ <strong>according to の目的語</strong>: <span class="en">the kind of item which is being offered</span><br>
+          → the kind of item「商品の種類」(=of で修飾)<br>
+          → which 関係代名詞節「(その商品が)現在提供されている」(=item を修飾、第27講応用)<br><br>
+          ★ <strong>核心 ─ is being offered = 受動態の進行形!</strong><br>
+          → is(=be 動詞)+ being(=現在分詞)+ V-ed(=過去分詞)<br>
+          → 「<strong>現在 V されつつある</strong>」(=進行中の動作 + 受動)<br><br>
+          ★ <strong>時制の整理</strong>:<br>
+          (1) is offered = 受動態(=単純現在)<br>
+          (2) <strong>is being offered = 受動態の進行形</strong>(=本問!)<br>
+          (3) has been offered = 現在完了 + 受動態<br>
+          (4) had been offered = 過去完了 + 受動態(=第58講応用)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>税率は、現在提供されている商品の種類に応じて異なる</strong>」<br><br>
+          → でも実際は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          vary according to「~に応じて変わる」(=慣用)!関係代名詞 which + is being offered = 受動態の進行形「現在~されている」!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>although it is sometimes difficult to understand why items are taxed at different rates.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">譲歩 although + 形式主語 + why 名詞節</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">although it is sometimes difficult to understand why items are taxed at different rates.</span>「もっとも、なぜ商品が異なる税率で課税されるのかを理解するのは、ときに難しい」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">although</span> = 接続詞「~だけれども/~にもかかわらず」(=譲歩、副詞節、第29講応用)<br><br>
+          ★ <strong>although 節の中身</strong>:<br>
+          → it = 形式主語(=仮主語、第39・51講応用)<br>
+          → V = is(=be 動詞)<br>
+          → M = sometimes「ときに」<br>
+          → C = difficult「難しい」<br>
+          → 真主語 = to understand ~「~を理解すること」(=不定詞、名詞用法)<br><br>
+          ★ <strong>形式主語の構造</strong>:<br>
+          → 仮主語 it + is + 形容詞 + 真主語(=to V)<br>
+          → 「Vすることは形容詞だ」<br><br>
+          ★ <strong>真主語(不定詞)の中身</strong>:<br>
+          → to understand「理解すること」<br>
+          → understand の目的語 = why items are taxed at different rates「なぜ商品が異なる税率で課税されるのか」(=why 名詞節)<br><br>
+          ★ <span class="en">why 名詞節</span>:<br>
+          → S’ = items「商品(複数)」<br>
+          → V’ = are taxed「課税される」(=受動態)<br>
+          → M’ = at different rates「異なる税率で」<br><br>
+          ★ <span class="en">at + %</span> = 「~の税率で」(=慣用)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>もっとも、なぜ商品が異なる税率で課税されるのかを理解するのは、ときに難しい</strong>」<br><br>
+          ★ <strong>2文目全体</strong>: 「<strong>税率は、提供されている商品の種類に応じて異なる。もっとも、なぜ商品が異なる税率で課税されるのかを理解するのは、ときに難しい</strong>」<br><br>
+          → 具体例?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          although(=譲歩)+ 形式主語 it + 真主語 to V + why 名詞節!at + % = 「~の税率で」(=慣用)!イギリス税制の複雑さ!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>For example, if you were to buy chocolate covered biscuits, you would pay the standard tax rate of 20%,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">本講のラスボス ─ 仮定法過去 if were to V, would V!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3文目スタート <span class="en">For example, if you were to buy chocolate covered biscuits, you would pay the standard tax rate of 20%,</span>「たとえば、もしあなたがチョコレートで覆われたビスケットを買おうとすれば、標準税率の20%を支払うことになるだろう」!</p>
+        <div class="ra-step-think">
+          ★ <strong>本講最大の核心 ─ 仮定法過去!</strong><br><br>
+          ★ <span class="en">if S were to V, S would V</span> = <strong>仮定法過去</strong>「もしSが Vしようとするなら、Sは V するだろう」(=現実離れした仮定)<br>
+          → if 節: <strong>were to V</strong>(=純粋な仮定/予想)<br>
+          → メイン節: <strong>would V</strong>(=助動詞 would + V)<br><br>
+          ★ <strong>分解</strong>:<br>
+          → For example「たとえば」(=具体例の導入)<br>
+          → if 節 = if you were to buy chocolate covered biscuits「(あなたが)チョコレートで覆われたビスケットを買おうとするなら」<br>
+          → メイン節 = you would pay the standard tax rate of 20%「あなたは標準税率の20%を支払うことになるだろう」<br><br>
+          ★ <strong>were to V の意味</strong>:<br>
+          → <strong>純粋な仮定/予想</strong>を表す!<br>
+          → 「(現実には不確かだが)仮に~するとしたら」<br>
+          → 過去形の were(=主語が単数でも were!)+ to V<br><br>
+          ★ <strong>仮定法 vs 直説法の違い</strong>:<br>
+          (1) 直説法: If you buy ~, you pay ~.「買えば、支払う」(=現在の事実、ありうる仮定)<br>
+          (2) <strong>仮定法過去</strong>: If you were to buy ~, you would pay ~.「(仮に)買おうとするなら、支払うだろう」(=現実とは違う仮定、予想)<br><br>
+          ★ <span class="en">chocolate covered biscuits</span>:<br>
+          → chocolate covered = 過去分詞句「チョコレートで覆われた」(=biscuits を修飾、第43講応用)<br>
+          → chocolate(=名詞、副詞的)+ covered(=過去分詞)<br>
+          → 「<strong>チョコレートで覆われたビスケット</strong>」<br><br>
+          ★ <span class="en">the standard tax rate of 20%</span>:<br>
+          → the standard tax rate「標準税率」<br>
+          → of 20%「20%という」(=同格的な of)<br><br>
+          ★ <strong>イギリスの税制度</strong>:<br>
+          → 標準税率(=Standard rate)= 20%<br>
+          → ゼロ税率(=Zero rate)= 0%<br>
+          → 「チョコレートコーティング」=高級品 → 20%<br>
+          → 「ノンチョコレート」=必需品 → 0%<br>
+          → <strong>非常に細かい税制</strong>!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>たとえば、もしあなたがチョコレートで覆われたビスケットを買おうとすれば、標準税率の20%を支払うことになるだろう</strong>」<br><br>
+          → 対比は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          仮定法過去 if S were to V, S would V!現実離れした仮定/予想!chocolate covered biscuits = 過去分詞修飾!イギリスの細かい税制!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>but if you wanted non-chocolate covered biscuits, the zero rate would apply.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">もう一つの仮定法過去 ─ if S V-ed, S would V!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">but if you wanted non-chocolate covered biscuits, the zero rate would apply.</span>「だが、もしあなたがチョコレートのないビスケットが欲しいと思えば、ゼロ税率が適用されるだろう」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心 ─ もう一つの仮定法過去!</strong><br><br>
+          ★ <span class="en">if S V-ed, S would V</span> = <strong>仮定法過去</strong>「もし S が V したら、Sは V するだろう」(=現在の事実と違う仮定)<br>
+          → if 節: <strong>過去形 V-ed</strong>(=現在の事実とは違う)<br>
+          → メイン節: <strong>would V</strong><br><br>
+          ★ <span class="en">but</span> = 接続詞「しかし」(=逆接、対比)<br>→ 前の文(=チョコレートあり、20%)と対比!<br><br>
+          ★ <strong>分解</strong>:<br>
+          → if 節 = if you wanted non-chocolate covered biscuits「(あなたが)チョコレートのないビスケットを欲しいと思ったら」<br>
+          → メイン節 = the zero rate would apply「ゼロ税率が適用されるだろう」<br><br>
+          ★ <strong>2種類の仮定法過去</strong>:<br>
+          (1) <strong>if S were to V</strong>(=前文): 純粋な仮定/予想<br>
+          (2) <strong>if S V-ed</strong>(=本文): 現在の事実と違う仮定<br>
+          → どちらも仮定法過去!メインは would V!<br><br>
+          ★ <span class="en">non-chocolate covered biscuits</span>:<br>
+          → non-(=接頭辞「~でない」)+ chocolate covered<br>
+          → 「チョコレートで覆われていない」 = 「ノンチョコレート」<br><br>
+          ★ <span class="en">apply</span>:<br>
+          → 自動詞「適用される」<br>
+          → would apply「適用されるだろう」(=仮定法、本問)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>だが、もしあなたがチョコレートのないビスケットが欲しいと思えば、ゼロ税率が適用されるだろう</strong>」<br><br>
+          ★ <strong>3文目全体</strong>: 「<strong>たとえば、もしあなたがチョコレートで覆われたビスケットを買おうとすれば、標準税率の20%を支払うことになるだろう。だが、もしあなたがチョコレートのないビスケットが欲しいと思えば、ゼロ税率が適用されるだろう</strong>」<br>
+          → ビスケットでも<strong>チョコの有無で税率が劇的に違う</strong>!<br><br>
+          → さらに具体例?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          もう一つの仮定法過去 if S V-ed, S would V!但し書きで but で対比!ビスケットの税制の細かさ!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>Clothes and footwear which are for children are taxed at 0%, while clothes and footwear that are for adults are taxed at 20%.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">4文目 ─ 関係代名詞 + while 対比!【60講ラスト】</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">Clothes and footwear which are for children are taxed at 0%, while clothes and footwear that are for adults are taxed at 20%.</span>「子供向けの衣類や履物は0%で課税されるが、一方、大人向けの衣類や履物は20%で課税される」!</p>
+        <div class="ra-step-think">
+          ★ <strong>本講ラストの核心 ─ while の対比!</strong><br><br>
+          ★ <span class="en">while</span> = 接続詞「<strong>~する一方で/~に対して</strong>」(=対比、副詞節、新出!)<br>
+          → 「~している間に」(=時間)とは別の用法!<br>
+          → 文脈で対比を表す!<br><br>
+          ★ <strong>関係代名詞 which と that</strong>:<br>
+          → どちらも物・動物を修飾(=人なら who/that)<br>
+          → 本問では Clothes and footwear に which と that の<strong>両方</strong>!(=同じ意味)<br><br>
+          ★ <strong>骨格 + 対比の構造</strong>(=L57応用!):<br>
+          → メイン文 = Clothes and footwear (which are for children) are taxed at 0%「子供向けの衣類や履物は0%で課税される」<br>
+          → <strong>while</strong>(=対比)<br>
+          → 対比節 = clothes and footwear (that are for adults) are taxed at 20%「大人向けの衣類や履物は20%で課税される(一方)」<br><br>
+          ★ <strong>骨格</strong>(=関係代名詞節を削ると):<br>
+          → clothes for children are taxed at 0%, while clothes for adults are taxed at 20%<br>
+          → <strong>シンプルな対比</strong>!<br><br>
+          ★ <span class="en">at + %</span> = 「~の税率で」(=慣用、頻出!)<br>
+          → taxed at 0%「0%で課税される」<br>
+          → taxed at 20%「20%で課税される」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>子供向けの衣類や履物は0%で課税されるが、一方、大人向けの衣類や履物は20%で課税される</strong>」<br><br>
+          ★ <strong>4文目全体</strong>: 子供 vs 大人で衣類の税率が違う!子供は0%、大人は20%!<br><br>
+          ★ <strong>4文全体のメッセージ</strong>:<br>
+          → 1文目: 税金は商品・サービス提供時に発生<br>
+          → 2文目: 税率は商品の種類で異なるが、なぜそうなのか分かりにくい<br>
+          → 3文目: ビスケットでもチョコの有無で 0% ↔ 20%(=仮定法で説明)<br>
+          → 4文目: 衣類でも子供向け 0% ↔ 大人向け 20%<br>
+          → <strong>イギリスの税制度の複雑さの実例</strong>!<br><br>
+          ★ <strong>本講(=最終講!)の本質</strong>:<br>
+          → 仮定法過去(=if S were to V / if S V-ed + would V)を見抜く!<br>
+          → 関係代名詞 + 受動態の進行形(=is being offered)を読み解く!<br>
+          → while の対比(=「~する一方で」)を見抜く!<br>
+          → 過去分詞修飾(=chocolate covered biscuits)、形式主語(=it is difficult to V)、why 名詞節など、<strong>これまで習ったすべて</strong>を結集!<br><br>
+          ★ <strong>60講のフィナーレ</strong>: ここまでで学んだ文法のすべてを総動員する英文!<br>
+          → 第1〜60講の<strong>集大成</strong>!<br>
+          → 英文解釈の基礎が完成!<br><br>
+          ★ <strong>お疲れ様でした!</strong> 英文解釈入門60、これで完走です!
+        </div>
+        <div class="ra-step-conclude">
+          while の対比「~する一方で」(=新出、副詞節)!関係代名詞 which/that = 同じ意味!at + %「~の税率で」(=慣用)!60講ラストにふさわしい総合問題!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">Tax</span><span class="seg-marker seg-marker-main">S₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">is paid</span><span class="seg-marker seg-marker-main">V₁(受動態)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[when a business provides goods or services to a customer].</span><span class="seg-marker seg-marker-sub">when副詞節</span></span>
+    <span class="seg-wrap"><span class="seg-main">The rates</span><span class="seg-marker seg-marker-main">S₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">vary</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈according to the kind of item</span><span class="seg-marker seg-marker-sub">M(慣用)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[which is being offered]〉,</span><span class="seg-marker seg-marker-sub">関係代名詞+受動態進行形</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[although it is sometimes difficult to understand [why items are taxed at different rates]].</span><span class="seg-marker seg-marker-sub">although+形式主語+why名詞節</span></span>
+    <span class="seg-wrap"><span class="seg-sub">For example,</span><span class="seg-marker seg-marker-sub">M(具体例)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[if you were to buy chocolate covered biscuits],</span><span class="seg-marker seg-marker-sub">仮定法過去 if were to V</span></span>
+    <span class="seg-wrap"><span class="seg-main">you</span><span class="seg-marker seg-marker-main">S₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">would pay</span><span class="seg-marker seg-marker-main">V₃(would+V)</span></span>
+    <span class="seg-wrap"><span class="seg-main">the standard tax rate of 20%,</span><span class="seg-marker seg-marker-main">O₃(=of で説明)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">but</span><span class="seg-marker seg-marker-sub">接(逆接)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[if you wanted non-chocolate covered biscuits],</span><span class="seg-marker seg-marker-sub">仮定法過去 if V-ed</span></span>
+    <span class="seg-wrap"><span class="seg-main">the zero rate</span><span class="seg-marker seg-marker-main">S₄</span></span>
+    <span class="seg-wrap"><span class="seg-main">would apply.</span><span class="seg-marker seg-marker-main">V₄(would+V)</span></span>
+    <span class="seg-wrap"><span class="seg-main">Clothes and footwear</span><span class="seg-marker seg-marker-main">S₅</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[which are for children]</span><span class="seg-marker seg-marker-sub">関係代名詞主格</span></span>
+    <span class="seg-wrap"><span class="seg-main">are taxed</span><span class="seg-marker seg-marker-main">V₅(受動態)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">at 0%,</span><span class="seg-marker seg-marker-sub">M(=at +%)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">while</span><span class="seg-marker seg-marker-sub">接(対比、新出!)</span></span>
+    <span class="seg-wrap"><span class="seg-main">clothes and footwear</span><span class="seg-marker seg-marker-main">S₆</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that are for adults]</span><span class="seg-marker seg-marker-sub">関係代名詞主格</span></span>
+    <span class="seg-wrap"><span class="seg-main">are taxed</span><span class="seg-marker seg-marker-main">V₆(受動態)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">at 20%.</span><span class="seg-marker seg-marker-sub">M(=at +%)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: S V(=受動態) [when S V O M]. 2: S V 〈according to N [which V(=is being V-ed)]〉, [although it V C 〈to V [why S V(=受動態) M]〉]. 3: 〈M(=具体例)〉, [if S were to V O], S would V O, 接 [if S V-ed O], S would V. 4: S [which V] V(=受動態) 〈M(=at%)〉, while S [that V] V(=受動態) 〈M(=at%)〉.</strong>(仮定法過去 if were to V & if V-ed + would V、関係代名詞 which/that 主格、受動態の進行形 is being V-ed、although 譲歩、形式主語 + why 名詞節、while 対比、過去分詞修飾、at + %、provide A to B、vary according to)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">税は、ビジネスが顧客に商品やサービスを提供するときに支払われる。レートは、提供されている商品の種類に応じて変わる、しかし時にそれは異なるレートで商品が課税される理由を理解するのが難しい。たとえば、もしあなたがチョコレートで覆われたビスケットを買うことになるなら、あなたは20%の標準税率を払うだろう、しかしもしあなたがチョコレートで覆われていないビスケットを欲しがったら、ゼロ税率が適用されるだろう。子供のための衣類と履物は0%で課税される、その間、大人のための衣類と履物は20%で課税される。</span>
+      <span class="trans-row-note">構造どおりの直訳。「ビジネス」「ゼロ税率」「その間」(=while を時間と勘違い)が硬い。仮定法も「~するなら、~するだろう」と直訳的。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>仮定法過去 if S were to V / if S V-ed, S would V</strong>「もし~ならば、~するだろう」(=現実離れした仮定 / 現在の事実と違う仮定)</span>
+    <span class="trans-arrow-detail">if you were to buy ~, you would pay ~(=純粋な仮定)、if you wanted ~, the zero rate would apply(=現在の事実と違う仮定)!if 節は過去形/were to V、メイン節は would V!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">税金は、企業が顧客に商品やサービスを提供するときに支払われる。税率は、現在提供されている商品の種類に応じて異なる。もっとも、なぜ商品が異なる税率で課税されるのかを理解するのは、ときに難しい。たとえば、もしチョコレートで覆われたビスケットを買おうとすれば、標準税率の20%を支払うだろう。だが、もしチョコレートのないビスケットが欲しいと思えば、ゼロ税率が適用されるだろう。子供向けの衣類や履物は0%で課税されるが、一方、大人向けの衣類や履物は20%で課税される。</span>
+      <span class="trans-row-note">受動態を「支払われる」、関係代名詞 + 受動態進行形を「現在提供されている」、although を「もっとも~」、仮定法 if S were to V / if S V-ed を「もし~なら、~するだろう」、while を「一方」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>関係代名詞 + 受動態の進行形 is being V-ed</strong>(=現在 ~ されている)、<strong>while 対比</strong>「~する一方で」(=新出!)、<strong>although 譲歩</strong>(=第29講応用)、<strong>形式主語 + why 名詞節</strong>(=第51講応用)、<strong>過去分詞修飾</strong>(=chocolate covered、第43講応用)、<strong>at + %</strong>「~の税率で」</span>
+    <span class="trans-arrow-detail">これまで習った文法をすべて結集!最終講にふさわしい総合問題!while の対比は新出、左右の節を比較する読み方を身につける!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>税金は、企業が顧客に商品やサービスを提供するときに支払われる。税率は、提供されている商品の種類に応じて異なる。もっとも、なぜ商品が異なる税率で課税されるのかを理解するのは、ときに難しい。たとえば、もしあなたがチョコレートで覆われたビスケットを買おうとすれば、標準税率の20%を支払うことになるだろう。だが、もしあなたがチョコレートのないビスケットが欲しいと思えば、ゼロ税率が適用されるだろう。子供向けの衣類や履物は0%で課税されるが、一方、大人向けの衣類や履物は20%で課税される。</strong></span>
+      <span class="trans-row-note">「あなた」を補足して仮定法を読みやすく、「~することになるだろう」(=would V の自然訳)、「~適用されるだろう」、「一方」(=while の自然な対比訳)で仕上げ。これで完成!60講の集大成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">【60講の総まとめ】<strong>仮定法過去と while 対比 ─ 60講の集大成!</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ <strong>第60講!最終講!</strong>これまで習った文法を総動員!<br><br>★ 今日のメインテーマは<strong>仮定法過去</strong>!<br><br>★ <strong>仮定法とは</strong>:<br>★ <strong>現実とは違う仮定</strong>を表す特殊な時制!<br>★ 「もし~ならば、~するだろう」(=現実にはそうではないが、仮の話として)<br><br>★ <strong>仮定法過去の基本形</strong>:<br>★ <span class="en">if S V-ed (=過去形), S would V</span>「もし S が V したら、S は V するだろう」<br>★ <strong>意味</strong>: 現在の事実と違う仮定<br>★ <strong>例</strong>: <span class="en">If I had a million dollars, I would buy a house.</span>「100万ドルあれば、家を買うのに(=今は持っていない)」<br><br>★ <strong>仮定法過去 ─ were to V 形</strong>:<br>★ <span class="en">if S were to V, S would V</span>「もし S が V しようとするなら、S は V するだろう」<br>★ <strong>意味</strong>: 純粋な仮定/予想(=現実にはありえない / 可能性が低い)<br>★ <strong>例</strong>: <span class="en">If I were to win the lottery, I would travel the world.</span>「もし宝くじに当たったら、世界中を旅するだろう」<br><br>★ <strong>仮定法 vs 直説法</strong>:<br>(1) <strong>直説法</strong>: <span class="en">If you buy ~, you pay ~.</span>「買えば、支払う」(=現在の事実、ありうる仮定)<br>(2) <strong>仮定法過去</strong>: <span class="en">If you bought / were to buy ~, you would pay ~.</span>「(仮に)買うなら、支払うだろう」(=現実とは違う、予想)<br><br>★ <strong>仮定法のサイン</strong>:<br>★ if 節 = <strong>過去形</strong>(=V-ed)/ <strong>were to V</strong><br>★ メイン節 = <strong>助動詞の過去形 + V</strong>(=would V / could V / might V)<br>★ ※ <strong>be 動詞は主語に関係なく were</strong>!(=I were、he were も可能!)<br><br>★ <strong>本問の例</strong>:<br>(1) <span class="en">if you were to buy ~, you would pay ~</span>「(仮に)買おうとするなら、支払うだろう」<br>(2) <span class="en">if you wanted ~, the zero rate would apply</span>「(仮に)欲しいと思えば、ゼロ税率が適用されるだろう」<br>→ <strong>2種類の仮定法過去!</strong><br><br>★ <strong>類例</strong>(=仮定法過去):<br>・<span class="en">If I were rich, I would help the poor.</span>「金持ちなら、貧しい人を助けるのに」<br>・<span class="en">If she had time, she would visit us.</span>「時間があれば、訪ねてくるのに」<br>・<span class="en">If he were to leave, we would be sad.</span>「彼が去るとしたら、悲しいだろう」<br><br>★ <strong>もう一つ ─ while 副詞節</strong>(=対比、新出!):<br>★ while には2つの意味!<br>(1) <strong>「~している間に」</strong>(=時間)<br>(2) <strong>「~する一方で/~に対して」</strong>(=対比、本問!)<br>★ <strong>判別</strong>: 文脈で「2つの状況を対比」 → 対比!<br><br>★ <strong>本問の例</strong>: <span class="en">~ are taxed at 0%, while ~ are taxed at 20%</span>「~は0%で課税されるが、一方、~は20%で課税される」<br><br>★ <strong>類例</strong>(=while 対比):<br>・<span class="en">Some people love coffee, while others prefer tea.</span>「コーヒー好きな人もいれば、紅茶好きな人もいる」<br>・<span class="en">Tom is tall, while his brother is short.</span>「Tomは背が高いが、弟は背が低い」<br><br>★ <strong>もう一つ ─ 関係代名詞 + 受動態の進行形 is being V-ed</strong>(=第19講応用):<br>★ is + being + V-ed = 「現在 ~ されつつある」(=進行 + 受動)<br>★ <strong>類例</strong>:<br>・<span class="en">The house is being built.</span>「家が建てられている(=建設中)」<br>・<span class="en">The book is being written.</span>「本が書かれている(=執筆中)」<br><br>★ <strong>もう一つ ─ although 譲歩</strong>(=第29講応用):<br>★ although + S V「~だけれども」<br>★ メイン文の<strong>譲歩</strong>を表す副詞節!<br>★ but(=等位接続詞)とは違う!<br><br>★ <strong>もう一つ ─ 形式主語 + why 名詞節</strong>(=第51講応用):<br>★ <span class="en">It is + 形容詞 + to V</span>「Vすることは形容詞だ」<br>★ 真主語の不定詞の中に why 名詞節を含む場合あり!<br>★ 本問: it is difficult to understand <strong>why ~</strong>「なぜ~を理解するのは難しい」<br><br>★ <strong>もう一つ ─ 過去分詞修飾</strong>(=第43講応用):<br>★ chocolate covered biscuits「チョコレートで覆われたビスケット」<br>★ 過去分詞句が名詞を修飾!<br><br>★ <strong>もう一つ ─ at + %</strong>「~の税率で」(=慣用):<br>★ taxed at 0% / 20%「0% / 20%で課税される」<br><br>★ <strong>もう一つ ─ provide A to B</strong>「A を B に提供する」(=慣用):<br>★ provide A with B も同義!<br><br>★ <strong>もう一つ ─ vary according to ~</strong>「~に応じて変わる」(=慣用):<br>★ <strong>類例</strong>:<br>・<span class="en">Prices vary according to demand.</span>「価格は需要に応じて変わる」<br>・<span class="en">Rules vary according to the country.</span>「規則は国によって異なる」<br><br>★ <strong>60講の総まとめ</strong>:<br>★ 今日の英文には、<strong>これまで習ったすべての文法</strong>が結集しています!<br>(1) 受動態(=第19講)<br>(2) 関係代名詞 which/that 主格(=第27講)<br>(3) 譲歩 although(=第29講)<br>(4) 過去分詞修飾(=第43講)<br>(5) 形式主語 + 不定詞(=第51講)<br>(6) why 名詞節(=第48講)<br>(7) 受動態の進行形(=本講で発展)<br>(8) <strong>仮定法過去</strong>(=本講のメイン)<br>(9) <strong>while 対比</strong>(=本講で新出)<br>(10) 慣用句多数(=at + %、provide A to B、vary according to など)<br><br>★ <strong>これで60講完走!お疲れ様でした!</strong><br>★ 英文解釈の基礎は完成しました!<br>★ ここから先は、<strong>長文読解</strong>と<strong>多読</strong>でこの基礎を磨いていきましょう!<br>★ どんな英文も、構造を見抜く力と多くの文法知識があれば必ず読めます!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">If I were a bird, I would fly to you.</span></span>
+      <span class="natural-tip-ex-bad">私が鳥だったら、あなたに飛んだ (直説法と勘違い)</span>
+      <span class="natural-tip-ex-good">もし私が鳥なら、あなたのところへ飛んでいくのに (仮定法過去!I were(=主語が単数でもwere)、メイン節 would fly!現実とは違う仮定)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">If he were to come, we would welcome him.</span></span>
+      <span class="natural-tip-ex-bad">彼が来ることになったら、私たちは歓迎する (直説法と勘違い)</span>
+      <span class="natural-tip-ex-good">仮に彼が来るとしたら、私たちは歓迎するだろう (were to V = 純粋な仮定/予想!ありえない/可能性低い)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">Some prefer tea, while others love coffee.</span></span>
+      <span class="natural-tip-ex-bad">お茶を好む人もいる、その間、コーヒーを愛する人もいる (while を「~の間」と取り違え)</span>
+      <span class="natural-tip-ex-good">お茶を好む人もいれば、一方、コーヒーが大好きな人もいる (while = 対比「~する一方で」!時間ではない!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">仮定法過去 if S V-ed, S would V</span>
+  </div>
+  <p class="drill-en"><strong>If I had more time, I would learn another language</strong>.</p>
+  <p class="drill-q">仮定法を分析し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> 仮定法過去!<br>
+        ・if 節 = If I had more time(=過去形 had、現在の事実と違う = 今は時間がない)<br>
+        ・メイン節 = I would learn another language(=助動詞の過去形 would + V)<br>
+        ・<strong>仮定法のサイン</strong>: if + 過去形 + would V!<br>
+        ・現実: 私には今、時間がない(=だから別の言語を学んでいない)<br>
+        ・仮定: もし時間があったら、学ぶのに!<br>
+        <strong>訳:</strong> 「<strong>もし(私に)もっと時間があれば、別の言語を学ぶのに</strong>」<br><br>
+        💡 仮定法過去 = 現在の事実と違う仮定!if + V-ed + メイン節 would V!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">仮定法過去 if S were to V, S would V</span>
+  </div>
+  <p class="drill-en"><strong>If the sun were to disappear, all life on Earth would die</strong>.</p>
+  <p class="drill-q">仮定法 were to V を分析し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> 仮定法過去 were to V!<br>
+        ・if 節 = If the sun were to disappear「もし太陽が消えるとしたら」(=純粋な仮定、ありえない)<br>
+        ・メイン節 = all life on Earth would die「地球上のすべての生命は死ぬだろう」<br>
+        ・<strong>were to V のニュアンス</strong>: 「(現実にはありえないが、仮に)~するとしたら」<br>
+        ・主語が単数(the sun)でも were!<br>
+        <strong>訳:</strong> 「<strong>もし太陽が消えるとしたら、地球上のすべての生命は死ぬだろう</strong>」<br><br>
+        💡 if S were to V = 純粋な仮定/予想!ありえない/可能性が低い仮定!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">while 対比 + 関係代名詞 + 受動態進行形</span>
+  </div>
+  <p class="drill-en">The book <strong>which is being written</strong> by him is interesting, <strong>while the one</strong> by his brother is boring.</p>
+  <p class="drill-q">構造を分析し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> 関係代名詞 + 受動態の進行形 + while 対比!<br>
+        ・S = The book<br>
+        ・修飾 = which is being written by him「彼によって(現在)書かれている」(=関係代名詞 which + 受動態の進行形)<br>
+        ・V = is interesting「面白い」<br>
+        ・while(=対比!)<br>
+        ・S’ = the one「(同じ種類の)もの」(=代名詞 one = book)<br>
+        ・修飾 = by his brother「彼の兄弟による」<br>
+        ・V’ = is boring「退屈だ」<br>
+        ・骨格: book by him is interesting, while book by brother is boring(=対比)<br>
+        <strong>訳:</strong> 「<strong>彼によって(今)書かれている本は面白いが、一方、彼の兄弟によるものは退屈だ</strong>」<br><br>
+        💡 is being V-ed = 受動態の進行形「現在~されている」!while = 対比「~する一方で」!one = book の代名詞!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>仮定法のサイン</strong>を見抜く ─ if + 過去形/were to V + would V</div>
+      <div class="flow-desc">if 節が過去形、メイン節が would V → 仮定法過去!現実とは違う仮定!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>仮定法過去 if S V-ed, S would V</strong>「もし~なら、~するだろう」</div>
+      <div class="flow-desc">現在の事実と違う仮定!if 節は過去形、メイン節は would V!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>仮定法過去 if S were to V, S would V</strong>「仮に~するとしたら」</div>
+      <div class="flow-desc">純粋な仮定/予想!ありえない/可能性低い仮定!主語に関係なく were!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>while 副詞節「~する一方で」</strong>(=対比、新出!)</div>
+      <div class="flow-desc">時間「~の間」とは別!2つの状況を対比!文脈で判別!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>関係代名詞 + 受動態の進行形 is being V-ed</strong>「現在~されている」</div>
+      <div class="flow-desc">is + being + V-ed!進行 + 受動の組み合わせ!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>although 譲歩</strong>「~だけれども」(=第29講応用)</div>
+      <div class="flow-desc">副詞節!メイン文の譲歩を表す!but(=等位)とは違う!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>形式主語 + why 名詞節</strong>(=第51講応用)</div>
+      <div class="flow-desc">It is + 形容詞 + to V + why ~!仮主語 + 真主語(=不定詞)+ why 名詞節!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>過去分詞修飾</strong>(=第43講応用、chocolate covered biscuits)</div>
+      <div class="flow-desc">過去分詞句が名詞を後ろから修飾!chocolate(=名詞、副詞的)+ covered(=過去分詞)!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>慣用句のまとめ</strong> at + %、provide A to B、vary according to</div>
+      <div class="flow-desc">at 0% / 20% = 「~の税率で」!provide A to B = 「AをBに提供する」!vary according to = 「~に応じて変わる」!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>仮定法のサイン</strong>(=if + 過去形/were to V + would V)を見抜けるようになった</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>仮定法過去 if S V-ed, S would V</strong>「もし~なら、~するだろう」(=現在の事実と違う仮定)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>仮定法過去 if S were to V, S would V</strong>「仮に~するとしたら」(=純粋な仮定/予想)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>仮定法 vs 直説法</strong>(=現実と違う仮定 vs ありうる仮定)の判別ができる</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>be 動詞は主語に関係なく were</strong>(=I were、he were も可能)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>while 副詞節「~する一方で」</strong>(=対比、新出!)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 + 受動態の進行形 is being V-ed</strong>「現在~されている」を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>although 譲歩</strong>「~だけれども」(=第29講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>形式主語 + why 名詞節</strong>(=第51講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>過去分詞修飾</strong>(=第43講応用、chocolate covered biscuits)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>慣用句</strong>(=at + %、provide A to B、vary according to、apply など)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>60講の集大成</strong>として、これまでの全文法を総動員する読解力を身につけた!</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第60講 · 【60講ラスト】if were to V / if V-ed と would V を見て、仮定法を見抜く</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

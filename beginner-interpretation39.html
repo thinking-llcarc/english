@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第39講 It is ~ to V の it は何を指しているか | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">39</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 形式主語 it</div>
+        <h1 class="lesson-title">It is ~ to V の it は何を指しているか</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  <p class="opening-text">
+      第39講のテーマは <strong>「形式主語 <span class="en">It is ~ to V</span>」+「<span class="en">be C(=that 節)</span>」</strong>。<br>
+      英語では、主語が長くなりすぎないように<strong>形式的な主語 <span class="en">It</span></strong> を立てて、本当の主語(=to V や that 節)を後ろに置く構造があります。<br>
+      第19講で学んだ受動態(=第7講応用)、第32講の最上級も再登場!<br>
+      南極の自然を題材に、<strong>形式主語と複合構造</strong>を読み解きます。<br><br>
+      今日のキー:<br>
+      ① <strong>形式主語 <span class="en">It is ~ to V</span></strong>「<strong>~するのは~だ</strong>」(=It は仮主語、to V が真主語)<br>
+      ② <strong><span class="en">a number of ~</span></strong>「<strong>いくつもの~</strong>」(=不定冠詞、第24講応用)<br>
+      ③ <strong>最上級 <span class="en">the coldest place on Earth</span></strong>「地球で最も寒い場所」<br>
+      ④ <strong>受動態 <span class="en">be covered in ~</span></strong>「~に覆われている」(=第19講応用)<br>
+      ⑤ <strong><span class="en">be C(=that 節)</span></strong>「~であることだ」(=主語の核心を that 節で説明)<br>
+      南極大陸の厳しい環境を題材に、<strong>形式主語と最上級・受動態</strong>を読み解きます!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>形式主語 <span class="en">It is ~ to V</span></strong>「~するのは~だ」を見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>be 動詞 + that 節(=補語)</strong>の構造「~であることだ」を読み解きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>受動態 <span class="en">be covered in ~</span></strong>「~に覆われている」(=第19講応用)を再確認します。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">It is tough to live in Antarctica for a number of reasons. The biggest problem is that Antarctica is the coldest place on Earth, and about 98% is covered in ice.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>6つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">It is tough to live in Antarctica</span> の <span class="en">It</span> を「それ」と訳す</span>
+  </div>
+  <div class="trap-misread">「<u>それは</u>南極に住むには厳しい~」(=形式主語を見落とす)</div>
+  <p class="trap-why">★ <span class="en">It is ~ to V</span> = <strong>形式主語の構文</strong>!<br>→ <span class="en">It</span> = 仮主語(=訳さない!)<br>→ <span class="en">to V</span> = <strong>真主語</strong>「~すること」<br>★ <strong>本問</strong>: <span class="en">It is tough to live in Antarctica</span><br>→ It = 仮主語<br>→ to live in Antarctica = 真主語「南極で生活すること」<br>→ tough = 形容詞「厳しい/大変な」<br>★ <strong>意訳</strong>: 「<strong>南極で生活するのはとても大変だ</strong>」(=「~するのは~だ」のリズム)<br>★ <strong>判別ヒント</strong>: <span class="en">It</span> を「それ」と訳して意味不明 → 形式主語を疑う!<br>★ <span class="en">It is ~ to V</span> パターン:<br>・<span class="en">It is fun to study English.</span>「英語を学ぶのは楽しい」<br>・<span class="en">It is important to be honest.</span>「正直であることは大切だ」<br>・<span class="en">It is hard to wake up early.</span>「早起きは難しい」<br>★ <strong>核心</strong>: 主語が<strong>長い to V</strong> のとき、それを後ろに置いて、形式主語 It を頭に立てる!読みやすくするため!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">tough</span> を「タフ」とカタカナで訳す</span>
+  </div>
+  <div class="trap-misread">「<u>タフ</u>に~」(=やや硬い)</div>
+  <p class="trap-why">★ <span class="en">tough</span> = 形容詞「<strong>厳しい/大変な/つらい</strong>」<br>★ <strong>本問</strong>: <span class="en">It is tough to live ~</span>「~するのは大変だ」<br>★ <span class="en">tough</span> の用法:<br>(1) <strong>「厳しい/大変な」</strong>(=本問)<br>(2) 「丈夫な/頑丈な」<br>(3) 「強い/タフな」(=人の性格)<br>★ <strong>類例</strong>:<br>・<span class="en">a tough day</span>「大変な一日」<br>・<span class="en">tough conditions</span>「厳しい条件」<br>・<span class="en">a tough question</span>「難しい質問」<br>★ <strong>意訳</strong>: 「<strong>とても大変だ/厳しい</strong>」(=自然な日本語)<br>★ カタカナ「タフ」を避けるが、文脈によっては意味がわかりやすいことも</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">for a number of reasons</span> の <span class="en">a number of</span> を「~の数」と取る</span>
+  </div>
+  <div class="trap-misread">「(a number of の慣用を取り違える)」</div>
+  <p class="trap-why">★ <span class="en">a number of ~</span> = 慣用「<strong>いくつもの~/たくさんの~</strong>」(=不定冠詞、第24講応用)<br>★ <strong>注意</strong>: <span class="en">the number of ~</span>(=「~の数」)とは違う!<br>(1) <span class="en">the number of ~</span>「<strong>~の数</strong>」(=定冠詞、第24・32講)<br>(2) <strong><span class="en">a number of ~</span>「いくつもの~/多くの~」(=不定冠詞、本問)</strong><br>★ <strong>本問</strong>: <span class="en">for a number of reasons</span> = 「<strong>いくつもの理由で</strong>」<br>★ <strong>類例</strong>:<br>・<span class="en">a number of students</span>「いくつもの生徒/多くの生徒」<br>・<span class="en">a number of problems</span>「いくつもの問題」<br>・<span class="en">a number of ways</span>「いくつもの方法」<br>★ <strong>意訳</strong>: 「<strong>いくつもの理由で</strong>」(=複数の理由を含意)<br>★ <span class="en">for ~</span> = 前置詞「~のために/~の理由で」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">The biggest problem is that ~</span> の <span class="en">that 節</span> の役割を取り違える</span>
+  </div>
+  <div class="trap-misread">「(that 節を関係詞節と取って混乱)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">that 節</span>が <span class="en">be 動詞</span>の<strong>補語(=C)</strong>として働く!<br>★ <strong>本問</strong>: <span class="en">The biggest problem is that ~</span><br>→ S = <span class="en">The biggest problem</span>「最大の問題」<br>→ V = <span class="en">is</span>(=be動詞)<br>→ <strong>C = <span class="en">that 節</span></strong>「~ということ/~であること」<br>→ 第2文型 SVC「<strong>S = C(=that 以下)</strong>」<br>★ <strong>意訳</strong>: 「<strong>最大の問題は~であることだ</strong>」<br>★ <span class="en">that</span> = 名詞節を作る接続詞「~ということ」(=第18・22講応用)<br>→ that 節は名詞節!<br>→ 文中の主語・目的語・<strong>補語</strong>のいずれにもなる!<br>★ <strong>類例</strong>(=be C(=that 節)):<br>・<span class="en">The fact is that he lied.</span>「事実は彼が嘘をついたことだ」<br>・<span class="en">The truth is that I don't know.</span>「真実は私が知らないことだ」<br>・<span class="en">My hope is that you succeed.</span>「私の希望は君が成功することだ」<br>★ <span class="en">The biggest problem</span> = 最上級「最大の問題」(=big の最上級+定冠詞 the)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the coldest place on Earth</span> の最上級を見落とす</span>
+  </div>
+  <div class="trap-misread">「(coldest の最上級を見落とす)」</div>
+  <p class="trap-why">★ <span class="en">the coldest place</span> = 最上級「<strong>最も寒い場所</strong>」<br>→ <span class="en">cold</span>(=寒い)+ <span class="en">-est</span>(=最上級語尾)+ 定冠詞 the<br>→ 短い形容詞の最上級は -est!<br>★ <strong>本問</strong>: <span class="en">Antarctica is the coldest place on Earth</span><br>→ S' = <span class="en">Antarctica</span>「南極大陸」<br>→ V' = <span class="en">is</span>(=be動詞)<br>→ C' = <span class="en">the coldest place</span>「最も寒い場所」<br>→ <span class="en">on Earth</span> = 前置詞句「地球で」(=最上級の範囲を限定)<br>★ <strong>意訳</strong>: 「<strong>南極は地球で最も寒い場所</strong>」<br>★ <span class="en">on Earth</span> = 「地球上で/地球で」(=on は接触の意味)<br>★ <strong>最上級の作り方</strong>(=第32講応用):<br>・短い形容詞: -est(=cold→coldest, big→biggest)<br>・長い形容詞: most + 形容詞(=most beautiful)<br>・不規則: good→best, bad→worst<br>★ <span class="en">place on Earth</span>「地球上の場所」 ─ 範囲を限定!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">about 98% is covered in ice</span> の<strong>主語</strong>を取り違える</span>
+  </div>
+  <div class="trap-misread">「(主語が省略されているように見えて混乱)」</div>
+  <p class="trap-why">★ <span class="en">about 98%</span> = 主語「<strong>約98%</strong>」(=数値が主語!)<br>→ <span class="en">about</span>「およそ/約」(=第19講応用)<br>→ <span class="en">98%</span> = 名詞(=主語)<br>★ <strong>本問</strong>: <span class="en">about 98% is covered in ice</span><br>→ S' = <span class="en">about 98%</span>「約98%」(=of Antarctica が省略、文脈で南極の98%)<br>→ V' = <span class="en">is covered</span>「覆われている」(=受動態、第19講応用)<br>→ <span class="en">in ice</span> = 前置詞句「氷に」<br>★ <span class="en">be covered in ~</span> = 「<strong>~に覆われている</strong>」(=受動態の慣用、第19講応用)<br>★ <strong>意訳</strong>: 「<strong>(その)約98%は氷に覆われている</strong>」<br>★ <span class="en">and</span> が文と文をつなぐ(=第15講応用):<br>→ 前: Antarctica is the coldest place on Earth<br>→ 後: about 98% is covered in ice<br>→ 主語が「南極」と「南極の約98%」(=連動)<br>★ <strong>受動態の構造</strong>: be + 過去分詞 = 「~される」<br>→ <span class="en">cover</span>(=他動詞「覆う」)→ <span class="en">covered</span>(=過去分詞)→ <span class="en">be covered</span>(=覆われる)</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>It is tough</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ 形式主語 It の登場</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">It is tough</span>「(それは)厳しい」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">It</span> = 主語?「それ」?<br>
+          → でも、何を指しているのか分からない…<br>
+          → <strong>形式主語</strong>を疑う!<br><br>
+          ★ <span class="en">It is ~</span> の後ろに <span class="en">to V</span> が来たら、<br>
+          → <span class="en">It</span> = <strong>仮主語</strong>(=訳さない!)<br>
+          → <span class="en">to V</span> = 真主語「~すること」<br><br>
+          ★ <span class="en">tough</span> = 形容詞「<strong>厳しい/大変な</strong>」<br>
+          ★ <span class="en">be + 形容詞</span> = SVC「~である」<br><br>
+          → 後ろに <span class="en">to V</span> を待つ!
+        </div>
+        <div class="ra-step-conclude">
+          冒頭の It → 形式主語の可能性!後ろに to V が来るかチェック!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>to live in Antarctica</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">真主語 to V ─ 南極で生活すること</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました <span class="en">to live in Antarctica</span>「南極で生活すること」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">It is tough to live in Antarctica</span> = <strong>形式主語の構文</strong>!<br>
+          → It = 仮主語(=訳さない!)<br>
+          → <span class="en">to live in Antarctica</span> = <strong>真主語</strong>「南極で生活すること」<br><br>
+          ★ <span class="en">to live</span>:<br>
+          → <span class="en">to live</span>(=不定詞、名詞用法「~すること」、第11講応用)<br>
+          → <span class="en">in Antarctica</span> = 前置詞句「南極で」<br>
+          → 「南極で生活すること」<br><br>
+          ★ <strong>本問の構造</strong>:<br>
+          → 仮主語: <span class="en">It</span>(=訳さない)<br>
+          → V: <span class="en">is</span><br>
+          → C: <span class="en">tough</span>「大変な」<br>
+          → 真主語(=後置): <span class="en">to live in Antarctica</span>「南極で生活すること」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>南極で生活するのは大変だ</strong>」(=「~するのは~だ」)<br><br>
+          → なぜ大変?(=理由?)
+        </div>
+        <div class="ra-step-conclude">
+          to live in Antarctica = 真主語「南極で生活すること」!It は仮主語(=訳さない)。「南極で生活するのは大変」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>for a number of reasons.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">理由の補足 ─ いくつもの理由で</span>
+    </div>
+    <div class="ra-step-body">
+      <p><span class="en">for a number of reasons.</span>「いくつもの理由で」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">for ~</span> = 前置詞「~のために/~の理由で」<br>
+          ★ <span class="en">a number of ~</span> = 慣用「<strong>いくつもの~/多くの~</strong>」<br><br>
+          ★ <strong>注意!</strong> <span class="en">the number of ~</span>(=「~の数」、第24・32講)とは違う!<br>
+          → 定冠詞 the は<strong>「~の数」</strong><br>
+          → 不定冠詞 a は<strong>「いくつもの~」</strong>(=多数の意味)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>いくつもの理由で</strong>」(=複数の理由を含意)<br><br>
+          ★ <strong>1文目の意訳</strong>: 「<strong>南極で生活するのは、いくつもの理由でとても大変だ</strong>」<br><br>
+          → 後ろの文で具体的な理由が来る!
+        </div>
+        <div class="ra-step-conclude">
+          a number of reasons「いくつもの理由」(=不定冠詞 a)。the number of ~(=定冠詞、~の数)と区別!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>The biggest problem is</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目スタート ─ 最大の問題は</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目スタート <span class="en">The biggest problem is</span>「最大の問題は~」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">The biggest problem</span>「<strong>最大の問題</strong>」<br>
+          → <span class="en">biggest</span> = <span class="en">big</span> の最上級「最大の」<br>
+          → <span class="en">the + 最上級</span>(=最上級は普通、定冠詞 the と一緒)<br>
+          ★ V = <span class="en">is</span>(=be動詞)<br><br>
+          ★ <span class="en">be 動詞</span>の後ろに何が来る?<br>
+          → 補語(C)が必要!<br>
+          → 名詞、形容詞、または<strong>that 節</strong>!<br><br>
+          → 後ろに that 節が来そう!
+        </div>
+        <div class="ra-step-conclude">
+          S=The biggest problem(=最上級)、V=is。「最大の問題は~」(=補語を予測!)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>that Antarctica is the coldest place on Earth,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">be C(=that節)─ 南極は地球で最も寒い場所</span>
+    </div>
+    <div class="ra-step-body">
+      <p>来ました <span class="en">that Antarctica is the coldest place on Earth,</span>「南極は地球で最も寒い場所であるということ」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">that</span> = 名詞節を作る接続詞「~ということ」(=第18・22講応用)<br>
+          → これは <span class="en">be 動詞</span>の<strong>補語(C)</strong>!<br>
+          → 第2文型 SVC「<strong>S = that 以下</strong>」<br><br>
+          ★ <strong>that 節の中身</strong>:<br>
+          → S' = <span class="en">Antarctica</span>「南極大陸」<br>
+          → V' = <span class="en">is</span>(=be動詞)<br>
+          → C' = <span class="en">the coldest place on Earth</span>「地球で最も寒い場所」<br><br>
+          ★ <strong>最上級</strong>: <span class="en">the coldest place</span>!<br>
+          → <span class="en">cold + -est</span> = coldest(=最上級)<br>
+          → 定冠詞 the と一緒!(=最上級は唯一の対象)<br>
+          → <span class="en">on Earth</span> = 「地球で」(=範囲限定)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>南極は地球で最も寒い場所である(ということ)</strong>」<br><br>
+          → コンマ → さらに and で続く?
+        </div>
+        <div class="ra-step-conclude">
+          that 節 = be 動詞の補語(C)。「最大の問題は~であることだ」!最上級「地球で最も寒い場所」
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>and about 98% is covered in ice.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">and + 受動態 ─ 約98%が氷に覆われている</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後に <span class="en">and about 98% is covered in ice.</span>「約98%が氷に覆われている」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">and</span> = 接続詞、文と文をつなぐ(=第15講応用)<br>
+          → 前: <span class="en">Antarctica is the coldest place on Earth</span>(=最寒の場所)<br>
+          → 後: <span class="en">about 98% is covered in ice</span>(=98%が氷)<br>
+          → どちらも that 節の中身!<br><br>
+          ★ <strong>後ろの文の構造</strong>:<br>
+          → S' = <span class="en">about 98%</span>「<strong>約98%</strong>」(=数値が主語、of Antarctica が省略)<br>
+          → V' = <span class="en">is covered</span>「覆われている」(=受動態!)<br>
+          → <span class="en">in ice</span> = 前置詞句「氷に」<br><br>
+          ★ <strong>受動態 <span class="en">be covered in ~</span></strong>「~に覆われている」(=第19講応用)<br>
+          → <span class="en">be + 過去分詞</span> = 受動態「~される」<br>
+          → <span class="en">cover</span>(=他動詞「覆う」)→ <span class="en">covered</span>(=過去分詞)→ <span class="en">be covered</span>(=覆われる)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>(南極の)約98%が氷に覆われている</strong>」<br><br>
+          ★ <strong>2文目全体</strong>: 「<strong>最大の問題は、南極が地球で最も寒い場所であり、その約98%が氷に覆われていることだ</strong>」<br><br>
+          ★ <strong>2文全体のメッセージ</strong>:<br>
+          → 1文目: 南極で生活するのは、いくつもの理由で大変<br>
+          → 2文目: 最大の問題は、最寒+98%氷<br>
+          → 厳しい自然環境を、形式主語+最上級+受動態で<strong>客観的・構造的に</strong>説明!<br><br>
+          ★ <strong>本講の本質</strong>: 形式主語 It の構文を見抜き、be 動詞の後ろの that 節を補語として処理し、最上級と受動態を順に整理する!
+        </div>
+        <div class="ra-step-conclude">
+          and 文と文 + 受動態 be covered in ~「~に覆われている」(=第19講応用)。「98%が氷に覆われている」
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">It</span><span class="seg-marker seg-marker-main">仮S</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">tough</span><span class="seg-marker seg-marker-main">C₁</span></span>
+    <span class="seg-wrap"><span class="seg-sub">to live in Antarctica</span><span class="seg-marker seg-marker-sub">真S(=to V)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈for a number of reasons〉. </span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-main">The biggest problem</span><span class="seg-marker seg-marker-main">S₂(最上級)</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[that</span><span class="seg-marker seg-marker-sub">名詞節(=C)</span></span>
+    <span class="seg-wrap"><span class="seg-main">Antarctica is the coldest place</span><span class="seg-marker seg-marker-main">S' V' C'(最上級)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈on Earth〉,</span><span class="seg-marker seg-marker-sub">M</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接(文と文)</span></span>
+    <span class="seg-wrap"><span class="seg-main">about 98% is covered</span><span class="seg-marker seg-marker-main">S' V'(受動態)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">〈in ice〉].</span><span class="seg-marker seg-marker-sub">M</span></span><span class="seg-text">.</span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: 仮S(It) V C 真S(=to V) 〈M〉. 2: S(最上級) V [C=that S' V' C'(最上級) 〈M〉, and S' V'(受動態) 〈M〉].</strong>(形式主語 It is ~ to V、be C(=that節)、最上級2回、受動態 be covered in)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">それは、いくつかの理由のために南極で住むことは厳しい。最も大きな問題は南極は地球の上で最も寒い場所であり、約98%は氷の中で覆われていることである。</span>
+      <span class="trans-row-note">構造どおりの直訳。「それは~住むことは」と仮主語と真主語が混在、「氷の中で」も硬い。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>形式主語 <span class="en">It is ~ to V</span></strong>「~するのは~だ」</span>
+    <span class="trans-arrow-detail">It = 仮主語(=訳さない!)、to V = 真主語!主語が長くなりすぎないようにする!</span>
+  </div>
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">南極で住むのはいくつもの理由で大変だ。最大の問題は、南極は地球で最も寒い場所であり、約98%が氷に覆われていることだ。</span>
+      <span class="trans-row-note">「それは」を消し、形式主語の構造を訳に反映。「氷の中で」を「氷に」と自然に。</span>
+    </div>
+  </div>
+
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>be C(=that 節)</strong>「~であることだ」</span>
+    <span class="trans-arrow-detail">be 動詞の後ろに that 節 → 補語!<span class="en">The problem is that ~</span>「問題は~であることだ」!</span>
+  </div>
+
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>南極で生活するのは、いくつもの理由でとても大変だ。最大の問題は、南極が地球で最も寒い場所であり、その約98%が氷に覆われていることだ。</strong></span>
+      <span class="trans-row-note">「住む」を「生活する」、「とても大変」と強調。「その約98%」と所有を補い、文脈の繋がりを強める。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>形式主語 <span class="en">It is ~ to V</span></strong> ─ 主語が長すぎると後ろに置く</span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第39講で身につけてほしい<strong>「形式主語」</strong>を伝えます。<br><br>★ 英語には、<strong>主語を後ろに置く</strong>仕組みがあります。これが<strong>形式主語の構文</strong>!<br><br>★ <strong>なぜ形式主語?</strong><br>★ 主語が長くなりすぎると<strong>読みにくい</strong>!<br>例: <span class="en">To live in Antarctica is tough.</span>「南極で生活することは大変」(=主語が長い)<br>→ <span class="en">It is tough to live in Antarctica.</span>「南極で生活するのは大変」(=形式主語、読みやすい!)<br><br>★ <strong>形式主語の基本パターン</strong>:<br>★ <span class="en">It is + 形容詞/名詞 + to V</span>「<strong>~するのは~だ</strong>」<br>→ <span class="en">It</span> = 仮主語(=訳さない!)<br>→ <span class="en">to V</span> = 真主語「~すること」<br><br>★ <strong>頻出パターン</strong>:<br>・<span class="en">It is fun to V</span>「~するのは楽しい」<br>・<span class="en">It is important to V</span>「~することは大切だ」<br>・<span class="en">It is hard to V</span>「~するのは難しい」<br>・<span class="en">It is necessary to V</span>「~することが必要だ」<br>・<span class="en">It is impossible to V</span>「~することは不可能だ」<br>・<span class="en">It is tough to V</span>「~するのは大変だ」(=本問)<br><br>★ <strong>本問の例</strong>:<br>★ <span class="en">It is tough to live in Antarctica for a number of reasons.</span><br>→ It = 仮主語<br>→ to live in Antarctica = 真主語「南極で生活すること」<br>→ tough = 形容詞「大変な」<br>→ for a number of reasons = 「いくつもの理由で」<br>→ 訳: 「<strong>南極で生活するのは、いくつもの理由でとても大変だ</strong>」<br><br>★ <strong>判別ヒント</strong>: 文頭の <span class="en">It is ~</span> + 後ろに <span class="en">to V</span> → 形式主語!<br><br>★ <strong>形式主語のバリエーション</strong>:<br>(1) <span class="en">It is ~ to V</span>(=本問)<br>(2) <strong><span class="en">It is ~ that S V</span></strong>「~することは~だ」(=that 節を真主語に)<br>例: <span class="en">It is true that he came.</span>「彼が来たことは本当だ」<br>(3) <strong><span class="en">It is ~ V-ing</span></strong>(=動名詞を真主語に、まれ)<br>例: <span class="en">It is no use crying.</span>「泣いても無駄だ」<br><br>★ <strong>もう一つ大事なポイント ─ <span class="en">be C(=that 節)</span></strong>:<br><br>★ 第18講で学んだ <span class="en">that 節</span> は名詞節 ─ 主語・目的語・補語のいずれにもなる!<br>★ 本問の2文目では、<strong>be 動詞の補語</strong>として that 節が登場!<br><br>★ <strong>本問</strong>: <span class="en">The biggest problem is that Antarctica is ~ , and about 98% is covered in ice.</span><br>→ S = The biggest problem「最大の問題」<br>→ V = is<br>→ <strong>C = that 節</strong>「~であること」<br>→ 第2文型 SVC「S = C(=that 以下)」<br><br>★ <strong>類例</strong>:<br>・<span class="en">The fact is that he lied.</span>「事実は彼が嘘をついたことだ」<br>・<span class="en">The truth is that I don't know.</span>「真実は私が知らないことだ」<br>・<span class="en">My hope is that you succeed.</span>「私の希望は君が成功することだ」<br><br>★ <strong>意訳</strong>: 「~は~であることだ」(=日本語的に自然)<br><br>★ <strong>もう一つ ─ <span class="en">a number of ~</span> vs <span class="en">the number of ~</span></strong>(=第24・32講応用):<br>(1) <span class="en">a number of ~</span>(=不定冠詞 a)「<strong>いくつもの~/多くの~</strong>」<br>(2) <span class="en">the number of ~</span>(=定冠詞 the)「<strong>~の数</strong>」<br>→ 冠詞で<strong>意味が大きく変わる</strong>!<br><br>★ これからの60講で、形式主語と be C(=that 節) は<strong>頻繁に</strong>登場します。出会うたびに「<strong>It は仮主語?</strong>」「<strong>that 節は補語?</strong>」と問う習慣を!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">It is important to study every day.</span></span>
+      <span class="natural-tip-ex-bad">それは毎日勉強することは大切だ (It と to study が混在)</span>
+      <span class="natural-tip-ex-good">毎日勉強することは大切だ (It = 仮主語、訳さない!to study every day = 真主語)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">The truth is that he lied to us.</span></span>
+      <span class="natural-tip-ex-bad">(that 節の役割を取り違える)</span>
+      <span class="natural-tip-ex-good">真実は、彼が私たちに嘘をついたことだ (be C(=that 節) = 第2文型、that 節が補語)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">There are a number of options.</span></span>
+      <span class="natural-tip-ex-bad">オプションの数があります (a number of を「~の数」と取る)</span>
+      <span class="natural-tip-ex-good">いくつもの選択肢がある (a number of = 「いくつもの~」、不定冠詞)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">形式主語 <span class="en">It is ~ to V</span></span>
+  </div>
+  <p class="drill-en"><strong>It is fun to play soccer.</strong></p>
+  <p class="drill-q">It の役割と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> <span class="en">It</span> = <strong>仮主語</strong>(=訳さない!)<br>
+        ・<span class="en">to play soccer</span> = <strong>真主語</strong>「サッカーをすること」<br>
+        ・<span class="en">fun</span> = 形容詞「楽しい」(=補語)<br>
+        <strong>訳:</strong> 「<strong>サッカーをするのは楽しい</strong>」<br><br>
+        💡 文頭 It is ~ + to V → 形式主語!It は訳さず、to V を主語として読む!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title"><span class="en">be C(=that 節)</span></span>
+  </div>
+  <p class="drill-en">The problem is <strong>that I have no money</strong>.</p>
+  <p class="drill-q">that 節の役割と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> <span class="en">be 動詞</span>の後ろの <span class="en">that 節</span> = <strong>補語C</strong>!<br>
+        ・S = <span class="en">The problem</span>「問題」<br>
+        ・V = <span class="en">is</span><br>
+        ・C = <span class="en">that I have no money</span>「お金がないこと」<br>
+        <strong>訳:</strong> 「<strong>問題は、お金がないことだ</strong>」<br><br>
+        💡 be C(=that 節) = 「~は~であることだ」!主語の核心を that 節で説明!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title"><span class="en">be covered in ~</span></span>
+  </div>
+  <p class="drill-en">The mountain is <strong>covered in snow</strong>.</p>
+  <p class="drill-q">構造と訳は？</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> <span class="en">be covered in/with ~</span> = 受動態の慣用「<strong>~に覆われている</strong>」(=第19講応用)<br>
+        ・S = <span class="en">The mountain</span>「山」(=覆われる側)<br>
+        ・V = <span class="en">is covered</span>(=受動態)<br>
+        ・<span class="en">in snow</span> = 前置詞句「雪に」<br>
+        <strong>訳:</strong> 「その山は<strong>雪に覆われている</strong>」<br><br>
+        💡 be + 過去分詞 = 受動態「~される」!主語が動作の対象!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>形式主語 <span class="en">It is ~ to V</span></strong>「~するのは~だ」</div>
+      <div class="flow-desc">It = 仮主語(=訳さない!)、to V = 真主語!主語が長くなりすぎないようにする!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>形式主語のバリエーション</strong></div>
+      <div class="flow-desc"><span class="en">It is ~ to V / It is ~ that S V / It is ~ V-ing</span>!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>頻出パターン</strong></div>
+      <div class="flow-desc"><span class="en">It is fun/important/hard/necessary/tough to V</span>!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>be C(=that 節)</strong>「~は~であることだ」</div>
+      <div class="flow-desc">be 動詞の後ろの that 節 = 補語!<span class="en">The problem/fact/truth is that ~</span>!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>受動態 <span class="en">be covered in ~</span></strong>「~に覆われている」(=第19講応用)</div>
+      <div class="flow-desc">be + 過去分詞 = 受動態「~される」!主語が動作の対象!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong><span class="en">a number of ~</span></strong>「いくつもの~」(=第24講応用)</div>
+      <div class="flow-desc"><span class="en">the number of ~</span>「~の数」(=定冠詞)とは違う!不定冠詞 a で「多数」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>最上級 <span class="en">the + -est</span></strong>(=第32講応用)</div>
+      <div class="flow-desc"><span class="en">the coldest place / the biggest problem</span>!短い形容詞は -est、長い形容詞は most + 形容詞!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>最上級の範囲限定</strong>: <span class="en">on Earth, in the world</span></div>
+      <div class="flow-desc"><span class="en">the coldest place on Earth</span>「地球で最も寒い場所」!範囲を前置詞句で限定!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>形式主語 <span class="en">It is ~ to V</span></strong>「~するのは~だ」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>It は仮主語(=訳さない)、to V が真主語</strong>と理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>形式主語の頻出パターン</strong>(<span class="en">It is fun/important/hard to V</span>)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>形式主語のバリエーション</strong>(<span class="en">It is ~ that S V</span>)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>be C(=that 節)</strong>「~は~であることだ」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>that 節の3つの役割</strong>(=主語・目的語・補語)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>受動態 <span class="en">be covered in ~</span></strong>「~に覆われている」(=第19講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">a number of ~</span></strong>「いくつもの~」(=第24講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong><span class="en">a number of ~</span> vs <span class="en">the number of ~</span></strong>を区別</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>最上級 <span class="en">the + -est</span></strong>(=第32講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>最上級の範囲限定</strong>(<span class="en">on Earth, in the world</span>)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第39講 · It is ~ to V の it は何を指しているか</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

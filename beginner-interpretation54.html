@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第54講 As S V の S V を見て、As の役割を決める | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">54</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ As 接続詞「~するにつれて」 + 関係代名詞 which + 受動態並列</div>
+        <h1 class="lesson-title">As S V の S V を見て、As の役割を決める</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第54講のテーマは <strong>「As S V の S V を見て、As の役割を決める」</strong>。<br>
+      <span class="en">as</span> はとにかく多義語!接続詞「~するときに/~するにつれて/~なので」、前置詞「~として」、関係代名詞、「~のように」など、<strong>役割が多彩</strong>!<br>
+      第45・49講で as の用法を学びましたが、今日はその<strong>判別力</strong>をさらに磨きます!<br>
+      第27・43講応用の関係代名詞 which、第19講応用の受動態、第15講応用の and 並列、第36講応用の比較級も登場!<br>
+      今日のキー:<br>
+      ① <strong>As + S V</strong> = 接続詞「~するときに/~するにつれて/~なので」(=後ろの形と意味で判別)<br>
+      ② <strong>As S became richer</strong>「Sが豊かになるにつれて」(=変化の同時並行を表す!)<br>
+      ③ <strong>関係代名詞 which(=主格)</strong>(=第27講応用)<br>
+      ④ <strong>受動態 may be V-ed and V-ed</strong>(=助動詞共通の受動態並列、第19講応用)<br>
+      ⑤ <strong>代名詞 ones</strong>(=複数名詞の繰り返しを避ける)<br>
+      消費社会の英文を題材に、<strong>as の役割の判別力</strong>を確立します!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>As + S V</strong> を見たら、後ろの形と意味から「~するときに/~するにつれて/~なので」を判別します。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>「~するにつれて」</strong>は、メイン文の動作との<strong>変化の同時並行</strong>を示すときに使う ─ そのサインを見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>受動態の並列</strong>(<span class="en">may be V-ed and V-ed</span>)で、共通する助動詞・be 動詞を見抜きます。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">As people became richer, they began to throw away a lot of things. Now, we buy things and throw them away easily. If we want a change in our life, even desks or chairs which are not so old may be discarded and changed for new ones.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>7つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">As people became richer,</span> の <span class="en">As</span> を「~として」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>人々として豊かになった</u>」(=前置詞「~として」と勘違い)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">As + S V</span> = <strong>接続詞</strong>!(=前置詞ではない!)<br>→ as の後ろが <span class="en">people became richer</span>(=S V)<br>→ <strong>後ろが S V → 接続詞!</strong><br>★ <strong>本問</strong>: <span class="en">As people became richer, they began to throw away a lot of things.</span><br>→ as 副詞節 = As people became richer「人々が豊かになるにつれて」<br>→ メイン文 = they began to throw away a lot of things「彼らはたくさんのものを捨て始めた」<br>★ <span class="en">as</span> 接続詞の主な意味:<br>(1) <strong>「~するときに/~するにつれて」</strong>(=時間・変化、本問!)<br>(2) 「~なので」(=理由)<br>(3) 「~のように」(=様態)<br>★ <strong>本問の判別 ─ なぜ「~するにつれて」?</strong>:<br>→ became richer = <strong>変化を表す動詞</strong>(=become + 比較級)!<br>→ メイン文 began to throw away ~ も<strong>変化</strong>(=今までと違う行動を始める)!<br>→ <strong>2つの変化が同時並行</strong> → 「~するにつれて」が自然!<br>★ <strong>意訳</strong>: 「<strong>人々が豊かになるにつれて</strong>」<br>★ <strong>類例</strong>(=as「~するにつれて」):<br>・<span class="en">As I grow older, I understand my parents better.</span>「年を取るにつれて、親をよりよく理解する」<br>・<span class="en">As time passes, things change.</span>「時間が経つにつれて、物事は変わる」<br>・<span class="en">As technology develops, our lives change.</span>「技術が発達するにつれて、私たちの生活は変わる」<br>★ <strong>核心</strong>: 「~するにつれて」は<strong>変化の同時並行</strong>!<br>★ <strong>判別の決め手</strong>: as 節の動詞とメイン文の動詞、<strong>両方が変化を表す</strong> → 「~するにつれて」!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">people became richer</span> の <span class="en">richer</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(richer の比較級を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">richer</span> = <strong>比較級</strong>(=rich「豊かな」の比較級、第36講応用)<br>→ <strong>SVC + 比較級</strong>「Sは~より~である」(=than は省略!)<br>→ 「より豊かに」(=過去より、または前と比べて豊かに)<br>★ <strong>本問</strong>: <span class="en">As people became richer</span>「人々が豊かになるにつれて」<br>→ S = people<br>→ V = became「~になった」(=自動詞、becomeの過去形)<br>→ C = richer「より豊かに」(=形容詞の比較級、補語)<br>→ SVC、第2文型!<br>★ <strong>than は省略</strong>:<br>→ 比較対象が明らかな場合、than 以下は省略可能!<br>→ 本問では「過去と比べて」「他の時代と比べて」などが暗黙!<br>★ <span class="en">become + 比較級</span> = 「<strong>(より)~になる</strong>」(=変化を強調)<br>→ become richer「より豊かになる」<br>→ become bigger「より大きくなる」<br>→ become more popular「より人気になる」<br>★ <strong>意訳</strong>: 「<strong>豊かになるにつれて</strong>」(=変化の同時並行を強調)<br>★ <strong>類例</strong>:<br>・<span class="en">become older</span>「年を取る」<br>・<span class="en">become richer</span>「豊かになる」(=本問!)<br>・<span class="en">become more important</span>「より重要になる」<br>★ <strong>核心</strong>: become + 比較級は「変化」を表す!As と組み合わさって「変化の同時並行」のニュアンスが強まる!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">throw away</span> を「投げ捨てる」とだけ取る</span>
+  </div>
+  <div class="trap-misread">「<u>遠くへ投げる</u>」(=直訳)</div>
+  <p class="trap-why">★ <span class="en">throw away</span> = 群動詞「<strong>捨てる/破棄する</strong>」(=throw + 副詞 away)<br>→ 単に「投げる」ではなく、<strong>不要なものとして処分する</strong>意味!<br>★ <strong>本問</strong>: <span class="en">they began to throw away a lot of things.</span>「彼らはたくさんのものを捨て始めた」<br>→ S = they<br>→ V = began「始めた」(=他動詞、beginの過去形)<br>→ O = to throw away a lot of things「たくさんのものを捨てること」(=不定詞、名詞用法、第11講応用)<br>★ <span class="en">throw away</span> の中:<br>→ V = throw away「捨てる」(=群動詞、他動詞的)<br>→ O = a lot of things「たくさんのもの」<br>★ <strong>意訳</strong>: 「<strong>たくさんのものを捨て始めた</strong>」<br>★ <span class="en">throw ~ away</span>(=分離可能):<br>→ <span class="en">throw away things</span>(=本問、目的語が後ろ)<br>→ <span class="en">throw things away</span>(=目的語を間に挟む、=2文目!)<br>→ どちらも可!<br>★ <strong>類例</strong>(=群動詞 throw away):<br>・<span class="en">Don't throw away your dreams.</span>「夢を捨てるな」<br>・<span class="en">She threw away the old letter.</span>「彼女は古い手紙を捨てた」<br>★ <strong>本問の文化的意味</strong>: 豊かさ → 「捨てる」習慣の増加 → <strong>大量消費社会</strong>の問題提起!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">we buy things and throw them away easily</span> の <span class="en">and</span> の繋ぎを取り違える</span>
+  </div>
+  <div class="trap-misread">「(and の繋ぎを取り違え)」</div>
+  <p class="trap-why">★ <span class="en">and</span> = ここでは<strong>動詞句の並列</strong>!(=第15講応用)<br>→ V₁ + O₁ と V₂ + O₂ を繋ぐ!<br>→ 共通主語 = we!<br>★ <strong>本問</strong>: <span class="en">we buy things and throw them away easily</span><br>→ S = we<br>→ V₁ + O₁ = buy things「ものを買う」<br>→ <strong>and</strong>(=動詞句並列)<br>→ V₂ + O₂ = throw them away「それらを捨てる」<br>→ M = easily「簡単に」(=副詞、両方にかかる)<br>★ <span class="en">throw them away</span>:<br>→ them = things を指す代名詞<br>→ throw them away「それらを捨てる」(=代名詞は動詞と副詞の<strong>間に挟む</strong>!)<br>★ <strong>句動詞の語順ルール</strong>:<br>(1) 目的語が名詞 → throw away things / throw things away(=どちらも可)<br>(2) 目的語が代名詞 → <strong>throw them away</strong>(=代名詞は必ず間!)<br>★ <strong>意訳</strong>: 「<strong>私たちはものを買って、簡単にそれらを捨てる</strong>」<br>★ <strong>核心</strong>: 句動詞の目的語が<strong>代名詞</strong>(=them, it, us, you, etc.) → 必ず動詞と副詞の<strong>間に挟む</strong>!<br>★ <strong>類例</strong>:<br>・<span class="en">pick it up</span>「それを拾う」(=代名詞は間)<br>・<span class="en">turn it on</span>「それをつける」(=代名詞は間)<br>・<span class="en">put them away</span>「それらをしまう」(=代名詞は間)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">desks or chairs which are not so old</span> の <span class="en">which</span> を疑問詞と取る</span>
+  </div>
+  <div class="trap-misread">「(which を疑問詞「どれ」と勘違い)」</div>
+  <p class="trap-why">★ <span class="en">which</span> = ここでは<strong>関係代名詞(=主格)</strong>!(=第27講応用)<br>→ 名詞 <span class="en">desks or chairs</span> を後ろから修飾!<br>→ which 節の中身は<strong>不完全文</strong>(=S が抜ける、which が S を兼ねる)<br>★ <strong>本問</strong>: <span class="en">desks or chairs which are not so old</span><br>→ 名詞 = desks or chairs「机や椅子」(=or で並列、第15講応用)<br>→ 修飾 = which are not so old「それほど古くない」(=関係代名詞節)<br>★ <strong>関係代名詞節の中身</strong>:<br>→ S' = which(=主格、desks or chairs を指す)<br>→ V' = are「~である」(=be 動詞)<br>→ M' = not so old「それほど古くない」(=否定 + 副詞 + 形容詞)<br>★ <span class="en">not so + 形容詞</span> = 「<strong>それほど~ない</strong>」(=慣用)<br>→ 「very ~」の否定的逆!<br>→ 「あまり古くない」「まだ新しい」(=ニュアンス)<br>★ <strong>意訳</strong>: 「<strong>それほど古くない机や椅子</strong>」<br>★ <strong>which と who の使い分け</strong>:<br>→ 物・動物 → which / that<br>→ 人 → who / that<br>→ 本問: desks or chairs(=物) → which!<br>★ <strong>類例</strong>(=which 主格):<br>・<span class="en">a book which sells well</span>「よく売れる本」<br>・<span class="en">cars which are made in Japan</span>「日本で作られる車」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">may be discarded and changed for new ones</span> の受動態並列を取り違える</span>
+  </div>
+  <div class="trap-misread">「(受動態並列の構造を取り違え)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">may be V-ed₁ and V-ed₂</span> = <strong>受動態の並列</strong>!(=第19講応用)<br>→ may + be が共通!<br>→ V-ed₁ = discarded「捨てられる」<br>→ <strong>and</strong>(=過去分詞並列)<br>→ V-ed₂ = changed for new ones「新しいものに替えられる」<br>★ <strong>本問</strong>: <span class="en">desks or chairs ~ may be discarded and changed for new ones.</span><br>→ S = desks or chairs(=長い主語、関係代名詞節含む)<br>→ V = may be discarded and changed for new ones(=助動詞 + 受動態並列)<br>★ <span class="en">discard</span> = 他動詞「捨てる/破棄する」(=throw away のフォーマルな表現)<br>★ <span class="en">change A for B</span> = 「A を B に替える/交換する」(=慣用)<br>→ 受動態 = A is changed for B「Aは Bに替えられる」<br>★ <span class="en">new ones</span>:<br>→ ones = 代名詞「~なもの(複数)」(=desks or chairs を指す)<br>→ one(=単数)/ ones(=複数)<br>→ 「新しいもの(複数)」 = 「新しい机や椅子」<br>★ <strong>意訳</strong>: 「<strong>捨てられて、新しいものに替えられる</strong>」<br>★ <strong>受動態並列の構造図</strong>:<br>→ may + be + (V-ed₁ and V-ed₂)<br>→ may = 助動詞「~かもしれない」(=可能性、推量)<br>→ be = 受動態の be 動詞<br>→ V-ed = 過去分詞2つを and で並列!<br>★ <strong>類例</strong>(=受動態並列):<br>・<span class="en">be loved and respected</span>「愛され、尊敬される」<br>・<span class="en">be cooked and served</span>「料理され、提供される」<br>・<span class="en">may be invited and welcomed</span>「招待されて歓迎されるかもしれない」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">a change in our life</span> の <span class="en">in our life</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(in our life を「私たちの生活で」と訳して不自然)」</div>
+  <p class="trap-why">★ <span class="en">a change in our life</span> = 「<strong>生活における変化</strong>/生活上の変化」(=慣用、change のテーマ)<br>→ change(=名詞)+ in 名詞「~における変化」<br>★ <strong>本問</strong>: <span class="en">If we want a change in our life</span>「生活に変化が欲しいと思えば」<br>→ if 節 = If we want ~(=条件)<br>→ S' = we、V' = want、O' = a change in our life<br>★ <span class="en">a change in ~</span> = 慣用「~における変化」<br>→ 「~の中での変化」というよりも、「~について何か新しいこと」<br>→ <strong>類例</strong>:<br>・<span class="en">a change in policy</span>「方針の変更」<br>・<span class="en">a change in attitude</span>「態度の変化」<br>・<span class="en">a change in life</span>「生活の変化」(=本問!)<br>★ <strong>意訳</strong>: 「<strong>生活に変化が欲しい(と思えば)</strong>」(=「気分転換」「新しいもの」のニュアンス)<br>★ <span class="en">if we want a change</span> = 「気分転換したいなら」(=慣用、ちょっと飽きた感じ)<br>★ <strong>本問の意味</strong>: 「ちょっと飽きたら、まだ十分使える机や椅子も捨てて買い換える」 = <strong>大量消費社会の風刺</strong>!</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>As people became richer,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ As 接続詞「~するにつれて」(=変化の同時並行)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">As people became richer,</span>「人々が豊かになるにつれて」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">As + S V</span> → <strong>接続詞</strong>(=前置詞ではない!)<br>
+          → as の後ろ = people became richer(=S V C)<br>
+          → 後ろが S V → 接続詞!<br><br>
+          ★ <strong>as 接続詞の主な意味</strong>:<br>
+          (1) 「~するときに/~するにつれて」(=時間・変化)<br>
+          (2) 「~なので」(=理由)<br>
+          (3) 「~のように」(=様態)<br><br>
+          ★ <strong>本問の判別</strong>:<br>
+          → became richer = <strong>変化を表す動詞</strong>(=become + 比較級)!<br>
+          → メイン文の動詞も変化を表す → 「<strong>~するにつれて</strong>」が自然!<br><br>
+          ★ <strong>as 節の中身</strong>:<br>
+          → S' = people「人々」<br>
+          → V' = became「~になった」(=自動詞、becomeの過去形)<br>
+          → C' = richer「より豊かに」(=形容詞の比較級、補語)<br>
+          → SVC、第2文型!<br><br>
+          ★ <span class="en">become + 比較級</span> = 「(より)~になる」(=変化を強調)<br>
+          → than は省略(=過去や前と比較、暗黙)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>人々が豊かになるにつれて</strong>」<br><br>
+          → メイン文の動詞は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          As + S V → 接続詞!became + 比較級(=変化を強調) → 「~するにつれて」が自然!変化の同時並行のサイン!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>they began to throw away a lot of things.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">メイン文 ─ began to V(=不定詞名詞用法) + 群動詞 throw away</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">they began to throw away a lot of things.</span>「彼らはたくさんのものを捨て始めた」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">they</span>「彼ら(=people を指す)」<br>
+          ★ V = <span class="en">began</span>「始めた」(=他動詞、beginの過去形)<br>
+          ★ O = <span class="en">to throw away a lot of things</span>「たくさんのものを捨てること」(=不定詞、名詞用法、第11講応用)<br><br>
+          ★ <span class="en">begin + to V</span> = 「~し始める」(=不定詞は began の目的語)<br><br>
+          ★ <strong>不定詞の中身</strong>:<br>
+          → V'' = throw away「捨てる」(=群動詞、他動詞的)<br>
+          → O'' = a lot of things「たくさんのもの」<br><br>
+          ★ <span class="en">throw away</span> = 群動詞「<strong>捨てる/破棄する</strong>」<br>
+          → 単に「投げる」ではなく、<strong>不要として処分</strong>!<br><br>
+          ★ <strong>変化の同時並行</strong>:<br>
+          → As 節: people became richer「豊かになる」(=変化)<br>
+          → メイン文: began to throw away「捨て始める」(=変化)<br>
+          → <strong>2つの変化が同時並行</strong> → 「~するにつれて」が完璧に当てはまる!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>たくさんのものを捨て始めた</strong>」<br><br>
+          ★ <strong>1文目全体</strong>: 「<strong>人々が豊かになるにつれて、たくさんのものを捨て始めた</strong>」<br>
+          → 大量消費社会の始まり!<br><br>
+          → 現代では?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          began + to V「~し始める」(=不定詞名詞用法)。throw away「捨てる」(=群動詞)。As節「~するにつれて」と完璧にリンク!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>Now, we buy things and throw them away easily.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目 ─ and で動詞句並列 + 句動詞の語順</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目 <span class="en">Now, we buy things and throw them away easily.</span>「今では、私たちはものを買って、簡単にそれらを捨てる」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">Now,</span> = 副詞「今/現在では」(=時間)<br>
+          ★ S = <span class="en">we</span>「私たち」<br><br>
+          ★ <strong>and が繋ぐもの</strong>:<br>
+          → V₁ + O₁ = buy things「ものを買う」<br>
+          → and<br>
+          → V₂ + O₂ = throw them away「それらを捨てる」<br>
+          → <strong>動詞句の並列</strong>(=第15講応用)!<br><br>
+          ★ <span class="en">throw them away</span>:<br>
+          → them = things を指す代名詞<br>
+          → <strong>句動詞の目的語が代名詞 → 動詞と副詞の間に挟む</strong>!<br>
+          → throw + them + away(=○)<br>
+          → throw away them(=×、代名詞では使えない!)<br><br>
+          ★ <span class="en">easily</span> = 副詞「簡単に」<br>
+          → buy と throw away、両方にかかる!<br><br>
+          ★ <strong>骨格</strong>: 副詞 + S + V₁ + O₁ + and + V₂ + O₂ + 副詞 = 第3文型 + and!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>今では、私たちはものを買って、簡単にそれらを捨てる</strong>」<br><br>
+          ★ <strong>1文目→2文目の流れ</strong>:<br>
+          → 1文目: 豊かになるにつれて、捨て始めた(=変化の始まり)<br>
+          → 2文目: 今では、買っては簡単に捨てる(=現在の状況)<br>
+          → 大量消費社会の現状!<br><br>
+          → 具体例?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          and = 動詞句並列(buy things と throw them away)!代名詞 them は throw と away の間!句動詞の語順ルール!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>If we want a change in our life,</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">3文目スタート ─ if 副詞節 + a change in our life</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3文目スタート <span class="en">If we want a change in our life,</span>「生活に変化が欲しいと思えば」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">If S V</span> = <strong>副詞節</strong>「もし~ならば」(=条件、第21講応用)<br><br>
+          ★ <strong>if 節の中身</strong>:<br>
+          → S' = we「私たち」<br>
+          → V' = want「欲しい」(=他動詞)<br>
+          → O' = a change「変化」(=名詞)<br>
+          → 修飾 = in our life「生活における」(=前置詞句、a change を修飾)<br><br>
+          ★ <span class="en">a change in our life</span> = 「<strong>生活における変化</strong>/生活の変化」(=慣用)<br>
+          → 「気分転換」「新しいもの」のニュアンス!<br>
+          → <span class="en">if we want a change</span>「ちょっと飽きたら/気分を変えたいなら」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>生活に変化が欲しいと思えば</strong>」<br><br>
+          ★ <strong>本問の意味合い</strong>: 「ちょっと気分を変えたい」程度で物を買い替える → 大量消費社会の<strong>軽い動機</strong>!<br><br>
+          → メイン文を待つ!
+        </div>
+        <div class="ra-step-conclude">
+          if 副詞節「もし~ならば」(=条件)。a change in our life「生活の変化」(=慣用、「気分転換」のニュアンス)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>even desks or chairs which are not so old</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">長い主語 ─ 関係代名詞 which(=主格)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">even desks or chairs which are not so old</span>「それほど古くもない机や椅子でさえ」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">even</span> = 副詞「~でさえ/~ですら」(=強調)<br>
+          → 続く名詞を強調!<br><br>
+          ★ <span class="en">desks or chairs</span> = 「机や椅子」(=or で並列、第15講応用)<br>
+          → メイン文の主語の中心!<br><br>
+          ★ <span class="en">which</span> = <strong>関係代名詞(=主格)</strong>(=第27講応用)<br>
+          → 名詞 desks or chairs を後ろから修飾!<br>
+          → which 節の中身は<strong>不完全文</strong>(=S が抜ける、which が S を兼ねる)<br><br>
+          ★ <strong>関係代名詞節の中身</strong>:<br>
+          → S' = which(=主格、desks or chairs を指す)<br>
+          → V' = are「~である」(=be 動詞)<br>
+          → M' = not so old「それほど古くない」(=否定 + 副詞 + 形容詞)<br><br>
+          ★ <span class="en">not so + 形容詞</span> = 慣用「<strong>それほど~ない</strong>」<br>
+          → 「very ~」の逆!<br>
+          → 「あまり古くない/まだ十分使える」のニュアンス!<br><br>
+          ★ <strong>which と who の使い分け</strong>:<br>
+          → 物・動物 → which / that<br>
+          → 人 → who / that<br>
+          → 本問: desks or chairs(=物) → which!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>それほど古くない机や椅子でさえ</strong>」<br><br>
+          → メインの動詞は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          even「~でさえ」、which = 関係代名詞主格(=物)、not so + 形容詞「それほど~ない」(=慣用、「まだ十分使える」のニュアンス)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>may be discarded and changed for new ones.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">受動態並列 ─ may be V-ed and V-ed</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">may be discarded and changed for new ones.</span>「捨てられて、新しいものに替えられるかもしれない」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">may + be + V-ed and V-ed</span> = <strong>受動態の並列</strong>(=第19講応用)<br>
+          → may = 助動詞「~かもしれない」(=可能性、推量)<br>
+          → be = 受動態の be 動詞<br>
+          → V-ed = 過去分詞2つを and で並列!<br><br>
+          ★ <strong>過去分詞の並列</strong>:<br>
+          → V-ed₁ = discarded「捨てられる」<br>
+          → and<br>
+          → V-ed₂ = changed「替えられる」<br>
+          → 共通の may be が両方にかかる!<br><br>
+          ★ <span class="en">discard</span> = 他動詞「捨てる/破棄する」(=throw away のフォーマル)<br>
+          ★ <span class="en">change A for B</span> = 「A を B に替える/交換する」<br>
+          → 受動態 = A is changed for B「A は B に替えられる」<br><br>
+          ★ <span class="en">for new ones</span>:<br>
+          → ones = 代名詞「~なもの(複数)」(=desks or chairs を指す)<br>
+          → one(=単数)/ ones(=複数)<br>
+          → 「新しいもの(複数)」<br><br>
+          ★ <strong>骨格</strong>: S(=long、関係詞含む)+ may be V-ed and V-ed + 副詞句 = 受動態並列!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>捨てられて、新しいものに替えられるかもしれない</strong>」<br><br>
+          ★ <strong>3文目全体</strong>: 「<strong>生活に変化が欲しいと思えば、それほど古くもない机や椅子でさえ、捨てられて、新しいものに買い替えられてしまうかもしれない</strong>」<br><br>
+          ★ <strong>3文全体のメッセージ</strong>:<br>
+          → 1文目: 豊かになるにつれて、捨て始めた<br>
+          → 2文目: 今では買っては簡単に捨てる<br>
+          → 3文目: 気分次第で、まだ使える物まで捨てて買い替える<br>
+          → <strong>大量消費社会の問題提起</strong>!<br><br>
+          ★ <strong>本講の本質</strong>: as の役割は<strong>後ろの形と意味</strong>で決まる!<br>
+          → As + S V + 変化動詞 → 「~するにつれて」!<br>
+          → 同じ as でも、文脈で意味は変わる!毎回確認の習慣を!
+        </div>
+        <div class="ra-step-conclude">
+          may + be + 過去分詞₁ and 過去分詞₂ → 受動態の並列!ones = 複数名詞の代名詞!大量消費社会の風刺で結ぶ!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-sub">[As people became richer]</span><span class="seg-marker seg-marker-sub">as副詞節「~するにつれて」</span></span>
+    <span class="seg-wrap"><span class="seg-sub">,</span><span class="seg-marker seg-marker-sub">区切り</span></span>
+    <span class="seg-wrap"><span class="seg-main">they</span><span class="seg-marker seg-marker-main">S₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">began</span><span class="seg-marker seg-marker-main">V₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">to throw away a lot of things.</span><span class="seg-marker seg-marker-main">O₁(=不定詞名詞用法)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">Now,</span><span class="seg-marker seg-marker-sub">M(時間)</span></span>
+    <span class="seg-wrap"><span class="seg-main">we</span><span class="seg-marker seg-marker-main">S₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">buy</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">things</span><span class="seg-marker seg-marker-main">O₂</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接(動詞句並列)</span></span>
+    <span class="seg-wrap"><span class="seg-main">throw</span><span class="seg-marker seg-marker-main">V₃(群動詞前半)</span></span>
+    <span class="seg-wrap"><span class="seg-main">them</span><span class="seg-marker seg-marker-main">O₃(代名詞、間に挟む)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">away</span><span class="seg-marker seg-marker-sub">V₃(群動詞後半)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">easily.</span><span class="seg-marker seg-marker-sub">M(両V₂V₃)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[If we want a change in our life]</span><span class="seg-marker seg-marker-sub">if副詞節</span></span>
+    <span class="seg-wrap"><span class="seg-sub">, even</span><span class="seg-marker seg-marker-sub">M(強調)</span></span>
+    <span class="seg-wrap"><span class="seg-main">desks or chairs</span><span class="seg-marker seg-marker-main">S₃(中心)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[which are not so old]</span><span class="seg-marker seg-marker-sub">関係代名詞主格</span></span>
+    <span class="seg-wrap"><span class="seg-main">may be discarded</span><span class="seg-marker seg-marker-main">V₄(受動態+助動詞)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">and</span><span class="seg-marker seg-marker-sub">接(過去分詞並列)</span></span>
+    <span class="seg-wrap"><span class="seg-main">changed</span><span class="seg-marker seg-marker-main">V₅(過去分詞、be共通)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">for new ones.</span><span class="seg-marker seg-marker-sub">M(代名詞 ones)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: [As S V C(=比較級)], S V O(=to V). 2: 〈M〉, S V O 接 V O 〈M〉. 3: [If S V O 〈M〉], 〈M〉 S [which V C(=not so 形容詞)] V(=may be V-ed₁ and V-ed₂) 〈M(=for new ones)〉.</strong>(As 接続詞「~するにつれて」、関係代名詞 which 主格、受動態並列 may be V-ed and V-ed、句動詞 throw away、代名詞 ones、not so + 形容詞「それほど~ない」、a change in our life)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">人々がより豊かになったとき、彼らはたくさんのものを投げ捨てることを始めた。今、私たちは物を買って、簡単にそれらを投げ捨てる。もし私たちが私たちの生活の中で変化を欲するなら、それほど古くない机や椅子さえも、捨てられて、そして新しいもののために替えられるかもしれない。</span>
+      <span class="trans-row-note">構造どおりの直訳。「より豊かになったとき」(=as を「~したとき」と訳すと不自然)、「投げ捨てる」「生活の中で変化を欲する」「新しいもののために替えられる」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>As + S V + 変化動詞</strong> → 接続詞「~するにつれて」(=変化の同時並行!)</span>
+    <span class="trans-arrow-detail">As people became richer, they began to throw away ~ → 「豊かになる」と「捨て始める」が同時並行!As の役割は後ろの形と意味で決まる!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">人々が豊かになるにつれて、たくさんのものを捨て始めた。今では、私たちはものを買っては、簡単に捨てる。生活に変化が欲しいと思えば、それほど古くない机や椅子でさえ、捨てられて、新しいものに替えられるかもしれない。</span>
+      <span class="trans-row-note">as を「~するにつれて」(=変化の同時並行)、throw away を「捨てる」、a change in our life を「生活の変化」、change A for B を「A を B に替える」、ones を「もの」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>関係代名詞 which 主格</strong>(=第27講応用)、<strong>受動態の並列 may be V-ed and V-ed</strong>(=第19講応用)、<strong>代名詞 ones</strong></span>
+    <span class="trans-arrow-detail">desks or chairs which are not so old → 関係代名詞 which が物を修飾!may be discarded and changed → 助動詞 + be が共通の受動態並列!ones = 複数名詞の代名詞!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>人々が豊かになるにつれて、たくさんのものを捨て始めた。今では、私たちはものを買っては、簡単に捨てている。生活に変化が欲しいと思えば、それほど古くもない机や椅子でさえ、捨てられて、新しいものに買い替えられてしまうかもしれない。</strong></span>
+      <span class="trans-row-note">「捨てている」(=現在進行のニュアンス、現在の習慣)、「それほど古くもない」(=「も」で「すら」の感じ)、「買い替えられてしまう」(=「~てしまう」で残念さ・批判のトーン)で大量消費社会の問題提起を表現!これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>As の役割は後ろの形と意味で決まる</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第54講で身につけてほしい<strong>「as の役割の判別力」</strong>を伝えます。<br><br>★ <span class="en">as</span> は<strong>多義語</strong>!文脈と形によって意味が変わります。<br>★ 第45講で「~するときに/~するにつれて」、第49講で「~のように」(=具体例の導入)を学びました。<br>★ 今日は特に<strong>「~するにつれて」</strong>に焦点!<br><br>★ <strong>as の主な用法</strong>:<br>(1) <strong>接続詞「~するときに/~するにつれて」</strong>(=時間・変化、本問!)<br>(2) 接続詞「~なので」(=理由)<br>(3) 接続詞「~のように」(=様態)<br>(4) 前置詞「~として」<br>(5) 関係代名詞(=第59講で予定)<br><br>★ <strong>判別の決め手</strong>:<br>★ <strong>as の後ろの形</strong>!<br>(1) <strong>as + S V</strong> → 接続詞!<br>(2) <strong>as + 名詞</strong> → 前置詞「~として」<br>(3) as in ~ → 「~におけるような」(=具体例、第49講応用)<br><br>★ <strong>接続詞 as の意味の判別</strong>:<br>★ <strong>後ろの形と意味で決める</strong>!<br>(1) <strong>「~するにつれて」</strong> → as 節とメイン文の<strong>動詞が両方とも変化</strong>を表す!(=本問!)<br>(2) 「~するときに」 → as 節とメイン文が<strong>同時に起こる</strong>!<br>(3) 「~なので」 → as 節がメイン文の<strong>理由</strong>を表す!<br>(4) 「~のように」 → as 節がメイン文の<strong>動作の様態</strong>を示す!<br><br>★ <strong>本問の例</strong>:<br>★ <span class="en">As people became richer, they began to throw away a lot of things.</span><br>→ as 節: people became richer「豊かになる」(=変化)<br>→ メイン文: they began to throw away「捨て始める」(=変化)<br>→ <strong>2つの変化が同時並行</strong> → 「~するにつれて」!<br><br>★ <strong>変化のサイン</strong>:<br>★ <span class="en">become + 比較級</span>「(より)~になる」(=本問の became richer)<br>★ <span class="en">begin to V</span>「~し始める」(=本問の began to throw away)<br>★ <span class="en">grow / get + 比較級</span>「(より)~になる」<br>★ <span class="en">change</span>「変わる」<br>→ これらが両方の節にあれば、「~するにつれて」を疑う!<br><br>★ <strong>類例</strong>(=as「~するにつれて」):<br>・<span class="en">As I grow older, I understand my parents better.</span>「年を取るにつれて、親をよりよく理解する」<br>・<span class="en">As technology develops, our lives change.</span>「技術が発達するにつれて、生活は変わる」<br>・<span class="en">As prices rise, people buy less.</span>「物価が上がるにつれて、人々は買い物を減らす」<br><br>★ <strong>もう一つ ─ 関係代名詞 which 主格</strong>(=第27講応用):<br>★ 名詞 + which + V → which が S を兼ねる(=不完全文)<br>★ 物・動物を修飾(=人なら who/that)<br>★ 本問: <span class="en">desks or chairs which are not so old</span>「それほど古くない机や椅子」<br><br>★ <strong>もう一つ ─ 受動態の並列</strong>(=第19講応用):<br>★ <span class="en">may be V-ed₁ and V-ed₂</span> = 助動詞 + be が共通の<strong>受動態並列</strong>!<br>★ 本問: <span class="en">may be discarded and changed for new ones</span>「捨てられて、新しいものに替えられる」<br>★ <strong>類例</strong>:<br>・<span class="en">be loved and respected</span>「愛され尊敬される」<br>・<span class="en">may be invited and welcomed</span>「招待されて歓迎されるかもしれない」<br><br>★ <strong>もう一つ ─ 句動詞の語順</strong>:<br>★ 句動詞(=動詞 + 副詞)の目的語が:<br>(1) 名詞 → 動詞 + 副詞 + 名詞 / 動詞 + 名詞 + 副詞 (=どちらも可)<br>(2) <strong>代名詞</strong> → <strong>動詞 + 代名詞 + 副詞</strong>(=必ず間!)<br>★ 本問: <span class="en">throw them away</span>(=代名詞 them は間)<br>★ <span class="en">throw away them</span>(=×、不可)<br><br>★ <strong>もう一つ ─ 代名詞 ones</strong>:<br>★ <span class="en">one</span>(=単数)/ <span class="en">ones</span>(=複数)= 同じ種類の名詞の繰り返しを避ける代名詞!<br>★ 本問: <span class="en">new ones</span>「新しいもの(=desks or chairs)」<br>★ <strong>類例</strong>:<br>・<span class="en">I have an old car. I want a new one.</span>「古い車を持っている。新しいのが欲しい」(=one = car)<br>・<span class="en">These shoes are old. I need new ones.</span>「この靴は古い。新しいのが必要」(=ones = shoes)<br><br>★ <strong>もう一つ ─ not so + 形容詞</strong>「それほど~ない」(=慣用):<br>★ very ~ の逆!<br>★ 本問: <span class="en">not so old</span>「それほど古くない」(=「まだ十分使える」のニュアンス)<br><br>★ <strong>もう一つ ─ a change in ~</strong>「~における変化」(=慣用):<br>★ <span class="en">a change in our life</span>「生活の変化」(=「気分転換」のニュアンス)<br>★ <span class="en">a change in policy</span>「方針の変更」<br>★ <span class="en">a change in attitude</span>「態度の変化」<br><br>★ これからの60講で、<strong>as の判別</strong>は頻出します。as を見たら、まず後ろの形と意味を確認する習慣を!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">As I grew older, I became wiser.</span></span>
+      <span class="natural-tip-ex-bad">私は大きくなったとき、賢くなった (「~したとき」と訳して不自然)</span>
+      <span class="natural-tip-ex-good">年を取るにつれて、賢くなった (両方とも変化を表す → 「~するにつれて」!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">As it was raining, we stayed home.</span></span>
+      <span class="natural-tip-ex-bad">雨が降っていたとき、家にいた (時間と取って不自然)</span>
+      <span class="natural-tip-ex-good">雨が降っていたので、家にいた (理由を表す as!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">These pens are old. I need new ones.</span></span>
+      <span class="natural-tip-ex-bad">このペンは古い。新しい(1つ)が必要だ (one を単数で訳す)</span>
+      <span class="natural-tip-ex-good">このペンは古い。新しいものが必要だ (ones = 複数の代名詞、ペン複数を指す!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">As 接続詞「~するにつれて」</span>
+  </div>
+  <p class="drill-en"><strong>As technology advances</strong>, our daily lives become more convenient.</p>
+  <p class="drill-q">as の役割を判別し、訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> as + S V + 変化動詞、メイン文も変化動詞 → 「~するにつれて」!<br>
+        ・as 節 = As technology advances「技術が進歩する」(=変化)<br>
+        ・メイン文 = our daily lives become more convenient「生活がより便利になる」(=変化)<br>
+        ・両方が変化を表す → 「~するにつれて」!<br>
+        <strong>訳:</strong> 「<strong>技術が進歩するにつれて、私たちの日常生活はより便利になる</strong>」<br><br>
+        💡 as 節とメイン文、両方が変化を表す動詞 → 「~するにつれて」!become + 比較級、advance、grow なども変化のサイン!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">受動態の並列 + 関係代名詞</span>
+  </div>
+  <p class="drill-en">Old books <strong>which are no longer read may be donated and recycled</strong>.</p>
+  <p class="drill-q">構造を分析して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> 関係代名詞 which 主格 + 受動態並列!<br>
+        ・S = Old books<br>
+        ・修飾 = which are no longer read「もう読まれない」(=関係代名詞 which 主格 + 受動態)<br>
+        ・V = may be donated and recycled(=助動詞 + be 共通の受動態並列、第19講応用)<br>
+        ・donated「寄付される」 + recycled「リサイクルされる」<br>
+        <strong>訳:</strong> 「<strong>もう読まれない古い本は、寄付されてリサイクルされるかもしれない</strong>」<br><br>
+        💡 may be V-ed and V-ed → 受動態の並列!may + be が共通!第19・54講応用!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">句動詞の代名詞の語順</span>
+  </div>
+  <p class="drill-en">I bought a new phone. I will <strong>throw the old one away</strong>.</p>
+  <p class="drill-q">句動詞の語順と代名詞 one の役割は?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> 句動詞 throw away + 代名詞 one!<br>
+        ・throw away「捨てる」(=群動詞)<br>
+        ・the old one「古いもの」(=one = phone を指す代名詞、単数)<br>
+        ・<strong>名詞</strong>の目的語の場合: throw away the old one / throw the old one away (=どちらも可)<br>
+        ・<strong>代名詞</strong>(=it/them)の場合: throw it away (=必ず間!)、throw away it(=×)<br>
+        ・本問の the old one は名詞句なので、どちらの語順でも可!<br>
+        <strong>訳:</strong> 「<strong>新しい電話を買った。古いのを捨てるつもりだ</strong>」<br><br>
+        💡 句動詞の目的語が代名詞(=it/them)なら必ず動詞と副詞の間!one は「~なもの」(=既出の名詞を指す)、ones で複数!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>as の後ろの形を確認</strong></div>
+      <div class="flow-desc">as + S V → 接続詞、as + 名詞 → 前置詞「~として」!まず後ろの形を見る!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>接続詞 as の意味を判別</strong></div>
+      <div class="flow-desc">「~するときに/~するにつれて/~なので/~のように」!後ろの動詞・メイン文の動詞・文脈で判別!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>「~するにつれて」のサイン</strong>: 両方の節が変化動詞</div>
+      <div class="flow-desc">become + 比較級、grow、advance、develop、change、begin to V など → 変化の同時並行!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>関係代名詞 which 主格</strong>(=第27講応用)</div>
+      <div class="flow-desc">物・動物 + which + V → which が S を兼ねる(=不完全文)!人なら who/that!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>受動態の並列 may be V-ed and V-ed</strong>(=第19講応用)</div>
+      <div class="flow-desc">助動詞 + be が共通!過去分詞2つを and で並列!discarded and changed「捨てられて替えられる」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>句動詞の語順ルール</strong></div>
+      <div class="flow-desc">目的語が代名詞 → 必ず動詞と副詞の間!throw it away(=○)/throw away it(=×)!名詞ならどちらも可!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>代名詞 one / ones</strong></div>
+      <div class="flow-desc">既出の名詞の繰り返しを避ける!one(=単数)/ ones(=複数)!new ones「新しいもの(複数)」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>not so + 形容詞</strong>「それほど~ない」(=慣用)</div>
+      <div class="flow-desc">very ~ の逆!「あまり~ない/まだ~でない」のニュアンス!not so old「それほど古くない」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>begin to V</strong>「~し始める」(=不定詞名詞用法)</div>
+      <div class="flow-desc">begin/start + to V「~し始める」!不定詞は begin/start の目的語!変化のサイン!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as の判別</strong>(=後ろの形と意味で役割を決める)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>As 接続詞「~するにつれて」</strong>(=変化の同時並行)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>変化のサイン</strong>(=become + 比較級、begin to V、change など)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>関係代名詞 which 主格</strong>(=第27講応用、物・動物を修飾)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>受動態の並列 may be V-ed and V-ed</strong>(=第19講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>句動詞の語順ルール</strong>(=代名詞は必ず間)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>代名詞 one / ones</strong>(=既出名詞の繰り返しを避ける)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>not so + 形容詞</strong>「それほど~ない」(=慣用)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>begin to V</strong>「~し始める」(=不定詞名詞用法、変化のサイン)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>throw away</strong>「捨てる」(=群動詞)、<strong>discard</strong>「破棄する」(=フォーマル)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>change A for B</strong>「A を B に替える」(=慣用、受動態 A is changed for B)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第54講 · As S V の S V を見て、As の役割を決める</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

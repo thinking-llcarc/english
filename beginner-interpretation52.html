@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第52講 It was ~ that ~ の形を強調構文と見抜く | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">52</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 強調構文 It was ~ that</div>
+        <h1 class="lesson-title">It was ~ that ~ の形を強調構文と見抜く</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第52講のテーマは <strong>「強調構文 It was ~ that ~」</strong>。<br>
+      第51講で形式主語 It is V-ed that ~ を学びましたが、It was/is ~ that ~ にはもう1つの<strong>強調構文</strong>という重要な顔があります!<br>
+      特に <strong>It was not until ~ that ~</strong> は<strong>超頻出</strong>!「~してはじめて~」という意味を表します。<br>
+      第51講応用の形式主語との見分け、第43講応用の過去分詞、第19講応用の受動態(=become known)も登場!<br>
+      今日のキー:<br>
+      ① <strong>強調構文 <span class="en">It is/was ~ that ~</span></strong>「~こそが~だ」(=「~」の部分を強調)<br>
+      ② <strong>強調する要素</strong>: 名詞、副詞句、副詞節など(=主語・動詞以外の要素を強調)<br>
+      ③ <strong>It was not until ~ that ~</strong>「~してはじめて~」(=慣用、超頻出!)<br>
+      ④ <strong>強調構文 vs 形式主語の判別</strong>(=It is と that の間に何があるか)<br>
+      ⑤ <strong>become known</strong>「知られるようになる」(=become + 過去分詞、第19講応用)<br>
+      ロゼッタストーンの歴史的発見の英文を題材に、<strong>強調構文の見抜き方</strong>を確立します!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>強調構文 It is/was ~ that ~</strong>を、It と that の間にある要素から見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>元の文に戻す</strong>(=It is/was と that を取り除き、強調されている要素を元の位置に戻す)習慣を身につけます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>It was not until ~ that ~</strong>「~してはじめて~」(=慣用)を覚え、自然に訳せるようにします。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">It was not until the discovery of the Rosetta Stone that some clues to the Egyptian language became known.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>8つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">It was not until the discovery of the Rosetta Stone that ~</span> の <span class="en">It</span> を「それ」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>それはロゼッタストーンの発見まで~ではなかった</u>」(=指示代名詞と勘違い)</div>
+  <p class="trap-why">★ <strong>核心</strong>: <span class="en">It was not until ~ that ~</span> = <strong>強調構文</strong>!<br>→ It は<strong>強調構文の主語</strong>(=指示代名詞「それ」ではない!)<br>→ <span class="en">until the discovery of the Rosetta Stone</span> の部分を強調!<br>★ <strong>本問</strong>: <span class="en">It was not until the discovery of the Rosetta Stone that some clues to the Egyptian language became known.</span><br>★ <strong>元の文を考える</strong>(=強調構文化前):<br>→ <span class="en">Some clues to the Egyptian language did not become known until the discovery of the Rosetta Stone.</span><br>→ 「ロゼッタストーンの発見まで、エジプト語への手がかりは知られていなかった」<br>★ <strong>強調する要素</strong>: <span class="en">until the discovery of the Rosetta Stone</span>「ロゼッタストーンの発見まで」(=副詞句)<br>★ <strong>強調構文化の手順</strong>:<br>(1) 強調したい要素を <span class="en">It was/is</span> と <span class="en">that</span> の間に挟む<br>(2) 残りの部分を that の後ろに!<br>★ <strong>意訳</strong>: 「<strong>ロゼッタストーンの発見によって、初めてエジプト語へのいくつかの手がかりが知られるようになった</strong>」(=意訳「~してはじめて~」)<br>★ <strong>類例</strong>(=強調構文):<br>・<span class="en">It is John that broke the window.</span>「窓を割ったのはJohn だ」(=主語を強調)<br>・<span class="en">It was yesterday that I met him.</span>「私が彼に会ったのは昨日だ」(=副詞を強調)<br>・<span class="en">It was in Paris that we first met.</span>「私たちが初めて会ったのはパリでだった」(=副詞句を強調)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">not until ~ that ~</span> の <span class="en">not until</span> を「~まで~ない」とだけ取る</span>
+  </div>
+  <div class="trap-misread">「<u>~まで~ない</u>」(=直訳して不自然)</div>
+  <p class="trap-why">★ <span class="en">It was not until ~ that ~</span> = 慣用「<strong>~してはじめて~</strong>」(=超頻出!)<br>→ 直訳: 「~まで~ではなかった」<br>→ 自然訳: 「<strong>~してはじめて~</strong>」<br>★ <strong>意味のニュアンス</strong>:<br>→ 「~の時点まではない/起こっていない」<br>→ つまり「~でようやく/~してはじめて」!<br>→ <strong>その時点が転機</strong>!<br>★ <strong>本問</strong>: <span class="en">It was not until the discovery of the Rosetta Stone that some clues to the Egyptian language became known.</span><br>→ 直訳: 「ロゼッタストーンの発見までエジプト語の手がかりは知られていなかった」<br>→ 自然訳: 「<strong>ロゼッタストーンの発見によって、初めてエジプト語の手がかりが知られるようになった</strong>」<br>★ <strong>類例</strong>(=It was not until ~ that ~):<br>・<span class="en">It was not until I met her that I knew real love.</span>「彼女に会ってはじめて、本当の愛を知った」<br>・<span class="en">It was not until 1969 that humans landed on the moon.</span>「1969年にはじめて、人類は月に着陸した」<br>・<span class="en">It was not until last year that I started learning English.</span>「去年になってはじめて、英語の勉強を始めた」<br>・<span class="en">It was not until then that I realized my mistake.</span>「そのときになってはじめて、私は自分の間違いに気づいた」<br>★ <strong>核心</strong>: <span class="en">It was not until A that B</span> = 「Aしてはじめて B」 / 「B したのは A の時だった」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">It was ~ that</span> の <span class="en">that</span> を関係代名詞 / 同格と取る</span>
+  </div>
+  <div class="trap-misread">「(that を関係代名詞か同格と勘違い)」</div>
+  <p class="trap-why">★ <strong>核心</strong>: 強調構文の <span class="en">that</span> は<strong>関係代名詞でも同格でもない</strong>!<br>→ <strong>強調構文専用の that</strong>(=接続詞的に働く)<br>→ 元の文を組み立てるための「橋渡し」!<br>★ <strong>強調構文 vs 関係代名詞 / 同格 / 形式主語の判別</strong>:<br>(1) <strong>強調構文</strong>: <span class="en">It is/was ~ that ~</span> → 元の文に戻して同じ意味なら強調構文!(=本問)<br>(2) 関係代名詞 that: 名詞 + that + 不完全文 → 「~する(名詞)」(=第50講応用)<br>(3) 同格 that: 名詞 + that + 完全文 → 「~という(名詞)」(=第50講応用)<br>(4) 形式主語 it ~ that ~: <span class="en">It is V/V-ed that ~</span> → 真主語が that 節「~ということ(が V される)」(=第51講応用)<br>★ <strong>強調構文の確認手順</strong>:<br>→ It と that を取り除く!<br>→ 「~」の部分(=It is と that の間)を、文の元の位置に戻す!<br>→ 自然な英文になる → <strong>強調構文</strong>!<br>★ <strong>本問</strong>: <span class="en">It was not until the discovery of the Rosetta Stone that some clues to the Egyptian language became known.</span><br>→ It と that を取り除く: <span class="en">not until the discovery of the Rosetta Stone, some clues to the Egyptian language became known.</span><br>→ <span class="en">until the discovery of the Rosetta Stone</span> を後ろに移動: <span class="en">Some clues to the Egyptian language did not become known until the discovery of the Rosetta Stone.</span><br>→ <strong>自然な英文</strong> → 強調構文!<br>★ <strong>形式主語との比較</strong>(=第51講応用):<br>→ 形式主語: It is said <strong>that ~</strong>(=that 節が真主語)<br>→ 強調構文: It is <strong>~</strong> that ~(=It is と that の間に強調する要素)<br>→ <strong>It is と that の間に何があるか</strong>で判別!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the discovery of the Rosetta Stone</span> の <span class="en">discovery</span> を動詞と取る</span>
+  </div>
+  <div class="trap-misread">「(discovery を動詞と勘違い)」</div>
+  <p class="trap-why">★ <span class="en">discovery</span> = <strong>名詞</strong>「発見」(=動詞 discover「発見する」の名詞形)<br>→ ここでは前置詞 until の<strong>目的語</strong>(=名詞)!<br>★ <strong>本問</strong>: <span class="en">until the discovery of the Rosetta Stone</span><br>→ 前置詞 = until「~まで」<br>→ 目的語 = the discovery「発見」(=名詞)<br>→ 修飾 = of the Rosetta Stone「ロゼッタストーンの」(=前置詞句)<br>→ 「<strong>ロゼッタストーンの発見まで</strong>」<br>★ <span class="en">discover</span>(=動詞)→ <span class="en">discovery</span>(=名詞):<br>→ 動詞 + y → 名詞「~すること/~の状態」<br>→ recover → recovery「回復」<br>→ deliver → delivery「配達」<br>→ master → mastery「習得」<br>★ <strong>意訳</strong>: 「<strong>ロゼッタストーンの発見まで</strong>」<br>★ <strong>ロゼッタストーンとは</strong>:<br>→ 1799年、ナポレオン軍がエジプトで発見した石碑<br>→ 古代ギリシャ語、エジプト象形文字、デモティック文字の3言語で同じ内容を記していた<br>→ シャンポリオンが1822年に解読 → エジプト語学の<strong>転機</strong>!<br>→ 「until the discovery of the Rosetta Stone」が「until 1799」(=発見以前は手がかりがなかった)を表す!<br>★ <strong>類例</strong>(=動詞→名詞):<br>・develop → development「発展」<br>・arrive → arrival「到着」<br>・depart → departure「出発」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">some clues to the Egyptian language</span> の <span class="en">to</span> を不定詞と取る</span>
+  </div>
+  <div class="trap-misread">「(to を不定詞と勘違い)」</div>
+  <p class="trap-why">★ <span class="en">to the Egyptian language</span> = <strong>前置詞句</strong>!<br>→ to(=前置詞)+ the Egyptian language(=名詞)<br>→ 不定詞ではない!<br>→ 名詞 clues を後ろから修飾!<br>★ <strong>本問</strong>: <span class="en">some clues to the Egyptian language</span><br>→ 名詞 = some clues「いくつかの手がかり」<br>→ 修飾 = to the Egyptian language「エジプト語への」(=前置詞句)<br>→ 「<strong>エジプト語へのいくつかの手がかり</strong>」<br>★ <span class="en">a clue to ~</span> = 「~への手がかり」(=慣用)<br>→ 「~を解く鍵」<br>★ <strong>不定詞 vs 前置詞 to の判別</strong>:<br>(1) to + 動詞の原形 → 不定詞(=「~する/~するための」)<br>(2) <strong>to + 名詞</strong> → 前置詞句「~へ/~に」(=本問!)<br>★ <strong>類例</strong>(=前置詞 to + 名詞):<br>・<span class="en">the key to success</span>「成功への鍵」<br>・<span class="en">an answer to the question</span>「質問への答え」<br>・<span class="en">the way to the station</span>「駅への道」<br>・<span class="en">an introduction to history</span>「歴史への入門」<br>★ <strong>意訳</strong>: 「<strong>エジプト語へのいくつかの手がかり</strong>」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">became known</span> の <span class="en">known</span> を「知っている」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>知っているになった</u>」(=knownを動詞と勘違い)</div>
+  <p class="trap-why">★ <span class="en">become known</span> = 「<strong>知られるようになる</strong>」(=become + 過去分詞、第19講応用)<br>→ become(=自動詞「~になる」)+ known(=過去分詞「知られた」、形容詞的)<br>→ 「知られた状態になる」 = 「知られるようになる」<br>★ <strong>本問</strong>: <span class="en">some clues ~ became known.</span><br>→ S = some clues「いくつかの手がかり」<br>→ V = became「~になった」(=自動詞、過去形)<br>→ C = known「知られた」(=過去分詞、補語)<br>→ <strong>SVC、第2文型</strong>!<br>★ <span class="en">become</span> の用法:<br>→ become + 形容詞/過去分詞 = 「~になる」<br>→ become happy「幸せになる」<br>→ become tired「疲れる」<br>→ <strong>become known「知られるようになる」</strong>(=本問)<br>→ become famous「有名になる」<br>★ <strong>意訳</strong>: 「<strong>知られるようになった</strong>」<br>★ <strong>類例</strong>(=become + 過去分詞):<br>・<span class="en">become known</span>「知られるようになる」<br>・<span class="en">become accepted</span>「受け入れられるようになる」<br>・<span class="en">become forgotten</span>「忘れられるようになる」<br>★ <strong>核心</strong>: 過去分詞は形容詞的に働く!be 動詞だけでなく、become / get / remain などの後ろにも来る!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title">強調構文の語順 ─ <span class="en">that</span>の後ろに完全文?不完全文?</span>
+  </div>
+  <div class="trap-misread">「(that の後ろが完全文か不完全文か曖昧)」</div>
+  <p class="trap-why">★ 強調構文の <span class="en">that</span> の後ろは:<br>→ <strong>強調されている要素を取り除いた残り</strong>!<br>→ その要素が主語/目的語/副詞などで、結果として完全文 or 不完全文に!<br>★ <strong>本問</strong>: <span class="en">It was [not until the discovery of the Rosetta Stone] that some clues ~ became known.</span><br>→ It was と that の間: <span class="en">not until the discovery of the Rosetta Stone</span>(=副詞句、強調)<br>→ that の後ろ: <span class="en">some clues to the Egyptian language became known</span>(=元の文の主語+動詞、副詞句を取り除いた残り)<br>→ <strong>that の後ろは完全文</strong>(=副詞句が抜けたから、SVCは揃う)!<br>★ <strong>強調する要素による that の後ろの違い</strong>:<br>(1) <strong>主語を強調</strong>: <span class="en">It is John that broke the window.</span>(=that の後ろは S なし、不完全文)<br>(2) <strong>目的語を強調</strong>: <span class="en">It is John that I met yesterday.</span>(=that の後ろは O なし、不完全文)<br>(3) <strong>副詞 / 副詞句を強調</strong>: <span class="en">It was yesterday that I met John.</span>(=that の後ろは完全文)(=本問もこのパターン!)<br>★ <strong>核心</strong>: 強調構文は<strong>強調する要素</strong>によって that の後ろの形が変わる!<br>★ <strong>判別の決め手</strong>: It is/was と that を取り除いて、強調されている要素を元の位置に戻して、自然な英文になるか?</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">the Rosetta Stone</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(Rosetta Stone を一般名詞と勘違い)」</div>
+  <p class="trap-why">★ <span class="en">the Rosetta Stone</span> = <strong>固有名詞</strong>「ロゼッタストーン」(=歴史的遺物の固有名)<br>→ the が付くのは、世界に1つしかない有名な遺物だから!<br>★ <strong>歴史的背景</strong>:<br>→ 1799年、ナポレオンのエジプト遠征中に、フランス軍兵士がエジプトのロゼッタ(=Rosetta、現在のラシード)で発見!<br>→ 紀元前196年に作られた花崗岩の石碑<br>→ <strong>同じ内容を3つの文字で記している</strong>:<br>　(1) ヒエログリフ(=エジプト象形文字)<br>　(2) デモティック(=エジプト民衆文字)<br>　(3) 古代ギリシャ語<br>→ ギリシャ語が読めれば、対比でエジプト語の解読が可能に!<br>→ 1822年、フランスの言語学者シャンポリオンが解読<br>→ <strong>古代エジプト学の誕生</strong>!<br>★ <strong>本問の意味</strong>:<br>→ ロゼッタストーン発見(1799年) / 解読(1822年)以前は、エジプト語(=ヒエログリフ)を読む手がかりが全くなかった!<br>→ ロゼッタストーンこそが、エジプト語解読の<strong>転機</strong>!<br>→ だから「<strong>ロゼッタストーンの発見によって、初めて~</strong>」と訳すと、歴史的意味合いが伝わる!<br>★ <strong>類例</strong>(=固有名詞 + the):<br>・the Statue of Liberty「自由の女神像」<br>・the Eiffel Tower「エッフェル塔」<br>・the Great Wall「万里の長城」</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>It was</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">冒頭 ─ It was で始まる ─ 強調構文の可能性を疑う!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>冒頭 <span class="en">It was</span>「それは~だった」!でも待って、<strong>強調構文</strong>の可能性!</p>
+        <div class="ra-step-think">
+          ★ <strong>文頭 It is/was を見たら、まず3つの可能性を疑う</strong>!<br><br>
+          (1) <strong>形式主語</strong>(=第39・51講応用): It is V/V-ed that ~ → 真主語が that 節<br>
+          (2) <strong>強調構文</strong>: It is/was ~ that ~ → ~ の部分を強調<br>
+          (3) 指示代名詞 it: It = 何かを指す代名詞「それ」<br><br>
+          ★ <strong>判別の決め手</strong>:<br>
+          → It と that の間に何があるか?<br>
+          → V/V-ed のみ(=is said など)→ 形式主語<br>
+          → 名詞・副詞句・副詞節 → 強調構文<br>
+          → that がない → 指示代名詞<br><br>
+          ★ <strong>本問の続き</strong>を見て判別!<br>
+          → It was の後ろは何?<br>
+          → not until ~ という副詞句!<br>
+          → <strong>強調構文の可能性高い</strong>!<br><br>
+          → 続きを見て確定!
+        </div>
+        <div class="ra-step-conclude">
+          文頭 It is/was → 形式主語?強調構文?指示代名詞?It と that の間で判別!本問は副詞句あり → 強調構文の可能性!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>not until the discovery of the Rosetta Stone</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">強調されている要素 ─ 副詞句!</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">not until the discovery of the Rosetta Stone</span>「ロゼッタストーンの発見まで~ない」!</p>
+        <div class="ra-step-think">
+          ★ <span class="en">not until ~</span> = 「<strong>~まで~ない</strong>」(=副詞句)<br>
+          → not(=否定の副詞)+ until(=前置詞「~まで」)<br>
+          → 「~の時点まで~は起こっていない」<br><br>
+          ★ <span class="en">until the discovery of the Rosetta Stone</span>:<br>
+          → until(=前置詞)<br>
+          → the discovery「発見」(=名詞、discover の名詞形)<br>
+          → of the Rosetta Stone「ロゼッタストーンの」(=前置詞句、修飾)<br>
+          → 「<strong>ロゼッタストーンの発見まで</strong>」<br><br>
+          ★ <strong>これは何?</strong>:<br>
+          → It was と that の間にある = <strong>強調されている要素</strong>!<br>
+          → 「ロゼッタストーンの発見まで~ない」(=副詞句)を強調!<br><br>
+          ★ <strong>強調構文の確定</strong>:<br>
+          → It was [not until ~] that ~ → <strong>強調構文</strong>!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>ロゼッタストーンの発見まで~なかった</strong>」(=直訳)<br>
+          → 自然訳: 「<strong>ロゼッタストーンの発見によって、初めて~</strong>」<br><br>
+          → that の後ろを見て確認!
+        </div>
+        <div class="ra-step-conclude">
+          It was と that の間に副詞句!→ 強調構文確定!not until ~「~まで~ない」(=慣用、強調されると「~してはじめて」)
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>that some clues to the Egyptian language</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">that の後ろ ─ 強調された要素を抜いた残り</span>
+    </div>
+    <div class="ra-step-body">
+      <p>続く <span class="en">that some clues to the Egyptian language</span>「エジプト語へのいくつかの手がかりが」!</p>
+        <div class="ra-step-think">
+          ★ <strong>that</strong> = 強調構文専用の that(=接続詞的)<br>
+          → 関係代名詞でも同格でもない!<br>
+          → 元の文の残り部分を繋ぐ!<br><br>
+          ★ <strong>that の後ろの中身</strong>:<br>
+          → S' = <span class="en">some clues</span>「いくつかの手がかり」<br>
+          → 修飾 = <span class="en">to the Egyptian language</span>「エジプト語への」<br><br>
+          ★ <span class="en">to the Egyptian language</span>:<br>
+          → to = 前置詞「~への」(=不定詞ではない!)<br>
+          → the Egyptian language「エジプト語」(=名詞)<br>
+          → 「<strong>エジプト語への</strong>」<br><br>
+          ★ <span class="en">a clue to ~</span> = 「~への手がかり」(=慣用)<br>
+          → 「~を解く鍵」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>エジプト語へのいくつかの手がかり</strong>」<br><br>
+          → 動詞は?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          that の後ろのSは some clues。to the Egyptian language は前置詞句(=不定詞ではない!)。a clue to ~「~への手がかり」(=慣用)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>became known.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">動詞 ─ become + known(=知られるようになる)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">became known.</span>「知られるようになった」!</p>
+        <div class="ra-step-think">
+          ★ V' = <span class="en">became</span>「~になった」(=自動詞、becomeの過去形)<br>
+          ★ C' = <span class="en">known</span>「知られた」(=過去分詞、補語)<br><br>
+          ★ <span class="en">become + 過去分詞</span> = 「~されるようになる」(=第19講応用、過去分詞は形容詞的)<br>
+          → become known「知られるようになる」<br>
+          → 「知られた状態になる」 = 「知られるようになる」<br><br>
+          ★ <strong>that の後ろの構造のまとめ</strong>:<br>
+          → S' = some clues to the Egyptian language「エジプト語へのいくつかの手がかり」<br>
+          → V' = became「~になった」<br>
+          → C' = known「知られた」<br>
+          → <strong>SVC、第2文型!完全文!</strong><br><br>
+          ★ <strong>強調構文の確認</strong>:<br>
+          → that の後ろが完全文 → <strong>副詞句</strong>を強調していた!(=本問は until ~ の副詞句を強調)<br>→ 主語や目的語を強調する場合は、that の後ろは不完全文になる!<br><br>
+          ★ <strong>元の文に戻す</strong>:<br>
+          → It was と that を取り除く<br>
+          → 強調されていた副詞句 not until ~ を後ろに移動<br>
+          → 結果: <span class="en">Some clues to the Egyptian language did not become known until the discovery of the Rosetta Stone.</span><br>
+          → 「ロゼッタストーンの発見まで、エジプト語の手がかりは知られていなかった」<br>
+          → 自然な英文 → <strong>強調構文確定</strong>!<br><br>
+          ★ <strong>意訳</strong>:<br>
+          → 直訳: 「ロゼッタストーンの発見まで、エジプト語の手がかりは知られていなかった」<br>
+          → <strong>自然訳</strong>: 「<strong>ロゼッタストーンの発見によって、初めてエジプト語へのいくつかの手がかりが知られるようになった</strong>」<br><br>
+          ★ <strong>歴史的意義</strong>:<br>
+          → ロゼッタストーン発見(1799年) → シャンポリオンの解読(1822年)<br>
+          → これ以前は、エジプト語(=ヒエログリフ)を読む手がかりが全くなかった!<br>
+          → ロゼッタストーンこそが、古代エジプト学の<strong>転機</strong>!<br><br>
+          ★ <strong>本講の本質</strong>: It is/was ~ that ~ を見たら、It と that の間に何があるかをチェック!<br>
+          → 副詞句 → 強調構文!<br>
+          → 形式主語、関係代名詞、同格、強調構文 ─ 4つを毎回意識して判別する習慣を!
+        </div>
+        <div class="ra-step-conclude">
+          that の後ろは SVC = 完全文!副詞句 not until ~ を強調する強調構文!元の文に戻して確認 → 自然な英文!ロゼッタストーンが転機!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">4つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">It</span><span class="seg-marker seg-marker-main">強調構文のS</span></span>
+    <span class="seg-wrap"><span class="seg-main">was</span><span class="seg-marker seg-marker-main">V</span></span>
+    <span class="seg-wrap"><span class="seg-sub">not until the discovery of the Rosetta Stone</span><span class="seg-marker seg-marker-sub">強調されている要素(=副詞句)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">that</span><span class="seg-marker seg-marker-sub">強調構文のthat</span></span>
+    <span class="seg-wrap"><span class="seg-main">some clues</span><span class="seg-marker seg-marker-main">S'</span></span>
+    <span class="seg-wrap"><span class="seg-sub">to the Egyptian language</span><span class="seg-marker seg-marker-sub">M(前置詞句、cluesを修飾)</span></span>
+    <span class="seg-wrap"><span class="seg-main">became</span><span class="seg-marker seg-marker-main">V'(become 過去形)</span></span>
+    <span class="seg-wrap"><span class="seg-main">known.</span><span class="seg-marker seg-marker-main">C'(過去分詞、補語)</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>It was [強調されている要素=not until 名詞句] that [元の文の残り=S' M' V' C'(=become known)].</strong>(強調構文 It was ~ that、強調する要素は副詞句 not until ~、that の後ろは SVC 完全文、become + 過去分詞 known、a clue to ~「~への手がかり」)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">それはロゼッタストーンの発見までではなかった、エジプト言語へのいくつかの手がかりが知られた状態になったというのは。</span>
+      <span class="trans-row-note">構造どおりの直訳。「それは~ではなかった」(It を訳に残す)、「~までではなかった」(=not until を直訳)、語順がぎこちない。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>強調構文 It was ~ that ~</strong>「~こそが~だ」(=It is/was と that の間にある要素を強調)</span>
+    <span class="trans-arrow-detail">本問では <span class="en">not until the discovery of the Rosetta Stone</span>(=副詞句)を強調!元の文に戻して確認!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">ロゼッタストーンの発見まで、エジプト語へのいくつかの手がかりは知られていなかった。</span>
+      <span class="trans-row-note">元の文(=強調構文化前)に戻して訳す。It は仮主語的に訳出しない。not until を「~まで~ない」と訳出。意味は通じるが、まだ「強調」の感じが弱い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>It was not until ~ that ~</strong>「~してはじめて~」(=慣用、超頻出!)、<strong>become + 過去分詞</strong>「~されるようになる」</span>
+    <span class="trans-arrow-detail">not until を慣用訳「~してはじめて」に!become known「知られるようになる」(=become + 過去分詞、第19講応用)!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>ロゼッタストーンの発見によって、初めてエジプト語へのいくつかの手がかりが知られるようになった。</strong></span>
+      <span class="trans-row-note">「~してはじめて~」(=It was not until ~ that ~の慣用訳)で、強調のニュアンスを出す!ロゼッタストーンが「転機」だった歴史的意味合いも自然に伝わる訳!これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>It is/was ~ that ~ の4つの可能性</strong> ─ 強調構文を見抜く</span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第52講で身につけてほしい<strong>「強調構文の見抜き方」</strong>を伝えます。<br><br>★ 文頭の <span class="en">It is/was</span> + ~ + <span class="en">that ~</span> を見たら、まず<strong>4つの可能性</strong>を意識します!<br><br>★ <strong>4つの可能性</strong>:<br>(1) <strong>強調構文</strong>: It is/was ~ that ~「~こそが~だ」(=本講!)<br>(2) <strong>形式主語</strong>: It is V-ed that ~「~と V される」(=第51講)<br>(3) <strong>関係代名詞 / 同格 that</strong>(=第50講応用、that の前に名詞があるとき)<br>(4) <strong>指示代名詞 it</strong>: it = 何かを指す「それ」<br><br>★ <strong>判別の決め手</strong>:<br>★ <strong>It is/was と that の間に何があるか?</strong><br>(1) <strong>名詞・副詞句・副詞節</strong> → <strong>強調構文</strong>!(=本問)<br>(2) <strong>形容詞・過去分詞</strong>(=is said、is true、is clear など)→ <strong>形式主語</strong>!<br><br>★ <strong>強調構文の特徴</strong>:<br>★ <span class="en">It is/was [強調したい要素] that [残りの部分]</span><br>★ <strong>強調できる要素</strong>: 主語、目的語、副詞、副詞句、副詞節など(=動詞以外!)<br>★ 動詞は強調できない!<br><br>★ <strong>強調構文の例</strong>:<br>(1) <span class="en">It is John that broke the window.</span>「窓を割ったのは John だ」(=主語を強調)<br>(2) <span class="en">It was John that I met yesterday.</span>「昨日会ったのは John だ」(=目的語を強調)<br>(3) <span class="en">It was yesterday that I met John.</span>「私が John に会ったのは昨日だ」(=副詞を強調)<br>(4) <span class="en">It was in Paris that we first met.</span>「私たちが初めて会ったのはパリでだ」(=副詞句を強調)<br>(5) <span class="en">It was because he was sick that he didn't come.</span>「彼が来なかったのは病気だったからだ」(=副詞節を強調)<br><br>★ <strong>確認の手順</strong>:<br>(1) It is/was と that を取り除く<br>(2) 強調されている要素を、元の位置(=文の中の自然な位置)に戻す<br>(3) 自然な英文になる → <strong>強調構文</strong>!<br><br>★ <strong>本問の例</strong>:<br>★ <span class="en">It was not until the discovery of the Rosetta Stone that some clues to the Egyptian language became known.</span><br>→ It was と that を取り除く<br>→ 強調されている <span class="en">not until ~</span> を文の自然な位置(=動詞の修飾、文末)に戻す<br>→ <span class="en">Some clues to the Egyptian language did not become known until the discovery of the Rosetta Stone.</span><br>→ 自然な英文 → <strong>強調構文</strong>!<br><br>★ <strong>もう一つ ─ It was not until ~ that ~</strong>(=慣用、超頻出!):<br>★ 「<strong>~してはじめて~</strong>」と訳す!<br>★ 直訳の「~まで~ない」よりも自然!<br>★ <strong>その時点が転機</strong>を示す!<br><br>★ <strong>類例</strong>:<br>・<span class="en">It was not until I met her that I knew real love.</span>「彼女に会ってはじめて、本当の愛を知った」<br>・<span class="en">It was not until 1969 that humans landed on the moon.</span>「1969年にはじめて、人類は月に着陸した」<br>・<span class="en">It was not until last year that I started learning English.</span>「去年になってはじめて、英語の勉強を始めた」<br><br>★ <strong>もう一つ ─ that の後ろは強調する要素によって違う</strong>:<br>(1) 主語を強調 → that の後ろは S なし(=不完全文)<br>(2) 目的語を強調 → that の後ろは O なし(=不完全文)<br>(3) <strong>副詞 / 副詞句を強調</strong> → that の後ろは完全文(=本問!)<br><br>★ <strong>もう一つ ─ become + 過去分詞</strong>(=第19講応用):<br>★ become known「知られるようになる」<br>★ become accepted「受け入れられるようになる」<br>★ become forgotten「忘れられるようになる」<br>★ <strong>過去分詞は形容詞的に働く</strong>!be 動詞だけでなく、become / get / remain などの後ろにも来る!<br><br>★ <strong>もう一つ ─ a clue to ~</strong>「~への手がかり」(=慣用):<br>★ to は前置詞(=不定詞ではない!)<br>★ <strong>類例</strong>:<br>・<span class="en">the key to success</span>「成功への鍵」<br>・<span class="en">an answer to the question</span>「質問への答え」<br>・<span class="en">the way to the station</span>「駅への道」<br><br>★ これからの60講で、<strong>It is/was ~ that ~</strong>は頻繁に登場します。<br>★ 文頭の It を見たら、<strong>4つの可能性</strong>を意識して判別する習慣を!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">It was John who broke the window.</span></span>
+      <span class="natural-tip-ex-bad">John は窓を割った人だ (普通の文と訳して強調が消える)</span>
+      <span class="natural-tip-ex-good">窓を割ったのは(他でもなく)Johnだ (It is と that(=who) で挟まれた John が強調されている!Johnこそが犯人!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">It was not until last year that I realized the truth.</span></span>
+      <span class="natural-tip-ex-bad">去年まで真実に気づかなかった (直訳で強調のニュアンスが弱い)</span>
+      <span class="natural-tip-ex-good">去年になってはじめて、真実に気づいた (It was not until ~ that ~ = 慣用「~してはじめて」!転機を強調!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">It was in 1492 that Columbus reached America.</span></span>
+      <span class="natural-tip-ex-bad">コロンブスが1492年にアメリカに到達した (普通の文と訳す)</span>
+      <span class="natural-tip-ex-good">コロンブスがアメリカに到達したのは1492年だった (It was と that の間の「in 1492」が強調されている!年が重要!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">強調構文(=主語を強調)</span>
+  </div>
+  <p class="drill-en"><strong>It is John that</strong> broke the window.</p>
+  <p class="drill-q">構造を分析し、強調されている要素は?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> 強調構文 It is ~ that ~!<br>
+        ・It is と that の間: <strong>John</strong>(=名詞、強調されている要素)<br>
+        ・that の後ろ: broke the window(=S なし、不完全文)<br>
+        ・元の文 = <span class="en">John broke the window.</span>「Johnが窓を割った」<br>
+        ・強調するから It is と that で John を挟む!<br>
+        <strong>訳:</strong> 「<strong>窓を割ったのは(他でもなく) Johnだ</strong>」<br><br>
+        💡 主語を強調 → that の後ろは S なし(=不完全文)!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">強調構文(=副詞句を強調)</span>
+  </div>
+  <p class="drill-en"><strong>It was in Paris that</strong> they got married.</p>
+  <p class="drill-q">構造を分析し、強調されている要素は?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> 強調構文 It was ~ that ~!<br>
+        ・It was と that の間: <strong>in Paris</strong>(=副詞句、強調されている要素)<br>
+        ・that の後ろ: they got married(=完全文、SV)<br>
+        ・元の文 = <span class="en">They got married in Paris.</span>「パリで結婚した」<br>
+        ・「パリ」を強調するから It was と that で in Paris を挟む!<br>
+        <strong>訳:</strong> 「<strong>彼らが結婚したのはパリでだった</strong>」<br><br>
+        💡 副詞 / 副詞句を強調 → that の後ろは完全文!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">It was not until ~ that ~(=慣用)</span>
+  </div>
+  <p class="drill-en"><strong>It was not until I met her that</strong> I understood true love.</p>
+  <p class="drill-q">構造を分析し、自然に訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> 強調構文の慣用パターン!<br>
+        ・It was not until ~ that ~ = 「<strong>~してはじめて~</strong>」(=慣用)<br>
+        ・強調されている要素: not until I met her「彼女に会うまで~ない」(=副詞節)<br>
+        ・that の後ろ: I understood true love「私は本当の愛を理解した」(=完全文)<br>
+        ・元の文 = <span class="en">I did not understand true love until I met her.</span><br>
+        <strong>訳:</strong> 「<strong>彼女に会ってはじめて、私は本当の愛を理解した</strong>」<br><br>
+        💡 not until を慣用訳「~してはじめて」に!転機を強調するパターン!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>文頭 It is/was ~ that ~</strong>を見たら、まず4つの可能性を疑う</div>
+      <div class="flow-desc">(1)強調構文 (2)形式主語 (3)関係代名詞/同格 that (4)指示代名詞!It と that の間で判別!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>強調構文の判別</strong>: It is/was と that の間に何があるか?</div>
+      <div class="flow-desc">名詞・副詞句・副詞節 → 強調構文!形容詞 / 過去分詞 → 形式主語!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>強調できる要素</strong>: 主語、目的語、副詞、副詞句、副詞節</div>
+      <div class="flow-desc">動詞は強調できない!It is と that で挟むのは「主語・動詞以外」!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>確認の手順</strong>: It is/was と that を取り除いて元の文に戻す</div>
+      <div class="flow-desc">強調されている要素を文の自然な位置に戻す!自然な英文になれば強調構文!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>It was not until ~ that ~</strong>「~してはじめて~」(=慣用、超頻出!)</div>
+      <div class="flow-desc">直訳「~まで~ない」よりも自然!その時点が転機を示す!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>that の後ろは強調する要素によって違う</strong></div>
+      <div class="flow-desc">主語/目的語を強調 → that の後ろは不完全文!副詞 / 副詞句を強調 → that の後ろは完全文!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>become + 過去分詞</strong>「~されるようになる」(=第19講応用)</div>
+      <div class="flow-desc">become known「知られるようになる」、become accepted「受け入れられるようになる」!過去分詞は形容詞的!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>a clue to ~</strong>「~への手がかり」(=慣用)</div>
+      <div class="flow-desc">to は前置詞!不定詞ではない!the key to ~、an answer to ~、the way to ~ も同様!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>discovery</strong>「発見」(=discover の名詞形)</div>
+      <div class="flow-desc">動詞 + y → 名詞「~すること」!recovery / delivery / mastery なども同様!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>文頭 It is/was ~ that ~</strong>を見たら、4つの可能性を意識する習慣がついた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>強調構文 It is/was ~ that ~</strong>「~こそが~だ」を見抜けるようになった</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>強調構文 vs 形式主語の判別</strong>(=It と that の間に何があるか)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>強調できる要素</strong>(=主語、目的語、副詞、副詞句、副詞節)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>確認の手順</strong>(=It is/was と that を取り除いて元の文に戻す)を身につけた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>It was not until ~ that ~</strong>「~してはじめて~」(=慣用)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>that の後ろは強調する要素によって違う</strong>(=完全文 or 不完全文)を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>become + 過去分詞</strong>「~されるようになる」(=第19講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>a clue to ~</strong>「~への手がかり」(=to は前置詞、不定詞ではない)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>discovery</strong>「発見」(=動詞 discover の名詞形)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>ロゼッタストーン</strong>(=エジプト語解読の転機、1799年発見/1822年解読)の歴史的背景を理解した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第52講 · It was ~ that ~ の形を強調構文と見抜く</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>

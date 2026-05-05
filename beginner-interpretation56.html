@@ -1,0 +1,2274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第56講 as ~ as と as soon as を一緒に整理する | オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #f7f3ed;
+    --bg-paper: #fdfaf4;
+    --bg-card: #ffffff;
+    --bg-soft: #f2ece1;
+    --bg-warm: #fbf6ee;
+    --bg-cool: #f0f4f6;
+    
+    --ink-primary: #2c2520;
+    --ink-secondary: #5a4f47;
+    --ink-tertiary: #8a7d72;
+    --ink-faint: #b8ac9f;
+    
+    --line-thin: #e0d6c5;
+    --line-mid: #c9bca8;
+    --line-strong: #2c2520;
+    
+    --orange-main: #e85a1a;
+    --orange-deep: #b8420f;
+    --orange-soft: #fde4d3;
+    --orange-bg: #fff4e8;
+    --orange-pale: #fdeede;
+    
+    --aqua-main: #4a90a8;
+    --aqua-deep: #2f6d82;
+    --aqua-soft: #d8e8ee;
+    --aqua-bg: #eef5f8;
+    --aqua-faded: #6fa3b5;
+    
+    --warn: #c84e2c;
+    --warn-bg: #fdecdb;
+    --good: #4a8a5e;
+    --good-bg: #e8f1ea;
+    
+    --accent-gold: #c9a961;
+    --accent-gold-bg: #faf2dd;
+    
+    --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.04), 0 2px 4px rgba(40, 30, 20, 0.04);
+    --shadow-md: 0 2px 4px rgba(40, 30, 20, 0.06), 0 4px 12px rgba(40, 30, 20, 0.08);
+    --shadow-lg: 0 4px 8px rgba(40, 30, 20, 0.06), 0 12px 32px rgba(40, 30, 20, 0.10);
+    
+    --font-display: 'Crimson Pro', 'Noto Sans JP', serif;
+    --font-serif-jp: 'Noto Sans JP', sans-serif;
+    --font-body-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'DM Mono', 'Courier New', monospace;
+    --font-en: 'Manrope', 'Noto Sans JP', sans-serif;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: var(--font-body-jp);
+    background: var(--bg-base);
+    color: var(--ink-primary);
+    line-height: 1.8;
+    font-size: 16px;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(ellipse at top left, rgba(232, 90, 26, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(74, 144, 168, 0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  /* ===== Header ===== */
+  .site-header {
+    background: var(--bg-paper);
+    border-bottom: 1px solid var(--line-thin);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .site-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--orange-main) 0%, var(--orange-main) 60%, var(--aqua-main) 60%, var(--aqua-main) 100%);
+    z-index: 1;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .lesson-num-block {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    background: var(--orange-main);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(232, 90, 26, 0.3);
+    position: relative;
+  }
+  
+  .lesson-num-block::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+  }
+  
+  .lesson-num {
+    font-family: var(--font-display);
+    font-size: 2.85rem;
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .lesson-cat {
+    font-family: var(--font-serif-jp);
+    font-size: 0.75rem;
+    color: var(--orange-main);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background: var(--orange-pale);
+    border-radius: 2px;
+  }
+  
+  .lesson-title {
+    font-family: var(--font-serif-jp);
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink-primary);
+    letter-spacing: -0.005em;
+  }
+  
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+  }
+  
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--line-mid);
+    border-radius: 2px;
+    background: var(--bg-card);
+    position: relative;
+  }
+  
+  .brand::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 8px; height: 8px;
+    border-top: 2px solid var(--orange-main);
+    border-left: 2px solid var(--orange-main);
+  }
+  
+  .brand::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 8px; height: 8px;
+    border-bottom: 2px solid var(--aqua-main);
+    border-right: 2px solid var(--aqua-main);
+  }
+  
+  .brand-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-tertiary);
+    line-height: 1;
+  }
+  
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-primary);
+    line-height: 1;
+    font-style: italic;
+  }
+  
+  .brand-name span {
+    color: var(--orange-main);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  /* ===== Main ===== */
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+  }
+  
+  /* ===== STEP heading ===== */
+  .step-head {
+    margin-bottom: 1.75rem;
+    margin-top: 4rem;
+  }
+  
+  .step-head:first-child {
+    margin-top: 0;
+  }
+  
+  .step-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--ink-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  .step-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-mid);
+  }
+  
+  .step-counter {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink-tertiary);
+    letter-spacing: 0.05em;
+  }
+  
+  .step-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  .step-subtitle {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.7;
+  }
+  
+  /* ===== OPENING ===== */
+  .opening {
+    background: linear-gradient(135deg, #fef9f0 0%, #fdf2e0 100%);
+    border-left: 4px solid var(--orange-main);
+    padding: 2rem 2.25rem;
+    border-radius: 2px 8px 8px 2px;
+    margin-bottom: 3.5rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+  
+  .opening-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--orange-main);
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .opening-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 1.1rem;
+    line-height: 1.45;
+  }
+  
+  .opening-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.98rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+    margin-bottom: 1.25rem;
+  }
+  
+  .opening-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  
+  .opening-skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0.95rem;
+    background: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  
+  .opening-skill-num {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 0: 自分で読む ===== */
+  .self-read-card {
+    background: var(--bg-card);
+    border: 2px dashed var(--line-mid);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    text-align: center;
+  }
+  
+  .self-read-text {
+    font-family: var(--font-en);
+    font-size: 1.55rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .self-read-instruct {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    background: var(--bg-warm);
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-gold);
+    text-align: left;
+  }
+  
+  .self-read-instruct strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Trap card (誤読の罠) ===== */
+  .trap-card {
+    background: var(--warn-bg);
+    border: 1px solid #f0c8a8;
+    border-left: 4px solid var(--warn);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  
+  .trap-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .trap-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--warn);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .trap-card-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--warn);
+  }
+  
+  .trap-misread {
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.55);
+    border-radius: 4px;
+    line-height: 1.75;
+  }
+  
+  .trap-misread::before {
+    content: '✕';
+    color: var(--warn);
+    font-weight: 700;
+    margin-right: 0.5em;
+    font-size: 1.1em;
+  }
+  
+  .trap-why {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+  }
+  
+  .trap-why strong {
+    color: var(--warn);
+    font-weight: 700;
+  }
+  
+  /* ===== 実況中継 read-along ===== */
+  .read-along {
+    margin: 1.75rem 0;
+  }
+  
+  .ra-step {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .ra-step-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.4rem;
+    background: linear-gradient(90deg, var(--orange-pale) 0%, transparent 80%);
+    border-bottom: 1px solid var(--line-thin);
+  }
+  
+  .ra-step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .ra-step-pos {
+    font-family: var(--font-en);
+    font-size: 1.15rem;
+    color: var(--orange-deep);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .ra-step-pos em {
+    font-style: italic;
+    background: var(--orange-soft);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .ra-step-arrow {
+    color: var(--ink-faint);
+    margin: 0 0.3rem;
+  }
+  
+  .ra-step-question {
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    margin-left: auto;
+    background: var(--bg-soft);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  
+  .ra-step-body {
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-primary);
+  }
+  
+  .ra-step-body p { margin-bottom: 0.85rem; }
+  .ra-step-body p:last-child { margin-bottom: 0; }
+  
+  .ra-step-think {
+    background: var(--aqua-bg);
+    border-left: 3px solid var(--aqua-main);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  
+  .ra-step-think::before {
+    content: '🧠 ここで考える';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+  
+  .ra-step-conclude {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good);
+    padding: 0.85rem 1.1rem;
+    border-radius: 2px 4px 4px 2px;
+    margin: 0.75rem 0 !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  .ra-step-conclude::before {
+    content: '✓ 結論';
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--good);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.45rem;
+    font-weight: 700;
+  }
+  
+  /* ===== ルール抽出 ===== */
+  .rule-card {
+    background: linear-gradient(135deg, #fff8ee 0%, #fef0d8 100%);
+    border: 2px solid var(--orange-main);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .rule-card::before {
+    content: 'RULE';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--orange-main);
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .rule-card-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--orange-deep);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .rule-card-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+  }
+  
+  .rule-card-text strong {
+    color: var(--orange-deep);
+    background: rgba(255,255,255,0.6);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .rule-card-explain {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    line-height: 1.85;
+    margin-top: 0.85rem;
+    padding-top: 0.9rem;
+    border-top: 1px dashed var(--line-mid);
+  }
+  
+  /* ===== ミニドリル / 転用練習 ===== */
+  .drill-card {
+    background: var(--bg-cool);
+    border: 1px solid var(--aqua-soft);
+    border-left: 4px solid var(--aqua-main);
+    border-radius: 2px 6px 6px 2px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.25rem 0;
+  }
+  
+  .drill-head {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .drill-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--aqua-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .drill-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--aqua-deep);
+  }
+  
+  .drill-en {
+    font-family: var(--font-en);
+    font-size: 1.2rem;
+    color: var(--ink-primary);
+    line-height: 1.6;
+    padding: 0.85rem 1rem;
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 0.85rem;
+  }
+  
+  .drill-q {
+    font-family: var(--font-serif-jp);
+    font-size: 0.92rem;
+    color: var(--ink-secondary);
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+  }
+  
+  .drill-toggle-btn {
+    background: var(--aqua-main);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  
+  .drill-toggle-btn:hover {
+    background: var(--aqua-deep);
+  }
+  
+  .drill-answer {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--good);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .drill-answer.is-shown { display: block; }
+  
+  .drill-answer strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* ===== Final Sentence Display (色分け) ===== */
+  .final-display {
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    padding: 2rem 2.25rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-display::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--orange-main) 0%, var(--aqua-main) 100%);
+  }
+  
+  .final-display-text {
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    line-height: 2.4;
+    color: var(--ink-primary);
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+  
+  .seg-main {
+    color: var(--orange-deep);
+    font-weight: 600;
+    background: linear-gradient(180deg, transparent 65%, var(--orange-soft) 65%);
+    padding: 0 0.05em;
+  }
+  
+  .seg-sub {
+    color: var(--aqua-faded);
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.92;
+  }
+  
+  .seg-text {
+    color: var(--ink-secondary);
+  }
+  
+  .seg-wrap {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5em;
+  }
+  
+  .seg-marker {
+    position: absolute;
+    bottom: 0.15em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding: 0.05rem 0.3rem;
+    border-radius: 2px;
+    line-height: 1;
+    color: white;
+  }
+  
+  .seg-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 1.05em;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--ink-faint);
+  }
+  
+  .seg-marker-main { background: var(--orange-main); }
+  .seg-marker-sub { background: var(--aqua-main); opacity: 0.85; }
+  
+  /* ===== Merge Bridge (STEP 2 統合用の橋渡し) ===== */
+  .merge-bridge {
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, #fdf8ed 0%, #faf2dd 100%);
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-gold);
+    position: relative;
+  }
+  
+  .merge-bridge-2 {
+    background: linear-gradient(135deg, #f3e8da 0%, #e8d5b8 100%);
+    border-left-color: var(--orange-deep);
+  }
+  
+  .merge-bridge-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--orange-deep);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+  }
+  
+  .merge-bridge-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+  }
+  
+  .merge-bridge-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Skeleton line in final-display ===== */
+  .skeleton-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-secondary);
+    padding-top: 1rem;
+    border-top: 1px dashed var(--line-mid);
+    letter-spacing: 0.05em;
+  }
+  
+  .skeleton-line strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+  }
+  
+  /* ===== Translation building (改良版) ===== */
+  .trans-build {
+    margin: 1.5rem 0;
+  }
+  
+  .trans-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line-thin);
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .trans-row.is-direct {
+    border-left: 4px solid var(--ink-faint);
+  }
+  
+  .trans-row.is-natural {
+    border-left: 4px solid var(--good);
+    background: linear-gradient(135deg, #f0f8f3 0%, #e3f0e7 100%);
+    box-shadow: 0 2px 6px rgba(74, 138, 94, 0.12);
+  }
+  
+  .trans-row-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-tertiary);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 5rem;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+  
+  .trans-row.is-natural .trans-row-label {
+    background: var(--good);
+    color: white;
+  }
+  
+  .trans-row-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  
+  .trans-row-text {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    color: var(--ink-primary);
+    line-height: 1.8;
+  }
+  
+  .trans-row.is-natural .trans-row-text {
+    font-weight: 500;
+  }
+  
+  .trans-row-note {
+    font-family: var(--font-serif-jp);
+    font-size: 0.82rem;
+    color: var(--ink-tertiary);
+    line-height: 1.65;
+    font-style: italic;
+  }
+  
+  .trans-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0.4rem 0;
+    padding: 0.6rem;
+  }
+  
+  .trans-arrow-icon {
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .trans-arrow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    color: var(--ink-primary);
+    text-align: center;
+    line-height: 1.55;
+  }
+  
+  .trans-arrow-text strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .trans-arrow-detail {
+    font-family: var(--font-serif-jp);
+    font-size: 0.78rem;
+    color: var(--ink-tertiary);
+    text-align: center;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+  
+  /* ===== Natural translation tip ===== */
+  .natural-tip {
+    background: var(--bg-warm);
+    border: 1px solid var(--line-thin);
+    border-left: 3px solid var(--accent-gold);
+    padding: 1.4rem 1.6rem;
+    border-radius: 2px 6px 6px 2px;
+    margin: 1.5rem 0;
+  }
+  
+  .natural-tip-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  
+  .natural-tip-icon {
+    font-size: 1.1rem;
+  }
+  
+  .natural-tip-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--orange-deep);
+  }
+  
+  .natural-tip-body {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--ink-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .natural-tip-body strong {
+    color: var(--orange-deep);
+    font-weight: 700;
+    background: rgba(255,255,255,0.55);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  .natural-tip-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  
+  .natural-tip-ex {
+    background: white;
+    border: 1px solid var(--line-thin);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: var(--font-serif-jp);
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+  
+  .natural-tip-ex-en {
+    font-family: var(--font-en);
+    font-size: 1rem;
+    color: var(--ink-primary);
+    margin-bottom: 0.2rem;
+  }
+  
+  .natural-tip-ex-bad {
+    color: var(--warn);
+  }
+  
+  .natural-tip-ex-bad::before {
+    content: '✕ ';
+    font-weight: 700;
+  }
+  
+  .natural-tip-ex-good {
+    color: var(--good);
+    font-weight: 600;
+  }
+  
+  .natural-tip-ex-good::before {
+    content: '○ ';
+    font-weight: 700;
+  }
+  
+  /* ===== STEP 2 まとめ ===== */
+  .step2-summary {
+    background: linear-gradient(135deg, #2c2520 0%, #3a3128 100%);
+    color: var(--bg-paper);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    margin: 2.5rem 0 0;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .step2-summary-head {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed rgba(253, 250, 244, 0.25);
+  }
+  
+  .step2-summary-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .step2-summary-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bg-paper);
+    line-height: 1.5;
+  }
+  
+  .step2-summary-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  
+  .step2-flow-item {
+    flex: 1;
+    min-width: 180px;
+    background: rgba(253, 250, 244, 0.08);
+    border: 1px solid rgba(253, 250, 244, 0.15);
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .step2-flow-num {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--orange-main);
+    font-weight: 700;
+    line-height: 1;
+  }
+  
+  .step2-flow-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--bg-paper);
+  }
+  
+  .step2-flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange-main);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .step2-summary-text {
+    font-family: var(--font-serif-jp);
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: var(--bg-paper);
+    opacity: 0.92;
+  }
+  
+  .step2-summary-text strong {
+    color: var(--orange-main);
+    font-weight: 700;
+  }
+  
+  /* ===== Flow diagram ===== */
+  .flow {
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--line-thin);
+    border-radius: 8px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.95rem 0;
+    position: relative;
+  }
+  
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: var(--line-mid);
+  }
+  
+  .flow-num {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--orange-main);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .flow-content {
+    flex: 1;
+    padding-top: 0.15rem;
+  }
+  
+  .flow-q {
+    font-family: var(--font-serif-jp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+  
+  .flow-q strong {
+    color: var(--orange-deep);
+  }
+  
+  .flow-desc {
+    font-family: var(--font-serif-jp);
+    font-size: 0.88rem;
+    color: var(--ink-secondary);
+    line-height: 1.75;
+  }
+  
+  /* ===== Checklist ===== */
+  .checklist {
+    background: white;
+    border: 2px solid var(--ink-primary);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  
+  .checklist::before {
+    content: 'TAKEAWAY';
+    position: absolute;
+    top: -10px;
+    left: 1.25rem;
+    background: var(--ink-primary);
+    color: var(--bg-paper);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    padding: 0.3rem 0.85rem;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  
+  .check-title {
+    font-family: var(--font-serif-jp);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--line-thin);
+    font-family: var(--font-serif-jp);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  
+  .check-item:last-child {
+    border-bottom: none;
+  }
+  
+  .check-box {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ink-primary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+  }
+  
+  .check-box::after {
+    content: '✓';
+    color: var(--ink-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  
+  .check-text strong {
+    color: var(--orange-deep);
+    background: var(--orange-bg);
+    padding: 0 0.25em;
+    border-radius: 2px;
+  }
+  
+  /* ===== Inline elements ===== */
+  .kw {
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--ink-primary);
+    background: var(--bg-soft);
+    padding: 0 0.3em;
+    border-radius: 2px;
+    font-size: 1.02em;
+  }
+  
+  .en {
+    font-family: var(--font-en);
+    font-style: italic;
+    font-size: 1.04em;
+  }
+  
+  /* ===== Footer ===== */
+  .site-footer {
+    border-top: 1px solid var(--line-thin);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--bg-paper);
+  }
+  
+  .footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
+    color: var(--ink-secondary);
+  }
+  
+  .footer-brand span {
+    color: var(--orange-main);
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    
+    .header-inner { 
+      grid-template-columns: 1fr; 
+      gap: 1.25rem; 
+      padding: 1.5rem 1.25rem;
+    }
+    .header-left { gap: 1rem; }
+    .lesson-num-block { width: 60px; height: 60px; }
+    .lesson-num { font-size: 2rem; }
+    .lesson-title { font-size: 1.2rem; }
+    .header-right {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+    }
+    .brand { padding: 0.45rem 0.7rem; }
+    .brand-name { font-size: 1.05rem; letter-spacing: 0.15em; }
+    .brand-tag { font-size: 0.55rem; }
+    
+    main { padding: 2rem 1.25rem 3rem; }
+    
+    .step-head { margin-top: 3rem; }
+    .step-title { font-size: 1.25rem; }
+    .step-subtitle { font-size: 0.88rem; }
+    
+    .opening { padding: 1.5rem 1.4rem; }
+    .opening-title { font-size: 1.15rem; }
+    .opening-text { font-size: 0.92rem; }
+    .opening-skill { font-size: 0.88rem; }
+    
+    .self-read-card { padding: 1.5rem 1.25rem; }
+    .self-read-text { font-size: 1.15rem; line-height: 1.8; }
+    
+    .trap-card { padding: 1.2rem 1.25rem; }
+    .trap-card-title { font-size: 0.98rem; }
+    .trap-misread { font-size: 0.9rem; padding: 0.7rem 0.85rem; }
+    .trap-why { font-size: 0.88rem; }
+    
+    .ra-step-head { padding: 0.8rem 1rem; flex-wrap: wrap; }
+    .ra-step-pos { font-size: 1rem; }
+    .ra-step-question { 
+      margin-left: 0; 
+      margin-top: 0.4rem;
+      width: 100%;
+      white-space: normal;
+      font-size: 0.78rem;
+    }
+    .ra-step-body { padding: 1rem 1.15rem; font-size: 0.9rem; }
+    
+    .rule-card { padding: 1.4rem 1.4rem 1.25rem; }
+    .rule-card-text { font-size: 1rem; }
+    .rule-card-explain { font-size: 0.88rem; }
+    
+    .drill-card { padding: 1.2rem 1.25rem; }
+    .drill-en { font-size: 1.05rem; padding: 0.7rem 0.85rem; }
+    
+    .final-display { padding: 1.4rem 1.25rem; }
+    .final-display-text { font-size: 1.15rem; line-height: 2.2; }
+    .seg-marker { font-size: 0.6rem; padding: 0.05rem 0.25rem; }
+    
+    .merge-bridge { padding: 1rem 1.2rem; }
+    .merge-bridge-text { font-size: 0.88rem; }
+    
+    .trans-row { 
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .trans-row-label { 
+      width: fit-content; 
+      font-size: 0.65rem;
+      min-width: 0;
+    }
+    .trans-row-text { font-size: 0.95rem; }
+    .trans-row-note { font-size: 0.78rem; }
+    .trans-arrow-text { font-size: 0.85rem; }
+    .trans-arrow-detail { font-size: 0.75rem; }
+    
+    .natural-tip { padding: 1.15rem 1.25rem; }
+    .natural-tip-title { font-size: 0.96rem; }
+    .natural-tip-body { font-size: 0.88rem; }
+    .natural-tip-ex { padding: 0.7rem 0.85rem; font-size: 0.85rem; }
+    .natural-tip-ex-en { font-size: 0.95rem; }
+    
+    .step2-summary { padding: 1.5rem 1.4rem; }
+    .step2-summary-title { font-size: 1rem; }
+    .step2-summary-flow { 
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .step2-flow-arrow { 
+      transform: rotate(90deg);
+      padding: 0.2rem;
+    }
+    .step2-summary-text { font-size: 0.88rem; }
+    
+    .flow { padding: 1.25rem 1.1rem; }
+    .flow-step:not(:last-child)::after { left: 13px; top: 36px; }
+    .flow-q { font-size: 0.92rem; }
+    .flow-desc { font-size: 0.82rem; }
+    
+    .checklist { padding: 1.4rem 1.4rem 1.25rem; }
+    .check-item { font-size: 0.88rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .lesson-title { font-size: 1.1rem; }
+    .self-read-text { font-size: 1rem; }
+    .final-display-text { font-size: 1rem; }
+  }
+
+</style>
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="lesson-num-block">
+        <span class="lesson-num">56</span>
+      </div>
+      <div class="lesson-title-block">
+        <div class="lesson-cat">▶ 同等比較 as ~ as + as soon as 副詞節</div>
+        <h1 class="lesson-title">as ~ as と as soon as を一緒に整理する</h1>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="brand">
+        <span class="brand-tag">Online Cram School</span>
+        <span class="brand-name"><span>THINKING</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ OPENING ============ -->
+<section class="opening">
+  <div class="opening-eyebrow">▶ THIS LESSON</div>
+  <h2 class="opening-title">この講で身につく「読み方」</h2>
+  
+    <p class="opening-text">
+      第56講のテーマは <strong>「as の3つの顔を整理する」</strong>。<br>
+      第54・55講で as の様々な役割を学びましたが、今日は<strong>同等比較 as ~ as</strong> と <strong>as soon as 副詞節</strong>を一気に整理!<br>
+      第26・50講で as ~ as を学びましたが、今日は省略パターン(=as an adult (is))も登場!<br>
+      第15講応用の and 並列、第36講応用の最上級、第49講応用の再帰代名詞、第55講応用の群動詞も再登場!<br>
+      今日のキー:<br>
+      ① <strong>群動詞 take care of ~</strong>「~の世話をする」(=他動詞的)<br>
+      ② <strong>再帰代名詞 themselves</strong>(=第49講応用、慣用 take ~ from day one)<br>
+      ③ <strong>one of the ~est</strong>「最も~なものの1つ」(=最上級、第36講応用)<br>
+      ④ <strong>as ~ as ~</strong>「~と同じくらい~」(=同等比較、第26・50講応用、後ろの省略あり)<br>
+      ⑤ <strong>as soon as S V</strong>「~するとすぐに」(=副詞節、頻出!)<br>
+      ⑥ <strong>and で動詞並列</strong>(=catch and eat、共通の助動詞 can)<br>
+      ヘビの英文を題材に、<strong>asの3つの形を整理</strong>します!
+    </p>
+    <div class="opening-skills">
+      <div class="opening-skill">
+        <span class="opening-skill-num">1</span>
+        <div><strong>as ~ as ~</strong>「~と同じくらい~」(=同等比較、後ろの動詞省略あり)を見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">2</span>
+        <div><strong>as soon as S V</strong>「~するとすぐに」(=副詞節)を見抜きます。</div>
+      </div>
+      <div class="opening-skill">
+        <span class="opening-skill-num">3</span>
+        <div><strong>群動詞</strong>(=take care of、catch and eat)、<strong>最上級</strong>、<strong>再帰代名詞</strong>などを総合的に整理します。</div>
+      </div>
+    </div>
+</section>
+
+<!-- ============ STEP 0 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 0</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— First Read —</span>
+  </div>
+  <h2 class="step-title">まず、自分で読んでみよう</h2>
+  <p class="step-subtitle">解説を読む前に必ずやってほしいステップ。「自分はどう読んだか」を意識化することが、読み方を身につける最大の近道です。</p>
+</div>
+
+<div class="self-read-card">
+  <p class="self-read-text">Adult snakes don't take care of their babies. Snakes take themselves from day one. The African black mamba is one of the world's most dangerous snakes. A baby black mamba is as dangerous as an adult. It can catch and eat small animals as soon as it hatches.</p>
+  <div class="self-read-instruct">
+    <strong>STOP. ここで一度立ち止まって。</strong><br>
+    ① まず辞書を引かずに訳してみてください。<br>
+    ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
+    ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
+  </div>
+</div>
+
+<!-- ============ STEP 1 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 1</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Common Mistakes —</span>
+  </div>
+  <h2 class="step-title">ありがちな誤読を先につぶしておく</h2>
+  <p class="step-subtitle">この英文で多くの生徒がハマる罠が <strong>7つ</strong> あります。先に見ておくことで、自分が同じ罠にハマっていないかチェックできます。</p>
+</div>
+
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Adult snakes don't take care of their babies</span> の <span class="en">take care of</span> を「ケアを取る」と取る</span>
+  </div>
+  <div class="trap-misread">「<u>ケアを取る</u>」(=直訳して不自然)</div>
+  <p class="trap-why">★ <span class="en">take care of ~</span> = 群動詞「<strong>~の世話をする/~の面倒を見る</strong>」(=他動詞的)<br>→ take(=動詞)+ care(=名詞)+ of(=前置詞)<br>→ <strong>3語で1つの他動詞</strong>のように働く!<br>★ <strong>本問</strong>: <span class="en">Adult snakes don't take care of their babies.</span><br>→ S = Adult snakes「大人のヘビ」<br>→ V = don't take care of「世話をしない」(=群動詞、否定)<br>→ O(=of の目的語) = their babies「自分の赤ちゃん」<br>★ <strong>骨格</strong>: SVO + 否定 = 第3文型!<br>★ <strong>類例</strong>(=群動詞 take care of):<br>・<span class="en">take care of children</span>「子供の世話をする」<br>・<span class="en">take care of yourself</span>「自分自身を大事にする」<br>・<span class="en">take care of the dog</span>「犬の世話をする」<br>★ <strong>核心</strong>: take care of は<strong>1つの他動詞</strong>として捉える!後ろに目的語(=of の目的語)が必要!<br>★ <strong>本問の生物学的事実</strong>: 大半の爬虫類(=ヘビ、トカゲ等)は、卵から孵った後に親が子の世話をしない!哺乳類とは違う繁殖戦略!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">Snakes take themselves from day one</span> の <span class="en">take themselves</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「<u>ヘビは1日目から彼ら自身を取る</u>」(=直訳)</div>
+  <p class="trap-why">★ <span class="en">themselves</span> = <strong>再帰代名詞</strong>「<strong>自分自身を</strong>」(=第49講応用)<br>→ S = Snakes、O = themselves(=同じ Snakes を指す)<br>★ <span class="en">take ~ from day one</span> = 慣用「<strong>初日から自分のことは自分で行う/自分で身を守る</strong>」<br>→ take = ここでは「面倒を見る/管理する」(=独立して行動する意味)<br>→ from day one = 「初日から/最初から」(=慣用)<br>★ <strong>本問</strong>: <span class="en">Snakes take themselves from day one.</span><br>→ S = Snakes「ヘビ」<br>→ V = take「面倒を見る/扱う」(=他動詞)<br>→ O = themselves「自分自身を」(=再帰代名詞、Snakes を指す)<br>→ M = from day one「初日から」(=副詞句)<br>★ <strong>意訳</strong>: 「<strong>ヘビは初日から自分自身で身を守る/自分のことは自分で行う</strong>」(=自立)<br>★ <strong>本問の意味合い</strong>: 1文目「親は世話しない」 → 2文目「だから子は最初から自立する」 という対比!<br>★ <span class="en">from day one</span> = 「<strong>初日から/最初から</strong>」(=慣用、強調)<br>→ <span class="en">from the beginning</span> よりもインパクトが強い!<br>★ <strong>類例</strong>(=再帰代名詞 + 動詞):<br>・<span class="en">take care of yourself</span>「自分の世話をする」<br>・<span class="en">protect themselves</span>「自分自身を守る」<br>・<span class="en">enjoy yourself</span>「楽しむ」(=慣用)</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">one of the world's most dangerous snakes</span> の <span class="en">one of</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(one of の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">one of the + 最上級 + 複数名詞</span> = 「<strong>最も~なものの1つ</strong>」(=慣用、第36講応用)<br>→ <strong>「最も~な~の1つ」</strong>と訳す!<br>★ <strong>本問</strong>: <span class="en">The African black mamba is one of the world's most dangerous snakes.</span><br>→ S = The African black mamba「アフリカン・ブラック・マンバ」<br>→ V = is(=be 動詞)<br>→ C = one of the world's most dangerous snakes「世界で最も危険なヘビの1つ」<br>★ <strong>構造の分解</strong>:<br>→ one「1つ」(=代名詞)<br>→ of(=前置詞)<br>→ the world's most dangerous snakes「世界で最も危険なヘビ(複数)」(=最上級 + 複数名詞)<br>★ <strong>注意</strong>:<br>→ 必ず<strong>複数名詞</strong>!(=「~なもの<strong>たち</strong>の中の1つ」だから)<br>→ <span class="en">one of the most dangerous snake</span>(=×、不可)<br>→ <span class="en">one of the most dangerous snakes</span>(=○、複数!)<br>★ <span class="en">the world's most dangerous</span>:<br>→ the world's = 所有格「世界の」(=最上級の範囲を限定)<br>→ most dangerous = dangerous「危険な」の最上級(=long形容詞は most + 形容詞)<br>★ <strong>意訳</strong>: 「<strong>世界で最も危険なヘビの1つ</strong>」<br>★ <strong>類例</strong>:<br>・<span class="en">one of the most popular songs</span>「最も人気の歌の1つ」<br>・<span class="en">one of the smartest students</span>「最も賢い学生の1人」<br>・<span class="en">one of the highest mountains</span>「最も高い山の1つ」<br>★ <strong>ブラック・マンバ</strong>: アフリカ南部・東部に生息する毒ヘビ。最大4.5m、最速時速20km/h。猛毒で世界で最も危険なヘビとされる!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">A baby black mamba is as dangerous as an adult</span> の <span class="en">as ~ as</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(as ~ as の同等比較を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">as ~ as ~</span> = 同等比較「<strong>~と同じくらい~</strong>」(=第26・50講応用)<br>→ A is as 形容詞 as B「A は B と同じくらい~」<br>★ <strong>本問</strong>: <span class="en">A baby black mamba is as dangerous as an adult.</span><br>→ S = A baby black mamba「赤ちゃんのブラック・マンバ」<br>→ V = is(=be 動詞)<br>→ C = as dangerous「(同じくらい)危険」(=形容詞、補語)<br>→ M = as an adult「大人(のヘビ)と」(=比較対象)<br>★ <strong>核心 ─ 後ろの省略</strong>:<br>→ 完全形: <span class="en">A baby black mamba is as dangerous as an adult (is).</span><br>→ 後ろの<strong>(is) は省略</strong>!(=繰り返しを避ける)<br>→ 補うと: 「赤ちゃん black mamba は、大人(のヘビが危険である)のと同じくらい危険」<br>★ <strong>同等比較の構造</strong>:<br>(1) A V₁ as ~ as B (V₁) → 後ろの V₁ は省略可!<br>(2) 「A の~の度合い = B の~の度合い」<br>★ <strong>意訳</strong>: 「<strong>赤ちゃんのブラック・マンバは、大人(のヘビ)と同じくらい危険である</strong>」<br>★ <strong>本問の生物学的事実</strong>: 多くの毒ヘビは、生まれた時から成体と同じ強さの毒を持つ!むしろ赤ちゃんは毒の量を制御できないため<strong>より危険</strong>とされることも!<br>★ <strong>類例</strong>(=as ~ as + 省略):<br>・<span class="en">She is as tall as her sister (is).</span>「彼女は妹と同じくらい背が高い」<br>・<span class="en">He works as hard as I (do).</span>「彼は私と同じくらい一生懸命働く」<br>・<span class="en">This book is as interesting as that one (is).</span>「この本はあの本と同じくらい面白い」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">It can catch and eat small animals</span> の <span class="en">and</span> の繋ぎを取り違える</span>
+  </div>
+  <div class="trap-misread">「(catch and eat の動詞並列を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">and</span> = 接続詞、ここでは<strong>動詞の並列</strong>!(=第15講応用)<br>→ V₁ + and + V₂、共通の助動詞 + 共通の目的語!<br>★ <strong>本問</strong>: <span class="en">It can catch and eat small animals</span><br>→ S = It「それ(=A baby black mamba を指す)」<br>→ V₁ = catch「捕まえる」<br>→ and<br>→ V₂ = eat「食べる」<br>→ <strong>共通</strong>: 助動詞 can、目的語 small animals<br>→ 「(それは)<strong>小動物を捕まえて食べる</strong>ことができる」<br>★ <strong>並列の構造</strong>:<br>→ It can (catch and eat) small animals.<br>→ can + (動詞₁ and 動詞₂) + 目的語!<br>★ <span class="en">catch</span> = 他動詞「捕まえる」<br>★ <span class="en">eat</span> = 他動詞「食べる」<br>★ <strong>意訳</strong>: 「<strong>(それは)小動物を捕まえて食べることができる</strong>」<br>★ <strong>類例</strong>(=and で動詞並列、共通の助動詞 + 共通の目的語):<br>・<span class="en">She can read and write English.</span>「彼女は英語を読み書きできる」<br>・<span class="en">We will meet and discuss the plan.</span>「私たちは集まって計画を話し合う」<br>・<span class="en">He likes to study and play.</span>「彼は勉強したり遊んだりするのが好き」<br>★ <strong>核心</strong>: and が動詞2つを並列するとき、<strong>助動詞や目的語が共通</strong>することが多い!</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">as soon as it hatches</span> の <span class="en">as soon as</span> を取り違える</span>
+  </div>
+  <div class="trap-misread">「(as soon as の意味を取り違え)」</div>
+  <p class="trap-why">★ <span class="en">as soon as S V</span> = 副詞節「<strong>~するとすぐに</strong>」(=時間、頻出!)<br>→ as ~ as の同等比較とは別の慣用!<br>→ 「~してから時間がたたずに(=すぐに)」<br>★ <strong>本問</strong>: <span class="en">It can catch and eat small animals as soon as it hatches.</span><br>→ メイン文 = It can catch and eat small animals「小動物を捕まえて食べられる」<br>→ as soon as 副詞節 = as soon as it hatches「孵化するとすぐに」<br>★ <strong>as soon as 節の中身</strong>:<br>→ S’ = it(=A baby black mamba を指す)<br>→ V’ = hatches「孵化する」(=自動詞、3単現の s)<br>★ <span class="en">hatch</span> = 自動詞「孵化する/(卵から)生まれる」<br>★ <strong>意訳</strong>: 「<strong>孵化するとすぐに、小動物を捕まえて食べることができる</strong>」<br>★ <strong>本問の生物学的事実</strong>: ブラック・マンバの赤ちゃんは、孵化直後から自分で狩りができる!毒も完全に発達済み!<br>★ <span class="en">as soon as</span> vs <span class="en">as ~ as</span> の判別:<br>(1) <strong>as ~ as ~</strong> → 同等比較「~と同じくらい~」<br>(2) <strong>as soon as ~</strong> → 副詞節「~するとすぐに」(=時間)<br>(3) <strong>as long as ~</strong> → 副詞節「~する限り」(=条件・期間)<br>(4) <strong>as well as ~</strong> → 「~だけでなく/~と同様に」<br>★ <strong>類例</strong>(=as soon as):<br>・<span class="en">As soon as he came home, he started studying.</span>「彼は家に帰るとすぐに、勉強を始めた」<br>・<span class="en">Call me as soon as you arrive.</span>「到着次第、電話して」<br>・<span class="en">As soon as the bell rang, we left.</span>「ベルが鳴るとすぐに、私たちは出発した」</p>
+</div>
+
+<div class="trap-card">
+  <div class="trap-card-head">
+    <span class="trap-icon">!</span>
+    <span class="trap-card-title"><span class="en">an adult</span> を「成人」とだけ取る</span>
+  </div>
+  <div class="trap-misread">「(an adult を「人間の大人」と取って混乱)」</div>
+  <p class="trap-why">★ <span class="en">an adult</span> = ここでは「<strong>大人(のヘビ)</strong>」!(=人間の「成人」ではない)<br>→ 文脈で「ヘビの大人」を指す!<br>→ 「成人」というよりも、「成体」(=動物の成熟個体)<br>★ <strong>本問</strong>: <span class="en">A baby black mamba is as dangerous as an adult (black mamba).</span><br>→ A baby black mamba「赤ちゃんのブラック・マンバ」<br>→ an adult = an adult black mamba「大人のブラック・マンバ」(=後ろの black mamba は省略!)<br>★ <span class="en">an adult</span> の意味:<br>(1) 名詞「成人/大人」(=人間)<br>(2) <strong>形容詞「大人の」+ 名詞</strong>(=本問のように動物の成体も)<br>(3) 名詞「成体」(=動物)<br>★ <strong>意訳</strong>: 「<strong>大人(のヘビ)と同じくらい危険</strong>」<br>★ <strong>core point</strong>: 文脈で「人間」か「動物」かを判断!本問は<strong>ヘビの話</strong>だから、an adult = 「成体のヘビ」!<br>★ <strong>類例</strong>:<br>・<span class="en">an adult dog</span>「大人の犬」<br>・<span class="en">a baby and an adult</span>(=本問のように対比で使う)<br>★ <strong>同等比較の比較対象</strong>: A baby vs an adult → どちらも同じ種(=black mamba)で、年齢の違いを比較!</p>
+</div>
+
+<!-- ============ STEP 2 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 2</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Read Along —</span>
+  </div>
+  <h2 class="step-title">左から右へ、頭の中の実況中継</h2>
+  <p class="step-subtitle">読める人は、英文を読みながら<strong>頭の中で常に何かを「考えて」います</strong>。その思考プロセスを 1語ずつ覗いてみましょう。これが英文解釈の正体です。</p>
+</div>
+
+<div class="read-along">
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">1</span>
+      <span class="ra-step-pos"><em>Adult snakes don’t take care of their babies.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">1文目 ─ 群動詞 take care of</span>
+    </div>
+    <div class="ra-step-body">
+      <p>1文目 <span class="en">Adult snakes don’t take care of their babies.</span>「大人のヘビは、自分の赤ちゃんの世話をしない」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Adult snakes</span>「大人のヘビ(複数)」<br>
+          → Adult「大人の」(=形容詞)<br>
+          → snakes「ヘビ(複数)」(=名詞)<br><br>
+          ★ V = <span class="en">don’t take care of</span>「世話をしない」(=否定 + 群動詞)<br>
+          → take care of = 群動詞「~の世話をする/~の面倒を見る」<br>
+          → 3語で1つの他動詞のように働く!<br><br>
+          ★ O(=of の目的語) = <span class="en">their babies</span>「自分の赤ちゃん」<br>
+          → their = Adult snakes’(=ヘビたちの)<br><br>
+          ★ <strong>骨格</strong>: SVO + 否定 = 第3文型!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>大人のヘビは、自分の赤ちゃんの世話をしない</strong>」<br><br>
+          ★ <strong>生物学的事実</strong>:<br>
+          → 大半の爬虫類は、卵から孵った後に親が子の世話をしない!<br>
+          → 哺乳類とは違う繁殖戦略!<br><br>
+          → ではどうやって?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          take care of「~の世話をする」(=群動詞、3語で1つの他動詞!)。爬虫類の繁殖戦略の説明!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">2</span>
+      <span class="ra-step-pos"><em>Snakes take themselves from day one.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">2文目 ─ 再帰代名詞 themselves + from day one(=慣用)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>2文目 <span class="en">Snakes take themselves from day one.</span>「ヘビは初日から自分自身で身を守る」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">Snakes</span>「ヘビ」<br>
+          ★ V = <span class="en">take</span>「面倒を見る/扱う」(=他動詞、ここでは独立して行動する意味合い)<br>
+          ★ O = <span class="en">themselves</span>「自分自身を」(=再帰代名詞、Snakes を指す、第49講応用)<br>
+          ★ M = <span class="en">from day one</span>「初日から/最初から」(=副詞句、慣用)<br><br>
+          ★ <span class="en">take themselves</span> = 「自分自身で(自分の)面倒を見る」(=自立する)<br>
+          → 直訳「自分を扱う」 → 意訳「自立する/自分のことは自分で」<br><br>
+          ★ <span class="en">from day one</span>:<br>
+          → 慣用「<strong>初日から/最初から</strong>」<br>
+          → from the beginning よりもインパクトが強い!<br><br>
+          ★ <strong>骨格</strong>: SVO + 副詞句 = 第3文型!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>ヘビは初日から自分自身で身を守る/自分のことは自分で行う</strong>」<br><br>
+          ★ <strong>1文目→2文目の流れ</strong>:<br>
+          → 1文目: 親は世話しない<br>
+          → 2文目: だから子は最初から自立する<br>
+          → 因果関係!<br><br>
+          → 具体例?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          再帰代名詞 themselves(=主語 Snakes を指す)!from day one「初日から」(=慣用、強調)!1文目との因果関係!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">3</span>
+      <span class="ra-step-pos"><em>The African black mamba is one of the world’s most dangerous snakes.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">3文目 ─ 最上級 one of the ~est</span>
+    </div>
+    <div class="ra-step-body">
+      <p>3文目 <span class="en">The African black mamba is one of the world’s most dangerous snakes.</span>「アフリカン・ブラック・マンバは、世界で最も危険なヘビの1つだ」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">The African black mamba</span>「アフリカン・ブラック・マンバ」<br>
+          ★ V = <span class="en">is</span>(=be 動詞)<br>
+          ★ C = <span class="en">one of the world’s most dangerous snakes</span>「世界で最も危険なヘビの1つ」(=補語)<br><br>
+          ★ <span class="en">one of the + 最上級 + 複数名詞</span> = 慣用「<strong>最も~なものの1つ</strong>」(=第36講応用)<br><br>
+          ★ <strong>構造の分解</strong>:<br>
+          → one「1つ」(=代名詞)<br>
+          → of(=前置詞)<br>
+          → the world’s「世界の」(=所有格、最上級の範囲)<br>
+          → most dangerous「最も危険な」(=long形容詞の最上級、most + 形容詞)<br>
+          → snakes「ヘビ(複数)」!(=「最も~な~たち」の<strong>1つ</strong>だから複数名詞!)<br><br>
+          ★ <strong>骨格</strong>: SVC = 第2文型!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>世界で最も危険なヘビの1つ</strong>」<br><br>
+          ★ <strong>ブラック・マンバ</strong>:<br>
+          → アフリカ南部・東部に生息する毒ヘビ<br>
+          → 最大4.5m、最速時速20km/h<br>
+          → 猛毒、世界で最も危険なヘビの1つとされる!<br><br>
+          → 大人と赤ちゃんの違いは?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          one of the + 最上級 + 複数名詞「最も~なものの1つ」(=第36講応用)!複数名詞 snakes に注意!ブラック・マンバの紹介!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">4</span>
+      <span class="ra-step-pos"><em>A baby black mamba is as dangerous as an adult.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">4文目 ─ as ~ as 同等比較 + 後ろの省略</span>
+    </div>
+    <div class="ra-step-body">
+      <p>4文目 <span class="en">A baby black mamba is as dangerous as an adult.</span>「赤ちゃんのブラック・マンバは、大人(のヘビ)と同じくらい危険である」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">A baby black mamba</span>「赤ちゃんのブラック・マンバ」<br>
+          ★ V = <span class="en">is</span>(=be 動詞)<br><br>
+          ★ <strong>核心</strong>: <span class="en">as ~ as ~</span> = <strong>同等比較</strong>「~と同じくらい~」(=第26・50講応用)<br><br>
+          ★ <strong>分解</strong>:<br>
+          → C = as dangerous「(同じくらい)危険」(=形容詞、補語)<br>
+          → M = as an adult「大人(のヘビ)と」(=比較対象)<br><br>
+          ★ <strong>後ろの省略</strong>:<br>
+          → 完全形: <span class="en">A baby black mamba is as dangerous as an adult (is).</span><br>
+          → 後ろの<strong>(is) は省略</strong>!(=繰り返しを避ける)<br>
+          → 「赤ちゃん black mamba は、大人(のヘビが危険である)のと同じくらい危険」<br><br>
+          ★ <strong>同等比較の構造</strong>:<br>
+          → A V₁ as ~ as B (V₁) → 後ろの V₁ は省略可!<br>
+          → A の~の度合い = B の~の度合い<br><br>
+          ★ <span class="en">an adult</span>:<br>
+          → ここでは「<strong>大人のヘビ</strong>」!(=人間の「成人」ではない)<br>
+          → 後ろに black mamba が省略!(=A baby black mamba との対比)<br><br>
+          ★ <strong>意訳</strong>: 「<strong>赤ちゃんのブラック・マンバは、大人(のヘビ)と同じくらい危険である</strong>」<br><br>
+          ★ <strong>生物学的事実</strong>: 多くの毒ヘビは生まれた時から成体と同じ強さの毒を持つ!赤ちゃんでも危険!<br><br>
+          → どれくらい早く?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          as ~ as 同等比較(=第26・50講応用)!後ろの (is) は省略!an adult = 「大人のヘビ」(=文脈で動物の成体)!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">5</span>
+      <span class="ra-step-pos"><em>It can catch and eat small animals</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">5文目スタート ─ 助動詞 + 動詞並列(catch and eat)</span>
+    </div>
+    <div class="ra-step-body">
+      <p>5文目スタート <span class="en">It can catch and eat small animals</span>「(それは)小動物を捕まえて食べることができる」!</p>
+        <div class="ra-step-think">
+          ★ S = <span class="en">It</span>「それ(=A baby black mamba を指す)」<br>
+          ★ V = <span class="en">can catch and eat</span>「捕まえて食べることができる」<br><br>
+          ★ <span class="en">and</span> = 動詞の並列(=第15講応用)<br>
+          → V₁ = catch「捕まえる」(=他動詞)<br>
+          → and<br>
+          → V₂ = eat「食べる」(=他動詞)<br>
+          → <strong>共通</strong>: 助動詞 can、目的語 small animals!<br><br>
+          ★ <strong>並列の構造</strong>:<br>
+          → It can (catch and eat) small animals.<br>
+          → can + (動詞₁ and 動詞₂) + 目的語!<br><br>
+          ★ O = <span class="en">small animals</span>「小動物」(=catch と eat 両方の目的語)<br><br>
+          ★ <strong>骨格</strong>: SVO(=動詞並列) = 第3文型!<br><br>
+          ★ <strong>意訳</strong>: 「<strong>(それは)小動物を捕まえて食べることができる</strong>」<br><br>
+          → いつから?(=次へ!)
+        </div>
+        <div class="ra-step-conclude">
+          and で動詞2つを並列(catch and eat)!共通の助動詞 can、共通の目的語 small animals!
+        </div>
+    </div>
+  </div>
+
+  <div class="ra-step">
+    <div class="ra-step-head">
+      <span class="ra-step-num">6</span>
+      <span class="ra-step-pos"><em>as soon as it hatches.</em></span>
+      <span class="ra-step-arrow">▸</span>
+      <span class="ra-step-question">as soon as 副詞節「~するとすぐに」</span>
+    </div>
+    <div class="ra-step-body">
+      <p>最後 <span class="en">as soon as it hatches.</span>「孵化するとすぐに」!</p>
+        <div class="ra-step-think">
+          ★ <strong>核心</strong>: <span class="en">as soon as S V</span> = <strong>副詞節</strong>「<strong>~するとすぐに</strong>」(=時間、頻出!)<br>
+          → as ~ as の同等比較とは別の慣用!<br>
+          → 「~してから時間がたたずに(=すぐに)」<br><br>
+          ★ <strong>as soon as 節の中身</strong>:<br>
+          → S’ = it「それ(=A baby black mamba)」<br>
+          → V’ = hatches「孵化する」(=自動詞、3単現の s)<br><br>
+          ★ <span class="en">hatch</span> = 自動詞「<strong>孵化する/(卵から)生まれる</strong>」<br><br>
+          ★ <strong>意訳</strong>: 「<strong>孵化するとすぐに</strong>」<br><br>
+          ★ <strong>5文目全体</strong>: 「<strong>(それは)孵化するとすぐに、小動物を捕まえて食べることができる</strong>」<br><br>
+          ★ <strong>as の慣用句の整理</strong>:<br>
+          (1) <span class="en">as ~ as ~</span>「~と同じくらい~」(=同等比較、4文目!)<br>
+          (2) <span class="en">as soon as ~</span>「~するとすぐに」(=時間、5文目!)<br>
+          (3) as long as「~する限り」(=条件・期間)<br>
+          (4) as well as「~だけでなく」<br>
+          (5) as if「~のように」(=様態)<br>
+          → 各々違う意味!毎回確認!<br><br>
+          ★ <strong>5文全体のメッセージ</strong>:<br>
+          → 1文目: 大人のヘビは子の世話をしない<br>
+          → 2文目: ヘビは初日から自立する<br>
+          → 3文目: ブラック・マンバは世界一危険なヘビの1つ<br>
+          → 4文目: 赤ちゃんも大人と同じくらい危険<br>
+          → 5文目: 孵化と同時に狩りができる<br>
+          → <strong>ヘビの自立した生態</strong>!<br><br>
+          ★ <strong>本講の本質</strong>: as の3つの形を区別!<br>
+          → as ~ as = 同等比較<br>
+          → as soon as = 副詞節「~するとすぐに」<br>
+          → as ~(=単独) = 接続詞・前置詞・関係代名詞<br>
+          → as の後ろの<strong>形と意味</strong>で毎回判別!
+        </div>
+        <div class="ra-step-conclude">
+          as soon as「~するとすぐに」(=副詞節、時間)!as ~ as(=同等比較)とは別!hatch = 「孵化する」!ヘビの自立した生態の総まとめ!
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 構造の見える化 ============ -->
+<div class="merge-bridge">
+  <div class="merge-bridge-tag">▼ ここまでの解析を1枚で見る</div>
+  <p class="merge-bridge-text">6つのステップで、左から右へと考えてきたことを<strong>構造図にまとめる</strong>と、こうなります。色分けで見ると、骨格(メイン)と補足の関係が一気にクリアになるはず。</p>
+</div>
+
+<div class="final-display">
+  <p class="final-display-text">
+    <span class="seg-wrap"><span class="seg-main">Adult snakes</span><span class="seg-marker seg-marker-main">S₁</span></span>
+    <span class="seg-wrap"><span class="seg-main">don’t take care of</span><span class="seg-marker seg-marker-main">V₁(群動詞、否定)</span></span>
+    <span class="seg-wrap"><span class="seg-main">their babies.</span><span class="seg-marker seg-marker-main">O₁(=of の目的語)</span></span>
+    <span class="seg-wrap"><span class="seg-main">Snakes</span><span class="seg-marker seg-marker-main">S₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">take</span><span class="seg-marker seg-marker-main">V₂</span></span>
+    <span class="seg-wrap"><span class="seg-main">themselves</span><span class="seg-marker seg-marker-main">O₂(再帰代名詞)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">from day one.</span><span class="seg-marker seg-marker-sub">M(慣用)</span></span>
+    <span class="seg-wrap"><span class="seg-main">The African black mamba</span><span class="seg-marker seg-marker-main">S₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V₃</span></span>
+    <span class="seg-wrap"><span class="seg-main">one of the world’s most dangerous snakes.</span><span class="seg-marker seg-marker-main">C₃(=最上級慣用)</span></span>
+    <span class="seg-wrap"><span class="seg-main">A baby black mamba</span><span class="seg-marker seg-marker-main">S₄</span></span>
+    <span class="seg-wrap"><span class="seg-main">is</span><span class="seg-marker seg-marker-main">V₄</span></span>
+    <span class="seg-wrap"><span class="seg-main">as dangerous</span><span class="seg-marker seg-marker-main">C₄(=同等比較)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">as an adult (is).</span><span class="seg-marker seg-marker-sub">比較対象+省略</span></span>
+    <span class="seg-wrap"><span class="seg-main">It</span><span class="seg-marker seg-marker-main">S₅</span></span>
+    <span class="seg-wrap"><span class="seg-main">can catch and eat</span><span class="seg-marker seg-marker-main">V₅(=動詞並列、助動詞共通)</span></span>
+    <span class="seg-wrap"><span class="seg-main">small animals</span><span class="seg-marker seg-marker-main">O₅(=共通)</span></span>
+    <span class="seg-wrap"><span class="seg-sub">[as soon as it hatches].</span><span class="seg-marker seg-marker-sub">as soon as副詞節</span></span>
+  </p>
+  <div class="skeleton-line">
+    骨格 = <strong>1: S V(=群動詞、否定) O. 2: S V O(=再帰代名詞) 〈M(=慣用)〉. 3: S V C(=one of the 最上級 複数名詞). 4: S V C(=as 形容詞) 〈as B (V省略)〉. 5: S V₁ and V₂(=助動詞共通) O 〈[as soon as S V]〉.</strong>(群動詞 take care of、再帰代名詞 themselves、from day one、最上級 one of the ~est、同等比較 as ~ as + 後ろの省略、and で動詞並列、as soon as 副詞節「~するとすぐに」)
+  </div>
+</div>
+
+<!-- ============ STEP 2 - 訳の仕上げ ============ -->
+<div class="merge-bridge merge-bridge-2">
+  <div class="merge-bridge-tag">▼ 構造が見えたら、いよいよ訳の仕上げ</div>
+  <p class="merge-bridge-text">
+    構造解析で終わると「結局この文は何を言ってるの？」が宙ぶらりんになりがち。<br>
+    ここから、<strong>直訳 → 中間訳 → 完成訳</strong>と、日本語として自然な訳に磨き上げる手順を見ていきます。これも「センス」ではなく、ちゃんと<strong>段階的な手順</strong>があります。
+  </p>
+</div>
+
+<div class="trans-build">
+
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">① 直訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">大人のヘビは、彼らの赤ちゃんのケアを取らない。ヘビは1日目から彼ら自身を取る。アフリカンブラックマンバは、世界で最も危険なヘビたちの1つである。赤ちゃんブラックマンバは、大人と同じくらい危険である。それは、それが孵化するとすぐに、小動物を捕まえて食べることができる。</span>
+      <span class="trans-row-note">構造どおりの直訳。「ケアを取る」「彼ら自身を取る」「ヘビたちの1つ」「それが孵化するとすぐに、それは~」が硬い。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>as の3つの顔を整理</strong> ─ <strong>as ~ as</strong>(=同等比較)、<strong>as soon as ~</strong>(=「~するとすぐに」)、単独 as(=接続詞・前置詞・関係代名詞)</span>
+    <span class="trans-arrow-detail">4文目: as dangerous as an adult (is) → 同等比較 + 後ろの省略!5文目: as soon as it hatches → 時間の副詞節!</span>
+  </div>
+  <div class="trans-row is-direct">
+    <span class="trans-row-label">② 中間訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text">大人のヘビは、自分の赤ちゃんの世話をしない。ヘビは初日から自分のことは自分で行う。アフリカン・ブラック・マンバは、世界で最も危険なヘビの1つだ。赤ちゃんのブラック・マンバは、大人と同じくらい危険である。孵化するとすぐに、小動物を捕まえて食べることができる。</span>
+      <span class="trans-row-note">take care of を「世話をする」、take themselves from day one を「初日から自分のことは自分で行う」、one of the ~ を「~の1つ」、as ~ as を「~と同じくらい~」、as soon as を「~するとすぐに」と仕上げ。</span>
+    </div>
+  </div>
+  <div class="trans-arrow">
+    <span class="trans-arrow-icon">▼</span>
+    <span class="trans-arrow-text"><strong>群動詞 take care of</strong>「~の世話をする」、<strong>再帰代名詞 themselves</strong>(=第49講応用)、<strong>最上級 one of the ~est</strong>「最も~なものの1つ」(=第36講応用)、<strong>and で動詞並列</strong>(=第15講応用)</span>
+    <span class="trans-arrow-detail">take care of は3語で1つの他動詞!themselves は主語 Snakes を指す!one of the ~est は複数名詞!can catch and eat は助動詞・目的語が共通の動詞並列!</span>
+  </div>
+  <div class="trans-row is-natural">
+    <span class="trans-row-label">③ 完成訳</span>
+    <div class="trans-row-content">
+      <span class="trans-row-text"><strong>大人のヘビは、自分の赤ちゃんの世話をしない。ヘビは初日から自分自身で身を守る(=自分のことは自分で行う)。アフリカン・ブラック・マンバは、世界で最も危険なヘビの1つだ。生まれたばかりのブラック・マンバは、大人(のヘビ)と同じくらい危険である。孵化するとすぐに、小動物を捕まえて食べることができる。</strong></span>
+      <span class="trans-row-note">「身を守る」(=take themselves の意訳)、「生まれたばかりの」(=A baby を強調)、「大人(のヘビ)」(=an adult の補足)、「孵化するとすぐに」と仕上げ。これで完成!</span>
+    </div>
+  </div>
+</div>
+
+<div class="natural-tip">
+  <div class="natural-tip-head">
+    <span class="natural-tip-icon">💡</span>
+    <span class="natural-tip-title">自然訳の「型」: <strong>as の3つの形を整理する</strong></span>
+  </div>
+  <p class="natural-tip-body">
+    ★ 第56講で身につけてほしい<strong>「as の3つの形を整理する読み方」</strong>を伝えます。<br><br>★ 第54・55講で as の様々な役割を学びましたが、今日は特に<strong>同等比較 as ~ as</strong> と <strong>副詞節 as soon as</strong> を一気に整理!<br><br>★ <strong>asの3つの主要形</strong>:<br><br>★ <strong>形①: as ~ as ~ (=同等比較)</strong>(=第26・50講応用)<br>★ A V as 形容詞/副詞 as B (V) = 「A は B と同じくらい~」<br>★ 後ろの V は<strong>省略可</strong>!<br><br>★ <strong>本問の例</strong>: <span class="en">A baby black mamba is as dangerous as an adult (is).</span><br>→ 「赤ちゃん black mamba は、大人(のヘビ)と同じくらい危険」<br>→ 後ろの (is) は省略!<br><br>★ <strong>類例</strong>(=as ~ as):<br>・<span class="en">She is as tall as her sister (is).</span>「彼女は妹と同じくらい背が高い」<br>・<span class="en">He works as hard as I (do).</span>「彼は私と同じくらい働く」<br>・<span class="en">This book is as interesting as that one (is).</span>「この本はあの本と同じくらい面白い」<br><br>★ <strong>形②: as soon as S V (=副詞節)</strong><br>★ 「<strong>~するとすぐに</strong>」(=時間)<br>★ as ~ as の同等比較<strong>とは別の慣用</strong>!<br><br>★ <strong>本問の例</strong>: <span class="en">It can catch and eat small animals as soon as it hatches.</span><br>→ 「孵化するとすぐに、小動物を捕まえて食べる」<br><br>★ <strong>類例</strong>(=as soon as):<br>・<span class="en">As soon as he came home, he started studying.</span>「家に帰るとすぐに、勉強を始めた」<br>・<span class="en">Call me as soon as you arrive.</span>「到着次第、電話して」<br>・<span class="en">As soon as the bell rang, we left.</span>「ベルが鳴るとすぐに、出発した」<br><br>★ <strong>形③: 単独の as</strong>(=接続詞・前置詞・関係代名詞)<br>★ 第54・55講で学んだ通り!<br>★ 後ろの形と意味で判別!<br><br>★ <strong>as の主な慣用句</strong>:<br>(1) <strong>as ~ as ~</strong>「~と同じくらい~」(=同等比較、本講!)<br>(2) <strong>as soon as ~</strong>「~するとすぐに」(=時間、本講!)<br>(3) <strong>as long as ~</strong>「~する限り」(=条件・期間)<br>(4) <strong>as well as ~</strong>「~だけでなく/~と同様に」<br>(5) <strong>as if ~</strong>「~のように」(=様態)<br>(6) <strong>as far as ~</strong>「~する限り」(=範囲)<br>→ 各々別の意味!毎回確認!<br><br>★ <strong>判別の決め手</strong>:<br>★ as の<strong>後ろの形</strong>と<strong>前後の文脈</strong>!<br>(1) as + 形容詞/副詞 + as → 同等比較<br>(2) as soon as + S V → 時間の副詞節<br>(3) as long as + S V → 条件・期間の副詞節<br>(4) as + S V → 接続詞「~するときに/~するにつれて/~なので」<br>(5) as + 名詞 → 前置詞「~として」<br><br>★ <strong>もう一つ ─ 同等比較の後ろの省略</strong>:<br>★ <span class="en">A V as ~ as B (V)</span> → 後ろの V は<strong>省略</strong>!<br>★ 補って読む習慣を!<br><br>★ <strong>もう一つ ─ 群動詞 take care of</strong>「~の世話をする」:<br>★ take(=動詞)+ care(=名詞)+ of(=前置詞)<br>★ 3語で1つの他動詞のように働く!<br><br>★ <strong>もう一つ ─ 再帰代名詞</strong>(=第49講応用):<br>★ 主語と目的語が同じ人/物 → 再帰代名詞!<br>★ themselves = 「自分自身を」(=複数主語に対応)<br><br>★ <strong>もう一つ ─ from day one</strong>「初日から」(=慣用):<br>★ from the beginning よりインパクトが強い!<br>★ <strong>類例</strong>:<br>・<span class="en">from day one</span>「初日から」<br>・<span class="en">from the start</span>「最初から」<br>・<span class="en">from scratch</span>「ゼロから」<br><br>★ <strong>もう一つ ─ one of the + 最上級 + 複数名詞</strong>(=第36講応用):<br>★ 「最も~なものの<strong>1つ</strong>」<br>★ <strong>必ず複数名詞</strong>!(=「最も~な~たち」の<strong>1つ</strong>だから)<br>★ <strong>類例</strong>:<br>・<span class="en">one of the most popular songs</span>「最も人気の歌の1つ」<br>・<span class="en">one of the smartest students</span>「最も賢い学生の1人」<br><br>★ <strong>もう一つ ─ and で動詞並列</strong>(=第15講応用):<br>★ V₁ and V₂、<strong>共通の助動詞・目的語</strong>!<br>★ 本問: <span class="en">can catch and eat small animals</span> = can + (catch and eat) + small animals<br><br>★ これからの60講で、<strong>asの様々な形</strong>は頻出します。<br>★ as を見たら、後ろの形と前後の文脈で意味を判別する習慣を!
+  </p>
+  <div class="natural-tip-examples">
+    
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">She runs as fast as her brother.</span></span>
+      <span class="natural-tip-ex-bad">彼女は彼女の兄と速く走る (as ~ as を取り違え)</span>
+      <span class="natural-tip-ex-good">彼女は兄と同じくらい速く走る (as ~ as = 同等比較、後ろの runs は省略!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">As soon as the rain stopped, we went out.</span></span>
+      <span class="natural-tip-ex-bad">雨が止んだので、私たちは出かけた (as soon as を「~なので」と取り違え)</span>
+      <span class="natural-tip-ex-good">雨が止むとすぐに、私たちは出かけた (as soon as = 「~するとすぐに」、時間の副詞節!)</span>
+    </div>
+    <div class="natural-tip-ex">
+      <span class="natural-tip-ex-en"><span class="en">Mt. Fuji is one of the most beautiful mountains in Japan.</span></span>
+      <span class="natural-tip-ex-bad">富士山は日本で最も美しい山だ (one of を訳出しない)</span>
+      <span class="natural-tip-ex-good">富士山は日本で最も美しい山の1つだ (one of the + 最上級 + 複数名詞 = 「最も~なものの1つ」!)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2 - まとめ ============ -->
+<div class="step2-summary">
+  <div class="step2-summary-head">
+    <span class="step2-summary-icon">✓</span>
+    <span class="step2-summary-title">STEP 2 のまとめ ─ 「構造」から「意味」までの一直線</span>
+  </div>
+  <div class="step2-summary-flow">
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">1</span>
+      <span class="step2-flow-text">左から右へ、1語ずつ品詞と役割を確定する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">2</span>
+      <span class="step2-flow-text">骨格と修飾語(M)を色分けで把握する</span>
+    </div>
+    <span class="step2-flow-arrow">→</span>
+    <div class="step2-flow-item">
+      <span class="step2-flow-num">3</span>
+      <span class="step2-flow-text">直訳 → 中間訳 → 完成訳と日本語に仕上げる</span>
+    </div>
+  </div>
+  <p class="step2-summary-text">
+    この一連の流れが、英文解釈の全プロセスです。<strong>「構造が見えた」だけで満足せず、必ず最後の「自然な訳」まで仕上げる</strong>習慣を、今日からつけていきましょう。
+  </p>
+</div>
+
+<!-- ============ STEP 3: ドリル ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 3</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Try It Yourself —</span>
+  </div>
+  <h2 class="step-title">同じ思考で、別の英文を読んでみる</h2>
+  <p class="step-subtitle">読み方は「使えてナンボ」。今日身につけた思考プロセスを、別の英文で試してみましょう。<strong>答えを見る前に必ず自分で考える</strong>のがポイント。<br>知識として「覚える」のではなく、<strong>手を動かして「使える」状態</strong>に持っていきます。</p>
+</div>
+
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q1</span>
+    <span class="drill-title">同等比較 as ~ as + 後ろの省略</span>
+  </div>
+  <p class="drill-en">This restaurant is <strong>as good as the one</strong> we went to last week.</p>
+  <p class="drill-q">構造を分析し、後ろの省略を補って訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill1">解答と解説を見る</button>
+  <div class="drill-answer" id="drill1">
+    <strong>分析:</strong> as ~ as 同等比較 + 後ろの (is) 省略!<br>
+        ・S = This restaurant<br>
+        ・V = is<br>
+        ・C = as good「(同じくらい)良い」<br>
+        ・比較対象 = the one we went to last week「先週行った店」(=one = restaurant の代名詞、関係詞省略 + we went to が修飾)<br>
+        ・後ろの (is) は省略!<br>
+        <strong>訳:</strong> 「<strong>このレストランは、先週行った店と同じくらい良い</strong>」<br><br>
+        💡 as ~ as → 同等比較!後ろの V は省略可!the one「~なもの」(=代名詞、ones は複数)!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q2</span>
+    <span class="drill-title">as soon as 副詞節「~するとすぐに」</span>
+  </div>
+  <p class="drill-en"><strong>As soon as I get home</strong>, I will call you.</p>
+  <p class="drill-q">as soon as の役割と訳は?</p>
+  <button class="drill-toggle-btn" data-target="drill2">解答と解説を見る</button>
+  <div class="drill-answer" id="drill2">
+    <strong>分析:</strong> as soon as = 副詞節「~するとすぐに」(=時間)!<br>
+        ・as soon as 節 = As soon as I get home「家に着くとすぐに」<br>
+        ・主節 = I will call you「あなたに電話する」<br>
+        ・as ~ as の同等比較とは別!<br>
+        <strong>訳:</strong> 「<strong>家に着くとすぐに、あなたに電話する</strong>」<br><br>
+        💡 as soon as ≠ as ~ as!後ろが S V → 時間の副詞節「~するとすぐに」!頻出!
+  </div>
+</div>
+
+<div class="drill-card">
+  <div class="drill-head">
+    <span class="drill-icon">Q3</span>
+    <span class="drill-title">one of the + 最上級 + 複数名詞</span>
+  </div>
+  <p class="drill-en">Tokyo is <strong>one of the largest cities</strong> in the world.</p>
+  <p class="drill-q">構造を分析し、複数名詞に注目して訳すと?</p>
+  <button class="drill-toggle-btn" data-target="drill3">解答と解説を見る</button>
+  <div class="drill-answer" id="drill3">
+    <strong>分析:</strong> one of the + 最上級 + 複数名詞「最も~なものの1つ」(=第36講応用)!<br>
+        ・S = Tokyo<br>
+        ・V = is<br>
+        ・C = one of the largest cities「最も大きな都市の1つ」<br>
+        ・修飾 = in the world「世界の」<br>
+        ・<strong>cities</strong>(=複数!)に注目!「最も~な都市たち」の<strong>1つ</strong>だから複数!<br>
+        <strong>訳:</strong> 「<strong>東京は、世界で最も大きな都市の1つだ</strong>」<br><br>
+        💡 one of the + 最上級 → 必ず複数名詞!one of the largest city(=×、不可)、one of the largest cities(=○、複数)!
+  </div>
+</div>
+
+<!-- ============ STEP 4: Reading Algorithm ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag">STEP 4</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— Your Reading Algorithm —</span>
+  </div>
+  <h2 class="step-title">これからの英文に使える「思考フロー」</h2>
+  <p class="step-subtitle">最後に、今日の学びを<strong>初見の英文に使える型</strong>として整理しておきます。これを毎回頭の中で回せば、確実に読める英文が増えていきます。</p>
+</div>
+
+<div class="flow">
+
+  <div class="flow-step">
+    <span class="flow-num">1</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>as の3つの主要形</strong>を整理</div>
+      <div class="flow-desc">as ~ as(=同等比較)、as soon as(=「~するとすぐに」)、単独 as(=接続詞・前置詞・関係代名詞)!後ろの形と意味で判別!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">2</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>as ~ as ~</strong>「~と同じくらい~」(=同等比較、第26・50講応用)</div>
+      <div class="flow-desc">A V as 形容詞/副詞 as B (V) → 後ろの V は省略可!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">3</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>as soon as S V</strong>「~するとすぐに」(=副詞節、頻出!)</div>
+      <div class="flow-desc">時間の副詞節!as ~ as の同等比較とは別の慣用!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">4</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>群動詞 take care of</strong>「~の世話をする」</div>
+      <div class="flow-desc">3語で1つの他動詞!後ろに目的語(=of の目的語)が必要!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">5</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>再帰代名詞 themselves</strong>(=第49講応用)</div>
+      <div class="flow-desc">主語と目的語が同じ人/物!themselves = 「自分自身を」(=複数主語)!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">6</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>from day one</strong>「初日から」(=慣用)</div>
+      <div class="flow-desc">from the beginning よりインパクト強!from scratch「ゼロから」も類例!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">7</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>one of the + 最上級 + 複数名詞</strong>「最も~なものの1つ」(=第36講応用)</div>
+      <div class="flow-desc">必ず<strong>複数名詞</strong>!「~たちの中の1つ」だから!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">8</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>and で動詞並列</strong>(=第15講応用)</div>
+      <div class="flow-desc">共通の助動詞 + 共通の目的語!can catch and eat small animals = can + (catch and eat) + small animals!</div>
+    </div>
+  </div>
+
+  <div class="flow-step">
+    <span class="flow-num">9</span>
+    <div class="flow-content">
+      <div class="flow-q"><strong>同等比較の後ろの省略</strong></div>
+      <div class="flow-desc">A V as ~ as B (V) の後ろの V は省略可!補って読む!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CHECK ============ -->
+<div class="checklist">
+  <h3 class="check-title">今日のチェックリスト ─ 全部できれば本日の内容は完璧</h3>
+  <ul class="check-list">
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as の3つの形</strong>(=as ~ as / as soon as / 単独 as)を整理した</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as ~ as ~</strong>「~と同じくらい~」(=同等比較、後ろの V 省略あり)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as soon as S V</strong>「~するとすぐに」(=副詞節)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>as の慣用句</strong>(=as long as / as well as / as if / as far as)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>群動詞 take care of</strong>「~の世話をする」を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>再帰代名詞 themselves</strong>(=第49講応用)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>from day one</strong>「初日から」(=慣用)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>one of the + 最上級 + 複数名詞</strong>(=第36講応用、複数名詞に注意)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>and で動詞並列</strong>(=第15講応用、共通の助動詞・目的語)を再確認</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>同等比較の後ろの省略</strong>を補って読めるようになった</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text"><strong>hatch</strong>「孵化する」(=自動詞)を覚えた</span>
+    </li>
+    <li class="check-item">
+      <span class="check-box"></span>
+      <span class="check-text">STEP 3のドリル3問を、答えを見ずに自力で説明できる</span>
+    </li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <p class="footer-text">英文構造解析 · 第56講 · as ~ as と as soon as を一緒に整理する</p>
+  <p class="footer-brand">Online Cram School &nbsp;<span>THINKING</span></p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+  
+  // Drill toggle
+  document.querySelectorAll('.drill-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = btn.getAttribute('data-target');
+      const answer = document.getElementById(targetId);
+      const isShown = answer.classList.contains('is-shown');
+      if (isShown) {
+        answer.classList.remove('is-shown');
+        btn.textContent = '解答と解説を見る';
+      } else {
+        answer.classList.add('is-shown');
+        btn.textContent = '解答を閉じる';
+      }
+    });
+  });
+  
+  // Checkbox interaction
+  document.querySelectorAll('.check-box').forEach(box => {
+    box.style.cursor = 'pointer';
+    box.addEventListener('click', function() {
+      const after = box.querySelector('::after');
+      if (box.style.background === 'var(--ink-primary)' || box.style.background === 'rgb(44, 37, 32)') {
+        box.style.background = 'transparent';
+      } else {
+        box.style.background = 'var(--ink-primary)';
+      }
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>
