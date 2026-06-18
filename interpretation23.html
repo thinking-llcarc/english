@@ -1502,6 +1502,219 @@
     .final-display-text { font-size: 1rem; }
   }
 
+  /* ===== 生徒からの質問セクション ===== */
+  .qa-card {
+    background: var(--aqua-bg);
+    border: 1px solid var(--aqua-soft);
+    border-radius: 16px;
+    padding: 2rem 2.25rem;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+  }
+  .qa-card::before {
+    content: 'Q';
+    position: absolute;
+    top: -16px;
+    left: 28px;
+    width: 40px;
+    height: 40px;
+    background: var(--aqua-main);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 3px 8px rgba(47, 109, 130, 0.3);
+  }
+  .qa-card-label {
+    font-family: var(--font-en);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--aqua-deep);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .qa-card-text {
+    font-size: 1.02rem;
+    line-height: 1.9;
+    color: var(--ink-primary);
+  }
+  .qa-card-text .hl-q {
+    background: linear-gradient(transparent 60%, var(--aqua-soft) 60%);
+    font-weight: 700;
+  }
+  .qa-card-text .en { font-family: var(--font-en); font-weight: 600; }
+
+  .answer-headline {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    text-align: center;
+    margin: 2.5rem 0 0.5rem;
+    line-height: 1.4;
+  }
+  .answer-headline .em-orange { color: var(--orange-main); }
+  .answer-headline .em-aqua { color: var(--aqua-deep); }
+  .answer-sub {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--ink-tertiary);
+    margin-bottom: 2.5rem;
+  }
+
+  .two-that {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .that-col {
+    border-radius: 16px;
+    padding: 1.75rem;
+    position: relative;
+    border: 2px solid;
+  }
+  .that-col.col-rel {
+    background: var(--orange-bg);
+    border-color: var(--orange-main);
+  }
+  .that-col.col-dem {
+    background: var(--bg-soft);
+    border-color: var(--line-mid);
+  }
+  .that-badge {
+    display: inline-block;
+    font-family: var(--font-en);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  .col-rel .that-badge { background: var(--orange-main); color: #fff; }
+  .col-dem .that-badge { background: var(--ink-tertiary); color: #fff; }
+  .that-which {
+    font-family: var(--font-en);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .col-rel .that-which { color: var(--orange-deep); }
+  .col-dem .that-which { color: var(--ink-secondary); }
+  .that-role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    margin-bottom: 0.75rem;
+  }
+  .that-desc {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--ink-secondary);
+  }
+  .that-desc .en { font-family: var(--font-en); font-weight: 600; }
+
+  .position-sentence {
+    background: var(--bg-paper);
+    border: 1px solid var(--line-thin);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .position-sentence-label {
+    font-family: var(--font-en);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--ink-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  .pos-text {
+    font-family: var(--font-en);
+    font-size: 1.32rem;
+    line-height: 2.4;
+    text-align: center;
+    color: var(--ink-primary);
+    font-weight: 500;
+  }
+  .that-mark-rel {
+    color: var(--orange-deep);
+    font-weight: 700;
+    border-bottom: 3px solid var(--orange-main);
+    padding: 0 2px;
+  }
+  .that-mark-dem {
+    color: var(--ink-primary);
+    font-weight: 700;
+    background: var(--bg-soft);
+    border-bottom: 3px solid var(--ink-tertiary);
+    padding: 0 2px;
+  }
+  .pos-num {
+    display: inline-block;
+    font-family: var(--font-en);
+    font-size: 0.7rem;
+    font-weight: 700;
+    vertical-align: super;
+    margin-left: 1px;
+  }
+  .pos-num-rel { color: var(--orange-main); }
+  .pos-num-dem { color: var(--ink-tertiary); }
+  .pos-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
+  .pos-legend-item { display: flex; align-items: center; gap: 0.5rem; }
+  .pos-legend-dot { width: 14px; height: 14px; border-radius: 50%; }
+  .pos-legend-dot.rel { background: var(--orange-main); }
+  .pos-legend-dot.dem { background: var(--ink-tertiary); }
+
+  .verdict-box {
+    background: var(--good-bg);
+    border-left: 4px solid var(--good);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .verdict-box-title {
+    font-weight: 700;
+    color: var(--good);
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .verdict-box-text {
+    font-size: 0.98rem;
+    line-height: 1.9;
+    color: var(--ink-primary);
+  }
+  .verdict-box-text .en { font-family: var(--font-en); font-weight: 600; }
+  .verdict-box-text .hl-o { color: var(--orange-deep); font-weight: 700; }
+
+  @media (max-width: 768px) {
+    .two-that { grid-template-columns: 1fr; gap: 1rem; }
+    .qa-card { padding: 1.5rem 1.25rem; }
+    .pos-text { font-size: 1.05rem; line-height: 2.2; }
+    .answer-headline { font-size: 1.3rem; }
+  }
+
 </style>
 </head>
 <body>
@@ -1572,6 +1785,100 @@
     ② 訳せなくても OK。<strong>「どこで詰まったか」</strong>を意識してください。<br>
     ③ 「ここの構造がよく分からない」「この単語の品詞が判別できない」と感じたら、それがあなたの<strong>伸びしろ</strong>です。
   </div>
+</div>
+
+<!-- ============ 生徒からの質問 ============ -->
+<div class="step-head">
+  <div class="step-eyebrow">
+    <span class="step-tag" style="background: var(--aqua-main);">QUESTION</span>
+    <span class="step-line"></span>
+    <span class="step-counter">— 生徒からの質問に答えます —</span>
+  </div>
+  <h2 class="step-title">その <span class="en" style="color: var(--aqua-deep);">that</span> は、<br>「その国」の <span class="en" style="color: var(--ink-tertiary);">that</span> ではありません。</h2>
+  <p class="step-subtitle">今回の英文には <span class="en">that</span> が <strong>2回</strong> 出てきます。この2つは、見た目は同じでも<strong>まったく別物</strong>。ここを取り違えると、文の骨格が崩れてしまいます。質問をくれたあなたの「気づき」は超重要なので、しっかり整理しましょう。</p>
+</div>
+
+<div class="question-block">
+
+  <div class="qa-card">
+    <div class="qa-card-label">いただいた質問</div>
+    <p class="qa-card-text">
+      英文熟考23の <span class="en">thinking</span> の解説について質問です。<span class="en">All that S V is (to) V</span> と書いてあったのですが、<span class="hl-q">そこでの <span class="en">that</span> は「その国」の <span class="en">that</span> と思った</span>のですが、確認お願いします。
+    </p>
+  </div>
+
+  <p class="answer-headline">
+    結論 ─ その英文には、<span class="em-orange">関係代名詞の <span class="en">that</span></span> と<br><span class="em-aqua">「その国」の <span class="en">that</span></span> の<strong>2つ</strong>があります。
+  </p>
+  <p class="answer-sub">解説に出てくる <span class="en">All that S V</span> の <span class="en">that</span> は、<strong>①の関係代名詞</strong>の方です。</p>
+
+  <!-- 位置を示す文 -->
+  <div class="position-sentence">
+    <div class="position-sentence-label">★ 英文の中での「2つの that」の位置</div>
+    <p class="pos-text">
+      All <span class="that-mark-rel">that<span class="pos-num pos-num-rel">①</span></span> the doctors and scientists in <span class="that-mark-dem">that<span class="pos-num pos-num-dem">②</span></span> country want to do is to prevent bird flu from spreading.
+    </p>
+    <div class="pos-legend">
+      <div class="pos-legend-item">
+        <span class="pos-legend-dot rel"></span>
+        <span><strong>①</strong> = 関係代名詞の <span class="en">that</span>(=解説の <span class="en">All that S V</span> はコレ)</span>
+      </div>
+      <div class="pos-legend-item">
+        <span class="pos-legend-dot dem"></span>
+        <span><strong>②</strong> = 「その国」の <span class="en">that</span>(=<span class="en">that country</span>)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2つのthatを並べて比較 -->
+  <div class="two-that">
+    <div class="that-col col-rel">
+      <span class="that-badge">① 関係代名詞</span>
+      <div class="that-which">All <u>that</u> ...</div>
+      <div class="that-role">「~すること(のすべて)」の <span class="en">that</span></div>
+      <p class="that-desc">
+        <span class="en">All</span>(=先行詞「すべてのこと」)を受ける<strong>関係代名詞(目的格)</strong>。<br>
+        後ろの <span class="en">want to do</span> の <span class="en">do</span> の<strong>目的語が抜けている</strong>(=本来 <span class="en">do</span> の後ろにあるべき目的語が、関係代名詞 <span class="en">that</span> として前に出ている)。<br>
+        だから <span class="en">All that S want to do</span> = 「<strong>Sがしたいことのすべて</strong>」とまとまり、これが文全体の<strong>主語(S)</strong>になります。<br>
+        ★ 解説の <span class="en">All that S V is (to) V</span> の <span class="en">that</span> は、<strong>これ</strong>。
+      </p>
+    </div>
+    <div class="that-col col-dem">
+      <span class="that-badge">② 指示形容詞</span>
+      <div class="that-which">that country</div>
+      <div class="that-role">「その~」の <span class="en">that</span></div>
+      <p class="that-desc">
+        後ろの名詞 <span class="en">country</span> を指して「<strong>その国</strong>」という意味を作る<strong>指示形容詞</strong>(=this/that/these/those の仲間)。<br>
+        <span class="en">in that country</span> = 「<strong>その国の</strong>」という<strong>前置詞句(修飾)</strong>で、直前の <span class="en">the doctors and scientists</span>(=医者と科学者)を説明しているだけ。<br>
+        文の骨格(=S・V・C)には関係しない、ただの<strong>補足</strong>です。<br>
+        ★ これは <span class="en">All that S V is (to) V</span> の <span class="en">that</span> とは<strong>別物</strong>。
+      </p>
+    </div>
+  </div>
+
+  <!-- 判定 -->
+  <div class="verdict-box">
+    <div class="verdict-box-title">✓ なぜ混同しやすいのか?</div>
+    <p class="verdict-box-text">
+      同じ <span class="en">that</span> という単語が、1つの文の中に<strong>2回・近い位置</strong>に出てくるからです。でも、<strong>位置と働きが全然違います</strong>。<br>
+      ・①は <span class="hl-o"><span class="en">All</span> の直後</span> → 関係代名詞(=Allを受けて節を作る)<br>
+      ・②は <span class="en">in ___ country</span> の中 → 指示形容詞(=「その」と訳す)<br>
+      <br>
+      見分け方はシンプル: <strong><span class="en">that</span> の直後を見る</strong>。<br>
+      → <span class="en">that</span> + <strong>(主語+)動詞</strong> なら<strong>関係代名詞</strong>(①: <span class="en">that the doctors ... want</span>)。<br>
+      → <span class="en">that</span> + <strong>名詞</strong> なら<strong>指示形容詞</strong>「その~」(②: <span class="en">that country</span>)。
+    </p>
+  </div>
+
+  <div class="verdict-box" style="background: var(--orange-bg); border-left-color: var(--orange-main);">
+    <div class="verdict-box-title" style="color: var(--orange-deep);">★ まとめ</div>
+    <p class="verdict-box-text">
+      あなたが「<span class="en">All that S V</span> の <span class="en">that</span> は『その国』の <span class="en">that</span> かな?」と思ったのは、<strong>とても自然な疑問</strong>です。でも答えは <strong>NO</strong>。<br>
+      解説の <span class="en">All that S V is (to) V</span> の <span class="en">that</span> は、<span class="hl-o">文頭の <span class="en">All</span> を受ける関係代名詞</span>。「その国」の <span class="en">that</span>(=<span class="en">that country</span>)は、文の<strong>後半</strong>に出てくる<strong>別の <span class="en">that</span></strong> です。<br>
+      この2つをきっちり区別できれば、もうこの文の構造は完璧に見えています。次の STEP で、文全体の骨格をさらに詳しく確認しましょう!
+    </p>
+  </div>
+
 </div>
 
 <!-- ============ STEP 1 ============ -->
@@ -1674,10 +1981,11 @@
           → <span class="en">All that S V</span>「SがVするすべてのこと」=<strong>関係代名詞 that</strong> がそれを修飾するパターン!<br>
           → このパターンは慣用構文 <span class="en">All that S have to do is V</span>「Sは~さえすればよい」のサイン!<br><br>
           ※ <span class="en">all</span> や最上級などの後の関係代名詞は <span class="en">that</span> が好まれる(<span class="en">which</span> も使えるが慣用的にthat)。<br>
-          → これは「all」のような強く発音する語の後に、弱く発音される that を置きたいという音のリズム感が理由かもしれない。
+          → これは「all」のような強く発音する語の後に、弱く発音される that を置きたいという音のリズム感が理由かもしれない。<br><br>
+          ⚠️ <strong>注意</strong>: この <span class="en">that</span> は、文の後半に出てくる <span class="en">in <u>that</u> country</span>(=「その国」)の <span class="en">that</span> とは<strong>別物</strong>!こちらは <span class="en">All</span> を受ける<strong>関係代名詞</strong>、あちらは「その」を表す<strong>指示形容詞</strong>。<span class="en">that</span> の直後が「(主語+)動詞」か「名詞」かで見分けます。
         </div>
         <div class="ra-step-conclude">
-          that = 関係代名詞、All を修飾する節を導く。
+          that = 関係代名詞、All を修飾する節を導く。(=「その国」の that country とは別物!)
         </div>
     </div>
   </div>
@@ -1695,10 +2003,11 @@
           <span class="en">the doctors and scientists</span> = 「医者と科学者」(両方を訳出)<br>
           → 「すべての医者や科学者」と訳すと誤り(=allが代名詞だから「すべての」とは訳さない)!<br>
           <span class="en">in that country</span> = 「その国の」(=形容詞句、直前の名詞を修飾)<br>
-          → 全体で「<strong>その国の医者と科学者</strong>」
+          → 全体で「<strong>その国の医者と科学者</strong>」<br><br>
+          ⚠️ ここの <span class="en">that</span>(=<span class="en">that country</span> の <span class="en">that</span>)は「<strong>その</strong>」を表す<strong>指示形容詞</strong>。文頭の <span class="en">All <u>that</u></span> の<strong>関係代名詞</strong>とは<strong>別物</strong>です(=後ろが名詞 <span class="en">country</span> だから指示形容詞)。
         </div>
         <div class="ra-step-conclude">
-          S' = the doctors and scientists in that country「その国の医者と科学者」
+          S' = the doctors and scientists in that country「その国の医者と科学者」(=この that は「その」の指示形容詞、関係代名詞とは別!)
         </div>
     </div>
   </div>
